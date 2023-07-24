@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  H3,
+  Title,
   Body,
   MyImage,
   SecondaryButton,
@@ -24,7 +24,7 @@ const FooterCards = ({ footerCards }) => {
             <MyImage src={footerCard.image} alt={footerCard.alt}></MyImage>
           </GraphicContainer>
 
-          <H3 style={{ color: footerCard.textColour }}>{footerCard.heading}</H3>
+          <Title style={{ color: footerCard.textColour }}>{footerCard.heading}</Title>
           <Paragraph style={{ color: footerCard.textColour }}>
             {footerCard.paragraph}
           </Paragraph>

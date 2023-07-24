@@ -1,4 +1,4 @@
-import { Body, TextContainer, H4, H3 } from "../styles";
+import { Body, TextContainer, Subtitle, Title } from "../styles";
 import styled from "styled-components";
 
 // Destructure blogs and title directly from the props
@@ -18,23 +18,23 @@ const PublicationDetails = ({ publicationDetails }) => {
           >
             {publicationDetail.date}
           </Date>
-          <H4>{publicationDetail.synopsis}</H4>
-          <H3
+          <Subtitle>{publicationDetail.synopsis}</Subtitle>
+          <Title
             style={{
               display: publicationDetail.headingDisplay,
               marginBottom: "16px",
             }}
           >
             {publicationDetail.heading}
-          </H3>
-          <H4
+          </Title>
+          <Subtitle
             style={{
               display: publicationDetail.creditsDisplay,
               marginBottom: "16px",
             }}
           >
             {publicationDetail.credits}
-          </H4>
+          </Subtitle>
           <Body
             style={{
               display: publicationDetail.paragraphDisplay,

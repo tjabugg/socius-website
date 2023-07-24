@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {
-  H3,
+  Title,
   GridContainer,
   MyImage,
   Body,
@@ -19,7 +19,7 @@ const PublicationCovers = ({ publicationCovers }) => {
         <Container key={publicationCover.id}>
           <TextContainer>
             <Date>{publicationCover.date}</Date>
-            <H3>{publicationCover.heading}</H3>
+            <Title>{publicationCover.heading}</Title>
             <Paragraph>{publicationCover.paragraph}</Paragraph>
             <SecondaryButton
               href={publicationCover.link}

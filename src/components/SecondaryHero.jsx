@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {
   MyImage,
-  H1,
+  Heading,
   CentreContainer,
   CentreText,
   ImageContainer,
@@ -20,9 +20,9 @@ const SecondaryHero = ({ secondaryHeroes }) => {
       {secondaryHeroes.map((secondaryHero) => (
         // When we .map(), each root element we return must have a 'key' property which react uses to keep track of items in the dom
         <TextAndImage key={secondaryHero.id}>
-          <Heading>
-            <H1>{secondaryHero.heading}</H1>
-          </Heading>
+          <TextContainer>
+            <Heading>{secondaryHero.heading}</Heading>
+          </TextContainer>
           <GraphicContainer>
             <MyImage
               alt={secondaryHero.imageAlt}
@@ -39,9 +39,9 @@ const SecondaryHero = ({ secondaryHeroes }) => {
                 display: secondaryHero.display,
               }}
               src={secondaryHero.video}
-              autoplay
-              loop
-              playsinline
+              autoPlay={true}
+              loop={true}
+              playsInline={true}
             ></MyVideo>
             {/* should create a conditional statement for the display of the button */}
             <PauseButton>
@@ -73,7 +73,7 @@ const Play = () => {
 
 export default SecondaryHero;
 
-export const Heading = styled(CentreText)`
+export const TextContainer = styled(CentreText)`
   margin: 0px 10vw 16px 10vw;
 
   @media (max-width: 768px) {

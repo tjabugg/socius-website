@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  H4,
+  Subtitle,
   SecondaryButton,
   Body,
   ParentContainer,
@@ -58,7 +58,7 @@ export const ArticleCard = styled.div`
   }
 `;
 
-export const Heading = styled(H4)`
+export const Heading = styled(Subtitle)`
   margin: 0px 0px 8px 0px;
 `;
 

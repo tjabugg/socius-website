@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Body, H3, GridContainer } from "../styles";
+import { Body, Title, GridContainer } from "../styles";
 
 // Destructure blogs and title directly from the props
 const TextBlocks = ({ textBlocks }) => {
@@ -15,7 +15,7 @@ const TextBlocks = ({ textBlocks }) => {
             paddingBottom: textBlock.paddingBottom,
           }}
         >
-          <H3>{textBlock.heading}</H3>
+          <Title>{textBlock.heading}</Title>
           <Body>{textBlock.paragraph}</Body>
         </Container>
       ))}

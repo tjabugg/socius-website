@@ -11,7 +11,7 @@ import Office from "../assets/videos/office.mp4";
 import CallToAction from "../components/CallToAction";
 import FooterCard from "../components/FooterCard";
 import SplitImage from "../components/SplitImage";
-import { H2, GridContainer } from "../styles";
+import { Subheading, GridContainer } from "../styles";
 
 const Database = () => {
   const [secondaryHeroes] = useState([
@@ -108,10 +108,10 @@ const Database = () => {
         splitImages={splitImages.filter((splitImage) => splitImage.id === 1)}
       />
       <GridContainer>
-        <H2>
+        <Subheading>
           While we cannot fully reduce AI being a black box models, we aim to
           build Transparent, Accountable, and Interpretable AI models.
-        </H2>
+        </Subheading>
       </GridContainer>
       <TextBlocks
         textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}

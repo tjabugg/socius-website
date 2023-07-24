@@ -1,15 +1,11 @@
 import Hero from "../components/Hero";
-import GraphicCard from "../components/GraphicCard";
 import ArticleCard from "../components/ArticleCard";
 import { useState } from "react";
 import TextBlocks from "../components/TextBlocks";
-// import Random9x9Pattern01 from "../assets/svgs/random/random_9x9_01.svg";
-// import Random5x5Pattern01 from "../assets/svgs/random/random_5x5_01.svg";
-import Random16x9Pattern01 from "../assets/svgs/random/random_16x9_01.svg";
+import GraphicCards from "../components/GraphicCard";
 import Organised5x5Pattern01 from "../assets/svgs/organised/organised_5x5_01.svg";
 import Studying from "../assets/videos/studying.mp4";
 import StockExchange from "../assets/images/stock_exchange.jpg";
-// import FrozenIce from "../assets/images/frozen_ice.jpg";
 import FriendsAtDusk from "../assets/images/friends.jpg";
 import CallToAction from "../components/CallToAction";
 import TextAndImage from "../components/TextAndImage";
@@ -18,7 +14,7 @@ import styled from "styled-components";
 import React from "react";
 import {
   LetterContainer,
-  H2,
+  Subheading,
   Body,
   CentreContainer,
   MyImage,
@@ -40,38 +36,6 @@ const Home = () => {
         "Limited to academic researchers, we provide FREE 24/5 support in terms of methodologies, models, algorithms and many more.",
       id: 2,
     },
-  ]);
-
-  const [graphicCards] = useState([
-    // {
-    //   bgcolor: "#D9FFD8",
-    //   graphic: Random9x9Pattern01,
-    //   heading: "alphaVADER: a first step to compliance-proof",
-    //   paragraph:
-    //     "Aspect-based sentiment analysis model that analyzes text-based data ranging from media (i.e news) and social media (i.e reddit).",
-    //   id: 1,
-    //   link: "/alphavader",
-    // },
-    {
-      bgcolor: "#193718",
-      textColour: "white",
-      graphic: Random16x9Pattern01,
-      heading: "CompliSent: a first step to compliance-proof",
-      paragraph:
-        "Aspect-based sentiment analysis model that analyses text-based data ranging from media and social media.",
-      id: 3,
-      link: "/thisphenomenon",
-    },
-    // {
-    //   bgImage: FrozenIce,
-    //   opacity: "0",
-    //   textColour: "white",
-    //   heading: "This (phenomenon) looks like that (phenomena)",
-    //   paragraph:
-    //     "An AI model that “reasons” in a way that is similar to how economists and others explain why a current phenomenon looks like a past phenomena.",
-    //   id: 2,
-    //   link: "/thisphenomenon",
-    // },
   ]);
 
   const [articleCards] = useState([
@@ -132,7 +96,7 @@ const Home = () => {
       />
 
       <CentreText>
-        <H2>Our Research</H2>
+        <Subheading>Our Research</Subheading>
         <Body>
           We aim to create AI tools that empower social scientists to make
           discoveries that were previously impossible, to uncover new insights
@@ -141,13 +105,7 @@ const Home = () => {
         </Body>
       </CentreText>
 
-      <GraphicCard graphicCards={graphicCards} />
-
-      {/* <ButtonContainer>
-        <PrimaryButton href="/research">
-          Explore all of our publications
-        </PrimaryButton>
-      </ButtonContainer> */}
+      <GraphicCards></GraphicCards>
 
       <LetterContainer>
         <MyImage
@@ -167,10 +125,10 @@ const Home = () => {
       <TextAndImage textAndImages={textAndImages} />
 
       <QuoteContainer>
-        <H2>
+        <Subheading>
           "Artificial intelligence is not a substitute for human intelligence;
           it's a tool to help us think."
-        </H2>
+        </Subheading>
         <Body>Fei-Fei Li</Body>
       </QuoteContainer>
       <CallToAction callToActions={callToActions} />

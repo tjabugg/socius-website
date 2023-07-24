@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { H2, ParentContainer, SecondaryButton } from "../styles";
+import { Subheading, ParentContainer, SecondaryButton } from "../styles";
 
 // Destructure blogs and title directly from the props
 const CallToActions = ({ callToActions }) => {
@@ -13,14 +13,14 @@ const CallToActions = ({ callToActions }) => {
             backgroundColor: callToAction.bgColour,
           }}
         >
-          <H2
+          <Heading
             style={{
               color: callToAction.textColour,
             }}
           >
             {callToAction.heading}
             We’re always looking for new partners to collaborate with.
-          </H2>
+          </Heading>
           <SecondaryButton href="mailto:nick.sh.oh@gmail.com" target="_blank">
             {callToAction.button}Get in touch
           </SecondaryButton>
@@ -42,7 +42,7 @@ export const Container = styled(ParentContainer)`
   }
 `;
 
-export const Heading = styled(H2)`
+export const Heading = styled(Subheading)`
   width: 60%;
 
   @media (max-width: 768px) {

@@ -44,6 +44,7 @@ const SplitImages = ({ splitImages }) => {
               src={splitImage.videoTwo}
               autoPlay={true}
               loop={true}
+              playsInline={true}
             ></MyVideo>
 
             {/* <VideoButton>

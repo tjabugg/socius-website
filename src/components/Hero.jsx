@@ -1,6 +1,6 @@
 import React from "react";
-import { MyVideo, MyImage, PauseButton, H1 } from "../styles";
-import HeroVideo from "../assets/videos/video_montage.mp4";
+import { MyVideo, MyImage, PauseButton, Heading } from "../styles";
+import HeroVideo from "../assets/videos/montage.mp4";
 import PauseIcon from "../assets/meta/pause_button.svg";
 import PlayIcon from "../assets/meta/play_button.svg";
 
@@ -15,8 +15,9 @@ const Hero = () => (
       }}
       alt={`A portrait of Tony Bugg`}
       src={HeroVideo}
-      autoplay
-      loop
+      autoPlay={true}
+      loop={true}
+      playsInline={true}
       // playsinline
     ></MyVideo>
     <PauseButton>
@@ -28,9 +29,9 @@ const Hero = () => (
       ></MyImage>
     </PauseButton>
 
-    <Heading>
+    <HeroText>
       Empowering the pioneers of today’s social science research
-    </Heading>
+    </HeroText>
   </HeroContainer>
 );
 
@@ -54,8 +55,8 @@ export const HeroContainer = styled.div`
   display: inline-block;
 `;
 
-export const Heading = styled(H1)`
-  width: 80%;
+export const HeroText = styled(Heading)`
+  width: 70%;
   position: absolute;
   top: 80px;
   left: 16px;

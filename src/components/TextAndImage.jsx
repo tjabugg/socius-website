@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  H2,
+  Subheading,
   Body,
   PrimaryButton,
   ParentContainer,
@@ -22,7 +22,7 @@ const TextAndImages = ({ textAndImages }) => {
           }}
         >
           <TextContainer>
-            <H2>{textAndImage.heading}</H2>
+            <Subheading>{textAndImage.heading}</Subheading>
             <Paragraph>{textAndImage.paragraph}</Paragraph>
             <PrimaryButton href={textAndImage.link}>
               {textAndImage.button}
@@ -42,8 +42,9 @@ const TextAndImages = ({ textAndImages }) => {
                 display: textAndImage.display,
               }}
               src={textAndImage.video}
-              autoplay="true"
-              loop="true"
+              autoPlay={true}
+              loop={true}
+              playsInline={true}
             ></MyVideo>
           </GraphicContainer>
         </HoldingContainer>

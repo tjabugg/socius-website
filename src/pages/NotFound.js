@@ -1,7 +1,7 @@
 import React from "react";
 import {
   CentreContainer,
-  H1,
+  Heading,
   Body,
   SecondaryButton,
   CentreText,
@@ -36,7 +36,7 @@ export const TextContainer = styled(CentreText)`
   height: 90vh;
 `;
 
-export const Title = styled(H1)`
+export const Title = styled(Heading)`
   margin: 0px;
   padding: 0px;
 `;

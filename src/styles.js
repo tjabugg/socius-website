@@ -48,16 +48,15 @@ export const SecondaryButton = styled(PrimaryButton)`
 `;
 
 export const Heading = styled.h1`
+  font-size: 60px;
   font-family: "Montagu Slab", serif;
   margin: 0;
   padding: 0;
-  font-weight: 400;
   line-height: 1.1;
-  /* letter-spacing: -1px; */
-`;
 
-export const H1 = styled(Heading)`
-  font-size: 60px;
+  /* @media (min-width: 768px) {
+    font-size: 75px;
+  } */
 
   @media (max-width: 768px) {
     font-size: 50px;
@@ -68,20 +67,32 @@ export const H1 = styled(Heading)`
   }
 `;
 
-export const H2 = styled(Heading)`
+export const Subheading = styled.h2`
   font-size: 40px;
+  font-family: "Montagu Slab", serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
 
   @media (max-width: 414px) {
     font-size: 28px;
   }
 `;
 
-export const H3 = styled(Heading)`
+export const Title = styled.h3`
   font-size: 24px;
+  font-family: "Montagu Slab", serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
 `;
 
-export const H4 = styled(Heading)`
+export const Subtitle = styled.h4`
   font-size: 20px;
+  font-family: "Montagu Slab", serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
 `;
 
 export const Body = styled.p`

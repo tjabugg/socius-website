@@ -15,7 +15,7 @@ import NewYork from "../../assets/images/new_york.jpg";
 import styled from "styled-components";
 import {
   CentreContainer,
-  H3,
+  Title,
   ImageContainer,
   MyImage,
   ParentContainer,
@@ -178,7 +178,7 @@ const CompliSent = () => {
         />
       </ParentContainer>
       <ParentContainer>
-        <H3>Related publications</H3>
+        <Title>Related publications</Title>
       </ParentContainer>
       <ArticleCard articleCards={articleCards} />
     </>

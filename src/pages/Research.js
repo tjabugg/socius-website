@@ -10,7 +10,7 @@ import PublicationCoverPattern from "../assets/svgs/random/publication_cover_pat
 // import Lecturer from "../assets/images/lecturer.jpg";
 // import PostItNotes from "../assets/images/post_it_notes.jpg";
 // import Organised5x5Pattern02 from "../assets/svgs/organised/organised_5x5_02.svg";
-import { H2, ParentContainer } from "../styles";
+import { Subheading, ParentContainer } from "../styles";
 import FooterCard from "../components/FooterCard";
 
 const Research = () => {
@@ -102,7 +102,7 @@ const Research = () => {
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
       <TextBlocks textBlocks={textBlocks} />
       <ParentContainer>
-        <H2>Our Publications</H2>
+        <Subheading>Our Publications</Subheading>
       </ParentContainer>
       <PublicationCover publicationCovers={publicationCovers} />
       <FooterCard footerCards={footerCards} />
