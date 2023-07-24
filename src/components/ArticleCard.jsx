@@ -79,6 +79,9 @@ export const GraphicContainer = styled(ImageContainer)`
   }
 `;
 
-export const Graphic = styled(MyImage)`
+export const Graphic = styled.img`
   object-fit: contain;
+  /* width: 100%; */
+  /* height: 100%; */
+  /* display: block; */
 `;
