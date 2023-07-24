@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.4c22069e.js",
+    "main.js": "/static/js/main.40fb6e8d.js",
     "static/js/787.2922878d.chunk.js": "/static/js/787.2922878d.chunk.js",
     "static/media/video_montage.mp4": "/static/media/video_montage.4716269e5262f49539d1.mp4",
     "static/media/glasses.mp4": "/static/media/glasses.9d242997aef9270a9576.mp4",
@@ -8,24 +8,21 @@
     "static/media/studying.mp4": "/static/media/studying.04fa638d5254c03d4591.mp4",
     "static/media/farms.jpg": "/static/media/farms.24aefa6fdb94b74fdf57.jpg",
     "static/media/wheat.jpg": "/static/media/wheat.144e4b3502effa558209.jpg",
+    "static/media/frozen_ice.jpg": "/static/media/frozen_ice.f6be1c098a6b7725f505.jpg",
     "static/media/aerial_desert.jpg": "/static/media/aerial_desert.ff1fd8c9788655f8d8c4.jpg",
     "static/media/beach.jpg": "/static/media/beach.b85be4ac12bc2fa983e9.jpg",
     "static/media/code.mp4": "/static/media/code.be05379043f028c1ef1d.mp4",
-    "static/media/monotone_crowd.jpg": "/static/media/monotone_crowd.cd1a597fe735c8c51867.jpg",
     "static/media/crowd.jpg": "/static/media/crowd.0e7304685d84a9fb9960.jpg",
     "static/media/stock_exchange.jpg": "/static/media/stock_exchange.09e8732751a1b85301b2.jpg",
-    "static/media/moma.jpg": "/static/media/moma.f0470e02359bfedc547c.jpg",
+    "static/media/lecturer.jpg": "/static/media/lecturer.a02f31c94063bc56f144.jpg",
     "static/media/strategic_hands.jpg": "/static/media/strategic_hands.2221f6efffb1f739760d.jpg",
     "static/media/new_york.jpg": "/static/media/new_york.7d52478fec2f3bb473f6.jpg",
     "static/media/table_conversation.jpg": "/static/media/table_conversation.49b3baaeb14ac01d9e15.jpg",
     "static/media/open_book.jpg": "/static/media/open_book.60e4d66916f864af2313.jpg",
-    "static/media/tourists.jpg": "/static/media/tourists.bb68373f85a9eca35e35.jpg",
-    "static/media/standing_conversation.jpg": "/static/media/standing_conversation.9734b609c90e38b97642.jpg",
     "static/media/friends.jpg": "/static/media/friends.8ee96bf06c14caf0fa76.jpg",
     "static/media/pale_blue_dot.jpg": "/static/media/pale_blue_dot.a8f07be1f3cb9099c3f4.jpg",
     "static/media/silhouette.jpg": "/static/media/silhouette.d6de54158e1a5b0c1f24.jpg",
     "static/media/organised_17x17_01.svg": "/static/media/organised_17x17_01.db4bd8d1a295e04def1bee306cdcba4d.svg",
-    "static/media/organised_11x11_01.svg": "/static/media/organised_11x11_01.bc941386ade87dc16fb21c6d1f0d8f17.svg",
     "static/media/random_9x9_02.svg": "/static/media/random_9x9_02.11c0c89dd13d24c59ed28c8f6cefeb15.svg",
     "static/media/random_desktop_footer.svg": "/static/media/random_desktop_footer.14b044d7bd278516240552b8ef393516.svg",
     "static/media/random_mobile_footer.svg": "/static/media/random_mobile_footer.2bd645401bc7e0e2e99711987d91f984.svg",
@@ -34,15 +31,15 @@
     "static/media/random_tablet_footer.svg": "/static/media/random_tablet_footer.370162d70a196046b4fd6649cc593d84.svg",
     "static/media/organised_5x5_02.svg": "/static/media/organised_5x5_02.e85ba7251a0e6931fd21205e3a7a113f.svg",
     "static/media/publication_cover_pattern_01.svg": "/static/media/publication_cover_pattern_01.239c444bd804805cd636d574d1633678.svg",
-    "index.html": "/index.html",
     "static/media/socius_logo.svg": "/static/media/socius_logo.ee35a6d401525a01ecf84c72d8aae6c6.svg",
+    "index.html": "/index.html",
     "static/media/organised_5x5_01.svg": "/static/media/organised_5x5_01.403dd81745c4be47d3999a6ce8e4187d.svg",
     "static/media/pause_button.svg": "/static/media/pause_button.7e9ccef07fbf20dc7fd0a9142d51e8b6.svg",
     "static/media/play_button.svg": "/static/media/play_button.4821ad66bff6051baef2beb12cfac16d.svg",
-    "main.4c22069e.js.map": "/static/js/main.4c22069e.js.map",
+    "main.40fb6e8d.js.map": "/static/js/main.40fb6e8d.js.map",
     "787.2922878d.chunk.js.map": "/static/js/787.2922878d.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.4c22069e.js"
+    "static/js/main.40fb6e8d.js"
   ]
 }

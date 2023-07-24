@@ -188,7 +188,7 @@ export const QuoteContainer = styled(CentreContainer)`
     margin: 20vh 10vw 20vh 10vw;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 414px) {
     margin: 10vh 10vw 10vh 10vw;
   }
 `;

@@ -17,7 +17,7 @@ const Hero = () => (
       src={HeroVideo}
       autoplay
       loop
-      playsinline
+      // playsinline
     ></MyVideo>
     <PauseButton>
       <MyImage

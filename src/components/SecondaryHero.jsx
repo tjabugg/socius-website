@@ -77,7 +77,7 @@ export const Heading = styled(CentreText)`
   margin: 0px 10vw 16px 10vw;
 
   @media (max-width: 768px) {
-    margin: 0vw 0vw;
+    margin: 0vw 0vw 16px 0vw;
   }
 `;
 
@@ -89,6 +89,7 @@ export const TextAndImage = styled(CentreContainer)`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    margin: 80px 20px 0px 20px;
   }
 `;
 
@@ -96,7 +97,7 @@ export const GraphicContainer = styled(ImageContainer)`
   height: 80vh;
   width: 100%;
 
-  @media (max-width: 375px) {
+  @media (max-width: 414px) {
     height: 50vh;
   }
 `;

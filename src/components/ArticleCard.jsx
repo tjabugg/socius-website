@@ -4,7 +4,6 @@ import {
   H4,
   SecondaryButton,
   Body,
-  MyImage,
   ParentContainer,
   ImageContainer,
 } from "../styles";
@@ -68,12 +67,13 @@ export const Paragraph = styled(Body)`
 `;
 
 export const GraphicContainer = styled(ImageContainer)`
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
   aspect-ratio: 1/1;
   margin: 0px 0px 16px 0px;
+
   padding: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   @media (max-width: 768px) {
     padding: 24px;
@@ -81,8 +81,6 @@ export const GraphicContainer = styled(ImageContainer)`
 `;
 
 export const Graphic = styled.img`
-  object-fit: contain;
-  /* width: 100%; */
-  /* height: 100%; */
-  /* display: block; */
+  object-fit: cover;
+  width: 100%;
 `;

@@ -63,16 +63,16 @@ export const H1 = styled(Heading)`
     font-size: 50px;
   }
 
-  @media (max-width: 375px) {
-    font-size: 40px;
+  @media (max-width: 414px) {
+    font-size: 28px;
   }
 `;
 
 export const H2 = styled(Heading)`
   font-size: 40px;
 
-  @media (max-width: 375px) {
-    font-size: 24px;
+  @media (max-width: 414px) {
+    font-size: 28px;
   }
 `;
 
