@@ -7,7 +7,7 @@ import {
   ParentContainer,
   ImageContainer,
   MyVideo,
-  MyImage
+  MyImage,
 } from "../styles";
 
 // Destructure blogs and title directly from the props
@@ -75,6 +75,7 @@ export const TextContainer = styled(ParentContainer)`
 
   @media (max-width: 768px) {
     width: 100%;
+    gap: 8px;
   }
 `;
 

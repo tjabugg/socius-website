@@ -7,6 +7,7 @@ import AlphaVader from "./pages/Publications/AlphaVader";
 import Footer from "./components/Footer";
 import { GlobalStyle } from "./styles";
 import { Routes, Route } from "react-router-dom";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/database" element={<Database />} />
         <Route path="/forsocialscientists" element={<ForSocialScientists />} />
         <Route path="/alphavader" element={<AlphaVader />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>

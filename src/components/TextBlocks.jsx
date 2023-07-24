@@ -30,4 +30,8 @@ export const Container = styled(GridContainer)`
   padding-bottom: 40px;
   align-items: start;
   position: relative;
+
+  @media (max-width: 768px) {
+    padding-bottom: 24px;
+  }
 `;

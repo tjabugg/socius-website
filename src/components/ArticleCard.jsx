@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { H4, SecondaryButton, Body, MyImage, ParentContainer, ImageContainer } from "../styles";
+import {
+  H4,
+  SecondaryButton,
+  Body,
+  MyImage,
+  ParentContainer,
+  ImageContainer,
+} from "../styles";
 
 // Destructure blogs and title directly from the props
 const ArticleCards = ({ articleCards, alignment }) => {
@@ -18,7 +25,7 @@ const ArticleCards = ({ articleCards, alignment }) => {
               padding: articleCard.padding,
             }}
           >
-            <MyImage src={articleCard.image}></MyImage>
+            <Graphic src={articleCard.image}></Graphic>
           </GraphicContainer>
 
           <Heading>{articleCard.heading}</Heading>
@@ -64,8 +71,13 @@ export const GraphicContainer = styled(ImageContainer)`
   aspect-ratio: 1/1;
   margin: 0px 0px 16px 0px;
   padding: 40px;
+  object-fit: contain;
 
+  
   @media (max-width: 768px) {
     padding: 24px;
   }
+`;
+
+export const Graphic = styled(MyImage)`
 `;

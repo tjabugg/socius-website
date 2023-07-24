@@ -38,7 +38,13 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   width: 100%;
   z-index: 1000;
-  mix-blend-mode: exclusion;
+  /* background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.25) 75%,
+    rgba(255, 255, 255, 0) 100%
+  ); */
+  mix-blend-mode: difference;
 `;
 
 export const NavButton = styled(PrimaryButton)`
