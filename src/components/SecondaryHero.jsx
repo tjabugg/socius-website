@@ -39,8 +39,9 @@ const SecondaryHero = ({ secondaryHeroes }) => {
                 display: secondaryHero.display,
               }}
               src={secondaryHero.video}
-              autoPlay={true}
-              loop={true}
+              autoplay
+              loop
+              playsinline
             ></MyVideo>
             {/* should create a conditional statement for the display of the button */}
             <PauseButton>

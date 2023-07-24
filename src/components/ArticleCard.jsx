@@ -71,6 +71,7 @@ export const GraphicContainer = styled(ImageContainer)`
   aspect-ratio: 1/1;
   margin: 0px 0px 16px 0px;
   padding: 40px;
+  display: flex;
   align-items: center;
   justify-content: center;
 

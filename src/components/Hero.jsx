@@ -15,9 +15,9 @@ const Hero = () => (
       }}
       alt={`A portrait of Tony Bugg`}
       src={HeroVideo}
-      autoPlay={true}
-      loop={true}
-      // controls
+      autoplay
+      loop
+      playsinline
     ></MyVideo>
     <PauseButton>
       <MyImage
