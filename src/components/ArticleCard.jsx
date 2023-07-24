@@ -12,7 +12,7 @@ import {
 // Destructure blogs and title directly from the props
 const ArticleCards = ({ articleCards, alignment }) => {
   return (
-    <FlexContainer
+    <CardContainer
       style={{
         justifyContent: alignment,
       }}
@@ -25,7 +25,7 @@ const ArticleCards = ({ articleCards, alignment }) => {
               padding: articleCard.padding,
             }}
           >
-            <Graphic src={articleCard.image}></Graphic>
+            <Graphic src={articleCard.image} alt={articleCard.alt}></Graphic>
           </GraphicContainer>
 
           <Heading>{articleCard.heading}</Heading>
@@ -35,13 +35,13 @@ const ArticleCards = ({ articleCards, alignment }) => {
           </SecondaryButton>
         </ArticleCard>
       ))}
-    </FlexContainer>
+    </CardContainer>
   );
 };
 
 export default ArticleCards;
 
-export const FlexContainer = styled(ParentContainer)`
+export const CardContainer = styled(ParentContainer)`
   flex-wrap: wrap;
   /* justify-content: center; */
   margin: 8px;
@@ -73,11 +73,9 @@ export const GraphicContainer = styled(ImageContainer)`
   padding: 40px;
   object-fit: contain;
 
-  
   @media (max-width: 768px) {
     padding: 24px;
   }
 `;
 
-export const Graphic = styled(MyImage)`
-`;
+export const Graphic = styled(MyImage)``;

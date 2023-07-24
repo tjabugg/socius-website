@@ -25,6 +25,7 @@ const SecondaryHero = ({ secondaryHeroes }) => {
           </Heading>
           <GraphicContainer>
             <MyImage
+              alt={secondaryHero.imageAlt}
               style={{
                 display: secondaryHero.imageDisplay,
               }}
@@ -32,6 +33,7 @@ const SecondaryHero = ({ secondaryHeroes }) => {
             ></MyImage>
 
             <MyVideo
+              alt={secondaryHero.videoAlt}
               id="myVideoControls"
               style={{
                 display: secondaryHero.display,

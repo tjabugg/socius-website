@@ -4,7 +4,7 @@ import {
   H3,
   Body,
   MyImage,
-  PrimaryButton,
+  SecondaryButton,
   ParentContainer,
   ImageContainer,
 } from "../styles";
@@ -21,16 +21,16 @@ const FooterCards = ({ footerCards }) => {
           }}
         >
           <GraphicContainer>
-            <MyImage src={footerCard.image}></MyImage>
+            <MyImage src={footerCard.image} alt={footerCard.alt}></MyImage>
           </GraphicContainer>
 
           <H3 style={{ color: footerCard.textColour }}>{footerCard.heading}</H3>
           <Paragraph style={{ color: footerCard.textColour }}>
             {footerCard.paragraph}
           </Paragraph>
-          <PrimaryButton href={footerCard.link}>
+          <SecondaryButton href={footerCard.link}>
             {footerCard.button}
-          </PrimaryButton>
+          </SecondaryButton>
         </Container>
       ))}
     </div>

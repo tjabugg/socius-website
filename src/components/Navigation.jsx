@@ -9,7 +9,7 @@ import {
 } from "../styles";
 import styled from "styled-components";
 
-const Header = () => (
+const Navigation = () => (
   <HeaderContainer>
     <Link href="/">
       <LogoContainer>
@@ -26,7 +26,7 @@ const Header = () => (
   </HeaderContainer>
 );
 
-export default Header;
+export default Navigation;
 
 export const HeaderContainer = styled.header`
   padding: 20px;

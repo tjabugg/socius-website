@@ -33,12 +33,13 @@ const PublicationCovers = ({ publicationCovers }) => {
 
           <ImageContainer>
             <GraphicImage
+              alt={publicationCover.alt}
               src={publicationCover.graphic}
               style={{
                 padding: publicationCover.padding,
                 backgroundColor: publicationCover.bgColour,
                 backgroundImage: `url(${publicationCover.bgImage})`,
-                backgroundSize: "100%"
+                backgroundSize: "100%",
               }}
             ></GraphicImage>
           </ImageContainer>

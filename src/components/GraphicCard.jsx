@@ -21,6 +21,7 @@ const GraphicCards = ({ graphicCards }) => {
           <GraphicContainer>
             <MyImage
               src={graphicCard.graphic}
+              alt={graphicCard.alt}
               style={{ opacity: graphicCard.opacity }}
             ></MyImage>
           </GraphicContainer>

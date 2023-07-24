@@ -4,7 +4,7 @@ import SecondaryHero from "../components/SecondaryHero";
 import PaleBlueDot from "../assets/images/pale_blue_dot.jpg";
 import FieldOfWheat from "../assets/images/wheat.jpg";
 import OpenBook from "../assets/images/open_book.jpg";
-import NewYork from "../assets/images/new_york.jpg";
+import Lecturer from "../assets/images/lecturer.jpg";
 import React from "react";
 import Glasses from "../assets/videos/glasses.mp4";
 import Office from "../assets/videos/office.mp4";
@@ -17,6 +17,8 @@ const Database = () => {
   const [secondaryHeroes] = useState([
     {
       heading: "An open source database to assist your collaboration with AI",
+      videoAlt:
+        "A close up of a woman's glasses with the reflection of her computer screen in her lenses",
       imageDisplay: "none",
       video: Glasses,
       id: 1,
@@ -43,15 +45,23 @@ const Database = () => {
   const [splitImages] = useState([
     {
       imageOne: OpenBook,
+      imageOneAlt:
+        "An open notebook perched on the knees of a man sitting cross legged amongst rows of other people in chairs.",
       imageTwo: PaleBlueDot,
+      imageTwoAlt:
+        "A horizon of the moon's lunar landscape with the earth emerging in the distance of dark space.",
       aspectRatioOne: "7/5",
       aspectRatioTwo: "1/1",
       id: 1,
     },
     {
-      imageOne: NewYork,
+      imageOne: Lecturer,
+      imageOneAlt:
+        "A man conducting a lecture whilst stood behind lecturn and speaking into a microhpone.",
       imageDisplay: "none",
       videoTwo: Office,
+      videoAlt:
+        "People walking around and conversing to one another in an office",
       aspectRatioOne: "1/1",
       aspectRatioTwo: "7/5",
       id: 2,
@@ -68,19 +78,28 @@ const Database = () => {
 
   const [footerCards] = useState([
     {
-      bgColour: "#51DA4C",
+      bgColour: "#193718",
+      textColour: "#ffffff",
       image: FieldOfWheat,
-      heading: "The latest research in social science and AI",
+      heading:
+        "Explore about our first publication on building interpretable AI",
       paragraph:
-        "Could a computational intelligence help social scientists to consider every possible causative relationships between his or her theory-of-interest?",
+        "Aspect-based sentiment analysis model that analyses text-based data ranging from media and social media.",
       id: 1,
-      button: "Check out all our publications",
-      link: "forsocialscientists",
+      button: "Read more",
+      link: "complisent",
     },
   ]);
 
   return (
     <>
+      <meta
+        name="description"
+        content="Socius creates publicly available AI models and systems that are not only state-of-the-art in terms of technical capabilities, but also deeply rooted in the principles of social science. Our objective is to advance the frontiers of social science research through the development and application of AI technologies. The story of Socius starts from a simple question: could computational intelligence help social scientists to consider every possible causative relationships between their theory-of-interest?"
+      />
+      <title>
+        Bridging Artificial Intelligence to Human Knowledge | socius
+      </title>
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
       <TextBlocks
         textBlocks={textBlocks.filter((textBlock) => textBlock.id === 1)}

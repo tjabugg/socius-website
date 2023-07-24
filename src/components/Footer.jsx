@@ -22,11 +22,12 @@ const Footer = () => (
       </LogoContainer>
 
       <TextContainer>
-        {/* <LinkContainer>
+        <LinkContainer>
           <Title>Socials</Title>
           <FooterLink href="/#">Instagram</FooterLink>
+          <FooterLink href="/#">GitHub</FooterLink>
           <FooterLink href="/#">LinkedIn</FooterLink>
-        </LinkContainer> */}
+        </LinkContainer>
 
         <LinkContainer>
           <Title>Information</Title>

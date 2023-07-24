@@ -20,7 +20,12 @@ const Hero = () => (
       // controls
     ></MyVideo>
     <PauseButton>
-      <MyImage id="playButton" src={PauseIcon} onClick={Play}></MyImage>
+      <MyImage
+        id="playButton"
+        src={PauseIcon}
+        onClick={Play}
+        alt="A video montage of nature and society"
+      ></MyImage>
     </PauseButton>
 
     <Heading>

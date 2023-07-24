@@ -18,7 +18,7 @@ const Research = () => {
     {
       heading: "",
       paragraph:
-        "We create publicly available AI models and systems that are not only state-of-the-art in terms of technical capabilities, but also deeply rooted in the principles of social science.  Our objective is to advance the frontiers of social science research through the development and application of AI technologies. We aim to create AI tools that empower social scientists to make discoveries that were previously impossible, to uncover new insights into human behaviour and social systems, and to inform evidence-based decisions",
+        "We create publicly available AI models and systems that are not only state-of-the-art in terms of technical capabilities, but also deeply rooted in the principles of social science. Our objective is to advance the frontiers of social science research through the development and application of AI technologies. We aim to create AI tools that empower social scientists to make discoveries that were previously impossible, to uncover new insights into human behaviour and social systems, and to inform evidence-based decisions",
       id: 1,
     },
   ]);
@@ -36,10 +36,10 @@ const Research = () => {
   const [publicationCovers] = useState([
     {
       date: "May 2023",
-      heading: "alphaVADER: a first step to compliance-proof",
+      heading: "CompliSent: a first step to compliance-proof",
       paragraph:
-        "Aspect-based sentiment analysis model that analyzes text-based data ranging from media (i.e news) and social media (i.e reddit).",
-      id: 3,
+        "Aspect-based sentiment analysis model that analyses text-based data ranging from media and social media.",
+      id: 1,
       bgImage: Farms,
       graphic: PublicationCoverPattern,
       padding: "24px",
@@ -92,6 +92,13 @@ const Research = () => {
 
   return (
     <>
+      <meta
+        name="description"
+        content="Socius creates publicly available AI models and systems that are not only state-of-the-art in terms of technical capabilities, but also deeply rooted in the principles of social science. Our objective is to advance the frontiers of social science research through the development and application of AI technologies. The story of Socius starts from a simple question: could computational intelligence help social scientists to consider every possible causative relationships between their theory-of-interest?"
+      />
+      <title>
+        Bridging Artificial Intelligence to Human Knowledge | socius
+      </title>
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
       <TextBlocks textBlocks={textBlocks} />
       <ParentContainer>

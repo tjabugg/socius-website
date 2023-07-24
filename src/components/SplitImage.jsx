@@ -17,7 +17,10 @@ const SplitImages = ({ splitImages }) => {
               aspectRatio: splitImage.aspectRatioOne,
             }}
           >
-            <MyImage src={splitImage.imageOne}></MyImage>
+            <MyImage
+              alt={splitImage.imageOneAlt}
+              src={splitImage.imageOne}
+            ></MyImage>
           </GraphicContainer>
 
           <GraphicContainer
@@ -26,12 +29,14 @@ const SplitImages = ({ splitImages }) => {
             }}
           >
             <MyImage
+              alt={splitImage.imageTwoAlt}
               style={{
                 display: splitImage.imageDisplay,
               }}
               src={splitImage.imageTwo}
             ></MyImage>
             <MyVideo
+              alt={splitImage.videoAlt}
               id="splitVideoControls"
               style={{
                 display: splitImage.display,

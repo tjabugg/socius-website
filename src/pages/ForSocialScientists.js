@@ -28,7 +28,7 @@ const ForSocialScientists = () => {
       heading: "Sentiment Analysis",
       paragraph:
         "Systematically identify and study affective states and subjective information.",
-      id: 2,
+      id: 1,
     },
     {
       padding: "0px",
@@ -36,14 +36,14 @@ const ForSocialScientists = () => {
       heading: "Keyword Extraction",
       paragraph:
         "Identification of terms that best describe the subject of a document.",
-      id: 3,
+      id: 2,
     },
     {
       image: Organised17x17Pattern01,
       bgColour: "#00002E",
       heading: "Emotion recognition",
       paragraph: "The process of identifying human emotion",
-      id: 4,
+      id: 3,
     },
     {
       padding: "0px",
@@ -51,7 +51,7 @@ const ForSocialScientists = () => {
       heading: "socsciBERT: a small language model",
       paragraph:
         "An AI model that “reasons” in a way that is similar to how economists and others explain why a current phenomenon looks like a past phenomena.",
-      id: 5,
+      id: 4,
     },
     {
       image: Organised5x5Pattern01,
@@ -59,7 +59,7 @@ const ForSocialScientists = () => {
       heading: "Affective computing",
       paragraph:
         "Development of systems and devices that can recognise, interpret, process, and simulate human affects.",
-      id: 6,
+      id: 5,
     },
   ]);
 
@@ -83,6 +83,13 @@ const ForSocialScientists = () => {
 
   return (
     <>
+      <meta
+        name="description"
+        content="Socius creates publicly available AI models and systems that are not only state-of-the-art in terms of technical capabilities, but also deeply rooted in the principles of social science. Our objective is to advance the frontiers of social science research through the development and application of AI technologies. The story of Socius starts from a simple question: could computational intelligence help social scientists to consider every possible causative relationships between their theory-of-interest?"
+      />
+      <title>
+        Bridging Artificial Intelligence to Human Knowledge | socius
+      </title>
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
       <ArticleCard articleCards={articleCards} />
       <CallToAction callToActions={callToActions} />

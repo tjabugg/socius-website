@@ -31,6 +31,7 @@ const TextAndImages = ({ textAndImages }) => {
 
           <GraphicContainer>
             <MyImage
+              alt={textAndImage.alt}
               style={{
                 display: textAndImage.imageDisplay,
               }}
