@@ -4,7 +4,6 @@ import {
   H1,
   Body,
   SecondaryButton,
-  ParentContainer,
   CentreText,
 } from "../styles";
 import styled from "styled-components";
