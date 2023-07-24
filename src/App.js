@@ -4,7 +4,6 @@ import Research from "./pages/Research";
 import Database from "./pages/Database";
 import ForSocialScientists from "./pages/ForSocialScientists";
 import AlphaVader from "./pages/Publications/AlphaVader";
-import SosciBert from "./pages/Publications/SosciBert";
 import Footer from "./components/Footer";
 import { GlobalStyle } from "./styles";
 import { Routes, Route } from "react-router-dom";
@@ -20,7 +19,6 @@ const App = () => {
         <Route path="/database" element={<Database />} />
         <Route path="/forsocialscientists" element={<ForSocialScientists />} />
         <Route path="/alphavader" element={<AlphaVader />} />
-        <Route path="/soscibert" element={<SosciBert />} />
       </Routes>
       <Footer />
     </>

@@ -1,24 +1,24 @@
 import { useState } from "react";
 import TextBlocks from "../components/TextBlocks";
 import SecondaryHero from "../components/SecondaryHero";
-import NewYork from "../assets/images/new_york.jpg";
-import OfficeWindow from "../assets/images/office_window.jpg";
-import FriendsLaughing from "../assets/images/friends_laughing.jpg";
-import FieldOfWheat from "../assets/images/field_of_wheat.jpg";
+import PaleBlueDot from "../assets/images/pale_blue_dot.jpg";
+import FieldOfWheat from "../assets/images/wheat.jpg";
 import OpenBook from "../assets/images/open_book.jpg";
-import Mars from "../assets/images/mars.jpg";
+import NewYork from "../assets/images/new_york.jpg";
 import React from "react";
+import Glasses from "../assets/videos/glasses.mp4";
+import Office from "../assets/videos/office.mp4";
 import CallToAction from "../components/CallToAction";
 import FooterCard from "../components/FooterCard";
 import SplitImage from "../components/SplitImage";
-import { H2, ParentContainer } from "../styles";
-import styled from "styled-components";
+import { H2, GridContainer } from "../styles";
 
 const Database = () => {
   const [secondaryHeroes] = useState([
     {
       heading: "An open source database to assist your collaboration with AI",
-      image: OpenBook,
+      imageDisplay: "none",
+      video: Glasses,
       id: 1,
     },
   ]);
@@ -42,15 +42,16 @@ const Database = () => {
 
   const [splitImages] = useState([
     {
-      imageOne: NewYork,
-      imageTwo: OfficeWindow,
+      imageOne: OpenBook,
+      imageTwo: PaleBlueDot,
       aspectRatioOne: "7/5",
       aspectRatioTwo: "1/1",
       id: 1,
     },
     {
-      imageOne: Mars,
-      imageTwo: FriendsLaughing,
+      imageOne: NewYork,
+      imageDisplay: "none",
+      videoTwo: Office,
       aspectRatioOne: "1/1",
       aspectRatioTwo: "7/5",
       id: 2,
@@ -74,6 +75,7 @@ const Database = () => {
         "Could a computational intelligence help social scientists to consider every possible causative relationships between his or her theory-of-interest?",
       id: 1,
       button: "Check out all our publications",
+      link: "forsocialscientists",
     },
   ]);
 
@@ -86,12 +88,12 @@ const Database = () => {
       <SplitImage
         splitImages={splitImages.filter((splitImage) => splitImage.id === 1)}
       />
-      <QuoteContainer>
+      <GridContainer>
         <H2>
           While we cannot fully reduce AI being a black box models, we aim to
           build Transparent, Accountable, and Interpretable AI models.
         </H2>
-      </QuoteContainer>
+      </GridContainer>
       <TextBlocks
         textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
       />
@@ -106,11 +108,10 @@ const Database = () => {
 
 export default Database;
 
-export const QuoteContainer = styled(ParentContainer)`
-  margin: 40px 33vw 40px 16px;
+// export const QuoteContainer = styled(ParentContainer)`
+//   margin: 40px 33vw 40px 16px;
 
-  @media (max-width: 768px) {
-    margin: 40px 16px 40px 16px;
-
-  }
-`;
+//   @media (max-width: 768px) {
+//     margin: 40px 16px 40px 16px;
+//   }
+// `;

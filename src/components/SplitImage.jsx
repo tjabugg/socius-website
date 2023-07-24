@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import { MyImage, ParentContainer, ImageContainer } from "../styles";
+import { MyImage, ParentContainer, ImageContainer, MyVideo } from "../styles";
+// import PauseControls from "../assets/meta/pause_button.svg";
+// import PlayControls from "../assets/meta/play_button.svg";
 
 // Destructure blogs and title directly from the props
 const SplitImages = ({ splitImages }) => {
@@ -23,7 +25,29 @@ const SplitImages = ({ splitImages }) => {
               aspectRatio: splitImage.aspectRatioTwo,
             }}
           >
-            <MyImage src={splitImage.imageTwo}></MyImage>
+            <MyImage
+              style={{
+                display: splitImage.imageDisplay,
+              }}
+              src={splitImage.imageTwo}
+            ></MyImage>
+            <MyVideo
+              id="splitVideoControls"
+              style={{
+                display: splitImage.display,
+              }}
+              src={splitImage.videoTwo}
+              autoPlay={true}
+              loop={true}
+            ></MyVideo>
+
+            {/* <VideoButton>
+              <MyImage
+                id="videoButton"
+                src={PauseControls}
+                onClick={PlayVideo}
+              ></MyImage>
+            </VideoButton> */}
           </GraphicContainer>
         </ParentContainer>
       ))}
@@ -31,9 +55,21 @@ const SplitImages = ({ splitImages }) => {
   );
 };
 
+// const PlayVideo = () => {
+//   if (document.getElementById("splitVideoControls").paused) {
+//     document.getElementById("splitVideoControls").play();
+//     document.getElementById("videoButton").src = PauseControls;
+//   } else {
+//     document.getElementById("splitVideoControls").pause();
+//     document.getElementById("videoButton").src = PlayControls;
+//   }
+// };
+
 export default SplitImages;
 
 export const GraphicContainer = styled(ImageContainer)`
   flex: 1;
   width: 100%;
+  position: relative;
+  display: inline-block;
 `;

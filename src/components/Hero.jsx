@@ -1,21 +1,27 @@
 import React from "react";
-import { MyImage, H1 } from "../styles";
-import HeroImage from "../assets/images/aerial_people_shot.jpg";
+import { MyVideo, MyImage, PauseButton, H1 } from "../styles";
+import HeroVideo from "../assets/videos/video_montage.mp4";
+import PauseIcon from "../assets/meta/pause_button.svg";
+import PlayIcon from "../assets/meta/play_button.svg";
+
 import styled from "styled-components";
-import HeroPattern from "../assets/svgs/random/random_hero_pattern.svg";
 
 const Hero = () => (
   <HeroContainer>
-    <MyImage
+    <MyVideo
+      id="myVideoControls"
       style={{
         borderRadius: "0px",
       }}
       alt={`A portrait of Tony Bugg`}
-      src={HeroImage}
-    />
-    <PatternContainer>
-      <MyImage alt={`Full bleed pattern`} src={HeroPattern} />
-    </PatternContainer>
+      src={HeroVideo}
+      autoPlay={true}
+      loop={true}
+      // controls
+    ></MyVideo>
+    <PauseButton>
+      <MyImage id="playButton" src={PauseIcon} onClick={Play}></MyImage>
+    </PauseButton>
 
     <Heading>
       Empowering the pioneers of today’s social science research
@@ -23,22 +29,24 @@ const Hero = () => (
   </HeroContainer>
 );
 
+const Play = () => {
+  if (document.getElementById("myVideoControls").paused) {
+    document.getElementById("myVideoControls").play();
+    document.getElementById("playButton").src = PauseIcon;
+  } else {
+    document.getElementById("myVideoControls").pause();
+    document.getElementById("playButton").src = PlayIcon;
+  }
+};
+
 export default Hero;
 
 export const HeroContainer = styled.div`
   height: 90vh;
-  box-sizing: border-box;
-
-  @media (max-width: 800px) {
-  }
-`;
-
-export const PatternContainer = styled.div`
-  position: absolute;
-  bottom: 10vh;
   width: 100%;
   box-sizing: border-box;
-  padding: 16px;
+  position: relative;
+  display: inline-block;
 `;
 
 export const Heading = styled(H1)`
@@ -47,4 +55,26 @@ export const Heading = styled(H1)`
   top: 80px;
   left: 16px;
   color: white;
+`;
+
+export const DesktopPattern = styled(MyImage)`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const TabletPattern = styled(MyImage)`
+  display: none;
+
+  @media (max-width: 768px) and (min-width: 376px) {
+    display: block;
+  }
+`;
+
+export const MobilePattern = styled(MyImage)`
+  display: none;
+
+  @media (max-width: 375px) {
+    display: block;
+  }
 `;

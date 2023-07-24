@@ -29,7 +29,7 @@ const Header = () => (
 export default Header;
 
 export const HeaderContainer = styled.header`
-  padding: 16px;
+  padding: 20px;
   box-sizing: border-box;
   position: fixed;
   display: flex;

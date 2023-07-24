@@ -42,13 +42,13 @@ export const FlexContainer = styled(ParentContainer)`
 `;
 
 export const ArticleCard = styled.div`
-  width: calc(33.3333333333% - 16px);
-  margin: 16px 8px;
+  width: calc(33.3333333333% - 20px);
+  margin: 20px 8px;
   align-items: center;
   justify-content: center;
 
   @media (max-width: 768px) {
-    width: calc(100% - 16px);
+    width: calc(100% - 20px);
   }
 `;
 

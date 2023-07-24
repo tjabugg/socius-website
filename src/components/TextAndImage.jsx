@@ -6,6 +6,8 @@ import {
   PrimaryButton,
   ParentContainer,
   ImageContainer,
+  MyVideo,
+  MyImage
 } from "../styles";
 
 // Destructure blogs and title directly from the props
@@ -28,7 +30,20 @@ const TextAndImages = ({ textAndImages }) => {
           </TextContainer>
 
           <GraphicContainer>
-            <MyVideo src={textAndImage.video} autoplay="true" loop="true"></MyVideo>
+            <MyImage
+              style={{
+                display: textAndImage.imageDisplay,
+              }}
+              src={textAndImage.image}
+            ></MyImage>
+            <MyVideo
+              style={{
+                display: textAndImage.display,
+              }}
+              src={textAndImage.video}
+              autoplay="true"
+              loop="true"
+            ></MyVideo>
           </GraphicContainer>
         </HoldingContainer>
       ))}
@@ -74,12 +89,4 @@ export const GraphicContainer = styled(ImageContainer)`
   @media (max-width: 768px) {
     width: 100%;
   }
-`;
-
-export const MyVideo = styled.video`
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  position: relative;
 `;

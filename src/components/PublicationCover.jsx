@@ -38,6 +38,7 @@ const PublicationCovers = ({ publicationCovers }) => {
                 padding: publicationCover.padding,
                 backgroundColor: publicationCover.bgColour,
                 backgroundImage: `url(${publicationCover.bgImage})`,
+                backgroundSize: "100%"
               }}
             ></GraphicImage>
           </ImageContainer>
@@ -51,7 +52,7 @@ export default PublicationCovers;
 
 export const Container = styled(GridContainer)`
   align-items: center;
-  margin: 40px 16px;
+  margin: 40px 20px;
   justify-content: center;
 `;
 

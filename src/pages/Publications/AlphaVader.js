@@ -1,19 +1,25 @@
 import { useState } from "react";
 import React from "react";
 import PublicationCover from "../../components/PublicationCover";
-import PaddyFields from "../../assets/images/paddy_fields.jpg";
-import Random7x7Pattern01 from "../../assets/svgs/random/random_7x7_pattern_01.svg";
-import Organised11x11Pattern01 from "../../assets/svgs/organised/organised_11x11_pattern_01.png";
-import ManHoldingWires from "../../assets/images/man_holding_wires.jpg";
-import BWCrowd from "../../assets/images/b_w_crowd.jpg";
-import MountainSideRoad from "../../assets/images/mountainside_road.jpg";
-import CrowdInChina from "../../assets/images/crowd_in_china.jpg";
+import PaddyFields from "../../assets/images/farms.jpg";
+import PublicationCoverPattern from "../../assets/svgs/random/publication_cover_pattern_01.svg";
+import Organised11x11Pattern01 from "../../assets/svgs/organised/organised_11x11_01.svg";
+import MOMA from "../../assets/images/moma.jpg";
+import MonotoneCrowd from "../../assets/images/monotone_crowd.jpg";
+import MountainSideRoad from "../../assets/images/tourists.jpg";
+import CrowdInChina from "../../assets/images/crowd.jpg";
 import StandingConversation from "../../assets/images/standing_conversation.jpg";
 import PublicationDetails from "../../components/PublicationDetails";
 import ArticleCard from "../../components/ArticleCard";
 
 import styled from "styled-components";
-import { CentreContainer, H3, MyImage, ParentContainer } from "../../styles";
+import {
+  CentreContainer,
+  H3,
+  ImageContainer,
+  MyImage,
+  ParentContainer,
+} from "../../styles";
 
 const AlphaVader = () => {
   const [publicationCovers] = useState([
@@ -23,7 +29,7 @@ const AlphaVader = () => {
         "Aspect-based sentiment analysis model that analyzes text-based data ranging from media (i.e news) and social media (i.e reddit).",
       id: 1,
       bgImage: PaddyFields,
-      graphic: Random7x7Pattern01,
+      graphic: PublicationCoverPattern,
       padding: "24px",
       display: "none",
     },
@@ -134,7 +140,7 @@ const AlphaVader = () => {
           )}
         />
         <MediumContainer>
-          <MyImage src={ManHoldingWires}></MyImage>
+          <MyImage src={MOMA}></MyImage>
         </MediumContainer>
 
         <PublicationDetails
@@ -143,7 +149,7 @@ const AlphaVader = () => {
           )}
         />
         <LargeContainer>
-          <MyImage src={BWCrowd}></MyImage>
+          <MyImage src={MonotoneCrowd}></MyImage>
         </LargeContainer>
 
         <PublicationDetails
@@ -182,7 +188,7 @@ export const CoverContainer = styled.div`
   }
 `;
 
-export const MediumContainer = styled.div`
+export const MediumContainer = styled(ImageContainer)`
   aspect-ratio: 16/9;
   width: 60%;
 
@@ -192,8 +198,7 @@ export const MediumContainer = styled.div`
   }
 `;
 
-export const LargeContainer = styled.div`
-  aspect-ratio: 16/9;
+export const LargeContainer = styled(MediumContainer)`
   width: 80%;
 
   @media (max-width: 768px) {
@@ -201,7 +206,7 @@ export const LargeContainer = styled.div`
   }
 `;
 
-export const SmallContainer = styled.div`
+export const SmallContainer = styled(ImageContainer)`
   aspect-ratio: 1/1;
   width: 50%;
 

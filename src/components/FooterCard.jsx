@@ -28,7 +28,9 @@ const FooterCards = ({ footerCards }) => {
           <Paragraph style={{ color: footerCard.textColour }}>
             {footerCard.paragraph}
           </Paragraph>
-          <PrimaryButton>{footerCard.button}</PrimaryButton>
+          <PrimaryButton href={footerCard.link}>
+            {footerCard.button}
+          </PrimaryButton>
         </Container>
       ))}
     </div>
@@ -38,7 +40,7 @@ const FooterCards = ({ footerCards }) => {
 export default FooterCards;
 
 export const Container = styled(ParentContainer)`
-  padding: 16px;
+  padding: 20px;
   border-radius: 20px;
   flex-direction: column;
   gap: 12px;

@@ -9,7 +9,9 @@ import {
   Body,
   LogoContainer,
 } from "../styles";
-import FooterPattern from "../assets/svgs/random/random_footer_pattern.svg";
+import DesktopFooter from "../assets/svgs/random/random_desktop_footer.svg";
+import TabletFooter from "../assets/svgs/random/random_tablet_footer.svg";
+import MobileFooter from "../assets/svgs/random/random_mobile_footer.svg";
 
 const Footer = () => (
   <ParentContainer>
@@ -20,11 +22,11 @@ const Footer = () => (
       </LogoContainer>
 
       <TextContainer>
-        <LinkContainer>
+        {/* <LinkContainer>
           <Title>Socials</Title>
           <FooterLink href="/#">Instagram</FooterLink>
           <FooterLink href="/#">LinkedIn</FooterLink>
-        </LinkContainer>
+        </LinkContainer> */}
 
         <LinkContainer>
           <Title>Information</Title>
@@ -53,7 +55,9 @@ const Footer = () => (
       </TextContainer>
     </Grid>
     <PatternContainer>
-      <MyImage alt={`Full bleed pattern`} src={FooterPattern} />
+      <DesktopPattern alt={`Full bleed pattern`} src={DesktopFooter} />
+      <TabletPattern alt={`Full bleed pattern`} src={TabletFooter} />
+      <MobilePattern alt={`Full bleed pattern`} src={MobileFooter} />{" "}
     </PatternContainer>{" "}
   </ParentContainer>
 );
@@ -63,11 +67,11 @@ export default Footer;
 export const PatternContainer = styled.div`
   bottom: 0vh;
   box-sizing: border-box;
-  padding: 16px;
+  padding: 20px;
 `;
 
 export const Grid = styled(GridContainer)`
-  margin: 16px 16px 80px 16px;
+  margin: 20px 20px 80px 20px;
 
   @media (max-width: 768px) {
     gap: 16px;
@@ -111,6 +115,28 @@ export const Title = styled(Body)`
 
 export const SociusLogo = styled(Word)`
   @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
+export const DesktopPattern = styled(MyImage)`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const TabletPattern = styled(MyImage)`
+  display: none;
+
+  @media (max-width: 768px) and (min-width: 376px) {
+    display: block;
+  }
+`;
+
+export const MobilePattern = styled(MyImage)`
+  display: none;
+
+  @media (max-width: 375px) {
     display: block;
   }
 `;

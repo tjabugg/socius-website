@@ -4,7 +4,7 @@ import { ReactComponent as SociusWord } from "./assets/meta/socius_word.svg";
 
 export const GlobalStyle = createGlobalStyle`
 body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Neue-Haas-Grotesk', sans-serif;
     font-style: normal;
     margin: 0;
     padding: 0;
@@ -29,8 +29,7 @@ export const PrimaryButton = styled(Link)`
   padding: 8px;
   background-color: black;
   border: none;
-  border-radius: 12px;
-  color: white;
+  border-radius: 40px;
 
   &:hover {
     background-color: #cbdcff;
@@ -59,6 +58,10 @@ export const Heading = styled.h1`
 
 export const H1 = styled(Heading)`
   font-size: 60px;
+
+  @media (max-width: 768px) {
+    font-size: 50px;
+  }
 
   @media (max-width: 375px) {
     font-size: 40px;
@@ -117,7 +120,7 @@ export const CentreText = styled(CentreContainer)`
 `;
 
 export const ParentContainer = styled.div`
-  margin: 16px;
+  margin: 20px;
   text-align: left;
   display: flex;
   align-items: flex-start;
@@ -147,7 +150,7 @@ export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin: 24px 16px;
+  margin: 24px 20px;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -200,4 +203,21 @@ export const Word = styled(SociusWord)`
   @media (max-width: 768px) {
     display: none;
   }
+`;
+
+export const MyVideo = styled.video`
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+`;
+
+export const PauseButton = styled.div`
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  margin: 20px;
+  cursor: pointer;
 `;

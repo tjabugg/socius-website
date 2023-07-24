@@ -31,9 +31,7 @@ const GraphicCards = ({ graphicCards }) => {
           <Paragraph style={{ color: graphicCard.textColour }}>
             {graphicCard.paragraph}
           </Paragraph>
-          <SecondaryButton href={graphicCard.link}>
-            {graphicCard.button}
-          </SecondaryButton>
+          <SecondaryButton href={graphicCard.link}>Read more</SecondaryButton>
         </PatternCard>
       ))}
     </Container>
@@ -43,7 +41,7 @@ const GraphicCards = ({ graphicCards }) => {
 export default GraphicCards;
 
 export const Container = styled(GridContainer)`
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -55,15 +53,20 @@ export const Paragraph = styled(Body)`
 `;
 
 export const PatternCard = styled(CentreContainer)`
-  padding: 24px;
+  padding: 24px 120px;
   border-radius: 20px;
   background-size: cover;
   justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    padding: 16px 24px;
+  }
 `;
 
 export const GraphicContainer = styled.div`
-  padding: 20px;
+  padding: 24px;
   width: 100%;
-  aspect-ratio: 1/1;
+  /* height: 70vh; */
+  /* aspect-ratio: 1/1; */
   box-sizing: border-box;
 `;
