@@ -36,6 +36,7 @@ const ForSocialScientists = () => {
       heading: "Keyword Extraction",
       paragraph:
         "Identification of terms that best describe the subject of a document.",
+        alt: "An aerial shot of people on a beach and in the sea",
       id: 2,
     },
     {
