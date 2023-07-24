@@ -71,11 +71,12 @@ export const GraphicContainer = styled(ImageContainer)`
   aspect-ratio: 1/1;
   margin: 0px 0px 16px 0px;
   padding: 40px;
-  object-fit: contain;
 
   @media (max-width: 768px) {
     padding: 24px;
   }
 `;
 
-export const Graphic = styled(MyImage)``;
+export const Graphic = styled(MyImage)`
+  object-fit: contain;
+`;

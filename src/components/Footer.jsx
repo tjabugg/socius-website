@@ -40,11 +40,8 @@ const Footer = () => (
 
         <LinkContainer>
           <Title href="/#">Design and Development</Title>
-          <FooterLink
-            href="https://www.instagram.com/appliedlogic.studio/"
-            target="_blank"
-          >
-            Applied Logic
+          <FooterLink href="https://thomasbugg.com/" target="_blank">
+            Thomas Bugg
           </FooterLink>
           <FooterLink
             href="https://www.instagram.com/anthonyodu_/"
