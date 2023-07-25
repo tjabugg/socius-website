@@ -55,6 +55,11 @@ export const Container = styled(GridContainer)`
   align-items: center;
   margin: 40px 20px;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    margin: 20px 20px;
+    gap: 16px;
+  }
 `;
 
 export const Date = styled(Body)`
@@ -70,6 +75,10 @@ export const ImageContainer = styled.div`
   box-sizing: border-box;
   border-radius: 20px;
   background-size: contain;
+
+  @media (max-width: 768px) {
+    order: -1;
+  }
 `;
 
 export const GraphicImage = styled(MyImage)`
@@ -81,6 +90,6 @@ export const TextContainer = styled(CentreText)`
   margin: 24px;
 
   @media (max-width: 768px) {
-    margin: 0px;
+    margin: 8px;
   }
 `;

@@ -3,6 +3,12 @@ import { ReactComponent as SociusLogo } from "./assets/meta/socius_logo.svg";
 import { ReactComponent as SociusWord } from "./assets/meta/socius_word.svg";
 
 export const GlobalStyle = createGlobalStyle`
+
+*{
+  font-weight: 400;
+  margin: 0;
+    padding: 0;
+}
 body {
     font-family: 'Neue-Haas-Grotesk', sans-serif;
     font-style: normal;
@@ -53,6 +59,7 @@ export const Heading = styled.h1`
   margin: 0;
   padding: 0;
   line-height: 1.1;
+  /* font-weight: 400; */
 
   /* @media (min-width: 768px) {
     font-size: 75px;
@@ -63,7 +70,7 @@ export const Heading = styled.h1`
   }
 
   @media (max-width: 414px) {
-    font-size: 28px;
+    font-size: 32px;
   }
 `;
 
@@ -71,6 +78,7 @@ export const Subheading = styled.h2`
   font-size: 40px;
   font-family: "Montagu Slab", serif;
   margin: 0;
+  /* font-weight: 400; */
   padding: 0;
   line-height: 1.1;
 
@@ -84,6 +92,7 @@ export const Title = styled.h3`
   font-family: "Montagu Slab", serif;
   margin: 0;
   padding: 0;
+  /* font-weight: 400; */
   line-height: 1.1;
 `;
 

@@ -53,6 +53,10 @@ export const HeroContainer = styled.div`
   box-sizing: border-box;
   position: relative;
   display: inline-block;
+
+  @media (max-width: 768px) {
+    height: 70vh;
+  }
 `;
 
 export const HeroText = styled(Heading)`

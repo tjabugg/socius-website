@@ -64,7 +64,8 @@ export const HoldingContainer = styled(ParentContainer)`
   @media (max-width: 768px) {
     flex-direction: column;
     justify-content: left;
-    gap: 40px;
+    gap: 20px;
+    margin-top: 20px;
   }
 `;
 
@@ -77,7 +78,6 @@ export const TextContainer = styled(ParentContainer)`
 
   @media (max-width: 768px) {
     width: 100%;
-    gap: 8px;
   }
 `;
 

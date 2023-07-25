@@ -32,6 +32,7 @@ export const Container = styled(GridContainer)`
   position: relative;
 
   @media (max-width: 768px) {
-    padding-bottom: 24px;
+    margin: 20px 20px 20px 20px;
+    padding: 0px;
   }
 `;

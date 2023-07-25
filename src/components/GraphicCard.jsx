@@ -28,8 +28,8 @@ const GraphicCards = ({ graphicCards }) => {
 
         <Title>CompliSent: a first step to compliance-proof</Title>
         <Paragraph>
-          "Aspect-based sentiment analysis model that analyses text-based data
-          ranging from media and social media.",
+          Aspect-based sentiment analysis model that analyses text-based data
+          ranging from media and social media.
         </Paragraph>
 
         <SecondaryButton href="complisent">Read more</SecondaryButton>

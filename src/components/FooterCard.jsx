@@ -24,7 +24,9 @@ const FooterCards = ({ footerCards }) => {
             <MyImage src={footerCard.image} alt={footerCard.alt}></MyImage>
           </GraphicContainer>
 
-          <Title style={{ color: footerCard.textColour }}>{footerCard.heading}</Title>
+          <Heading style={{ color: footerCard.textColour }}>
+            {footerCard.heading}
+          </Heading>
           <Paragraph style={{ color: footerCard.textColour }}>
             {footerCard.paragraph}
           </Paragraph>
@@ -43,12 +45,16 @@ export const Container = styled(ParentContainer)`
   padding: 20px;
   border-radius: 20px;
   flex-direction: column;
-  gap: 12px;
-  margin: 24px 16px;
+  gap: 0px;
+  margin: 20px;
+`;
+
+export const Heading = styled(Title)`
+  margin-bottom: 8px;
 `;
 
 export const Paragraph = styled(Body)`
-  margin: 0px 0px 8px 0px;
+  margin-bottom: 16px;
   width: 50%;
 
   @media (max-width: 768px) {
@@ -59,6 +65,7 @@ export const Paragraph = styled(Body)`
 export const GraphicContainer = styled(ImageContainer)`
   height: 60vh;
   width: 100%;
+  margin-bottom: 16px;
 
   @media (max-width: 768px) {
     height: 40vh;

@@ -49,12 +49,13 @@ export const CardContainer = styled(ParentContainer)`
 
 export const ArticleCard = styled.div`
   width: calc(33.3333333333% - 20px);
-  margin: 20px 8px;
+  margin: 20px 10px;
   align-items: center;
   justify-content: center;
 
   @media (max-width: 768px) {
     width: calc(100% - 20px);
+    margin: 0px 10px 24px 10px;
   }
 `;
 
