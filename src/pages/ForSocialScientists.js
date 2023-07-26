@@ -1,8 +1,8 @@
 import { useState } from "react";
 import SecondaryHero from "../components/SecondaryHero";
-import Random9x9Pattern01 from "../assets/svgs/random/random_9x9_02.svg";
-import Organised17x17Pattern01 from "../assets/svgs/organised/organised_17x17_01.svg";
-import Organised5x5Pattern01 from "../assets/svgs/organised/organised_5x5_02.svg";
+import Random7x7Pattern01 from "../assets/svgs/random/random_7x7_pattern.svg";
+import Organised15x15Pattern01 from "../assets/svgs/organised/organised_15x15_pattern.svg";
+import Organised5x5Pattern01 from "../assets/svgs/organised/organised_5x5_pattern.svg";
 import Beach from "../assets/images/beach.jpg";
 import Silhouette from "../assets/images/silhouette.jpg";
 import StrategicHands from "../assets/images/strategic_hands.jpg";
@@ -18,12 +18,13 @@ const ForSocialScientists = () => {
       heading: "Explore the methodologies underlying our AI toolkits",
       imageDisplay: "none",
       video: Code,
+      videoAlt: "A close up a developer programming on a computer screen",
       id: 1,
     },
   ]);
   const [articleCards] = useState([
     {
-      image: Random9x9Pattern01,
+      image: Random7x7Pattern01,
       bgColour: "#0000FF",
       heading: "Sentiment Analysis",
       paragraph:
@@ -36,11 +37,11 @@ const ForSocialScientists = () => {
       heading: "Keyword Extraction",
       paragraph:
         "Identification of terms that best describe the subject of a document.",
-        alt: "An aerial shot of people on a beach and in the sea",
+      alt: "An aerial shot of people on a beach and in the sea",
       id: 2,
     },
     {
-      image: Organised17x17Pattern01,
+      image: Organised15x15Pattern01,
       bgColour: "#00002E",
       heading: "Emotion recognition",
       paragraph: "The process of identifying human emotion",
@@ -56,7 +57,7 @@ const ForSocialScientists = () => {
     },
     {
       image: Organised5x5Pattern01,
-      bgColour: "#51DA4C",
+      bgColour: "#D9FFD8",
       heading: "Affective computing",
       paragraph:
         "Development of systems and devices that can recognise, interpret, process, and simulate human affects.",
@@ -66,9 +67,9 @@ const ForSocialScientists = () => {
 
   const [callToActions] = useState([
     {
-      bgColour: "#D9FFD8",
+      bgColour: "#00002E",
       id: 7,
-      textColour: "#00002E",
+      textColour: "#CBDCFF",
     },
   ]);
   const [textAndImages] = useState([
@@ -79,6 +80,7 @@ const ForSocialScientists = () => {
       id: 8,
       button: "Take me there",
       image: StrategicHands,
+      alt: "A close up of an expressive hand gesture round an office table",
     },
   ]);
 

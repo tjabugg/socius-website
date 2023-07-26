@@ -33,13 +33,13 @@ export const Link = styled.a`
 
 export const PrimaryButton = styled(Link)`
   padding: 8px;
-  background-color: black;
+  background-color: #1b1b1b;
   border: none;
   border-radius: 40px;
 
   &:hover {
     background-color: #cbdcff;
-    color: black;
+    color: #1b1b1b;
   }
 `;
 
@@ -58,6 +58,7 @@ export const Heading = styled.h1`
   font-family: "Montagu Slab", serif;
   margin: 0;
   padding: 0;
+  color: #1B1B1B;
   line-height: 1.1;
   /* font-weight: 400; */
 
@@ -81,6 +82,7 @@ export const Subheading = styled.h2`
   /* font-weight: 400; */
   padding: 0;
   line-height: 1.1;
+  color: #1B1B1B;
 
   @media (max-width: 414px) {
     font-size: 28px;
@@ -94,6 +96,7 @@ export const Title = styled.h3`
   padding: 0;
   /* font-weight: 400; */
   line-height: 1.1;
+  color: #1B1B1B;
 `;
 
 export const Subtitle = styled.h4`
@@ -102,15 +105,19 @@ export const Subtitle = styled.h4`
   margin: 0;
   padding: 0;
   line-height: 1.1;
+  color: #1B1B1B;
 `;
 
 export const Body = styled.p`
   font-size: 16px;
-  color: black;
+  color: #1B1B1B;
   margin: 0;
   padding: 0;
   line-height: 1.3;
   white-space: pre-wrap;
+  @media (max-width: 768px) {
+    font-size: 17px;
+  }
 `;
 
 export const MyImage = styled.img`

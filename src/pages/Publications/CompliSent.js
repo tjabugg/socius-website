@@ -2,11 +2,11 @@ import { useState } from "react";
 import React from "react";
 import PublicationCover from "../../components/PublicationCover";
 import Farms from "../../assets/images/farms.jpg";
-import PublicationCoverPattern from "../../assets/svgs/random/publication_cover_pattern_01.svg";
+import PublicationCoverPattern from "../../assets/svgs/random/publication_cover_pattern.svg";
 import PublicationDetails from "../../components/PublicationDetails";
 import ArticleCard from "../../components/ArticleCard";
-import Random9x9Pattern01 from "../../assets/svgs/random/random_9x9_02.svg";
-import Organised17x17Pattern01 from "../../assets/svgs/organised/organised_17x17_01.svg";
+import Random7x7Pattern01 from "../../assets/svgs/random/random_7x7_pattern.svg";
+import Organised15x15Pattern01 from "../../assets/svgs/organised/organised_15x15_pattern.svg";
 import Beach from "../../assets/images/beach.jpg";
 import Crowd from "../../assets/images/crowd.jpg";
 import FrozenIce from "../../assets/images/frozen_ice.jpg";
@@ -31,6 +31,7 @@ const CompliSent = () => {
       bgImage: Farms,
       graphic: PublicationCoverPattern,
       padding: "24px",
+      display: "none",
     },
   ]);
 
@@ -91,7 +92,7 @@ const CompliSent = () => {
 
   const [articleCards] = useState([
     {
-      image: Random9x9Pattern01,
+      image: Random7x7Pattern01,
       bgColour: "#0000FF",
       heading: "Sentiment Analysis",
       paragraph:
@@ -107,7 +108,7 @@ const CompliSent = () => {
       id: 2,
     },
     {
-      image: Organised17x17Pattern01,
+      image: Organised15x15Pattern01,
       bgColour: "#00002E",
       heading: "Emotion recognition",
       paragraph: "The process of identifying human emotion",
@@ -178,7 +179,7 @@ const CompliSent = () => {
         />
       </ParentContainer>
       <ParentContainer>
-        <Title>Related publications</Title>
+        <Title>Explore our resources for social scientists</Title>
       </ParentContainer>
       <ArticleCard articleCards={articleCards} />
     </>

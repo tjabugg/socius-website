@@ -6,7 +6,7 @@ import TableConversation from "../assets/images/table_conversation.jpg";
 import AerialDesert from "../assets//images/aerial_desert.jpg";
 import React from "react";
 import PublicationCover from "../components/PublicationCover";
-import PublicationCoverPattern from "../assets/svgs/random/publication_cover_pattern_01.svg";
+import PublicationCoverPattern from "../assets/svgs/random/publication_cover_pattern.svg";
 import FooterCard from "../components/FooterCard";
 
 const Research = () => {
@@ -45,7 +45,7 @@ const Research = () => {
 
   const [footerCards] = useState([
     {
-      bgColour: "#D9FFD8",
+      bgColour: "#3C46FF",
       image: AerialDesert,
       heading: "Streamline your research process",
       paragraph:
@@ -53,6 +53,7 @@ const Research = () => {
       id: 7,
       button: "Find out more",
       link: "forsocialscientists",
+      textColour: "white",
     },
   ]);
 

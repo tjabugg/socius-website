@@ -9,9 +9,9 @@ import {
   Body,
   LogoContainer,
 } from "../styles";
-import DesktopFooter from "../assets/svgs/random/random_desktop_footer.svg";
-import TabletFooter from "../assets/svgs/random/random_tablet_footer.svg";
-import MobileFooter from "../assets/svgs/random/random_mobile_footer.svg";
+import DesktopFooter from "../assets/svgs/random/desktop_footer_pattern.svg";
+import TabletFooter from "../assets/svgs/random/tablet_footer_pattern.svg";
+import MobileFooter from "../assets/svgs/random/mobile_footer_pattern.svg";
 
 const Footer = () => (
   <ParentContainer>
@@ -79,7 +79,7 @@ export const Grid = styled(GridContainer)`
 export const ParentContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: #cbdcff;
+  background-color: #193718;
   flex-direction: column;
   border-radius: 20px 20px 0px 0px;
 `;
@@ -99,16 +99,17 @@ export const TextContainer = styled.div`
 export const LinkContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 `;
 
 export const FooterLink = styled(Link)`
-  color: black;
+  color: white;
 `;
 
 export const Title = styled(Body)`
   font-weight: 600;
   font-size: 14px;
+  color: white;
 `;
 
 export const SociusLogo = styled(Word)`

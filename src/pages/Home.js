@@ -3,7 +3,6 @@ import ArticleCard from "../components/ArticleCard";
 import { useState } from "react";
 import TextBlocks from "../components/TextBlocks";
 import GraphicCards from "../components/GraphicCard";
-import Organised5x5Pattern01 from "../assets/svgs/organised/organised_5x5_01.svg";
 import Studying from "../assets/videos/studying.mp4";
 import StockExchange from "../assets/images/stock_exchange.jpg";
 import FriendsAtDusk from "../assets/images/friends.jpg";
@@ -46,15 +45,17 @@ const Home = () => {
       heading: "Sentiment Analysis",
       paragraph:
         "Systematically identify and study affective states and subjective information.",
+      alt: "A group of friends sat in the foreground before an evening sky",
       id: 1,
       link: "/",
     },
     {
-      bgColour: "#00002E",
-      image: Organised5x5Pattern01,
+      bgColour: "#CBDCFF",
+      image: "",
       heading: "Keyword Extraction",
       paragraph:
         "Identification of terms that best describe the subject of a document",
+      alt: "An animation from the socius design system",
       id: 2,
       link: "/",
     },
@@ -68,6 +69,7 @@ const Home = () => {
       id: 1,
       button: "Learn more about our approach",
       video: Studying,
+      alt: "An video a woman sat at a desk reading through a book",
       link: "/database",
       imageDisplay: "none",
     },

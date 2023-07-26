@@ -2,7 +2,7 @@ import { useState } from "react";
 import TextBlocks from "../components/TextBlocks";
 import SecondaryHero from "../components/SecondaryHero";
 import PaleBlueDot from "../assets/images/pale_blue_dot.jpg";
-import FieldOfWheat from "../assets/images/wheat.jpg";
+import LandscapePainting from "../assets/images/landscape_painting.jpg";
 import OpenBook from "../assets/images/open_book.jpg";
 import Lecturer from "../assets/images/lecturer.jpg";
 import React from "react";
@@ -70,17 +70,17 @@ const Database = () => {
 
   const [callToActions] = useState([
     {
-      bgColour: "#00002E",
+      bgColour: "#51DA4C",
       id: 1,
-      textColour: "#51DA4C",
+      textColour: "#193718",
     },
   ]);
 
   const [footerCards] = useState([
     {
-      bgColour: "#193718",
-      textColour: "#ffffff",
-      image: FieldOfWheat,
+      bgColour: "#00002E",
+      textColour: "white",
+      image: LandscapePainting,
       heading:
         "Explore about our first publication on building interpretable AI",
       paragraph:

@@ -2,7 +2,8 @@ import React from "react";
 import { Body, GridContainer, SecondaryButton } from "../styles";
 import styled from "styled-components";
 import { CentreContainer, Title, MyImage } from "../styles";
-import Random16x9Pattern01 from "../assets/svgs/random/random_16x9_01.svg";
+import LandscapePattern from "../assets/svgs/random/landscape_card_pattern.svg";
+import SquarePattern from "../assets/svgs/random/square_card_pattern.svg";
 
 // Destructure blogs and title directly from the props
 const GraphicCards = ({ graphicCards }) => {
@@ -12,21 +13,13 @@ const GraphicCards = ({ graphicCards }) => {
       {/* Fires callback function for each item, whereby we return a jsx template */}
       {/* {graphicCards.map((graphicCard) => ( */}
       {/* // When we .map(), each root element we return must have a 'key' property which react uses to keep track of items in the dom */}
-      <PatternCard
-      // key={graphicCard.id}
-      // style={{
-      //   backgroundColor: graphicCard.bgcolor,
-      //   backgroundImage: `url(${graphicCard.bgImage})`,
-      // }}
-      >
+      <PatternCard>
         <GraphicContainer>
-          <MyImage
-            src={Random16x9Pattern01}
-            alt="A random cell based pattern"
-          ></MyImage>
+          <LandscapeCard alt={`Full bleed pattern`} src={LandscapePattern} />
+          <SquareCard alt={`Full bleed pattern`} src={SquarePattern} />
         </GraphicContainer>
 
-        <Title>CompliSent: a first step to compliance-proof</Title>
+        <Heading>CompliSent: a first step to compliance-proof</Heading>
         <Paragraph>
           Aspect-based sentiment analysis model that analyses text-based data
           ranging from media and social media.
@@ -43,10 +36,15 @@ export default GraphicCards;
 
 export const Container = styled(GridContainer)`
   grid-template-columns: 1fr;
+  color: white;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
+`;
+
+export const Heading = styled(Title)`
+  color: white;
 `;
 
 export const Paragraph = styled(Body)`
@@ -59,8 +57,7 @@ export const PatternCard = styled(CentreContainer)`
   border-radius: 20px;
   background-size: cover;
   justify-content: flex-end;
-  background-color: #193718;
-  color: white;
+  background-color: #00002e;
 
   @media (max-width: 768px) {
     padding: 16px 24px;
@@ -71,4 +68,18 @@ export const GraphicContainer = styled.div`
   padding: 24px;
   width: 100%;
   box-sizing: border-box;
+`;
+
+export const LandscapeCard = styled(MyImage)`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const SquareCard = styled(MyImage)`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;

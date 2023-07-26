@@ -28,7 +28,7 @@ export default NotFound;
 export const Container = styled(CentreContainer)`
   /* margin-top: 64px; */
   position: relative;
-  background-color: #d9ffd8;
+  background-color: #cbdcff;
 `;
 
 export const TextContainer = styled(CentreText)`

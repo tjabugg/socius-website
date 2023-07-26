@@ -55,7 +55,7 @@ export const HeroContainer = styled.div`
   display: inline-block;
 
   @media (max-width: 768px) {
-    height: 70vh;
+    height: 80vh;
   }
 `;
 
