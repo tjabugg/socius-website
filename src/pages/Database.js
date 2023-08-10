@@ -16,7 +16,7 @@ import { Subheading, GridContainer } from "../styles";
 const Database = () => {
   const [secondaryHeroes] = useState([
     {
-      heading: "An open source database to assist your collaboration with AI",
+      heading: "Accelerating social science research with accessible open data",
       videoAlt:
         "A close up of a woman's glasses with the reflection of her computer screen in her lenses",
       imageDisplay: "none",
@@ -27,18 +27,22 @@ const Database = () => {
 
   const [textBlocks] = useState([
     {
-      heading: "Primary Research",
+      heading: "SentiBank",
       paragraph:
-        "All open-source models will be compliance-safe and fully transparent, provided with documentations (i.e academic papers or papers with code). This enables researchers to fully understand how our AI system is developed, trained, operates and deployed in the application domain.\n \nWhile the business has been endorsed by LSE, we are currently reaching LSE professors to join the advisory board, which we believe would build another layer of trust.\n \nHowever, above all, we need to be recognised in the field. Which we do not yet. And this is precisely why we need a brand.",
+        "SentiBank is the most comprehensive open database of expert-verified sentiment dictionaries and lexicons, all accessible through a simple API.\n\nResearchers can instantly discover a vast knowledge base of annotated corpora spanning diverse domains to elevate their sentiment modeling.\n\nBy combining gold-standard sentiment data in one platform, sentibank facilitates more holistic cross-domain analysis and unlocks hidden emotions within text. This unified access removes the need to navigate disparate sources, allowing you to focus on innovative applications.",
       id: 1,
-      paddingBottom: "0px",
+      paddingBottom: "24px",
+      button: "Read more",
+      link: "complisent",
     },
     {
-      heading: "Secondary Research",
+      heading: "Optimizing research through data discovery AI",
       paragraph:
-        "We build AI-powered toolkits with the principles of social science in mind: While we cannot fully reduce AI being a black box models, we aim to build Transparent, Accountable, and Interpretable AI models (socscikit)\n \nWe build unified NLP framework to increase social science research collaborations: Not only this will increase collaborative opportunities, it will prevent social researchers to back a horse with their framework selections – Researchers can hire best performing NLP modules, without the need to learn new frameworks (coNLP)\n \nLimited to academic researchers, we provide FREE 24/5 support in terms of methodologies, models, algorithms and many more.",
+        "Locating ideal datasets can be arduous, but remains critical to research success. By leveraging language modeI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data.\n\nWe offer priority access to select researchers and partners to pilot this capability.\n\nCollaborating with social scientists across disciplines motivates everything we do. We invite you to connect with our team - we're excited to discover how we could partner to advance your research.",
       id: 2,
-      paddingBottom: "0px",
+      paddingBottom: "24px",
+      button: "Get aligned data to power insights and innovations",
+      link: "complisent",
     },
   ]);
 
@@ -81,12 +85,11 @@ const Database = () => {
       bgColour: "#00002E",
       textColour: "white",
       image: LandscapePainting,
-      heading:
-        "Explore about our first publication on building interpretable AI",
+      heading: "Integrate sentibank with CompliSent",
       paragraph:
-        "Aspect-based sentiment analysis model that analyses text-based data ranging from media and social media.",
+        "CompliSent combines the predictive power of AI with adjustable rule-based logic designed for human interpretability.",
       id: 1,
-      button: "Read more",
+      button: "Explore CompliSent",
       link: "complisent",
     },
   ]);
@@ -97,9 +100,7 @@ const Database = () => {
         name="description"
         content="Socius creates publicly available AI models and systems that are not only state-of-the-art in terms of technical capabilities, but also deeply rooted in the principles of social science. Our objective is to advance the frontiers of social science research through the development and application of AI technologies. The story of Socius starts from a simple question: could computational intelligence help social scientists to consider every possible causative relationships between their theory-of-interest?"
       />
-      <title>
-        Bridging Artificial Intelligence to Human Knowledge | socius
-      </title>
+      <title>Optimising research through data discovery AI | socius</title>
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
       <TextBlocks
         textBlocks={textBlocks.filter((textBlock) => textBlock.id === 1)}
@@ -109,8 +110,8 @@ const Database = () => {
       />
       <GridContainer>
         <Subheading>
-          While we cannot fully reduce AI being a black box models, we aim to
-          build Transparent, Accountable, and Interpretable AI models.
+          While we cannot fully prevent AI from being a black box, we aim to
+          build transparent, accountable, and interpretable AI models.
         </Subheading>
       </GridContainer>
       <TextBlocks
@@ -119,18 +120,10 @@ const Database = () => {
       <SplitImage
         splitImages={splitImages.filter((splitImage) => splitImage.id === 2)}
       />
-      <CallToAction callToActions={callToActions} />
       <FooterCard footerCards={footerCards} />
+      <CallToAction callToActions={callToActions} />
     </>
   );
 };
 
 export default Database;
-
-// export const QuoteContainer = styled(ParentContainer)`
-//   margin: 40px 33vw 40px 16px;
-
-//   @media (max-width: 768px) {
-//     margin: 40px 16px 40px 16px;
-//   }
-// `;

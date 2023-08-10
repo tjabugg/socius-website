@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MyImage, ParentContainer, ImageContainer, MyVideo } from "../styles";
+import { MyImage, ImageContainer, MyVideo, GridContainer } from "../styles";
 // import PauseControls from "../assets/meta/pause_button.svg";
 // import PlayControls from "../assets/meta/play_button.svg";
 
@@ -11,7 +11,7 @@ const SplitImages = ({ splitImages }) => {
       {/* Fires callback function for each item, whereby we return a jsx template */}
       {splitImages.map((splitImage) => (
         // When we .map(), each root element we return must have a 'key' property which react uses to keep track of items in the dom
-        <ParentContainer key={splitImage.id}>
+        <GridContainer key={splitImage.id}>
           <GraphicContainer
             style={{
               aspectRatio: splitImage.aspectRatioOne,
@@ -28,48 +28,28 @@ const SplitImages = ({ splitImages }) => {
               aspectRatio: splitImage.aspectRatioTwo,
             }}
           >
-            <MyImage
-              alt={splitImage.imageTwoAlt}
-              style={{
-                display: splitImage.imageDisplay,
-              }}
-              src={splitImage.imageTwo}
-            ></MyImage>
-            <MyVideo
-              alt={splitImage.videoAlt}
-              id="splitVideoControls"
-              style={{
-                display: splitImage.display,
-              }}
-              src={splitImage.videoTwo}
-              autoPlay={true}
-              loop={true}
-              playsInline={true}
-            ></MyVideo>
-
-            {/* <VideoButton>
+            {splitImage.imageTwo ? (
               <MyImage
-                id="videoButton"
-                src={PauseControls}
-                onClick={PlayVideo}
+                alt={splitImage.imageTwoAlt}
+                src={splitImage.imageTwo}
               ></MyImage>
-            </VideoButton> */}
+            ) : null}
+
+            {splitImage.videoTwo ? (
+              <MyVideo
+                alt={splitImage.videoAlt}
+                src={splitImage.videoTwo}
+                autoPlay={true}
+                loop={true}
+                playsInline={true}
+              ></MyVideo>
+            ) : null}
           </GraphicContainer>
-        </ParentContainer>
+        </GridContainer>
       ))}
     </div>
   );
 };
-
-// const PlayVideo = () => {
-//   if (document.getElementById("splitVideoControls").paused) {
-//     document.getElementById("splitVideoControls").play();
-//     document.getElementById("videoButton").src = PauseControls;
-//   } else {
-//     document.getElementById("splitVideoControls").pause();
-//     document.getElementById("videoButton").src = PlayControls;
-//   }
-// };
 
 export default SplitImages;
 

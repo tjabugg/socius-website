@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Body, Title, GridContainer } from "../styles";
+import { Body, Title, GridContainer, PrimaryButton } from "../styles";
 
 // Destructure blogs and title directly from the props
 const TextBlocks = ({ textBlocks }) => {
@@ -17,6 +17,9 @@ const TextBlocks = ({ textBlocks }) => {
         >
           <Title>{textBlock.heading}</Title>
           <Body>{textBlock.paragraph}</Body>
+          {textBlock.link ? (
+            <Button href={textBlock.link}> {textBlock.button}</Button>
+          ) : null}
         </Container>
       ))}
     </div>
@@ -27,12 +30,14 @@ export default TextBlocks;
 
 export const Container = styled(GridContainer)`
   display: grid;
-  padding-bottom: 40px;
-  align-items: start;
-  position: relative;
+  padding-bottom: 48px;
+  /* grid-auto-flow: column ; */
 
   @media (max-width: 768px) {
-    margin: 20px 20px 20px 20px;
-    padding: 0px;
+    padding-bottom: 24px;
   }
+`;
+
+export const Button = styled(PrimaryButton)`
+  grid-column-start: 2;
 `;

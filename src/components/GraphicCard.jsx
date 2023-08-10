@@ -19,13 +19,13 @@ const GraphicCards = ({ graphicCards }) => {
           <SquareCard alt={`Full bleed pattern`} src={SquarePattern} />
         </GraphicContainer>
 
-        <Heading>CompliSent: a first step to compliance-proof</Heading>
+        <Heading>CompliSent: Accuracy engineered for understanding</Heading>
         <Paragraph>
-          Aspect-based sentiment analysis model that analyses text-based data
-          ranging from media and social media.
+          Fusing AI linguistics with configurable logic for interpretable
+          sentiment scoring
         </Paragraph>
 
-        <SecondaryButton href="complisent">Read more</SecondaryButton>
+        <SecondaryButton href="complisent">Learn more</SecondaryButton>
       </PatternCard>
       {/* ))} */}
     </Container>

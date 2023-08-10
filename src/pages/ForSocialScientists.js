@@ -1,67 +1,105 @@
 import { useState } from "react";
 import SecondaryHero from "../components/SecondaryHero";
-import Random7x7Pattern01 from "../assets/svgs/random/random_7x7_pattern.svg";
-import Organised15x15Pattern01 from "../assets/svgs/organised/organised_15x15_pattern.svg";
-import Organised5x5Pattern01 from "../assets/svgs/organised/organised_5x5_pattern.svg";
+import Random7x7Pattern01 from "../assets/svgs/random/random_7x7_pattern_01.svg";
+import Organised15x15Pattern from "../assets/svgs/organised/organised_15x15_pattern.svg";
+import Organised5x5Pattern from "../assets/svgs/organised/organised_5x5_pattern.svg";
+import Organised10x10Pattern from "../assets/svgs/organised/organised_10x10_pattern.svg";
+import Random7x7Pattern02 from "../assets/svgs/random/random_7x7_pattern_02.svg";
 import Beach from "../assets/images/beach.jpg";
 import Silhouette from "../assets/images/silhouette.jpg";
-import StrategicHands from "../assets/images/strategic_hands.jpg";
+import Moma from "../assets/images/moma.jpg";
+import CountrysidePainting from "../assets/images/countryside_painting.jpg";
 import Code from "../assets/videos/code.mp4";
 import React from "react";
 import CallToAction from "../components/CallToAction";
 import ArticleCard from "../components/ArticleCard";
-import TextAndImage from "../components/TextAndImage";
+import { Body, ParentContainer, Subheading } from "../styles";
 
 const ForSocialScientists = () => {
   const [secondaryHeroes] = useState([
     {
-      heading: "Explore the methodologies underlying our AI toolkits",
+      heading: "Documentation designed to simplify usage and amplify impact",
       imageDisplay: "none",
       video: Code,
       videoAlt: "A close up a developer programming on a computer screen",
       id: 1,
     },
   ]);
-  const [articleCards] = useState([
+  const [compliSentCards] = useState([
     {
       image: Random7x7Pattern01,
       bgColour: "#0000FF",
-      heading: "Sentiment Analysis",
+      heading: "Heuristic Engine: ‘tag_pos’",
       paragraph:
-        "Systematically identify and study affective states and subjective information.",
+        "Parts-of-Speech tagging to analyse grammar and identify word’s syntactic roles.",
       id: 1,
     },
     {
       padding: "0px",
-      image: Beach,
-      heading: "Keyword Extraction",
+      image: Moma,
+      heading: "Heuristic Engine: ‘parse_aspect’",
       paragraph:
-        "Identification of terms that best describe the subject of a document.",
+        "Extract dependency relationships between aspects and their predicate.",
       alt: "An aerial shot of people on a beach and in the sea",
       id: 2,
     },
     {
-      image: Organised15x15Pattern01,
+      image: Organised15x15Pattern,
       bgColour: "#00002E",
-      heading: "Emotion recognition",
-      paragraph: "The process of identifying human emotion",
+      heading: "Heuristic Engine: ‘evaluate_senti (lex_dict)’",
+      paragraph:
+        "Compare and check whether any predicates match with the unigram lexicons in the dictionary.",
       id: 3,
     },
     {
       padding: "0px",
       image: Silhouette,
-      heading: "socsciBERT: a small language model",
+      heading: "Heuristic Engine: ‘evaluate_senti (identify_ngram)’",
       paragraph:
-        "An AI model that “reasons” in a way that is similar to how economists and others explain why a current phenomenon looks like a past phenomena.",
+        "Examine whether any ‘span’ of the predicates match with the n-gram lexicons in the dictionary.",
       id: 4,
     },
     {
-      image: Organised5x5Pattern01,
+      image: Organised5x5Pattern,
       bgColour: "#D9FFD8",
-      heading: "Affective computing",
+      heading: "Heuristic Engine: `evaluate_senti (fine_tune)`",
       paragraph:
-        "Development of systems and devices that can recognise, interpret, process, and simulate human affects.",
+        "Refine the sentiment score  based on the predefined fine-tuning rules.",
       id: 5,
+    },
+  ]);
+
+  const [sentiBankCards] = useState([
+    {
+      image: Organised10x10Pattern,
+      bgColour: "#51DA4C",
+      heading: "VADER",
+      paragraph:
+        "VADER is a rule-based sentiment analysis algorithm, particularly aimed at social media texts, that uses a sentiment polarity and intensity (valence) sensitive lexicon dictionary.",
+      id: 1,
+    },
+    {
+      padding: "0px",
+      image: Beach,
+      heading: "MASTER",
+      paragraph:
+        "While a sentiment dictionary designed to be applied in the general domain may be useful, a finance-specific dictionary called MASTER  was created to address the constraints of generality. ",
+      alt: "An aerial shot of people on a beach and in the sea",
+      id: 2,
+    },
+    {
+      image: Random7x7Pattern02,
+      bgColour: "#193718",
+      heading: "AFINN",
+      paragraph: "",
+      id: 3,
+    },
+    {
+      padding: "0px",
+      image: CountrysidePainting,
+      heading: "Aigents+",
+      paragraph: "",
+      id: 4,
     },
   ]);
 
@@ -72,17 +110,6 @@ const ForSocialScientists = () => {
       textColour: "#CBDCFF",
     },
   ]);
-  const [textAndImages] = useState([
-    {
-      heading: "Learn about our approach via our open source database",
-      paragraph:
-        "We advance the understanding of Social Science through the development and application of AI technologies. We know more than we used to, but we still know too little. Social scientists, like any other natural scientists, should also equip with state-of-the-art AI models, but models that are compatible with the principles of social science. ",
-      id: 8,
-      button: "Take me there",
-      image: StrategicHands,
-      alt: "A close up of an expressive hand gesture round an office table",
-    },
-  ]);
 
   return (
     <>
@@ -90,13 +117,25 @@ const ForSocialScientists = () => {
         name="description"
         content="Socius creates publicly available AI models and systems that are not only state-of-the-art in terms of technical capabilities, but also deeply rooted in the principles of social science. Our objective is to advance the frontiers of social science research through the development and application of AI technologies. The story of Socius starts from a simple question: could computational intelligence help social scientists to consider every possible causative relationships between their theory-of-interest?"
       />
-      <title>
-        Bridging Artificial Intelligence to Human Knowledge | socius
-      </title>
+      <title>Resources to simplify usage and amplify impact | socius</title>
+
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
-      <ArticleCard articleCards={articleCards} />
+      <ParentContainer>
+        <Subheading>CompliSent</Subheading>
+      </ParentContainer>
+      <ArticleCard articleCards={compliSentCards} />
+      <ParentContainer
+        style={{
+          flexDirection: "column",
+        }}
+      >
+        <Subheading>SentiBank</Subheading>
+        <Body>
+          Public repository of annotated sentiment lexicons and dictionaries
+        </Body>
+      </ParentContainer>
+      <ArticleCard articleCards={sentiBankCards} />
       <CallToAction callToActions={callToActions} />
-      <TextAndImage textAndImages={textAndImages} />
     </>
   );
 };

@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   font-weight: 400;
   margin: 0;
     padding: 0;
+    
 }
 body {
     font-family: 'Neue-Haas-Grotesk', sans-serif;
@@ -25,9 +26,14 @@ export const Link = styled.a`
   text-decoration: none;
   color: white;
   cursor: pointer;
+  opacity: 100%;
 
   @media (max-width: 375px) {
     font-size: 14px;
+  }
+
+  &:hover {
+    opacity: 30%;
   }
 `;
 
@@ -36,10 +42,12 @@ export const PrimaryButton = styled(Link)`
   background-color: #1b1b1b;
   border: none;
   border-radius: 40px;
+  justify-self: start;
 
   &:hover {
     background-color: #cbdcff;
     color: #1b1b1b;
+    opacity: 100%;
   }
 `;
 
@@ -56,15 +64,8 @@ export const SecondaryButton = styled(PrimaryButton)`
 export const Heading = styled.h1`
   font-size: 60px;
   font-family: "Montagu Slab", serif;
-  margin: 0;
-  padding: 0;
-  color: #1B1B1B;
+  color: #1b1b1b;
   line-height: 1.1;
-  /* font-weight: 400; */
-
-  /* @media (min-width: 768px) {
-    font-size: 75px;
-  } */
 
   @media (max-width: 768px) {
     font-size: 50px;
@@ -78,11 +79,8 @@ export const Heading = styled.h1`
 export const Subheading = styled.h2`
   font-size: 40px;
   font-family: "Montagu Slab", serif;
-  margin: 0;
-  /* font-weight: 400; */
-  padding: 0;
   line-height: 1.1;
-  color: #1B1B1B;
+  color: #1b1b1b;
 
   @media (max-width: 414px) {
     font-size: 28px;
@@ -92,31 +90,32 @@ export const Subheading = styled.h2`
 export const Title = styled.h3`
   font-size: 24px;
   font-family: "Montagu Slab", serif;
-  margin: 0;
-  padding: 0;
-  /* font-weight: 400; */
   line-height: 1.1;
-  color: #1B1B1B;
+  color: #1b1b1b;
 `;
 
 export const Subtitle = styled.h4`
   font-size: 20px;
   font-family: "Montagu Slab", serif;
-  margin: 0;
-  padding: 0;
   line-height: 1.1;
-  color: #1B1B1B;
+  color: #1b1b1b;
 `;
 
 export const Body = styled.p`
   font-size: 16px;
-  color: #1B1B1B;
-  margin: 0;
-  padding: 0;
+  color: #1b1b1b;
   line-height: 1.3;
   white-space: pre-wrap;
+
   @media (max-width: 768px) {
     font-size: 17px;
+  }
+`;
+
+export const Caption = styled(Body)`
+  font-size: 14px;
+  @media (max-width: 768px) {
+    font-size: 14px;
   }
 `;
 
@@ -125,7 +124,6 @@ export const MyImage = styled.img`
   height: 100%;
   display: block;
   object-fit: cover;
-  /* position: relative; */
 `;
 
 export const CentreContainer = styled.div`
@@ -154,7 +152,7 @@ export const ParentContainer = styled.div`
   justify-content: flex-start;
   box-sizing: border-box;
   flex-direction: row;
-  gap: 16px;
+  gap: 8px;
   /* width: 100%; */
 
   @media (max-width: 768px) {
@@ -162,22 +160,11 @@ export const ParentContainer = styled.div`
   }
 `;
 
-export const TextContainer = styled(ParentContainer)`
-  gap: 0px;
-  margin: 24px 30vw;
-  padding: 0px;
-  flex-direction: column;
-
-  @media (max-width: 768px) {
-    margin: 24px 0px;
-  }
-`;
-
 export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin: 24px 20px;
+  gap: 20px 20px;
+  margin: 20px;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -204,7 +191,7 @@ export const ImageContainer = styled.div`
 export const NavContainer = styled.nav`
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  gap: 20px;
   align-items: center;
 `;
 
@@ -247,4 +234,8 @@ export const PauseButton = styled.div`
   right: 0px;
   margin: 20px;
   cursor: pointer;
+
+  &:hover {
+    opacity: 30%;
+  }
 `;

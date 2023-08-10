@@ -14,7 +14,7 @@ const Research = () => {
     {
       heading: "Our publications",
       paragraph:
-        "We create publicly available AI models and systems that are not only state-of-the-art in terms of technical capabilities, but also deeply rooted in the principles of social science. Our objective is to advance the frontiers of social science research through the development and application of AI technologies.\n \nWe aim to create AI tools that empower social scientists to make discoveries that were previously impossible, to uncover new insights into human behaviour and social systems, and to inform evidence-based decisions",
+        "Social science deserves better AI tools - models designed on true understanding, not just prediction. For too long, computational social scientists struggled with black-box models prioritising opaque precision over interpretation and we’re leading that change.\n\nOur goal is to create AI tools that embrace what makes social science so valuable in the pursuit of true understanding, that is why our research focuses on integrating AI models with core social science principles, enhancing interpretability, transparency, and accountability - areas where social science and modern AI diverge.",
       id: 1,
     },
   ]);
@@ -22,8 +22,7 @@ const Research = () => {
   const [secondaryHeroes] = useState([
     {
       buttonDisplay: "none",
-      heading:
-        "Advancing the frontiers of social science through AI technology",
+      heading: "AI Technology focused on insight, not just performance",
       image: TableConversation,
       id: 2,
     },
@@ -31,10 +30,10 @@ const Research = () => {
 
   const [publicationCovers] = useState([
     {
-      date: "May 2023",
-      heading: "CompliSent: a first step to compliance-proof",
+      date: "August 2023",
+      heading: "CompliSent: Accuracy engineered for understanding",
       paragraph:
-        "Aspect-based sentiment analysis model that analyses text-based data ranging from media and social media.",
+        "Fusing AI linguistics with configurable logic for interpretable sentiment scoring",
       id: 1,
       bgImage: Farms,
       graphic: PublicationCoverPattern,
@@ -47,11 +46,11 @@ const Research = () => {
     {
       bgColour: "#3C46FF",
       image: AerialDesert,
-      heading: "Streamline your research process",
+      heading: "Take CompliSent further with SentiBank integration",
       paragraph:
-        "Explore our toolbox equipped with interpretable AI models to assist you with your research.",
+        "Tailor sentiment analysis to your needs. Sentibank, the largest public repository of sentiment lexica and dictionaries, lets you integrate lexica optimized for your particular domain or application.",
       id: 7,
-      button: "Find out more",
+      button: "Browse SentiBank",
       link: "forsocialscientists",
       textColour: "white",
     },
@@ -61,11 +60,9 @@ const Research = () => {
     <>
       <meta
         name="description"
-        content="Socius creates publicly available AI models and systems that are not only state-of-the-art in terms of technical capabilities, but also deeply rooted in the principles of social science. Our objective is to advance the frontiers of social science research through the development and application of AI technologies. The story of Socius starts from a simple question: could computational intelligence help social scientists to consider every possible causative relationships between their theory-of-interest?"
+        content="Our goal is to create AI tools that embrace what makes social science so valuable, the pursuit of true understanding. That is why our research focuses on integrating AI models with core social science principles, enhancing interpretability, transparency, and accountability - areas where social science and modern AI diverge."
       />
-      <title>
-        Bridging Artificial Intelligence to Human Knowledge | socius
-      </title>
+      <title>Integrating AI with social science principles | socius</title>
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
       <TextBlocks textBlocks={textBlocks} />
       <PublicationCover publicationCovers={publicationCovers} />

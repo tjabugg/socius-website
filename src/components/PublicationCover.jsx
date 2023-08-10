@@ -21,14 +21,17 @@ const PublicationCovers = ({ publicationCovers }) => {
             <Date>{publicationCover.date}</Date>
             <Title>{publicationCover.heading}</Title>
             <Paragraph>{publicationCover.paragraph}</Paragraph>
-            <SecondaryButton
-              href={publicationCover.link}
-              style={{
-                display: publicationCover.display,
-              }}
-            >
-              Learn more
-            </SecondaryButton>
+
+            {publicationCover.link ? (
+              <SecondaryButton
+                href={publicationCover.link}
+                style={{
+                  display: publicationCover.display,
+                }}
+              >
+                Learn more
+              </SecondaryButton>
+            ) : null}
           </TextContainer>
 
           <ImageContainer>

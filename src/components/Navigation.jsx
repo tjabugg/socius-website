@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   PrimaryButton,
   Link,
@@ -8,23 +8,43 @@ import {
   Word,
 } from "../styles";
 import styled from "styled-components";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
-const Navigation = () => (
-  <HeaderContainer>
-    <Link href="/">
-      <LogoContainer>
-        <Logo title={`Socius logo`} />
-        <Word title={`Socius word`} />
-      </LogoContainer>
-    </Link>
+function Navigation() {
+  // Only apply effect to home page
+  const navRef = useRef(null);
+  useEffect(() => {
+    const el = navRef.current;
+    gsap.fromTo(
+      el,
+      { backgroundColor: "rgba(255, 255, 255, 0)", mixBlendMode: "difference" },
+      {
+        mixBlendMode: "normal",
+        backgroundColor: "rgba(255, 255, 255, 1)",
+        scrollTrigger: { start: "0px", end: "1px", scrub: 1},
+      }
+    );
+  }, []);
 
-    <NavContainer>
-      <Link href="/research">Research</Link>
-      <Link href="/database">Database</Link>
-      <NavButton href="/forsocialscientists">For Social Scientists</NavButton>
-    </NavContainer>
-  </HeaderContainer>
-);
+  return (
+    <HeaderContainer ref={navRef}>
+      <NavLink href="/">
+        <LogoContainer>
+          <Logo title={`Socius logo`} />
+          <Word title={`Socius word`} />
+        </LogoContainer>
+      </NavLink>
+
+      <NavContainer>
+        <NavLink href="/research">Research</NavLink>
+        <NavLink href="/database">Database</NavLink>
+        <NavButton href="/forsocialscientists">For Social Scientists</NavButton>
+      </NavContainer>
+    </HeaderContainer>
+  );
+}
 
 export default Navigation;
 
@@ -38,16 +58,21 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   width: 100%;
   z-index: 1000;
-  /* background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.25) 75%,
-    rgba(255, 255, 255, 0) 100%
-  ); */
   mix-blend-mode: difference;
 `;
 
 export const NavButton = styled(PrimaryButton)`
   background-color: white;
   color: black;
+  mix-blend-mode: difference;
+
+  &:hover {
+    background-color: #1b1b1b;
+    color: #cbdcff;
+    opacity: 100%;
+  }
+`;
+
+export const NavLink = styled(Link)`
+  mix-blend-mode: difference;
 `;

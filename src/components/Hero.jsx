@@ -48,10 +48,13 @@ const Play = () => {
 export default Hero;
 
 export const HeroContainer = styled.div`
+  padding: 0px;
+  margin: 0px;
   height: 90vh;
   width: 100%;
   box-sizing: border-box;
   position: relative;
+  top: -1px;
   display: inline-block;
 
   @media (max-width: 768px) {

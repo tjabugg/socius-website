@@ -9,6 +9,7 @@ import FriendsAtDusk from "../assets/images/friends.jpg";
 import CallToAction from "../components/CallToAction";
 import TextAndImage from "../components/TextAndImage";
 import styled from "styled-components";
+import PatternAnimation from "../assets/videos/5x5_Animation.json";
 
 import React from "react";
 import {
@@ -26,13 +27,13 @@ const Home = () => {
     {
       heading: "Bridging Artificial Intelligence to Human Knowledge",
       paragraph:
-        "We create publicly available AI models and systems that are not only state-of-the-art in terms of technical capabilities, but also deeply rooted in the principles of social science. Our objective is to advance the frontiers of social science research through the development and application of AI technologies. The story of Socius starts from a simple question: could computational intelligence help social scientists to consider every possible causative relationships between their theory-of-interest?",
+        "We create open-source AI models for computational social scientists seeking to integrate the predictive power of AI with the interpretability of traditional methods.\n\nUnlike standard R packages that can not interface with AI models or Python libraries that offer black-box solutions, we provide an open-source collection of transparent and accountable AI integrations. This allows researchers to leverage advanced techniques like deep-learning models, while still being able to understand and explain their models.",
       id: 1,
     },
     {
-      heading: "Discover how social scientists use our AI toolkits ",
+      heading: "Explore our resources for social scientists",
       paragraph:
-        "Limited to academic researchers, we provide FREE 24/5 support in terms of methodologies, models, algorithms and many more.",
+        "Our comprehensive documentation illuminates everything we offer - from model logic to data sources and from methodology to applications. This transforms complexity into accessible clarity, streamlining research workflows. With obstacles removed, social scientists can concentrate on driving impactful discoveries.\n\nAdditionally, for academic researchers, we offer extensive free support - including guidance on methodologies, algorithms, and domain-specific fine-tuned models. This provides the necessary resources to fully leverage AI innovations across disciplines.",
       id: 2,
     },
   ]);
@@ -42,19 +43,19 @@ const Home = () => {
       align: "center",
       image: FriendsAtDusk,
       padding: "0px",
-      heading: "Sentiment Analysis",
+      heading: "CompliSent",
       paragraph:
-        "Systematically identify and study affective states and subjective information.",
+        "Explore our comprehensive guides and resources to utilize CompliSent (sentium), through documentation crafted to simplify and streamline your research workflow.",
       alt: "A group of friends sat in the foreground before an evening sky",
       id: 1,
       link: "/",
     },
     {
       bgColour: "#CBDCFF",
-      image: "",
-      heading: "Keyword Extraction",
+      animation: PatternAnimation,
+      heading: "SentiBank",
       paragraph:
-        "Identification of terms that best describe the subject of a document",
+        "Access extensive documentation explaining the breadth of annotated lexica available in sentibank, to amplify the capabilities of your sentiment analysis.",
       alt: "An animation from the socius design system",
       id: 2,
       link: "/",
@@ -63,15 +64,15 @@ const Home = () => {
 
   const [textAndImages] = useState([
     {
-      heading: "Find out about our progress via our open source database",
+      heading: "Opening new research frontiers by pooling knowledge resources",
       paragraph:
-        "We advance the understanding of Social Science through the development and application of AI technologies. We know more than we used to, but we still know too little. Social scientists, like any other natural scientists, should also equip with state-of-the-art AI models, but models that are compatible with the principles of social science. ",
+        "Our public open data repository contains a growing collection of datasets from researchers worldwide - an inclusive knowledge base to fuel new breakthroughs.\n\nBy pooling diverse data in one place, we aim to simplify the process of data discovery, preparation, and aggregation.\n\nOur first project, sentibank, has compiled the largest public repository of annotated sentiment lexicons and dictionaries. With this robust labeled data conveniently accessible in one location, researchers can advance sentiment analysis with greater precision and customization tailored to their field or application.",
       id: 1,
-      button: "Learn more about our approach",
+      button: "Explore sentibank",
       video: Studying,
       alt: "An video a woman sat at a desk reading through a book",
       link: "/database",
-      imageDisplay: "none",
+      // imageDisplay: "none",
     },
   ]);
 
@@ -82,15 +83,14 @@ const Home = () => {
       textColour: "White",
     },
   ]);
+
   return (
     <>
       <meta
         name="description"
         content="Socius creates publicly available AI models and systems that are not only state-of-the-art in terms of technical capabilities, but also deeply rooted in the principles of social science. Our objective is to advance the frontiers of social science research through the development and application of AI technologies. The story of Socius starts from a simple question: could computational intelligence help social scientists to consider every possible causative relationships between their theory-of-interest?"
       />
-      <title>
-        Bridging Artificial Intelligence to Human Knowledge | socius
-      </title>
+      <title>Open-source AI models for social scientists | socius</title>
       <Hero />
       {/* Property name (blogs) with dynamic prop value {blogs} */}
       <TextBlocks
@@ -100,10 +100,9 @@ const Home = () => {
       <CentreText>
         <Subheading>Our Research</Subheading>
         <Body>
-          We aim to create AI tools that empower social scientists to make
-          discoveries that were previously impossible, to uncover new insights
-          into human behaviour and social systems, and to inform evidence-based
-          decisions.
+          Our research focuses on integrating AI with social science principles,
+          enhancing interpretability, transparency, and accountability - areas
+          where the two diverge. 
         </Body>
       </CentreText>
 
@@ -122,13 +121,14 @@ const Home = () => {
       <TextBlocks
         textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
       />
-      <ArticleCard articleCards={articleCards} alignment={"center"} />
 
       <TextAndImage textAndImages={textAndImages} />
 
+      <ArticleCard articleCards={articleCards} alignment={"center"} />
+
       <QuoteContainer>
         <Subheading>
-          "Artificial intelligence is not a substitute for human intelligence;
+          “Artificial intelligence is not a substitute for human intelligence;
           it's a tool to help us think."
         </Subheading>
         <Body>Fei-Fei Li</Body>

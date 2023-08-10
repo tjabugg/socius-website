@@ -7,6 +7,7 @@ import {
   ParentContainer,
   ImageContainer,
 } from "../styles";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 // Destructure blogs and title directly from the props
 const ArticleCards = ({ articleCards, alignment }) => {
@@ -24,13 +25,41 @@ const ArticleCards = ({ articleCards, alignment }) => {
               padding: articleCard.padding,
             }}
           >
-            <Graphic src={articleCard.image} alt={articleCard.alt}></Graphic>
+            {articleCard.animation ? (
+              <Player
+                // autoplay
+                // loop
+                hover={true}
+                src={articleCard.animation}
+              ></Player>
+            ) : null}
+
+            {articleCard.image ? (
+              <Graphic src={articleCard.image} alt={articleCard.alt}></Graphic>
+            ) : null}
           </GraphicContainer>
 
-          <Heading>{articleCard.heading}</Heading>
-          <Paragraph>{articleCard.paragraph}</Paragraph>
-          <SecondaryButton href={articleCard.link}>
-            {articleCard.button}Read more
+          <Subtitle
+            style={{
+              marginBottom: "8px",
+            }}
+          >
+            {articleCard.heading}
+          </Subtitle>
+          <Body
+            style={{
+              marginBottom: "16px",
+            }}
+          >
+            {articleCard.paragraph}
+          </Body>
+          <SecondaryButton
+            style={{
+              alignSelf: "flex-start",
+            }}
+            href={articleCard.link}
+          >
+            {articleCard.button}Learn more
           </SecondaryButton>
         </ArticleCard>
       ))}
@@ -43,15 +72,15 @@ export default ArticleCards;
 export const CardContainer = styled(ParentContainer)`
   flex-wrap: wrap;
   /* justify-content: center; */
-  margin: 8px;
-  gap: 0px;
+  margin: 0px 10px 24px 10px;
+  gap: 20px 0px;
 `;
 
 export const ArticleCard = styled.div`
   width: calc(33.3333333333% - 20px);
-  margin: 20px 10px;
-  align-items: center;
-  justify-content: center;
+  margin: 0px 10px;
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: 768px) {
     width: calc(100% - 20px);
@@ -59,21 +88,10 @@ export const ArticleCard = styled.div`
   }
 `;
 
-export const Heading = styled(Subtitle)`
-  margin: 0px 0px 8px 0px;
-`;
-
-export const Paragraph = styled(Body)`
-  margin: 0px 0px 24px 0px;
-`;
-
 export const GraphicContainer = styled(ImageContainer)`
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
   aspect-ratio: 1/1;
   margin: 0px 0px 16px 0px;
-
   padding: 40px;
 
   @media (max-width: 768px) {
