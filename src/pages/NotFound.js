@@ -7,14 +7,18 @@ import {
   CentreText,
 } from "../styles";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 
 const NotFound = () => (
   <Container>
-    <meta
-      name="description"
-      content="Socius creates publicly available AI models and systems that are not only state-of-the-art in terms of technical capabilities, but also deeply rooted in the principles of social science. Our objective is to advance the frontiers of social science research through the development and application of AI technologies. The story of Socius starts from a simple question: could computational intelligence help social scientists to consider every possible causative relationships between their theory-of-interest?"
-    />
-    <title>Open-source AI models for social scientists | socius</title>
+    <Helmet>
+      <title>Open-source AI models for social scientists | socius</title>
+      <meta
+        name="description"
+        content="We create open-source AI models for social scientists seeking to integrate the power of AI with the interpretability of traditional methods."
+      />
+    </Helmet>
+    ;
     <TextContainer>
       <Title>404</Title>
       <Caption>This page could not be found</Caption>

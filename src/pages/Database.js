@@ -8,10 +8,10 @@ import Lecturer from "../assets/images/lecturer.jpg";
 import React from "react";
 import Glasses from "../assets/videos/glasses.mp4";
 import Office from "../assets/videos/office.mp4";
-import CallToAction from "../components/CallToAction";
 import FooterCard from "../components/FooterCard";
 import SplitImage from "../components/SplitImage";
 import { Subheading, GridContainer } from "../styles";
+import { Helmet } from "react-helmet";
 
 const Database = () => {
   const [secondaryHeroes] = useState([
@@ -72,14 +72,6 @@ const Database = () => {
     },
   ]);
 
-  const [callToActions] = useState([
-    {
-      bgColour: "#51DA4C",
-      id: 1,
-      textColour: "#193718",
-    },
-  ]);
-
   const [footerCards] = useState([
     {
       bgColour: "#00002E",
@@ -96,11 +88,14 @@ const Database = () => {
 
   return (
     <>
-      <meta
-        name="description"
-        content="Socius creates publicly available AI models and systems that are not only state-of-the-art in terms of technical capabilities, but also deeply rooted in the principles of social science. Our objective is to advance the frontiers of social science research through the development and application of AI technologies. The story of Socius starts from a simple question: could computational intelligence help social scientists to consider every possible causative relationships between their theory-of-interest?"
-      />
-      <title>Optimising research through data discovery AI | socius</title>
+      <Helmet>
+        <title>Optimising research through data discovery AI | socius</title>
+        <meta
+          name="description"
+          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
+        />
+      </Helmet>
+
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
       <TextBlocks
         textBlocks={textBlocks.filter((textBlock) => textBlock.id === 1)}
@@ -121,7 +116,6 @@ const Database = () => {
         splitImages={splitImages.filter((splitImage) => splitImage.id === 2)}
       />
       <FooterCard footerCards={footerCards} />
-      <CallToAction callToActions={callToActions} />
     </>
   );
 };

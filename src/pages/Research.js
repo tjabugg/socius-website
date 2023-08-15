@@ -8,6 +8,7 @@ import React from "react";
 import PublicationCover from "../components/PublicationCover";
 import PublicationCoverPattern from "../assets/svgs/random/publication_cover_pattern.svg";
 import FooterCard from "../components/FooterCard";
+import { Helmet } from "react-helmet";
 
 const Research = () => {
   const [textBlocks] = useState([
@@ -58,11 +59,14 @@ const Research = () => {
 
   return (
     <>
-      <meta
-        name="description"
-        content="Our goal is to create AI tools that embrace what makes social science so valuable, the pursuit of true understanding. That is why our research focuses on integrating AI models with core social science principles, enhancing interpretability, transparency, and accountability - areas where social science and modern AI diverge."
-      />
-      <title>Integrating AI with social science principles | socius</title>
+      <Helmet>
+        <title>Integrating AI with social science principles | socius</title>
+        <meta
+          name="description"
+          content="Our research focuses on integrating AI models with social science principles - enhancing interpretability, transparency and accountability."
+        />{" "}
+      </Helmet>
+      ;
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
       <TextBlocks textBlocks={textBlocks} />
       <PublicationCover publicationCovers={publicationCovers} />

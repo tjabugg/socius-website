@@ -153,7 +153,6 @@ export const ParentContainer = styled.div`
   box-sizing: border-box;
   flex-direction: row;
   gap: 8px;
-  /* width: 100%; */
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -183,7 +182,6 @@ export const LetterContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  /* width: 100%; */
   overflow: hidden;
   border-radius: 20px;
 `;
@@ -236,6 +234,6 @@ export const PauseButton = styled.div`
   cursor: pointer;
 
   &:hover {
-    opacity: 30%;
+    opacity: 60%;
   }
 `;

@@ -14,6 +14,7 @@ import React from "react";
 import CallToAction from "../components/CallToAction";
 import ArticleCard from "../components/ArticleCard";
 import { Body, ParentContainer, Subheading } from "../styles";
+import { Helmet } from "react-helmet";
 
 const ForSocialScientists = () => {
   const [secondaryHeroes] = useState([
@@ -113,15 +114,25 @@ const ForSocialScientists = () => {
 
   return (
     <>
-      <meta
-        name="description"
-        content="Socius creates publicly available AI models and systems that are not only state-of-the-art in terms of technical capabilities, but also deeply rooted in the principles of social science. Our objective is to advance the frontiers of social science research through the development and application of AI technologies. The story of Socius starts from a simple question: could computational intelligence help social scientists to consider every possible causative relationships between their theory-of-interest?"
-      />
-      <title>Resources to simplify usage and amplify impact | socius</title>
+      <Helmet>
+        <title>Resources designed simplify AI model integration | socius</title>
+        <meta
+          name="description"
+          content="Our mission is to ensure that researchers have the resources to succeed. Navigate our tools and data seamlessly with complete documentation."
+        />
+      </Helmet>
 
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
-      <ParentContainer>
+      <ParentContainer
+        style={{
+          flexDirection: "column",
+        }}
+      >
         <Subheading>CompliSent</Subheading>
+        <Body>
+          Our first open-source fusion of AI prediction and human
+          interpretability for sentiment analysis. 
+        </Body>
       </ParentContainer>
       <ArticleCard articleCards={compliSentCards} />
       <ParentContainer
@@ -131,7 +142,8 @@ const ForSocialScientists = () => {
       >
         <Subheading>SentiBank</Subheading>
         <Body>
-          Public repository of annotated sentiment lexicons and dictionaries
+          An open database of expert-verified sentiment dictionaries and
+          lexicons, all accessible through a simple API. 
         </Body>
       </ParentContainer>
       <ArticleCard articleCards={sentiBankCards} />

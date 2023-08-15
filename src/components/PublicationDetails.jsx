@@ -99,7 +99,7 @@ export const TextContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   gap: 80px;
-  margin-left: 10vw;
+  margin-left: 14vw;
 
   @media (max-width: 768px) {
     gap: 0px;
