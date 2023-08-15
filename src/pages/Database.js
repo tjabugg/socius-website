@@ -19,7 +19,6 @@ const Database = () => {
       heading: "Accelerating social science research with accessible open data",
       videoAlt:
         "A close up of a woman's glasses with the reflection of her computer screen in her lenses",
-      imageDisplay: "none",
       video: Glasses,
       id: 1,
     },

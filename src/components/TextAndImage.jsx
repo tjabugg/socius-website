@@ -49,6 +49,7 @@ const TextAndImages = ({ textAndImages }) => {
               src={textAndImage.video}
               autoPlay={true}
               loop={true}
+              muted={true}
               playsInline={true}
             ></MyVideo>
           </GraphicContainer>

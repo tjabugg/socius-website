@@ -22,7 +22,6 @@ const Research = () => {
 
   const [secondaryHeroes] = useState([
     {
-      buttonDisplay: "none",
       heading: "AI Technology focused on insight, not just performance",
       image: TableConversation,
       id: 2,

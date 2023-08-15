@@ -18,6 +18,7 @@ const Hero = () => (
       autoPlay={true}
       loop={true}
       playsInline={true}
+      muted={true}
       // playsinline
     ></MyVideo>
     <PauseButton>

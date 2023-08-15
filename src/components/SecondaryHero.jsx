@@ -24,36 +24,34 @@ const SecondaryHero = ({ secondaryHeroes }) => {
             <Heading>{secondaryHero.heading}</Heading>
           </TextContainer>
           <GraphicContainer>
-            <MyImage
-              alt={secondaryHero.imageAlt}
-              style={{
-                display: secondaryHero.imageDisplay,
-              }}
-              src={secondaryHero.image}
-            ></MyImage>
-
-            <MyVideo
-              alt={secondaryHero.videoAlt}
-              id="myVideoControls"
-              style={{
-                display: secondaryHero.display,
-              }}
-              src={secondaryHero.video}
-              autoPlay={true}
-              loop={true}
-              playsInline={true}
-            ></MyVideo>
-            {/* should create a conditional statement for the display of the button */}
-            <PauseButton>
+            {secondaryHero.image ? (
               <MyImage
-                style={{
-                  display: secondaryHero.buttonDisplay,
-                }}
-                id="playButton"
-                src={PauseIcon}
-                onClick={Play}
+                alt={secondaryHero.imageAlt}
+                src={secondaryHero.image}
               ></MyImage>
-            </PauseButton>
+            ) : null}
+
+            {secondaryHero.video ? (
+              <MyVideo
+                alt={secondaryHero.videoAlt}
+                id="myVideoControls"
+                src={secondaryHero.video}
+                autoPlay={true}
+                loop={true}
+                playsInline={true}
+                muted={true}
+              ></MyVideo>
+            ) : null}
+
+            {secondaryHero.video ? (
+              <PauseButton>
+                <MyImage
+                  id="playButton"
+                  src={PauseIcon}
+                  onClick={Play}
+                ></MyImage>
+              </PauseButton>
+            ) : null}
           </GraphicContainer>
         </TextAndImage>
       ))}

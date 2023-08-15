@@ -20,7 +20,6 @@ const ForSocialScientists = () => {
   const [secondaryHeroes] = useState([
     {
       heading: "Documentation designed to simplify usage and amplify impact",
-      imageDisplay: "none",
       video: Code,
       videoAlt: "A close up a developer programming on a computer screen",
       id: 1,
