@@ -60,11 +60,29 @@ const Research = () => {
   return (
     <>
       <Helmet>
+        {/* <!-- Primary Meta Tags --> */}
         <title>Integrating AI with social science principles | socius</title>
+        <meta
+          name="title"
+          content="Integrating AI with social science principles | socius"
+        />
         <meta
           name="description"
           content="Our research focuses on integrating AI models with social science principles - enhancing interpretability, transparency and accountability."
-        />{" "}
+        />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
+        <meta
+          property="og:title"
+          content="Integrating AI with social science principles | socius"
+        />
+        <meta
+          property="og:description"
+          content="Our research focuses on integrating AI models with social science principles - enhancing interpretability, transparency and accountability."
+        />
+        <meta property="og:image" content={TableConversation} />
       </Helmet>
       ;
       <SecondaryHero secondaryHeroes={secondaryHeroes} />

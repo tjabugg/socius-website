@@ -89,11 +89,29 @@ const Database = () => {
   return (
     <>
       <Helmet>
+        {/* <!-- Primary Meta Tags --> */}
         <title>Optimising research through data discovery AI | socius</title>
+        <meta
+          name="title"
+          content="Optimising research through data discovery AI | socius"
+        />
         <meta
           name="description"
           content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
         />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
+        <meta
+          property="og:title"
+          content="Optimising research through data discovery AI | socius"
+        />
+        <meta
+          property="og:description"
+          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
+        />
+        <meta property="og:image" content={OpenBook} />
       </Helmet>
 
       <SecondaryHero secondaryHeroes={secondaryHeroes} />

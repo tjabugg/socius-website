@@ -115,11 +115,29 @@ const ForSocialScientists = () => {
   return (
     <>
       <Helmet>
+        {/* <!-- Primary Meta Tags --> */}
         <title>Resources designed simplify AI model integration | socius</title>
+        <meta
+          name="title"
+          content="Resources designed simplify AI model integration | socius"
+        />
         <meta
           name="description"
           content="Our mission is to ensure that researchers have the resources to succeed. Navigate our tools and data seamlessly with complete documentation."
         />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
+        <meta
+          property="og:title"
+          content="Resources designed simplify AI model integration | socius"
+        />
+        <meta
+          property="og:description"
+          content="Our mission is to ensure that researchers have the resources to succeed. Navigate our tools and data seamlessly with complete documentation."
+        />
+        <meta property="og:image" content={Moma} />
       </Helmet>
 
       <SecondaryHero secondaryHeroes={secondaryHeroes} />

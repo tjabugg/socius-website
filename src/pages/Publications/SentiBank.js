@@ -11,6 +11,7 @@ import Beach from "../../assets/images/beach.jpg";
 import Crowd from "../../assets/images/crowd.jpg";
 import FrozenIce from "../../assets/images/frozen_ice.jpg";
 import NewYork from "../../assets/images/new_york.jpg";
+import { Helmet } from "react-helmet";
 
 import styled from "styled-components";
 import {
@@ -103,11 +104,33 @@ const CompliSent = () => {
 
   return (
     <>
-      <meta
-        name="description"
-        content="An open database of sentiment lexicons and dictionaries that lets you integrate your chosen domain or application through a simple API."
-      />
-      <title>SentiBank: Unleashing the emotions of textual data | socius</title>
+      <Helmet>
+        {/* <!-- Primary Meta Tags --> */}
+        <title>
+          SentiBank: Unleashing the emotions of textual data | socius
+        </title>
+        <meta
+          name="title"
+          content="SentiBank: Unleashing the emotions of textual data | socius"
+        />
+        <meta
+          name="description"
+          content="An open database of sentiment lexicons and dictionaries that lets you integrate your chosen domain or application through a simple API."
+        />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
+        <meta
+          property="og:title"
+          content="SentiBank: Unleashing the emotions of textual data | socius"
+        />
+        <meta
+          property="og:description"
+          content="An open database of sentiment lexicons and dictionaries that lets you integrate your chosen domain or application through a simple API."
+        />
+        <meta property="og:image" content={Farms} />
+      </Helmet>
 
       <CoverContainer>
         <PublicationCover publicationCovers={publicationCovers} />

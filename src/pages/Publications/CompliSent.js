@@ -11,6 +11,7 @@ import Beach from "../../assets/images/beach.jpg";
 import Crowd from "../../assets/images/crowd.jpg";
 import FrozenIce from "../../assets/images/frozen_ice.jpg";
 import NewYork from "../../assets/images/new_york.jpg";
+import { Helmet } from "react-helmet";
 
 import styled from "styled-components";
 import {
@@ -103,11 +104,33 @@ const CompliSent = () => {
 
   return (
     <>
-      <meta
-        name="description"
-        content="A fusion of AI prediction and human interpretability for sentiment analysis by blending computational linguistics with adjustable rules."
-      />
-      <title>CompliSent: Accuracy engineered for understanding | socius</title>
+      <Helmet>
+        {/* <!-- Primary Meta Tags --> */}
+        <title>
+          CompliSent: Accuracy engineered for understanding | socius
+        </title>
+        <meta
+          name="title"
+          content="CompliSent: Accuracy engineered for understanding | socius"
+        />
+        <meta
+          name="description"
+          content="A fusion of AI prediction and human interpretability for sentiment analysis by blending computational linguistics with adjustable rules."
+        />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
+        <meta
+          property="og:title"
+          content="CompliSent: Accuracy engineered for understanding | socius"
+        />
+        <meta
+          property="og:description"
+          content="A fusion of AI prediction and human interpretability for sentiment analysis by blending computational linguistics with adjustable rules."
+        />
+        <meta property="og:image" content={Farms} />
+      </Helmet>
 
       <CoverContainer>
         <PublicationCover publicationCovers={publicationCovers} />
