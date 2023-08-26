@@ -2,12 +2,12 @@ import { useState } from "react";
 import React from "react";
 import PublicationCover from "../../components/PublicationCover";
 import Farms from "../../assets/images/farms.jpg";
-import PublicationCoverPattern from "../../assets/svgs/random/publication_cover_pattern.svg";
+import PublicationCoverPattern from "../../assets/svgs/random/random_cover_pattern.svg";
 import PublicationDetails from "../../components/PublicationDetails";
 import ArticleCard from "../../components/ArticleCard";
 import Random7x7Pattern01 from "../../assets/svgs/random/random_7x7_pattern_01.svg";
 import Organised15x15Pattern from "../../assets/svgs/organised/organised_15x15_pattern.svg";
-import Beach from "../../assets/images/beach.jpg";
+import Moma from "../../assets/images/moma.jpg";
 import Crowd from "../../assets/images/crowd.jpg";
 import FrozenIce from "../../assets/images/frozen_ice.jpg";
 import NewYork from "../../assets/images/new_york.jpg";
@@ -28,11 +28,10 @@ const CompliSent = () => {
       date: "August 2023",
       heading: "CompliSent: a first step to compliance-proof",
       paragraph:
-        "Aspect-based sentiment analysis model that analyses text-based data ranging from media and social media.",
+        "Fusing AI linguistics with configurable logic for interpretable sentiment scoring",
       id: 1,
       bgImage: Farms,
       graphic: PublicationCoverPattern,
-      padding: "24px",
     },
   ]);
 
@@ -62,15 +61,14 @@ const CompliSent = () => {
       caption: "Reference",
     },
     {
+      synopsis: "Author",
       paragraph: "Nick Oh",
-      credits: "Authors",
       id: 5,
     },
     {
-      paragraph:
-        "Karl Cobbe \nHunter Lightman\nVineet Kosaraju\nYura Burda\nHarri Edwards\nJan Leike\nIlya Sutskever",
-      credits: "References",
-      id: 5,
+      synopsis: "References",
+      paragraph: "Nick Oh",
+      id: 6,
     },
   ]);
 
@@ -80,15 +78,15 @@ const CompliSent = () => {
       bgColour: "#0000FF",
       heading: "Heuristic Engine: ‘tag_pos’",
       paragraph:
-        "Parts-of-Speech tagging to analyse grammar and identify word’s syntactic roles",
+        "Parts-of-Speech tagging to analyse grammar and identify word’s syntactic roles.",
       id: 1,
     },
     {
       padding: "0px",
-      image: Beach,
+      image: Moma,
       heading: "Heuristic Engine: ‘parse_aspect’",
       paragraph:
-        "Extract dependency relationships between aspects and their predicate",
+        "Extract dependency relationships between aspects and their predicate.",
       alt: "An aerial shot of people on a beach and in the sea",
       id: 2,
     },
@@ -97,7 +95,7 @@ const CompliSent = () => {
       bgColour: "#00002E",
       heading: "Heuristic Engine: ‘evaluate_senti (lex_dict)’",
       paragraph:
-        "Development of systems and devices that can recognise, interpret, process, and simulate human affects.",
+        "Compare and check whether any predicates match with the unigram lexicons in the dictionary.",
       id: 3,
     },
   ]);
@@ -188,6 +186,11 @@ const CompliSent = () => {
       <PublicationDetails
         publicationDetails={publicationDetails.filter(
           (publicationDetail) => publicationDetail.id === 5
+        )}
+      />
+      <PublicationDetails
+        publicationDetails={publicationDetails.filter(
+          (publicationDetail) => publicationDetail.id === 6
         )}
       />
 

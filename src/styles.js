@@ -28,7 +28,7 @@ export const Link = styled.a`
   cursor: pointer;
   opacity: 100%;
 
-  @media (max-width: 375px) {
+  @media (max-width: 414px) {
     font-size: 14px;
   }
 
@@ -67,8 +67,8 @@ export const Heading = styled.h1`
   color: #1b1b1b;
   line-height: 1.1;
 
-  @media (max-width: 768px) {
-    font-size: 50px;
+  @media (max-width: 1024px) {
+    font-size: 40px;
   }
 
   @media (max-width: 414px) {
@@ -114,6 +114,7 @@ export const Body = styled.p`
 
 export const Caption = styled(Body)`
   font-size: 14px;
+
   @media (max-width: 768px) {
     font-size: 14px;
   }

@@ -32,7 +32,7 @@ const Database = () => {
       id: 1,
       paddingBottom: "24px",
       button: "Read more",
-      link: "complisent",
+      link: "sentibank",
     },
     {
       heading: "Optimizing research through data discovery AI",
@@ -41,7 +41,8 @@ const Database = () => {
       id: 2,
       paddingBottom: "24px",
       button: "Get aligned data to power insights and innovations",
-      link: "complisent",
+      link: "mailto:nick.sh.oh@gmail.com",
+      target: "_blank"
     },
   ]);
 

@@ -39,7 +39,6 @@ const PublicationCovers = ({ publicationCovers }) => {
               alt={publicationCover.alt}
               src={publicationCover.graphic}
               style={{
-                padding: publicationCover.padding,
                 backgroundColor: publicationCover.bgColour,
                 backgroundImage: `url(${publicationCover.bgImage})`,
                 backgroundSize: "100%",
@@ -87,6 +86,11 @@ export const ImageContainer = styled.div`
 export const GraphicImage = styled(MyImage)`
   border-radius: 20px;
   box-sizing: border-box;
+  padding: 40px;
+
+  @media (max-width: 1024px) {
+    padding: 20px;
+  }
 `;
 
 export const TextContainer = styled(CentreText)`

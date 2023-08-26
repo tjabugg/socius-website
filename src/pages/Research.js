@@ -6,7 +6,7 @@ import TableConversation from "../assets/images/table_conversation.jpg";
 import AerialDesert from "../assets//images/aerial_desert.jpg";
 import React from "react";
 import PublicationCover from "../components/PublicationCover";
-import PublicationCoverPattern from "../assets/svgs/random/publication_cover_pattern.svg";
+import PublicationCoverPattern from "../assets/svgs/random/random_cover_pattern.svg";
 import FooterCard from "../components/FooterCard";
 import { Helmet } from "react-helmet";
 
@@ -37,7 +37,6 @@ const Research = () => {
       id: 1,
       bgImage: Farms,
       graphic: PublicationCoverPattern,
-      padding: "24px",
       link: "complisent",
     },
   ]);
@@ -51,7 +50,7 @@ const Research = () => {
         "Tailor sentiment analysis to your needs. Sentibank, the largest public repository of sentiment lexica and dictionaries, lets you integrate lexica optimized for your particular domain or application.",
       id: 7,
       button: "Browse SentiBank",
-      link: "forsocialscientists",
+      link: "sentibank",
       textColour: "white",
     },
   ]);

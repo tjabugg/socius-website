@@ -26,12 +26,7 @@ const ArticleCards = ({ articleCards, alignment }) => {
             }}
           >
             {articleCard.animation ? (
-              <Player
-                // autoplay
-                // loop
-                hover={true}
-                src={articleCard.animation}
-              ></Player>
+              <Player hover={true} src={articleCard.animation}></Player>
             ) : null}
 
             {articleCard.image ? (
@@ -74,6 +69,15 @@ export const CardContainer = styled(ParentContainer)`
   /* justify-content: center; */
   margin: 0px 10px 24px 10px;
   gap: 20px 0px;
+
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 414px) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ArticleCard = styled.div`
@@ -84,7 +88,7 @@ export const ArticleCard = styled.div`
 
   @media (max-width: 768px) {
     width: calc(100% - 20px);
-    margin: 0px 10px 24px 10px;
+    margin: 0px 10px 10px 10px;
   }
 `;
 

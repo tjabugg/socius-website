@@ -24,9 +24,9 @@ const Footer = () => (
       <TextContainer>
         <LinkContainer>
           <Title>Socials</Title>
-          <FooterLink href="/#">Instagram</FooterLink>
-          <FooterLink href="/#">GitHub</FooterLink>
-          <FooterLink href="/#">LinkedIn</FooterLink>
+          <FooterLink>Instagram</FooterLink>
+          <FooterLink>GitHub</FooterLink>
+          <FooterLink>LinkedIn</FooterLink>
         </LinkContainer>
 
         <LinkContainer>

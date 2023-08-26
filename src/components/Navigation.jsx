@@ -17,13 +17,14 @@ function Navigation() {
   const navRef = useRef(null);
   useEffect(() => {
     const el = navRef.current;
+
     gsap.fromTo(
       el,
       { backgroundColor: "rgba(255, 255, 255, 0)", mixBlendMode: "difference" },
       {
         mixBlendMode: "normal",
         backgroundColor: "rgba(255, 255, 255, 1)",
-        scrollTrigger: { start: "0px", end: "1px", scrub: 1},
+        scrollTrigger: { start: "0px", end: "1px", scrub: 1 },
       }
     );
   }, []);

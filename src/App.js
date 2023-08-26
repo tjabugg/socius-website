@@ -8,6 +8,7 @@ import { GlobalStyle } from "./styles";
 import { Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import CompliSent from "./pages/Publications/CompliSent";
+import SentiBank from "./pages/Publications/SentiBank";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/database" element={<Database />} />
         <Route path="/forsocialscientists" element={<ForSocialScientists />} />
         <Route path="/complisent" element={<CompliSent />} />
+        <Route path="/sentibank" element={<SentiBank />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

@@ -1,40 +1,50 @@
 import React from "react";
-import { MyVideo, MyImage, PauseButton, Heading } from "../styles";
+import {
+  MyVideo,
+  MyImage,
+  PauseButton,
+  Heading,
+  ImageContainer,
+} from "../styles";
 import HeroVideo from "../assets/videos/montage.mp4";
+import WebPattern from "../assets/videos/web_hero.json";
+import TabletPattern from "../assets/videos/tablet_hero.json";
+import MobilePattern from "../assets/videos/mobile_hero.json";
 import PauseIcon from "../assets/meta/pause_button.svg";
 import PlayIcon from "../assets/meta/play_button.svg";
-
+import { Player } from "@lottiefiles/react-lottie-player";
 import styled from "styled-components";
 
-const Hero = () => (
-  <HeroContainer>
-    <MyVideo
-      id="myVideoControls"
-      style={{
-        borderRadius: "0px",
-      }}
-      alt={`A portrait of Tony Bugg`}
-      src={HeroVideo}
-      autoPlay={true}
-      loop={true}
-      playsInline={true}
-      muted={true}
-      // playsinline
-    ></MyVideo>
-    <PauseButton>
-      <MyImage
-        id="playButton"
-        src={PauseIcon}
-        onClick={Play}
+const Hero = () => {
+  return (
+    <HeroContainer>
+      <MyVideo
+        id="myVideoControls"
+        style={{
+          borderRadius: "0px",
+        }}
         alt="A video montage of nature and society"
-      ></MyImage>
-    </PauseButton>
+        src={HeroVideo}
+        autoPlay={true}
+        loop={true}
+        playsInline={true}
+        muted={true}
+      ></MyVideo>
 
-    <HeroText>
-      Empowering the pioneers of today’s social science research
-    </HeroText>
-  </HeroContainer>
-);
+      <ImageContainer>
+        <DesktopHero autoplay loop src={WebPattern}></DesktopHero>
+        <TabletHero autoplay loop src={TabletPattern}></TabletHero>
+        <MobileHero autoplay loop src={MobilePattern}></MobileHero>
+      </ImageContainer>
+      <PauseButton>
+        <MyImage id="playButton" src={PauseIcon} onClick={Play}></MyImage>
+      </PauseButton>
+      <HeroText>
+        Empowering the pioneers of today’s social science research
+      </HeroText>
+    </HeroContainer>
+  );
+};
 
 const Play = () => {
   if (document.getElementById("myVideoControls").paused) {
@@ -67,28 +77,31 @@ export const HeroText = styled(Heading)`
   width: 70%;
   position: absolute;
   top: 80px;
-  left: 16px;
+  left: 20px;
   color: white;
 `;
 
-export const DesktopPattern = styled(MyImage)`
+export const DesktopHero = styled(Player)`
+  position: absolute;
+  bottom: 0px;
+
   @media (max-width: 768px) {
     display: none;
   }
 `;
 
-export const TabletPattern = styled(MyImage)`
+export const TabletHero = styled(DesktopHero)`
   display: none;
 
-  @media (max-width: 768px) and (min-width: 376px) {
+  @media (max-width: 768px) and (min-width: 415px) {
     display: block;
   }
 `;
 
-export const MobilePattern = styled(MyImage)`
+export const MobileHero = styled(DesktopHero)`
   display: none;
 
-  @media (max-width: 375px) {
+  @media (max-width: 414px) {
     display: block;
   }
 `;

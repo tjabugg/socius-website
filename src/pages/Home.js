@@ -9,7 +9,7 @@ import FriendsAtDusk from "../assets/images/friends.jpg";
 import CallToAction from "../components/CallToAction";
 import TextAndImage from "../components/TextAndImage";
 import styled from "styled-components";
-import PatternAnimation from "../assets/videos/5x5_Animation.json";
+import PatternAnimation from "../assets/videos/5x5_animation.json";
 import { Helmet } from "react-helmet";
 
 import React from "react";
@@ -49,7 +49,7 @@ const Home = () => {
         "Explore our comprehensive guides and resources to utilize CompliSent (sentium), through documentation crafted to simplify and streamline your research workflow.",
       alt: "A group of friends sat in the foreground before an evening sky",
       id: 1,
-      link: "/",
+      // link: "",
     },
     {
       bgColour: "#CBDCFF",
@@ -59,7 +59,7 @@ const Home = () => {
         "Access extensive documentation explaining the breadth of annotated lexica available in sentibank, to amplify the capabilities of your sentiment analysis.",
       alt: "An animation from the socius design system",
       id: 2,
-      link: "/",
+      // link: "",
     },
   ]);
 
@@ -72,8 +72,7 @@ const Home = () => {
       button: "Explore sentibank",
       video: Studying,
       alt: "An video a woman sat at a desk reading through a book",
-      link: "/database",
-      // imageDisplay: "none",
+      link: "/sentibank",
     },
   ]);
 
