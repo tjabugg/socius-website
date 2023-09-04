@@ -16,6 +16,16 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import styled from "styled-components";
 
 const Hero = () => {
+  const Play = () => {
+    if (document.getElementById("myVideoControls").paused) {
+      document.getElementById("myVideoControls").play();
+      document.getElementById("playButton").src = PauseIcon;
+    } else {
+      document.getElementById("myVideoControls").pause();
+      document.getElementById("playButton").src = PlayIcon;
+    }
+  };
+
   return (
     <HeroContainer>
       <MyVideo
@@ -30,7 +40,7 @@ const Hero = () => {
         playsInline={true}
         muted={true}
       ></MyVideo>
-
+{/* Add controls */}
       <ImageContainer>
         <DesktopHero autoplay loop src={WebPattern}></DesktopHero>
         <TabletHero autoplay loop src={TabletPattern}></TabletHero>
@@ -44,16 +54,6 @@ const Hero = () => {
       </HeroText>
     </HeroContainer>
   );
-};
-
-const Play = () => {
-  if (document.getElementById("myVideoControls").paused) {
-    document.getElementById("myVideoControls").play();
-    document.getElementById("playButton").src = PauseIcon;
-  } else {
-    document.getElementById("myVideoControls").pause();
-    document.getElementById("playButton").src = PlayIcon;
-  }
 };
 
 export default Hero;

@@ -120,12 +120,7 @@ export const Caption = styled(Body)`
   }
 `;
 
-export const MyImage = styled.img`
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-`;
+
 
 export const CentreContainer = styled.div`
   text-align: center;
@@ -185,6 +180,13 @@ export const LetterContainer = styled.div`
 export const ImageContainer = styled.div`
   overflow: hidden;
   border-radius: 20px;
+`;
+
+export const MyImage = styled.img`
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 `;
 
 export const NavContainer = styled.nav`
