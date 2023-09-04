@@ -9,7 +9,7 @@ import FriendsAtDusk from "../assets/images/friends.jpg";
 import CallToAction from "../components/CallToAction";
 import TextAndImage from "../components/TextAndImage";
 import styled from "styled-components";
-import PatternAnimation from "../assets/videos/5x5_animation.json";
+// import PatternAnimation from "../assets/videos/5x5_animation.json";
 import { Helmet } from "react-helmet";
 
 import React from "react";
@@ -53,7 +53,7 @@ const Home = () => {
     },
     {
       bgColour: "#CBDCFF",
-      animation: PatternAnimation,
+      // animation: PatternAnimation,
       heading: "SentiBank",
       paragraph:
         "Access extensive documentation explaining the breadth of annotated lexica available in sentibank, to amplify the capabilities of your sentiment analysis.",
