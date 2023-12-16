@@ -8,13 +8,14 @@ import {
   GridContainer,
   Body,
   LogoContainer,
+  ParentContainer,
 } from "../styles";
 import DesktopFooter from "../assets/svgs/random/desktop_footer_pattern.svg";
 import TabletFooter from "../assets/svgs/random/tablet_footer_pattern.svg";
 import MobileFooter from "../assets/svgs/random/mobile_footer_pattern.svg";
 
 const Footer = () => (
-  <ParentContainer>
+  <Container>
     <Grid>
       <LogoContainer>
         <Logo title={`Socius logo`} />
@@ -53,11 +54,11 @@ const Footer = () => (
       </TextContainer>
     </Grid>
     <PatternContainer>
-      <DesktopPattern alt={`Full bleed pattern`} src={DesktopFooter} />
+      {/* <DesktopPattern alt={`Full bleed pattern`} src={DesktopFooter} />
       <TabletPattern alt={`Full bleed pattern`} src={TabletFooter} />
-      <MobilePattern alt={`Full bleed pattern`} src={MobileFooter} />{" "}
+      <MobilePattern alt={`Full bleed pattern`} src={MobileFooter} />{" "} */}
     </PatternContainer>{" "}
-  </ParentContainer>
+  </Container>
 );
 
 export default Footer;
@@ -65,23 +66,29 @@ export default Footer;
 export const PatternContainer = styled.div`
   bottom: 0vh;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 24px;
 `;
 
 export const Grid = styled(GridContainer)`
-  margin: 20px 20px 80px 20px;
+  margin: 24px 24px 80px 24px;
 
   @media (max-width: 768px) {
     gap: 16px;
   }
 `;
 
-export const ParentContainer = styled.div`
-  display: flex;
+export const Container = styled(ParentContainer)`
   justify-content: space-between;
-  background-color: #193718;
+  align-items: stretch;
+  background-color: #1b1b1b;
   flex-direction: column;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 20px;
+  height: 40vh;
+  margin: 24px auto 24px auto;
+
+  @media (max-width: 1728px) {
+    margin: 24px;
+  }
 `;
 
 export const TextContainer = styled.div`

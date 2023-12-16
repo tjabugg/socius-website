@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { ReactComponent as SociusLogo } from "./assets/meta/socius_logo.svg";
-import { ReactComponent as SociusWord } from "./assets/meta/socius_word.svg";
+import { ReactComponent as SociusWord } from "./assets/meta/socius_logotype.svg";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -11,24 +11,25 @@ export const GlobalStyle = createGlobalStyle`
     
 }
 body {
-    font-family: 'Neue-Haas-Grotesk', sans-serif;
+    font-family: 'Porpora';
     font-style: normal;
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     background-color: white;
+    color: #1b1b1b;
 }
 `;
 
 export const Link = styled.a`
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   color: white;
   cursor: pointer;
   opacity: 100%;
 
-  @media (max-width: 414px) {
+  @media (max-width: 1728px) {
     font-size: 14px;
   }
 
@@ -53,11 +54,23 @@ export const PrimaryButton = styled(Link)`
 
 export const SecondaryButton = styled(PrimaryButton)`
   background-color: #e5e5e5;
-  color: black;
+  color: #1b1b1b;
 
   &:hover {
     background-color: #d9ffd8;
-    color: black;
+    color: #1b1b1b;
+  }
+`;
+export const TertiaryButton = styled(PrimaryButton)`
+  border-bottom: 1px solid #1b1b1b;
+  color: #1b1b1b;
+  background-color: white;
+  border-radius: 0px;
+  padding: 0px;
+
+  &:hover {
+    background-color: white;
+    border-bottom: 1px solid white;
   }
 `;
 
@@ -67,7 +80,7 @@ export const Heading = styled.h1`
   color: #1b1b1b;
   line-height: 1.1;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 992px) {
     font-size: 40px;
   }
 
@@ -77,10 +90,14 @@ export const Heading = styled.h1`
 `;
 
 export const Subheading = styled.h2`
-  font-size: 40px;
+  font-size: 48px;
   font-family: "Montagu Slab", serif;
   line-height: 1.1;
   color: #1b1b1b;
+
+  @media (max-width: 1728px) {
+    font-size: 40px;
+  }
 
   @media (max-width: 414px) {
     font-size: 28px;
@@ -88,39 +105,37 @@ export const Subheading = styled.h2`
 `;
 
 export const Title = styled.h3`
+  font-size: 36px;
+  font-family: "Montagu Slab", serif;
+  line-height: 1.1;
+  color: #1b1b1b;
+
+  @media (max-width: 1728px) {
+    font-size: 32px;
+  }
+`;
+
+export const Subtitle = styled.h4`
   font-size: 24px;
   font-family: "Montagu Slab", serif;
   line-height: 1.1;
   color: #1b1b1b;
 `;
 
-export const Subtitle = styled.h4`
-  font-size: 20px;
-  font-family: "Montagu Slab", serif;
-  line-height: 1.1;
-  color: #1b1b1b;
-`;
-
 export const Body = styled.p`
-  font-size: 16px;
+  font-size: 18px;
   color: #1b1b1b;
   line-height: 1.3;
   white-space: pre-wrap;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1728px) {
     font-size: 17px;
   }
 `;
 
 export const Caption = styled(Body)`
   font-size: 14px;
-
-  @media (max-width: 768px) {
-    font-size: 14px;
-  }
 `;
-
-
 
 export const CentreContainer = styled.div`
   text-align: center;
@@ -132,8 +147,8 @@ export const CentreContainer = styled.div`
 `;
 
 export const CentreText = styled(CentreContainer)`
-  gap: 8px;
-  margin: 0vw 25vw;
+  gap: 24px;
+  margin: 64px 25vw 40px 25vw;
 
   @media (max-width: 768px) {
     margin: 16px;
@@ -141,14 +156,18 @@ export const CentreText = styled(CentreContainer)`
 `;
 
 export const ParentContainer = styled.div`
-  margin: 20px;
-  text-align: left;
+
+  margin: 24px auto 24px auto;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
   box-sizing: border-box;
   flex-direction: row;
   gap: 8px;
+  max-width: 1728px;
+
+  @media (max-width: 1728px) {
+    margin: 24px;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -158,8 +177,13 @@ export const ParentContainer = styled.div`
 export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px 20px;
-  margin: 20px;
+  gap: 24px 24px;
+  max-width: 1728px;
+  margin: 24px auto;
+
+  @media (max-width: 1728px) {
+    margin: 24px;
+  }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -169,6 +193,7 @@ export const GridContainer = styled.div`
 
 export const LetterContainer = styled.div`
   height: 80vh;
+  width: 100%;
   box-sizing: border-box;
   border-radius: 20px;
 
@@ -192,7 +217,7 @@ export const MyImage = styled.img`
 export const NavContainer = styled.nav`
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 24px;
   align-items: center;
 `;
 
@@ -202,16 +227,20 @@ export const LogoContainer = styled(NavContainer)`
 `;
 
 export const Logo = styled(SociusLogo)`
-  height: 18px;
+  height: 20px;
   margin-top: 2px;
-  width: 18px;
-  display: block;
+  width: 20px;
+  display: none;
   mix-blend-mode: difference;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 
 export const Word = styled(SociusWord)`
-  height: 20px;
-  width: 80px;
+  height: 22px;
+  width: 103px;
   display: block;
   mix-blend-mode: difference;
 

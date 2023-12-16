@@ -1,4 +1,4 @@
-import React from "react";
+import { useRef, React } from "react";
 import {
   MyVideo,
   MyImage,
@@ -12,61 +12,98 @@ import TabletPattern from "../assets/videos/tablet_hero.json";
 import MobilePattern from "../assets/videos/mobile_hero.json";
 import PauseIcon from "../assets/meta/pause_button.svg";
 import PlayIcon from "../assets/meta/play_button.svg";
-import { Player } from "@lottiefiles/react-lottie-player";
+import Lottie from "lottie-react";
 import styled from "styled-components";
 
 const Hero = () => {
+  const desktopRef = useRef();
+  const tabletRef = useRef();
+  const mobileRef = useRef();
+  const videoControls = useRef();
+  const playButton = useRef();
+
   const Play = () => {
-    if (document.getElementById("myVideoControls").paused) {
-      document.getElementById("myVideoControls").play();
-      document.getElementById("playButton").src = PauseIcon;
+    if (videoControls.current.paused) {
+      videoControls.current.play();
+      playButton.current.src = PauseIcon;
+      desktopRef.current.play();
+      tabletRef.current.play();
+      mobileRef.current.play();
     } else {
-      document.getElementById("myVideoControls").pause();
-      document.getElementById("playButton").src = PlayIcon;
+      playButton.current.src = PlayIcon;
+      videoControls.current.pause();
+      desktopRef.current.pause();
+      tabletRef.current.pause();
+      mobileRef.current.pause();
     }
   };
 
+  // const lottieRef = useRef<LottieRefCurrentProps |
+
   return (
-    <HeroContainer>
-      <MyVideo
-        id="myVideoControls"
-        style={{
-          borderRadius: "0px",
-        }}
-        alt="A video montage of nature and society"
-        src={HeroVideo}
-        autoPlay={true}
-        loop={true}
-        playsInline={true}
-        muted={true}
-      ></MyVideo>
-{/* Add controls */}
+    <Container>
+      <HeroContainer>
+        <MyVideo
+          ref={videoControls}
+          style={{
+            borderRadius: "0px",
+          }}
+          alt="A video montage of nature and society"
+          src={HeroVideo}
+          autoPlay={true}
+          loop={true}
+          playsInline={true}
+          muted={true}
+        ></MyVideo>
+        {/* Add controls */}
+      </HeroContainer>
+
       <ImageContainer>
-        <DesktopHero autoplay loop src={WebPattern}></DesktopHero>
-        <TabletHero autoplay loop src={TabletPattern}></TabletHero>
-        <MobileHero autoplay loop src={MobilePattern}></MobileHero>
+        <DesktopHero lottieRef={desktopRef} animationData={WebPattern} />
+        <TabletHero lottieRef={tabletRef} src={TabletPattern} />
+        <MobileHero lottieRef={mobileRef} src={MobilePattern} />
       </ImageContainer>
       <PauseButton>
-        <MyImage id="playButton" src={PauseIcon} onClick={Play}></MyImage>
+        <MyImage ref={playButton} src={PauseIcon} onClick={Play}></MyImage>
       </PauseButton>
       <HeroText>
         Empowering the pioneers of today’s social science research
       </HeroText>
-    </HeroContainer>
+    </Container>
   );
 };
 
 export default Hero;
 
 export const HeroContainer = styled.div`
-  padding: 0px;
-  margin: 0px;
-  height: 90vh;
+  /* padding: 0px; */
+  /* margin: 24px; */
+  /* height: 90vh;
   width: 100%;
   box-sizing: border-box;
   position: relative;
   top: -1px;
+  display: inline-block; */
+  /* height: 80vh; */
+  /* width: 100%; */
+  box-sizing: border-box;
+  height: 80vh;
+  /* width: 100%; */
+
+  @media (max-width: 768px) {
+    height: 80vh;
+  }
+`;
+
+export const Container = styled.div`
+  /* padding: 0px; */
+  /* height: 90vh; */
+  margin: 84px 0px 0px 0px;
   display: inline-block;
+  position: relative;
+  width: 100%;
+
+  /* display: inline-block; */
 
   @media (max-width: 768px) {
     height: 80vh;
@@ -77,31 +114,32 @@ export const HeroText = styled(Heading)`
   width: 70%;
   position: absolute;
   top: 80px;
-  left: 20px;
+  left: 24px;
   color: white;
 `;
 
-export const DesktopHero = styled(Player)`
+export const DesktopHero = styled(Lottie)`
   position: absolute;
   bottom: 0px;
+  width: 100vw;
 
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     display: none;
-  }
+  } */
 `;
 
-export const TabletHero = styled(DesktopHero)`
+export const TabletHero = styled(Lottie)`
   display: none;
 
-  @media (max-width: 768px) and (min-width: 415px) {
+  @media (max-width: 768px) and (min-width: 376px) {
     display: block;
   }
 `;
 
-export const MobileHero = styled(DesktopHero)`
+export const MobileHero = styled(Lottie)`
   display: none;
 
-  @media (max-width: 414px) {
+  @media (max-width: 375px) {
     display: block;
   }
 `;

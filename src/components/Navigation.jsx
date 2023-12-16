@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
+// import React, { useEffect, useRef } from "react";
 import {
   PrimaryButton,
   Link,
@@ -14,23 +15,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Navigation() {
   // Only apply effect to home page
-  const navRef = useRef(null);
-  useEffect(() => {
-    const el = navRef.current;
+  // const navRef = useRef(null);
+  // useEffect(() => {
+  //   const el = navRef.current;
 
-    gsap.fromTo(
-      el,
-      { backgroundColor: "rgba(255, 255, 255, 0)", mixBlendMode: "difference" },
-      {
-        mixBlendMode: "normal",
-        backgroundColor: "rgba(255, 255, 255, 1)",
-        scrollTrigger: { start: "0px", end: "1px", scrub: 1 },
-      }
-    );
-  }, []);
+  //   gsap.fromTo(
+  //     el,
+  //     { backgroundColor: "rgba(255, 255, 255, 0)", mixBlendMode: "difference" },
+  //     {
+  //       mixBlendMode: "normal",
+  //       backgroundColor: "rgba(255, 255, 255, 1)",
+  //       scrollTrigger: { start: "0px", end: "1px", scrub: 1 },
+  //     }
+  //   );
+  // }, []);
 
   return (
-    <HeaderContainer ref={navRef}>
+    // ref={navRef}
+    <HeaderContainer >
       <NavLink href="/">
         <LogoContainer>
           <Logo title={`Socius logo`} />
@@ -50,7 +52,7 @@ function Navigation() {
 export default Navigation;
 
 export const HeaderContainer = styled.header`
-  padding: 20px;
+  padding: 24px;
   box-sizing: border-box;
   position: fixed;
   display: flex;
@@ -59,7 +61,8 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   width: 100%;
   z-index: 1000;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
+  background-color: white;
 `;
 
 export const NavButton = styled(PrimaryButton)`

@@ -9,9 +9,12 @@ import Beach from "../assets/images/beach.jpg";
 import Silhouette from "../assets/images/silhouette.jpg";
 import Moma from "../assets/images/moma.jpg";
 import CountrysidePainting from "../assets/images/countryside_painting.jpg";
+import Sitting from "../assets/images/sitting.jpg";
+import Whiteboard from "../assets/images/whiteboard.jpg";
 import Code from "../assets/videos/code.mp4";
 import React from "react";
 import CallToAction from "../components/CallToAction";
+import styled from "styled-components";
 import ArticleCard from "../components/ArticleCard";
 import { Body, ParentContainer, Subheading } from "../styles";
 import { Helmet } from "react-helmet";
@@ -28,43 +31,40 @@ const ForSocialScientists = () => {
   const [compliSentCards] = useState([
     {
       image: Random7x7Pattern01,
-      bgColour: "#0000FF",
-      heading: "Heuristic Engine: ‘tag_pos’",
-      paragraph:
-        "Parts-of-Speech tagging to analyse grammar and identify word’s syntactic roles.",
+      bgColour: "#3C46FF",
+      heading: "tag_pos",
+      paragraph: "Tags parts-of-speech to analyse grammar and syntax.",
       id: 1,
     },
     {
       padding: "0px",
       image: Moma,
-      heading: "Heuristic Engine: ‘parse_aspect’",
+      heading: "parse_aspect",
       paragraph:
-        "Extract dependency relationships between aspects and their predicate.",
-      alt: "An aerial shot of people on a beach and in the sea",
+        "Extracts dependency relationships between aspects and their predicates.",
+      alt: "An aerial photograph of people sat on a bench in the MOMA.",
       id: 2,
     },
     {
       image: Organised15x15Pattern,
       bgColour: "#00002E",
-      heading: "Heuristic Engine: ‘evaluate_senti (lex_dict)’",
-      paragraph:
-        "Compare and check whether any predicates match with the unigram lexicons in the dictionary.",
+      heading: "lex_dict",
+      paragraph: "Compares predicates to sentiment lexicons for matches.",
       id: 3,
     },
     {
       padding: "0px",
       image: Silhouette,
-      heading: "Heuristic Engine: ‘evaluate_senti (identify_ngram)’",
+      heading: "identify_ngram",
       paragraph:
-        "Examine whether any ‘span’ of the predicates match with the n-gram lexicons in the dictionary.",
+        "Identifies matches between predicates and grammatical variations in n-gram lexicons.",
       id: 4,
     },
     {
       image: Organised5x5Pattern,
       bgColour: "#D9FFD8",
-      heading: "Heuristic Engine: `evaluate_senti (fine_tune)`",
-      paragraph:
-        "Refine the sentiment score  based on the predefined fine-tuning rules.",
+      heading: "fine_tune",
+      paragraph: "Refines sentiment score using predefined logic.",
       id: 5,
     },
   ]);
@@ -73,41 +73,62 @@ const ForSocialScientists = () => {
     {
       image: Organised10x10Pattern,
       bgColour: "#51DA4C",
-      heading: "VADER",
+      heading: "AFINN",
       paragraph:
-        "VADER is a rule-based sentiment analysis algorithm, particularly aimed at social media texts, that uses a sentiment polarity and intensity (valence) sensitive lexicon dictionary.",
+        "General purpose lexicon with sentiment ratings for common emotion words.",
       id: 1,
     },
     {
       padding: "0px",
       image: Beach,
-      heading: "MASTER",
+      heading: "Aigents+",
       paragraph:
-        "While a sentiment dictionary designed to be applied in the general domain may be useful, a finance-specific dictionary called MASTER  was created to address the constraints of generality. ",
+        "Lexicon optimised for social media posts related to cryptocurrencies.",
       alt: "An aerial shot of people on a beach and in the sea",
       id: 2,
     },
     {
       image: Random7x7Pattern02,
       bgColour: "#193718",
-      heading: "AFINN",
-      paragraph: "",
+      heading: "General Inquirer",
+      paragraph:
+        "Lexicon capturing broad psycholinguistic dimensions across semantics, values and motivations.",
       id: 3,
     },
     {
       padding: "0px",
-      image: CountrysidePainting,
-      heading: "Aigents+",
-      paragraph: "",
+      image: Sitting,
+      heading: "MASTER",
+      paragraph:
+        "Financial lexicons covering expressions common in business writing.",
       id: 4,
+    },
+    {
+      padding: "0px",
+      image: CountrysidePainting,
+      heading: "Vader",
+      paragraph:
+        "General purpose lexicon optimised for social media and microblogs.",
+      id: 5,
+    },
+    {
+      padding: "0px",
+      image: Whiteboard,
+      heading: "WordNet-Affect",
+      paragraph:
+        "Financial lexicons covering expressions common in business writing.",
+      id: 6,
     },
   ]);
 
   const [callToActions] = useState([
     {
+      heading:
+        "Our mission is ensuring researchers have the resources to succeed. ",
       bgColour: "#00002E",
       id: 7,
       textColour: "#CBDCFF",
+      button: "Request assistance",
     },
   ]);
 
@@ -140,29 +161,17 @@ const ForSocialScientists = () => {
       </Helmet>
 
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
-      <ParentContainer
-        style={{
-          flexDirection: "column",
-        }}
-      >
-        <Subheading>CompliSent</Subheading>
-        <Body>
-          Our first open-source fusion of AI prediction and human
-          interpretability for sentiment analysis. 
-        </Body>
-      </ParentContainer>
+      <HeadingContainer>
+        <Subheading>Sentium</Subheading>
+        <Body>Sentiment analysis designed for human interpretability.</Body>
+      </HeadingContainer>
       <ArticleCard articleCards={compliSentCards} />
-      <ParentContainer
-        style={{
-          flexDirection: "column",
-        }}
-      >
+
+      <HeadingContainer>
         <Subheading>SentiBank</Subheading>
-        <Body>
-          An open database of expert-verified sentiment dictionaries and
-          lexicons, all accessible through a simple API. 
-        </Body>
-      </ParentContainer>
+        <Body>Gold-standard sentiment dictionaries in one repository.</Body>
+      </HeadingContainer>
+
       <ArticleCard articleCards={sentiBankCards} />
       <CallToAction callToActions={callToActions} />
     </>
@@ -170,3 +179,12 @@ const ForSocialScientists = () => {
 };
 
 export default ForSocialScientists;
+
+export const HeadingContainer = styled(ParentContainer)`
+  flex-direction: column;
+  padding: 12px;
+
+  @media (max-width: 1728px) {
+    padding: 0px;
+  }
+`;

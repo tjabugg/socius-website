@@ -14,7 +14,7 @@ import PlayIcon from "../assets/meta/play_button.svg";
 // Destructure blogs and title directly from the props
 const SecondaryHero = ({ secondaryHeroes }) => {
   return (
-    <CentreContainer>
+    <div>
       {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
       {/* Fires callback function for each item, whereby we return a jsx template */}
       {secondaryHeroes.map((secondaryHero) => (
@@ -23,6 +23,7 @@ const SecondaryHero = ({ secondaryHeroes }) => {
           <TextContainer>
             <Heading>{secondaryHero.heading}</Heading>
           </TextContainer>
+
           <GraphicContainer>
             {secondaryHero.image ? (
               <MyImage
@@ -55,7 +56,7 @@ const SecondaryHero = ({ secondaryHeroes }) => {
           </GraphicContainer>
         </TextAndImage>
       ))}
-    </CentreContainer>
+    </div>
   );
 };
 
@@ -72,18 +73,25 @@ const Play = () => {
 export default SecondaryHero;
 
 export const TextContainer = styled(CentreText)`
-  margin: 0px 10vw 16px 10vw;
+  padding: 0px 10vw 24px 10vw;
+  margin: 0px;
 
   @media (max-width: 768px) {
-    margin: 0vw 0vw 16px 0vw;
+    padding: 0vw 0vw 24px 0vw;
   }
 `;
 
-export const TextAndImage = styled(CentreContainer)`
-  margin: 64px 20px 0px 20px;
+export const TextAndImage = styled.div`
+  /* margin: 84px 24px 0px 24px;
   padding: 0px;
   position: relative;
   display: inline-block;
+  width: 100% */
+
+  margin: 84px 24px 0px 24px;
+  display: inline-block;
+  position: relative;
+  width: calc(100% - 48px);
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -93,7 +101,6 @@ export const TextAndImage = styled(CentreContainer)`
 
 export const GraphicContainer = styled(ImageContainer)`
   height: 80vh;
-  width: 100%;
 
   @media (max-width: 414px) {
     height: 50vh;

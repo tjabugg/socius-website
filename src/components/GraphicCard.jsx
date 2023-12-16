@@ -1,33 +1,46 @@
 import React from "react";
 import { Body, GridContainer, SecondaryButton } from "../styles";
 import styled from "styled-components";
-import { CentreContainer, Title, MyImage } from "../styles";
-import LandscapePattern from "../assets/svgs/random/landscape_card_pattern.svg";
-import SquarePattern from "../assets/svgs/random/square_card_pattern.svg";
+import { CentreContainer, Subtitle, MyImage } from "../styles";
 
 // Destructure blogs and title directly from the props
 const GraphicCards = ({ graphicCards }) => {
   return (
     <Container>
-      {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
-      {/* Fires callback function for each item, whereby we return a jsx template */}
-      {/* {graphicCards.map((graphicCard) => ( */}
-      {/* // When we .map(), each root element we return must have a 'key' property which react uses to keep track of items in the dom */}
-      <PatternCard>
-        <GraphicContainer>
-          <LandscapeCard alt={`Full bleed pattern`} src={LandscapePattern} />
-          <SquareCard alt={`Full bleed pattern`} src={SquarePattern} />
-        </GraphicContainer>
+      {graphicCards.map((graphicCard) => (
+        <PatternCard
+          key={graphicCard.id}
+          style={{
+            backgroundImage: `url(${graphicCard.bgImage})`,
+          }}
+        >
+          <GraphicContainer>
+            {graphicCard.image ? (
+              <MyImage src={graphicCard.image} alt={`Socius pattern`}></MyImage>
+            ) : null}
+          </GraphicContainer>
 
-        <Heading>CompliSent: Accuracy engineered for understanding</Heading>
-        <Paragraph>
-          Fusing AI linguistics with configurable logic for interpretable
-          sentiment scoring
-        </Paragraph>
+          <Subtitle
+            style={{
+              color: "white",
+            }}
+          >
+            {graphicCard.heading}
+          </Subtitle>
+          <Body
+            style={{
+              color: "white",
+              marginBottom: "8px",
+            }}
+          >
+            {graphicCard.paragraph}
+          </Body>
 
-        <SecondaryButton href="complisent">Learn more</SecondaryButton>
-      </PatternCard>
-      {/* ))} */}
+          <SecondaryButton href={graphicCard.link}>
+            Learn more
+          </SecondaryButton>
+        </PatternCard>
+      ))}
     </Container>
   );
 };
@@ -35,21 +48,12 @@ const GraphicCards = ({ graphicCards }) => {
 export default GraphicCards;
 
 export const Container = styled(GridContainer)`
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   color: white;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-`;
-
-export const Heading = styled(Title)`
-  color: white;
-`;
-
-export const Paragraph = styled(Body)`
-  padding: 16px 0px 16px 0px;
-  color: white;
 `;
 
 export const PatternCard = styled(CentreContainer)`
@@ -58,28 +62,16 @@ export const PatternCard = styled(CentreContainer)`
   background-size: cover;
   justify-content: flex-end;
   background-color: #00002e;
+  gap: 8px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 16px 24px;
   }
 `;
 
 export const GraphicContainer = styled.div`
-  padding: 24px;
+  padding: 40px;
   width: 100%;
   box-sizing: border-box;
-`;
-
-export const LandscapeCard = styled(MyImage)`
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
-export const SquareCard = styled(MyImage)`
-  display: none;
-
-  @media (max-width: 768px) {
-    display: block;
-  }
+  aspect-ratio: 1/1;
 `;

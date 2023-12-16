@@ -4,13 +4,12 @@ import SecondaryHero from "../components/SecondaryHero";
 import PaleBlueDot from "../assets/images/pale_blue_dot.jpg";
 import LandscapePainting from "../assets/images/landscape_painting.jpg";
 import OpenBook from "../assets/images/open_book.jpg";
-import Lecturer from "../assets/images/lecturer.jpg";
+import Code from "../assets/images/code.jpg";
 import React from "react";
 import Glasses from "../assets/videos/glasses.mp4";
 import Office from "../assets/videos/office.mp4";
 import FooterCard from "../components/FooterCard";
 import SplitImage from "../components/SplitImage";
-import { Subheading, GridContainer } from "../styles";
 import { Helmet } from "react-helmet";
 
 const Database = () => {
@@ -28,21 +27,21 @@ const Database = () => {
     {
       heading: "SentiBank",
       paragraph:
-        "SentiBank is the most comprehensive open database of expert-verified sentiment dictionaries and lexicons, all accessible through a simple API.\n\nResearchers can instantly discover a vast knowledge base of annotated corpora spanning diverse domains to elevate their sentiment modeling.\n\nBy combining gold-standard sentiment data in one platform, sentibank facilitates more holistic cross-domain analysis and unlocks hidden emotions within text. This unified access removes the need to navigate disparate sources, allowing you to focus on innovative applications.",
+        "Open database of expert-verified sentiment dictionaries, all accessible through a simple API.\n\nCustomise sentiment dictionary tailored to your field of application. Instantly discover a vast knowledge base of annotated corpora spanning diverse domains.",
       id: 1,
       paddingBottom: "24px",
       button: "Read more",
       link: "sentibank",
     },
     {
-      heading: "Optimizing research through data discovery AI",
+      heading: "Optimising Research Through Private Data Archive",
       paragraph:
-        "Locating ideal datasets can be arduous, but remains critical to research success. By leveraging language modeI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data.\n\nWe offer priority access to select researchers and partners to pilot this capability.\n\nCollaborating with social scientists across disciplines motivates everything we do. We invite you to connect with our team - we're excited to discover how we could partner to advance your research.",
+        "14M+ data rows delivered and counting. Researchers rank our dashboard as saving 87%+ of the time and months of work compared to alternatives.",
       id: 2,
       paddingBottom: "24px",
-      button: "Get aligned data to power insights and innovations",
+      button: "Get priority access",
       link: "mailto:nick.sh.oh@gmail.com",
-      target: "_blank"
+      target: "_blank",
     },
   ]);
 
@@ -59,9 +58,9 @@ const Database = () => {
       id: 1,
     },
     {
-      imageOne: Lecturer,
+      imageOne: Code,
       imageOneAlt:
-        "A man conducting a lecture whilst stood behind lecturn and speaking into a microhpone.",
+        "A close-up of the back of a developers head and a screen with programming code",
       imageDisplay: "none",
       videoTwo: Office,
       videoAlt:
@@ -77,11 +76,11 @@ const Database = () => {
       bgColour: "#00002E",
       textColour: "white",
       image: LandscapePainting,
-      heading: "Integrate sentibank with CompliSent",
+      heading: "Leverage SentiBank with Sentium",
       paragraph:
-        "CompliSent combines the predictive power of AI with adjustable rule-based logic designed for human interpretability.",
+        "Experience customisable sentiment analysis that unlocks deeper insights.",
       id: 1,
-      button: "Explore CompliSent",
+      button: "Learn more",
       link: "complisent",
     },
   ]);
@@ -121,12 +120,7 @@ const Database = () => {
       <SplitImage
         splitImages={splitImages.filter((splitImage) => splitImage.id === 1)}
       />
-      <GridContainer>
-        <Subheading>
-          While we cannot fully prevent AI from being a black box, we aim to
-          build transparent, accountable, and interpretable AI models.
-        </Subheading>
-      </GridContainer>
+
       <TextBlocks
         textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
       />

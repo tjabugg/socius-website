@@ -1,65 +1,54 @@
 import React from "react";
 import styled from "styled-components";
+import Wheat from "../assets/images/wheat.jpg";
 import {
   Subheading,
   Body,
   PrimaryButton,
   ParentContainer,
   ImageContainer,
-  MyVideo,
   GridContainer,
-  // MyImage,
+  MyImage,
 } from "../styles";
 
 // Destructure blogs and title directly from the props
 const TextAndImages = ({ textAndImages }) => {
   return (
-    <div
-      style={{
-        marginBottom: "40px",
-      }}
-    >
+    <Container>
       {textAndImages.map((textAndImage) => (
-        <GridContainer
-          key={textAndImage.id}
-          style={{
-            backgroundColor: textAndImage.bgColour,
-          }}
-        >
+        <GridContainer key={textAndImage.id}>
           <TextContainer>
-            <Subheading>{textAndImage.heading}</Subheading>
-            <Paragraph>{textAndImage.paragraph}</Paragraph>
-            <PrimaryButton href={textAndImage.link}>
-              {textAndImage.button}
+            <Subheading>Open Data</Subheading>
+            <Paragraph>
+              AI runs on data. Our growing open data repository curates diverse
+              datasets to power new breakthroughs.
+            </Paragraph>
+            <PrimaryButton href="/sentibank">
+              Explore our collection
             </PrimaryButton>
           </TextContainer>
 
           <GraphicContainer>
-            {/* <MyImage
-              alt={textAndImage.alt}
-              style={{
-                display: textAndImage.imageDisplay,
-              }}
-              src={textAndImage.image}
-            ></MyImage> */}
-            <MyVideo
-              // style={{
-              //   display: textAndImage.display,
-              // }}
-              src={textAndImage.video}
-              autoPlay={true}
-              loop={true}
-              muted={true}
-              playsInline={true}
-            ></MyVideo>
+            <MyImage src={Wheat} />
           </GraphicContainer>
         </GridContainer>
       ))}
-    </div>
+    </Container>
   );
 };
 
 export default TextAndImages;
+
+export const Container = styled(ParentContainer)`
+  padding: 24px;
+  margin: 80px auto 0px auto;
+  background-color: #d9ffd8;
+
+  @media (max-width: 1728px) {
+    margin: 80px 0px 0px 0px;
+    padding: 0px;
+  }
+`;
 
 export const TextContainer = styled(ParentContainer)`
   border-radius: 20px;

@@ -20,7 +20,13 @@ const PublicationCovers = ({ publicationCovers }) => {
           <TextContainer>
             <Date>{publicationCover.date}</Date>
             <Title>{publicationCover.heading}</Title>
-            <Paragraph>{publicationCover.paragraph}</Paragraph>
+            <Body
+              style={{
+                margin: "8px",
+              }}
+            >
+              {publicationCover.paragraph}
+            </Body>
 
             {publicationCover.link ? (
               <SecondaryButton
@@ -55,21 +61,21 @@ export default PublicationCovers;
 
 export const Container = styled(GridContainer)`
   align-items: center;
-  margin: 40px 20px;
   justify-content: center;
+  margin: 40px auto;
+
+  @media (max-width: 1728px) {
+    margin: 40px 24px;
+  }
 
   @media (max-width: 768px) {
-    margin: 20px 20px;
+    margin: 24px;
     gap: 16px;
   }
 `;
 
 export const Date = styled(Body)`
   color: #808080;
-`;
-
-export const Paragraph = styled(Body)`
-  margin: 0px 0px 8px 0px;
 `;
 
 export const ImageContainer = styled.div`
@@ -95,6 +101,7 @@ export const GraphicImage = styled(MyImage)`
 
 export const TextContainer = styled(CentreText)`
   margin: 24px;
+  gap: 8px;
 
   @media (max-width: 768px) {
     margin: 8px;

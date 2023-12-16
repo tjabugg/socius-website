@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import { GlobalStyle } from "./styles";
 import { Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
-import CompliSent from "./pages/Publications/CompliSent";
+import Sentium from "./pages/Publications/Sentium";
 import SentiBank from "./pages/Publications/SentiBank";
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
         <Route path="/research" element={<Research />} />
         <Route path="/database" element={<Database />} />
         <Route path="/forsocialscientists" element={<ForSocialScientists />} />
-        <Route path="/complisent" element={<CompliSent />} />
+        <Route path="/sentium" element={<Sentium />} />
         <Route path="/sentibank" element={<SentiBank />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

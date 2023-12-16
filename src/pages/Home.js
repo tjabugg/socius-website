@@ -3,13 +3,15 @@ import ArticleCard from "../components/ArticleCard";
 import { useState } from "react";
 import TextBlocks from "../components/TextBlocks";
 import GraphicCards from "../components/GraphicCard";
-import Studying from "../assets/videos/studying.mp4";
 import StockExchange from "../assets/images/stock_exchange.jpg";
+import FrozenIce from "../assets/images/frozen_ice.jpg";
 import FriendsAtDusk from "../assets/images/friends.jpg";
+import PostIt from "../assets/images/post_it_notes.jpg";
 import CallToAction from "../components/CallToAction";
 import TextAndImage from "../components/TextAndImage";
+import HoverAnimation from "../assets/videos/hover_animation.json";
+import SquarePattern from "../assets/svgs/organised/organised_1x1_pattern.svg";
 import styled from "styled-components";
-// import PatternAnimation from "../assets/videos/5x5_animation.json";
 import { Helmet } from "react-helmet";
 
 import React from "react";
@@ -20,22 +22,46 @@ import {
   CentreContainer,
   MyImage,
   CentreText,
+  ParentContainer,
+  TertiaryButton,
+  Title,
 } from "../styles";
 
 const Home = () => {
   // An array and function
   const [textBlocks] = useState([
     {
-      heading: "Bridging Artificial Intelligence to Human Knowledge",
+      heading: "AI models for social scientists",
       paragraph:
-        "We create open-source AI models for computational social scientists seeking to integrate the predictive power of AI with the interpretability of traditional methods.\n\nUnlike standard R packages that can not interface with AI models or Python libraries that offer black-box solutions, we provide an open-source collection of transparent and accountable AI integrations. This allows researchers to leverage advanced techniques like deep-learning models, while still being able to understand and explain their models.",
+        "Discovery driven by understanding, insights you can trust. We create open-source AI models for social scientists seeking to integrate the predictive power of AI with the interpretability of traditional methods. ",
       id: 1,
     },
     {
-      heading: "Explore our resources for social scientists",
+      heading: "Resources to streamline your workflows",
       paragraph:
-        "Our comprehensive documentation illuminates everything we offer - from model logic to data sources and from methodology to applications. This transforms complexity into accessible clarity, streamlining research workflows. With obstacles removed, social scientists can concentrate on driving impactful discoveries.\n\nAdditionally, for academic researchers, we offer extensive free support - including guidance on methodologies, algorithms, and domain-specific fine-tuned models. This provides the necessary resources to fully leverage AI innovations across disciplines.",
+        "Concentrate on your impactful discoveries, not technicalities. Our documentation features step-by-step instructions, tutorials and API references, making our AI models and datasets readily accessible.  ",
       id: 2,
+      button: "Discover all of our resources",
+      link: "forsocialscientists",
+    },
+  ]);
+
+  const [graphicCards] = useState([
+    {
+      image: SquarePattern,
+      heading: "Sentium: Accuracy engineered for understanding",
+      paragraph:
+        "Fusing AI linguistics with configurable logic for interpretable sentiment analysis",
+      id: 1,
+      link: "sentium",
+    },
+    {
+      bgImage: FrozenIce,
+      heading: "SentiBank: Unleashing the emotions of textual data",
+      paragraph:
+        "Providing a trusted foundation for sentiment analysis via verified dictionaries",
+      id: 2,
+      link: "sentibank",
     },
   ]);
 
@@ -44,40 +70,40 @@ const Home = () => {
       align: "center",
       image: FriendsAtDusk,
       padding: "0px",
-      heading: "CompliSent",
+      heading: "Sentium",
       paragraph:
-        "Explore our comprehensive guides and resources to utilize CompliSent (sentium), through documentation crafted to simplify and streamline your research workflow.",
+        "Explore our comprehensive guides and resources to utilise Sentium, through documentation crafted to simplify and streamline your research workflow.",
       alt: "A group of friends sat in the foreground before an evening sky",
       id: 1,
-      // link: "",
+      link: "forsocialscientists",
     },
     {
       bgColour: "#CBDCFF",
-      // animation: PatternAnimation,
+      animation: HoverAnimation,
       heading: "SentiBank",
       paragraph:
-        "Access extensive documentation explaining the breadth of annotated lexica available in sentibank, to amplify the capabilities of your sentiment analysis.",
+        "Access extensive documentation explaining the breadth of annotated lexica available in SentiBank, to amplify the capabilities of your sentiment analysis.",
       alt: "An animation from the socius design system",
       id: 2,
-      // link: "",
+      link: "forsocialscientists",
     },
   ]);
 
   const [textAndImages] = useState([
     {
-      heading: "Opening new research frontiers by pooling knowledge resources",
+      heading: "Open Data",
       paragraph:
-        "Our public open data repository contains a growing collection of datasets from researchers worldwide - an inclusive knowledge base to fuel new breakthroughs.\n\nBy pooling diverse data in one place, we aim to simplify the process of data discovery, preparation, and aggregation.\n\nOur first project, sentibank, has compiled the largest public repository of annotated sentiment lexicons and dictionaries. With this robust labeled data conveniently accessible in one location, researchers can advance sentiment analysis with greater precision and customization tailored to their field or application.",
+        "AI runs on data. Our growing open data repository curates diverse datasets to power new breakthroughs.",
       id: 1,
-      button: "Explore sentibank",
-      video: Studying,
-      alt: "An video a woman sat at a desk reading through a book",
-      link: "/sentibank",
+      button: "Explore our collection",
+      link: "database",
     },
   ]);
 
   const [callToActions] = useState([
     {
+      heading: "We're ready to combine our capabilities with your expertise.",
+      button: "Get in touch",
       bgColour: "#3C46FF",
       id: 1,
       textColour: "White",
@@ -116,17 +142,32 @@ const Home = () => {
       <TextBlocks
         textBlocks={textBlocks.filter((textBlock) => textBlock.id === 1)}
       />
+      <ParentContainer>
+        <LetterContainer>
+          <MyImage
+            style={{
+              borderRadius: "20px",
+            }}
+            alt={`Black and white photo of the New York Stock Exchange`}
+            src={PostIt}
+          />
+        </LetterContainer>
+      </ParentContainer>
 
       <CentreText>
         <Subheading>Our Research</Subheading>
         <Body>
-          Our research focuses on integrating AI with social science principles,
-          enhancing interpretability, transparency, and accountability - areas
-          where the two diverge. 
+          Designing AI with social science principles. Our research focuses on
+          leveraging AI while maintaining transparency and interpretability. 
         </Body>
+        <TertiaryButton href="research">View all research</TertiaryButton>
       </CentreText>
 
-      <GraphicCards></GraphicCards>
+      <GraphicCards graphicCards={graphicCards} />
+
+      <TextBlocks
+        textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
+      />
 
       <LetterContainer>
         <MyImage
@@ -138,13 +179,19 @@ const Home = () => {
         />
       </LetterContainer>
 
-      <TextBlocks
-        textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
-      />
-
-      <TextAndImage textAndImages={textAndImages} />
+      <CentreContainer>
+        <Title
+          style={{
+            margin: "80px 0px 24px 0px",
+          }}
+        >
+          Explore our documentation
+        </Title>
+      </CentreContainer>
 
       <ArticleCard articleCards={articleCards} alignment={"center"} />
+
+      <TextAndImage textAndImages={textAndImages} />
 
       <QuoteContainer>
         <Subheading>

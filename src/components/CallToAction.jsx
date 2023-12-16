@@ -19,10 +19,9 @@ const CallToActions = ({ callToActions }) => {
             }}
           >
             {callToAction.heading}
-            We're ready to combine our capabilities with your expertise.
           </Title>
           <SecondaryButton href="mailto:nick.sh.oh@gmail.com" target="_blank">
-            {callToAction.button}Get in touch
+            {callToAction.button}
           </SecondaryButton>
         </Container>
       ))}
@@ -34,6 +33,7 @@ export default CallToActions;
 
 export const Container = styled(ParentContainer)`
   padding: 24px;
+  margin-bottom: 40px;
   border-radius: 20px;
   flex-direction: column;
   gap: 16px;

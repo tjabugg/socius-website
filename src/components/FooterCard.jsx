@@ -42,11 +42,15 @@ const FooterCards = ({ footerCards }) => {
 export default FooterCards;
 
 export const Container = styled(ParentContainer)`
-  padding: 20px;
+  padding: 24px;
   border-radius: 20px;
   flex-direction: column;
   gap: 0px;
-  margin: 20px;
+  margin: auto;
+
+  @media (max-width: 1728px) {
+    margin: 24px;
+  }
 `;
 
 export const Heading = styled(Title)`

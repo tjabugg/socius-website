@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Body, Title, GridContainer, PrimaryButton } from "../styles";
+import { Body, Title, ParentContainer, PrimaryButton } from "../styles";
 
 // Destructure blogs and title directly from the props
 const TextBlocks = ({ textBlocks }) => {
@@ -9,21 +9,22 @@ const TextBlocks = ({ textBlocks }) => {
       {/* Fires callback function for each item, whereby we return a jsx template */}
       {textBlocks.map((textBlock) => (
         // When we .map(), each root element we return must have a 'key' property which react uses to keep track of items in the dom
-        <Container
-          key={textBlock.id}
-          style={{
-            paddingBottom: textBlock.paddingBottom,
-          }}
-        >
+        <TextContainer key={textBlock.id}>
           <Title>{textBlock.heading}</Title>
-          <Body>{textBlock.paragraph}</Body>
+          <Paragraph
+            style={{
+              paddingBottom: "8px",
+            }}
+          >
+            {textBlock.paragraph}
+          </Paragraph>
           {textBlock.link ? (
-            <Button href={textBlock.link} target={textBlock.target}>
+            <PrimaryButton href={textBlock.link} target={textBlock.target}>
               {" "}
               {textBlock.button}
-            </Button>
+            </PrimaryButton>
           ) : null}
-        </Container>
+        </TextContainer>
       ))}
     </div>
   );
@@ -31,19 +32,21 @@ const TextBlocks = ({ textBlocks }) => {
 
 export default TextBlocks;
 
-export const Container = styled(GridContainer)`
-  display: grid;
-  padding-bottom: 48px;
+export const TextContainer = styled(ParentContainer)`
+  gap: 16px;
+  flex-direction: column;
+  margin: 48px auto 48px auto;
+  max-width: 1728px;
 
-  @media (max-width: 768px) {
-    padding-bottom: 24px;
+  @media (max-width: 1728px) {
+    margin: 48px 24px 48px 24px;
   }
 `;
 
-export const Button = styled(PrimaryButton)`
-  grid-column-start: 2;
+export const Paragraph = styled(Body)`
+  width: 50%;
 
-  @media (max-width: 768px) {
-    grid-column-start: 1;
+  @media (max-width: 1024px) {
+    width: 100%;
   }
 `;

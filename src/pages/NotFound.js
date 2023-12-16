@@ -39,8 +39,20 @@ const NotFound = () => (
     </Helmet>
     ;
     <TextContainer>
-      <Title>404</Title>
-      <Caption>This page could not be found</Caption>
+      <Title
+        style={{
+          color: "#cbdcff",
+        }}
+      >
+        404
+      </Title>
+      <Caption
+        style={{
+          color: "#cbdcff",
+        }}
+      >
+        This page could not be found
+      </Caption>
       <SecondaryButton href="/">Country roads, take me home!</SecondaryButton>
     </TextContainer>
   </Container>
@@ -50,7 +62,7 @@ export default NotFound;
 
 export const Container = styled(CentreContainer)`
   position: relative;
-  background-color: #cbdcff;
+  background-color: #3c46ff;
 `;
 
 export const TextContainer = styled(CentreText)`

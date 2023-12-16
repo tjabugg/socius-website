@@ -26,7 +26,7 @@ const ArticleCards = ({ articleCards, alignment }) => {
             }}
           >
             {articleCard.animation ? (
-              <Player hover={true} src={articleCard.animation}></Player>
+              <Player hover src={articleCard.animation}></Player>
             ) : null}
 
             {articleCard.image ? (
@@ -54,7 +54,7 @@ const ArticleCards = ({ articleCards, alignment }) => {
             }}
             href={articleCard.link}
           >
-            {articleCard.button}Learn more
+            Learn more
           </SecondaryButton>
         </ArticleCard>
       ))}
@@ -67,13 +67,27 @@ export default ArticleCards;
 export const CardContainer = styled(ParentContainer)`
   flex-wrap: wrap;
   /* justify-content: center; */
-  margin: 0px 10px 24px 10px;
+  /* margin: 0px 12px 24px 12px; */
+  margin: 0px auto 80px auto;
   gap: 20px 0px;
+  max-width: 1728px;
+
+  @media (max-width: 1728px) {
+    margin: 0px 12px 80px 12px;
+  }
+
+  // margin: 48px auto 48px auto;
+  // max-width: 1728px;
+
+  // @media (max-width: 1728px) {
+  //   margin: 48px 24px 48px 24px;
+  // }
 
   @media (max-width: 768px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
   @media (max-width: 414px) {
     display: grid;
     grid-template-columns: 1fr;
@@ -81,8 +95,8 @@ export const CardContainer = styled(ParentContainer)`
 `;
 
 export const ArticleCard = styled.div`
-  width: calc(33.3333333333% - 20px);
-  margin: 0px 10px;
+  width: calc(33.3333333333% - 24px);
+  margin: 0px 12px;
   display: flex;
   flex-direction: column;
 
@@ -95,10 +109,10 @@ export const ArticleCard = styled.div`
 export const GraphicContainer = styled(ImageContainer)`
   display: flex;
   aspect-ratio: 1/1;
-  margin: 0px 0px 16px 0px;
+  margin: 0px 0px 20px 0px;
   padding: 40px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 24px;
   }
 `;

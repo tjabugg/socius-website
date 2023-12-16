@@ -2,7 +2,7 @@ import { useState } from "react";
 import TextBlocks from "../components/TextBlocks";
 import SecondaryHero from "../components/SecondaryHero";
 import Farms from "../assets/images/farms.jpg";
-import TableConversation from "../assets/images/table_conversation.jpg";
+import OverviewGarden from "../assets/images/overview_garden.jpg";
 import AerialDesert from "../assets//images/aerial_desert.jpg";
 import React from "react";
 import PublicationCover from "../components/PublicationCover";
@@ -15,7 +15,7 @@ const Research = () => {
     {
       heading: "Our publications",
       paragraph:
-        "Social science deserves better AI tools - models designed on true understanding, not just prediction. For too long, computational social scientists struggled with black-box models prioritising opaque precision over interpretation and we’re leading that change.\n\nOur goal is to create AI tools that embrace what makes social science so valuable in the pursuit of true understanding, that is why our research focuses on integrating AI models with core social science principles, enhancing interpretability, transparency, and accountability - areas where social science and modern AI diverge.",
+        "Social science deserves better AI tools - models designed on true understanding, not just prediction. For too long, computational social scientists struggled with black-box models prioritising opaque precision over interpretation. And we’re leading that change. \n\nOur goal is to create AI tools that embrace what makes social science so valuable, which is the pursuit of true understanding. That is why our research focuses on integrating AI models with core social science principles, enhancing interpretability, transparency, and accountability - areas where social science and modern AI diverge.",
       id: 1,
     },
   ]);
@@ -23,7 +23,7 @@ const Research = () => {
   const [secondaryHeroes] = useState([
     {
       heading: "AI Technology focused on insight, not just performance",
-      image: TableConversation,
+      image: OverviewGarden,
       id: 2,
     },
   ]);
@@ -31,13 +31,13 @@ const Research = () => {
   const [publicationCovers] = useState([
     {
       date: "August 2023",
-      heading: "CompliSent: Accuracy engineered for understanding",
+      heading: "Sentium: Accuracy Engineered for Understanding",
       paragraph:
-        "Fusing AI linguistics with configurable logic for interpretable sentiment scoring",
+        "Fusing AI linguistics with configurable logic for interpretable sentiment analysis",
       id: 1,
       bgImage: Farms,
       graphic: PublicationCoverPattern,
-      link: "complisent",
+      link: "sentium",
     },
   ]);
 
@@ -45,9 +45,9 @@ const Research = () => {
     {
       bgColour: "#3C46FF",
       image: AerialDesert,
-      heading: "Take CompliSent further with SentiBank integration",
+      heading: "Take Sentium further with SentiBank",
       paragraph:
-        "Tailor sentiment analysis to your needs. Sentibank, the largest public repository of sentiment lexica and dictionaries, lets you integrate lexica optimized for your particular domain or application.",
+        "Tailor sentiment analysis to your needs with SentiBank, the largest public repository of sentiment dictionaries.",
       id: 7,
       button: "Browse SentiBank",
       link: "sentibank",
@@ -80,9 +80,9 @@ const Research = () => {
           property="og:description"
           content="Our research focuses on integrating AI models with social science principles - enhancing interpretability, transparency and accountability."
         />
-        <meta property="og:image" content={TableConversation} />
+        <meta property="og:image" content={OverviewGarden} />
       </Helmet>
-      ;
+
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
       <TextBlocks textBlocks={textBlocks} />
       <PublicationCover publicationCovers={publicationCovers} />
