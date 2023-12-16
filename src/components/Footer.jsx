@@ -10,9 +10,9 @@ import {
   LogoContainer,
   ParentContainer,
 } from "../styles";
-import DesktopFooter from "../assets/svgs/random/desktop_footer_pattern.svg";
-import TabletFooter from "../assets/svgs/random/tablet_footer_pattern.svg";
-import MobileFooter from "../assets/svgs/random/mobile_footer_pattern.svg";
+// import DesktopFooter from "../assets/svgs/random/desktop_footer_pattern.svg";
+// import TabletFooter from "../assets/svgs/random/tablet_footer_pattern.svg";
+// import MobileFooter from "../assets/svgs/random/mobile_footer_pattern.svg";
 
 const Footer = () => (
   <Container>
