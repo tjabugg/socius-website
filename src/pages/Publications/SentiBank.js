@@ -337,10 +337,10 @@ const SentiBank = () => {
 export default SentiBank;
 
 export const CoverContainer = styled.div`
-  padding-top: 36px;
+  padding-top: 43px;
 
   @media (max-width: 768px) {
-    padding-top: 48px;
+    padding-top: 55px;
   }
 `;
 
@@ -376,4 +376,13 @@ export const Container = styled(CentreContainer)`
 
 export const TitleContainer = styled(ParentContainer)`
   margin-top: 80px;
+  padding-left: 12px;
+
+  @media (max-width: 1728px) {
+    padding-left: 0px;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 64px;
+  }
 `;

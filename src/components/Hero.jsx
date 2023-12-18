@@ -60,8 +60,8 @@ const Hero = () => {
 
       <ImageContainer>
         <DesktopHero lottieRef={desktopRef} animationData={WebPattern} />
-        <TabletHero lottieRef={tabletRef} src={TabletPattern} />
-        <MobileHero lottieRef={mobileRef} src={MobilePattern} />
+        <TabletHero lottieRef={tabletRef} animationData={TabletPattern} />
+        <MobileHero lottieRef={mobileRef} animationData={MobilePattern} />
       </ImageContainer>
       <PauseButton>
         <MyImage ref={playButton} src={PauseIcon} onClick={Play}></MyImage>
@@ -103,9 +103,8 @@ export const Container = styled.div`
   position: relative;
   width: 100%;
 
-  /* display: inline-block; */
-
   @media (max-width: 768px) {
+    margin: 64px 0px 0px 0px;
     height: 80vh;
   }
 `;
@@ -113,9 +112,13 @@ export const Container = styled.div`
 export const HeroText = styled(Heading)`
   width: 70%;
   position: absolute;
-  top: 80px;
+  top: 40px;
   left: 24px;
   color: white;
+
+  @media (max-width: 768px) {
+    left: 16px;
+  }
 `;
 
 export const DesktopHero = styled(Lottie)`
@@ -123,12 +126,15 @@ export const DesktopHero = styled(Lottie)`
   bottom: 0px;
   width: 100vw;
 
-  /* @media (max-width: 768px) {
+  @media (max-width: 768px) {
     display: none;
-  } */
+  }
 `;
 
 export const TabletHero = styled(Lottie)`
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;
   display: none;
 
   @media (max-width: 768px) and (min-width: 376px) {
@@ -137,6 +143,9 @@ export const TabletHero = styled(Lottie)`
 `;
 
 export const MobileHero = styled(Lottie)`
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;
   display: none;
 
   @media (max-width: 375px) {

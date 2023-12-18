@@ -16,7 +16,13 @@ const GraphicCards = ({ graphicCards }) => {
         >
           <GraphicContainer>
             {graphicCard.image ? (
-              <MyImage src={graphicCard.image} alt={`Socius pattern`}></MyImage>
+              <MyImage
+                style={{
+                  objectFit: "contain",
+                }}
+                src={graphicCard.image}
+                alt={`Socius pattern`}
+              ></MyImage>
             ) : null}
           </GraphicContainer>
 
@@ -30,15 +36,13 @@ const GraphicCards = ({ graphicCards }) => {
           <Body
             style={{
               color: "white",
-              marginBottom: "8px",
+              // marginBottom: "8px",
             }}
           >
             {graphicCard.paragraph}
           </Body>
 
-          <SecondaryButton href={graphicCard.link}>
-            Learn more
-          </SecondaryButton>
+          <SecondaryButton href={graphicCard.link}>Learn more</SecondaryButton>
         </PatternCard>
       ))}
     </Container>
@@ -57,15 +61,15 @@ export const Container = styled(GridContainer)`
 `;
 
 export const PatternCard = styled(CentreContainer)`
-  padding: 24px 120px;
+  padding: 24px 160px;
   border-radius: 20px;
   background-size: cover;
   justify-content: flex-end;
   background-color: #00002e;
-  gap: 8px;
+  gap: 16px;
 
   @media (max-width: 1024px) {
-    padding: 16px 24px;
+    padding: 20px;
   }
 `;
 
@@ -74,4 +78,8 @@ export const GraphicContainer = styled.div`
   width: 100%;
   box-sizing: border-box;
   aspect-ratio: 1/1;
+
+  @media (max-width: 1024px) {
+    padding: 20px 40px;
+  }
 `;

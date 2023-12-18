@@ -32,7 +32,7 @@ function Navigation() {
 
   return (
     // ref={navRef}
-    <HeaderContainer >
+    <HeaderContainer>
       <NavLink href="/">
         <LogoContainer>
           <Logo title={`Socius logo`} />
@@ -43,7 +43,7 @@ function Navigation() {
       <NavContainer>
         <NavLink href="/research">Research</NavLink>
         <NavLink href="/database">Database</NavLink>
-        <NavButton href="/forsocialscientists">For Social Scientists</NavButton>
+        <PrimaryButton href="/forsocialscientists">For Social Scientists</PrimaryButton>
       </NavContainer>
     </HeaderContainer>
   );
@@ -63,17 +63,9 @@ export const HeaderContainer = styled.header`
   z-index: 1000;
   /* mix-blend-mode: difference; */
   background-color: white;
-`;
 
-export const NavButton = styled(PrimaryButton)`
-  background-color: white;
-  color: black;
-  mix-blend-mode: difference;
-
-  &:hover {
-    background-color: #1b1b1b;
-    color: #cbdcff;
-    opacity: 100%;
+  @media (max-width: 768px) {
+    padding: 20px;
   }
 `;
 

@@ -63,7 +63,9 @@ export const Date = styled(Body)`
 `;
 
 export const Code = styled(Body)`
-  /* font-family: "Source Code Pro", monospace; */
+  font-family: "Source Code Pro", monospace;
+  font-size: 14px;
+
 `;
 
 export const CodeContainer = styled.div`
@@ -89,18 +91,12 @@ export const BodyContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* flex: 0.5; */
-  width: 40vw;
+  flex: 0.35;
   gap: 20px;
   margin: 20px;
 
-  @media (min-width: 1024px) {
-    width: 30vw;
-  }
-
-  @media (max-width: 1024px) {
-    width: 100vw;
-    /* flex: 1; */
+  @media (max-width: 768px) {
+    flex: 1;
   }
 `;
 

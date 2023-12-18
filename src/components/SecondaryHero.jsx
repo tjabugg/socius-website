@@ -95,6 +95,7 @@ export const TextAndImage = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     margin: 80px 20px 0px 20px;
+    width: calc(100% - 40px);
   }
 `;
 

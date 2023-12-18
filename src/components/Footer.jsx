@@ -4,7 +4,7 @@ import {
   Logo,
   Link,
   Word,
-  MyImage,
+  // MyImage,
   GridContainer,
   Body,
   LogoContainer,
@@ -53,26 +53,27 @@ const Footer = () => (
         </LinkContainer>
       </TextContainer>
     </Grid>
-    <PatternContainer>
-      {/* <DesktopPattern alt={`Full bleed pattern`} src={DesktopFooter} />
+    {/* <PatternContainer>
+      <DesktopPattern alt={`Full bleed pattern`} src={DesktopFooter} />
       <TabletPattern alt={`Full bleed pattern`} src={TabletFooter} />
-      <MobilePattern alt={`Full bleed pattern`} src={MobileFooter} />{" "} */}
-    </PatternContainer>{" "}
+      <MobilePattern alt={`Full bleed pattern`} src={MobileFooter} />{" "}
+    </PatternContainer>{" "} */}
   </Container>
 );
 
 export default Footer;
 
-export const PatternContainer = styled.div`
-  bottom: 0vh;
-  box-sizing: border-box;
-  padding: 24px;
-`;
+// export const PatternContainer = styled.div`
+//   bottom: 0vh;
+//   box-sizing: border-box;
+//   padding: 24px;
+// `;
 
 export const Grid = styled(GridContainer)`
-  margin: 24px 24px 80px 24px;
+  margin: 24px;
 
   @media (max-width: 768px) {
+    margin: 20px;
     gap: 16px;
   }
 `;
@@ -83,11 +84,16 @@ export const Container = styled(ParentContainer)`
   background-color: #1b1b1b;
   flex-direction: column;
   border-radius: 20px;
-  height: 40vh;
+  padding-bottom: 10vh;
   margin: 24px auto 24px auto;
 
   @media (max-width: 1728px) {
     margin: 24px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin: 20px;
   }
 `;
 
@@ -125,24 +131,24 @@ export const SociusLogo = styled(Word)`
   }
 `;
 
-export const DesktopPattern = styled(MyImage)`
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
+// export const DesktopPattern = styled(MyImage)`
+//   @media (max-width: 768px) {
+//     display: none;
+//   }
+// `;
 
-export const TabletPattern = styled(MyImage)`
-  display: none;
+// export const TabletPattern = styled(MyImage)`
+//   display: none;
 
-  @media (max-width: 768px) and (min-width: 376px) {
-    display: block;
-  }
-`;
+//   @media (max-width: 768px) and (min-width: 376px) {
+//     display: block;
+//   }
+// `;
 
-export const MobilePattern = styled(MyImage)`
-  display: none;
+// export const MobilePattern = styled(MyImage)`
+//   display: none;
 
-  @media (max-width: 375px) {
-    display: block;
-  }
-`;
+//   @media (max-width: 375px) {
+//     display: block;
+//   }
+// `;

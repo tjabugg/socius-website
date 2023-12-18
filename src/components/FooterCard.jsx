@@ -51,6 +51,11 @@ export const Container = styled(ParentContainer)`
   @media (max-width: 1728px) {
     margin: 24px;
   }
+
+  @media (max-width: 768px) {
+    margin: 20px;
+    padding: 20px;
+  }
 `;
 
 export const Heading = styled(Title)`

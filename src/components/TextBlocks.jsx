@@ -11,15 +11,15 @@ const TextBlocks = ({ textBlocks }) => {
         // When we .map(), each root element we return must have a 'key' property which react uses to keep track of items in the dom
         <TextContainer key={textBlock.id}>
           <Title>{textBlock.heading}</Title>
-          <Paragraph
-            style={{
-              paddingBottom: "8px",
-            }}
-          >
-            {textBlock.paragraph}
-          </Paragraph>
+          <Paragraph>{textBlock.paragraph}</Paragraph>
           {textBlock.link ? (
-            <PrimaryButton href={textBlock.link} target={textBlock.target}>
+            <PrimaryButton
+              style={{
+                marginTop: "8px",
+              }}
+              href={textBlock.link}
+              target={textBlock.target}
+            >
               {" "}
               {textBlock.button}
             </PrimaryButton>
@@ -40,6 +40,10 @@ export const TextContainer = styled(ParentContainer)`
 
   @media (max-width: 1728px) {
     margin: 48px 24px 48px 24px;
+  }
+
+  @media (max-width: 768px) {
+    margin: 40px 20px 40px 20px;
   }
 `;
 

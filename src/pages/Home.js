@@ -148,7 +148,7 @@ const Home = () => {
             style={{
               borderRadius: "20px",
             }}
-            alt={`Black and white photo of the New York Stock Exchange`}
+            alt={`A close up photo of a hand pointing at post-it notes on a whiteboard`}
             src={PostIt}
           />
         </LetterContainer>

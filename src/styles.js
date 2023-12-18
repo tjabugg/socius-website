@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     
 }
 body {
-    font-family: 'Porpora';
+    font-family: "Porpora", sans-serif;
     font-style: normal;
     margin: 0;
     padding: 0;
@@ -23,6 +23,7 @@ body {
 `;
 
 export const Link = styled.a`
+  font-family: "Porpora", sans-serif;
   font-size: 16px;
   text-decoration: none;
   color: white;
@@ -113,6 +114,9 @@ export const Title = styled.h3`
   @media (max-width: 1728px) {
     font-size: 32px;
   }
+  @media (max-width: 1728px) {
+    font-size: 28px;
+  }
 `;
 
 export const Subtitle = styled.h4`
@@ -123,6 +127,7 @@ export const Subtitle = styled.h4`
 `;
 
 export const Body = styled.p`
+  font-family: "Porpora", sans-serif;
   font-size: 18px;
   color: #1b1b1b;
   line-height: 1.3;
@@ -151,12 +156,12 @@ export const CentreText = styled(CentreContainer)`
   margin: 64px 25vw 40px 25vw;
 
   @media (max-width: 768px) {
-    margin: 16px;
+    gap: 20px;
+    margin: 48px 20px 20px 20px;
   }
 `;
 
 export const ParentContainer = styled.div`
-
   margin: 24px auto 24px auto;
   display: flex;
   align-items: flex-start;
@@ -171,6 +176,7 @@ export const ParentContainer = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    margin: 20px;
   }
 `;
 
@@ -186,6 +192,7 @@ export const GridContainer = styled.div`
   }
 
   @media (max-width: 768px) {
+    margin: 20px;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }

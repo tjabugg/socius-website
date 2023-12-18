@@ -61,8 +61,15 @@ const CompliSent = () => {
       id: 4,
     },
     {
-      synopsis:
-        "Sentiment analysis is unlocking new behavioural insights across social science disciplines - the applications are vast across domains1 2 3 4   . By mining emotions in text, researchers gain unprecedented understanding of attitudes, opinions, and human behaviour.",
+      synopsis: [
+        <p>
+          Sentiment analysis is unlocking new behavioural insights across social
+          science disciplines - the applications are vast across domains{" "}
+          <sup> 1 2 3 4 </sup> . By mining emotions in text, researchers gain
+          unprecedented understanding of attitudes, opinions, and human
+          behaviour.{" "}
+        </p>,
+      ],
       id: 5,
     },
     {
@@ -279,10 +286,10 @@ const CompliSent = () => {
 export default CompliSent;
 
 export const CoverContainer = styled.div`
-  padding-top: 36px;
+  padding-top: 43px;
 
   @media (max-width: 768px) {
-    padding-top: 48px;
+    padding-top: 55px;
   }
 `;
 
@@ -320,4 +327,12 @@ export const Container = styled(CentreContainer)`
 
 export const TitleContainer = styled(ParentContainer)`
   margin-top: 80px;
+  padding-left: 12px;
+
+  @media (max-width: 1728px) {
+    padding-left: 0px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 64px;
+  }
 `;

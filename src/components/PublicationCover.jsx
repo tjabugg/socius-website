@@ -69,8 +69,8 @@ export const Container = styled(GridContainer)`
   }
 
   @media (max-width: 768px) {
-    margin: 24px;
-    gap: 16px;
+    margin: 20px;
+    gap: 24px;
   }
 `;
 
@@ -104,6 +104,6 @@ export const TextContainer = styled(CentreText)`
   gap: 8px;
 
   @media (max-width: 768px) {
-    margin: 8px;
+    margin: 0px;
   }
 `;

@@ -182,9 +182,9 @@ export default ForSocialScientists;
 
 export const HeadingContainer = styled(ParentContainer)`
   flex-direction: column;
-  padding: 12px;
+  padding-left: 12px;
 
   @media (max-width: 1728px) {
-    padding: 0px;
+    padding-left: 0px;
   }
 `;

@@ -89,6 +89,7 @@ export const CardContainer = styled(ParentContainer)`
   }
 
   @media (max-width: 414px) {
+    margin: 0px 12px 40px 12px;
     display: grid;
     grid-template-columns: 1fr;
   }

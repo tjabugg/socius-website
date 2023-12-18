@@ -39,7 +39,7 @@ export const Container = styled(ParentContainer)`
   gap: 16px;
 
   @media (max-width: 768px) {
-    padding: 16px;
+    padding: 20px;
   }
 `;
 export const Title = styled(Subheading)`
