@@ -182,7 +182,7 @@ const Home = () => {
       <CentreContainer>
         <Title
           style={{
-            margin: "80px 0px 24px 0px",
+            margin: "80px 20px 24px 20px",
           }}
         >
           Explore our documentation
