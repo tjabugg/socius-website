@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   margin: 0;
     padding: 0;
     
+    
 }
 body {
     font-family: "Porpora", sans-serif;
@@ -112,9 +113,6 @@ export const Title = styled.h3`
   color: #1b1b1b;
 
   @media (max-width: 1728px) {
-    font-size: 32px;
-  }
-  @media (max-width: 1728px) {
     font-size: 28px;
   }
 `;
@@ -148,6 +146,7 @@ export const CentreContainer = styled.div`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+
   flex-direction: column;
 `;
 

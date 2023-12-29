@@ -59,13 +59,12 @@ export default PublicationDetails;
 
 export const Date = styled(Body)`
   color: #808080;
-  font-size: 16px;
+  /* font-size: 16px; */
 `;
 
 export const Code = styled(Body)`
   font-family: "Source Code Pro", monospace;
   font-size: 14px;
-
 `;
 
 export const CodeContainer = styled.div`

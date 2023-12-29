@@ -1,0 +1,29 @@
+.embla-thumbs__slide {
+  position: relative;
+}
+
+.embla-thumbs__slide__button {
+  background-color: transparent;
+  touch-action: manipulation;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  height: 5vh;
+  opacity: 0.2;
+  transition: opacity 0.2s;
+}
+
+.embla-thumbs__slide--selected .embla-thumbs__slide__button {
+  opacity: 1;
+}
+
+.embla-thumbs__slide__img {
+  height: 100%;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+

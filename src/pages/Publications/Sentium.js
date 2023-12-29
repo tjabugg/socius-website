@@ -8,11 +8,16 @@ import ArticleCard from "../../components/ArticleCard";
 import Random7x7Pattern01 from "../../assets/svgs/random/random_7x7_pattern_01.svg";
 import Organised15x15Pattern from "../../assets/svgs/organised/organised_15x15_pattern.svg";
 import Moma from "../../assets/images/moma.jpg";
-import Crowd from "../../assets/images/crowd.jpg";
 import NewYork from "../../assets/images/new_york.jpg";
 import Desert from "../../assets/images/desert.jpg";
 import Laughing from "../../assets/images/laughing.jpg";
 import Aristocrats from "../../assets/images/aristocrats.jpg";
+import Carousel from "../../components/Carousel";
+import DiagramOne from "../../assets/videos/Diagram_1.mp4";
+import DiagramTwo from "../../assets/videos/Diagram_2.mp4";
+import DiagramThree from "../../assets/videos/Diagram_3.mp4";
+import DiagramFour from "../../assets/videos/Diagram_4.mp4";
+import DiagramFive from "../../assets/videos/Diagram_5.mp4";
 import { Helmet } from "react-helmet";
 
 import styled from "styled-components";
@@ -46,14 +51,14 @@ const CompliSent = () => {
     },
     {
       paragraph:
-        "Think of two automobile factories: Given a set of components, one factory (recently founded, equipped with advanced features) is able to deliver with 99% success rate. However, by a 1% chance, we may end up receiving a faulty car. You approach the human supervisor of that company and ask for an after service, trying to figure out what caused such a fault. But there’s a big problem. Not only that the system is so complex, the manufacturers are machines. Between manufacturing machines, they communicate in their own language, and the human supervisor cannot simply comprehend. At best, the human supervisor can identify the specific component responsible for the error, but the underlying reasons remain a black box. All the supervisor can only observe is the inputs (components) and the output (a faulty car.\n\nIn contrast, the second factory (with legacy and history) delivers you with a 90% success rate. While the fault rate is slightly higher, the ability to trace and understand the source of faults is enhanced. In this factory, the manufacturers are highly-skilled individuals (the “Meisters”) who follow a structured manual (historical accumulation of knowledge from the past “Meisters”), contributing to a transparent and interpretable assembly line. The human supervisor possesses a clear understanding of the manufacturing process, enabling them to easily identify the causes of faults. The communication between workers is accessible to the supervisor, empowering them to pinpoint the specific component or step that led to the error. While the overall success rate is lower, the system's interpretability facilitates troubleshooting and continuous improvement.",
+        "Think of two automobile factories: Given a set of components, one factory (recently founded, equipped with advanced features) is able to deliver with 99% success rate. However, by a 1% chance, we may end up receiving a faulty car. You approach the human supervisor of that company and ask for an after service, trying to figure out what caused such a fault. But there’s a big problem. Not only that the system is so complex, the manufacturers are machines. Between manufacturing machines, they communicate in their own language, and the human supervisor cannot simply comprehend. At best, the human supervisor can identify the specific component responsible for the error, but the underlying reasons remain a black box. All the supervisor can only observe is the inputs (components) and the output (a faulty car.\n\nIn contrast, the second factory (with legacy and history) delivers you with a 90% success rate. While the fault rate is slightly higher, the ability to trace and understand the source of faults is enhanced. In this factory, the manufacturers are highly-skilled individuals (the “Meisters”) who follow a structured manual (historical accumulation of knowledge from the past “Meisters”), contributing to a transparent and interpretable assembly line. The human supervisor possesses a clear understanding of the manufacturing process, enabling them to easily identify the causes of faults. The communication between workers is accessible to the supervisor, empowering them to pinpoint the specific component or step that led to the error. While the overall success rate is lower, the system's interpretability facilitates troubleshooting and continuous improvement.\n\nThe black-box nature makes it challenging to diagnose and address model limitations (internal validity), adapt models to new data (external validity), avoid biassed results, and build appropriate trust in predictions -  Which is often critical considerations for social science research.",
       id: 2,
     },
     {
-      paragraph:
-        "The black-box nature makes it challenging to diagnose and address model limitations (internal validity), adapt models to new data (external validity), avoid biassed results, and build appropriate trust in predictions -  Which is often critical considerations for social science research.",
+      synopsis: "Diagram",
       id: 3,
     },
+
     {
       synopsis: "Real World Applications",
       paragraph:
@@ -133,6 +138,25 @@ const CompliSent = () => {
     },
   ]);
 
+  // Should probably loop through all the objects in the array
+  const images = [
+    {
+      src: DiagramOne,
+    },
+    {
+      src: DiagramTwo,
+    },
+    {
+      src: DiagramThree,
+    },
+    {
+      src: DiagramFour,
+    },
+    {
+      src: DiagramFive,
+    },
+  ];
+
   return (
     <>
       <Helmet>
@@ -178,20 +202,14 @@ const CompliSent = () => {
           (publicationDetail) => publicationDetail.id === 2
         )}
       />
-      <Container>
-        <MediumContainer>
-          <MyImage
-            src={Crowd}
-            alt="A crowd of pedestrians walking the streets in China"
-          ></MyImage>
-        </MediumContainer>
-      </Container>
 
       <PublicationDetails
         publicationDetails={publicationDetails.filter(
           (publicationDetail) => publicationDetail.id === 3
         )}
       />
+
+      <Carousel images={images}></Carousel>
 
       <PublicationDetails
         publicationDetails={publicationDetails.filter(
