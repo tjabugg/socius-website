@@ -86,6 +86,6 @@ export const GraphicContainer = styled.div`
   }
 
   @media (max-width: 1024px) {
-    padding: 20px 40px;
+    padding: 0px 40px;
   }
 `;

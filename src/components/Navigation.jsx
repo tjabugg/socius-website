@@ -59,7 +59,7 @@ export const HeaderContainer = styled.div`
   left: 0;
   right: 0;
   margin: auto;
-  padding: 24px;
+  padding: 24px 0px;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;

@@ -81,16 +81,15 @@ export const TextContainer = styled(CentreText)`
 `;
 
 export const TextAndImage = styled.div`
-  /* margin: 84px 24px 0px 24px;
-  padding: 0px;
+  margin: 84px auto 0px auto;
+  /* display: inline-block; */
   position: relative;
-  display: inline-block;
-  width: 100% */
+  /* width: calc(100% - 48px); */
+  max-width: 1729px;
 
-  margin: 84px 24px 0px 24px;
-  display: inline-block;
-  position: relative;
-  width: calc(100% - 48px);
+  @media (max-width: 1729px) {
+    margin: 84px 24px 0px 24px;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -100,7 +99,11 @@ export const TextAndImage = styled.div`
 `;
 
 export const GraphicContainer = styled(ImageContainer)`
-  height: 80vh;
+  height: 70vh;
+
+  /* @media (max-width: 1729px) {
+    height: 80vh;
+  } */
 
   @media (max-width: 414px) {
     height: 50vh;

@@ -70,7 +70,7 @@ const CompliSent = () => {
         <p>
           Sentiment analysis is unlocking new behavioural insights across social
           science disciplines - the applications are vast across domains{" "}
-          <sup> 1 2 3 4 </sup> . By mining emotions in text, researchers gain
+          <sup> 1 2 3 4</sup> . By mining emotions in text, researchers gain
           unprecedented understanding of attitudes, opinions, and human
           behaviour.{" "}
         </p>,
@@ -100,7 +100,7 @@ const CompliSent = () => {
       id: 9,
     },
     {
-      heading: "Author",
+      synopsis: "Author",
       paragraph: "Nick Oh",
       id: 10,
     },
@@ -352,5 +352,9 @@ export const TitleContainer = styled(ParentContainer)`
   }
   @media (max-width: 768px) {
     margin-top: 64px;
+  }
+
+  @media (max-width: 414px) {
+    margin-top: 40px;
   }
 `;

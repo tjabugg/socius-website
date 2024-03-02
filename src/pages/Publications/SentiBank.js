@@ -32,7 +32,7 @@ const SentiBank = () => {
       paragraph:
         "Providing a trusted foundation for sentiment analysis via verified dictionaries",
       id: 1,
-      bgColour: "#CBDCFF",
+      bgColour: "#D9FFD8",
       graphic: PublicationCoverPattern,
     },
   ]);
@@ -384,5 +384,9 @@ export const TitleContainer = styled(ParentContainer)`
 
   @media (max-width: 768px) {
     margin-top: 64px;
+  }
+
+  @media (max-width: 414px) {
+    margin-top: 40px;
   }
 `;

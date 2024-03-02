@@ -121,7 +121,7 @@ export const Title = styled.h3`
   max-width: 1729px;
 
   @media (max-width: 1729px) {
-    font-size: 36px;
+    font-size: 28px;
   }
 `;
 

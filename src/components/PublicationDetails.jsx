@@ -20,10 +20,10 @@ const PublicationDetails = ({ publicationDetails }) => {
             ) : null}
 
             {publicationDetail.synopsis ? (
-              <Subtitle>{publicationDetail.synopsis}</Subtitle>
+              <Heading>{publicationDetail.synopsis}</Heading>
             ) : null}
 
-            {publicationDetail.heading ? (
+            {/* {publicationDetail.heading ? (
               <Subtitle
                 style={{
                   marginBottom: "8px",
@@ -31,7 +31,7 @@ const PublicationDetails = ({ publicationDetails }) => {
               >
                 {publicationDetail.heading}
               </Subtitle>
-            ) : null}
+            ) : null} */}
 
             {publicationDetail.paragraph ? (
               <Body>{publicationDetail.paragraph}</Body>
@@ -65,6 +65,10 @@ export const Date = styled(Body)`
 export const Code = styled(Body)`
   font-family: "Source Code Pro", monospace;
   font-size: 14px;
+`;
+
+export const Heading = styled(Subtitle)`
+  font-family: "Porpora Regular";
 `;
 
 export const CodeContainer = styled.div`

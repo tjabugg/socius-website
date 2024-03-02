@@ -19,6 +19,10 @@ export const Thumbnail = (props) => {
           className="embla-thumbs__slide__img"
           src={imgSrc}
           alt="Your alt text"
+          autoPlay={true}
+          loop={true}
+          playsInline={true}
+          muted={true}
         />
       </button>
     </div>
