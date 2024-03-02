@@ -133,7 +133,7 @@ export const Subtitle = styled.h4`
 `;
 
 export const Body = styled.p`
-  font-family: "Porpora", sans-serif;
+  font-family: "Porpora Regular";
   font-size: 19px;
   color: #1b1b1b;
   line-height: 1.3;
