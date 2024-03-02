@@ -1,8 +1,15 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { ReactComponent as SociusLogo } from "./assets/meta/socius_logo.svg";
 import { ReactComponent as SociusWord } from "./assets/meta/socius_logotype.svg";
+import PorporaRegular from "../src/assets/fonts/Porpora-Regular.ttf";
 
 export const GlobalStyle = createGlobalStyle`
+
+@font-face {
+  font-family: 'Porpora Regular';
+  src: url(${PorporaRegular});
+}
+
 
 *{
   font-weight: 400;
@@ -12,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     
 }
 body {
-    font-family: "Porpora", sans-serif;
+    font-family: 'Porpora Regular';
     font-style: normal;
     margin: 0;
     padding: 0;
@@ -24,14 +31,14 @@ body {
 `;
 
 export const Link = styled.a`
-  font-family: "Porpora", sans-serif;
+  font-family: "Porpora Regular";
   font-size: 16px;
   text-decoration: none;
   color: white;
   cursor: pointer;
   opacity: 100%;
 
-  @media (max-width: 1728px) {
+  @media (max-width: 1729px) {
     font-size: 14px;
   }
 
@@ -77,13 +84,13 @@ export const TertiaryButton = styled(PrimaryButton)`
 `;
 
 export const Heading = styled.h1`
-  font-size: 60px;
+  font-size: 64px;
   font-family: "Montagu Slab", serif;
   color: #1b1b1b;
   line-height: 1.1;
 
-  @media (max-width: 992px) {
-    font-size: 40px;
+  @media (max-width: 1729px) {
+    font-size: 48px;
   }
 
   @media (max-width: 414px) {
@@ -97,7 +104,7 @@ export const Subheading = styled.h2`
   line-height: 1.1;
   color: #1b1b1b;
 
-  @media (max-width: 1728px) {
+  @media (max-width: 1729px) {
     font-size: 40px;
   }
 
@@ -107,13 +114,14 @@ export const Subheading = styled.h2`
 `;
 
 export const Title = styled.h3`
-  font-size: 36px;
+  font-size: 40px;
   font-family: "Montagu Slab", serif;
   line-height: 1.1;
   color: #1b1b1b;
+  max-width: 1729px;
 
-  @media (max-width: 1728px) {
-    font-size: 28px;
+  @media (max-width: 1729px) {
+    font-size: 36px;
   }
 `;
 
@@ -126,13 +134,13 @@ export const Subtitle = styled.h4`
 
 export const Body = styled.p`
   font-family: "Porpora", sans-serif;
-  font-size: 18px;
+  font-size: 19px;
   color: #1b1b1b;
   line-height: 1.3;
   white-space: pre-wrap;
 
   @media (max-width: 1728px) {
-    font-size: 17px;
+    font-size: 18px;
   }
 `;
 
@@ -167,9 +175,9 @@ export const ParentContainer = styled.div`
   box-sizing: border-box;
   flex-direction: row;
   gap: 8px;
-  max-width: 1728px;
+  max-width: 1729px;
 
-  @media (max-width: 1728px) {
+  @media (max-width: 1729px) {
     margin: 24px;
   }
 
@@ -183,10 +191,10 @@ export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px 24px;
-  max-width: 1728px;
+  max-width: 1729px;
   margin: 24px auto;
 
-  @media (max-width: 1728px) {
+  @media (max-width: 1729px) {
     margin: 24px;
   }
 
@@ -202,6 +210,12 @@ export const LetterContainer = styled.div`
   width: 100%;
   box-sizing: border-box;
   border-radius: 20px;
+  max-width: 1729px;
+  margin: 0px auto;
+
+  @media (max-width: 1729px) {
+    margin: 0px;
+  }
 
   @media (max-width: 768px) {
     height: 60vh;
@@ -261,17 +275,21 @@ export const MyVideo = styled.video`
   display: block;
   object-fit: cover;
 `;
-
 export const PauseButton = styled.div`
+  position: absolute;
   height: 40px;
   width: 40px;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  margin: 20px;
+  bottom: 0;
+  right: 0;
+  margin: 24px;
+  box-sizing: border-box;
   cursor: pointer;
 
   &:hover {
     opacity: 60%;
+  }
+
+  @media (max-width: 768px) {
+    margin: 20px;
   }
 `;

@@ -38,31 +38,30 @@ const Hero = () => {
     }
   };
 
-  // const lottieRef = useRef<LottieRefCurrentProps |
-
   return (
     <Container>
-      <HeroContainer>
-        <MyVideo
-          ref={videoControls}
-          style={{
-            borderRadius: "0px",
-          }}
-          alt="A video montage of nature and society"
-          src={HeroVideo}
-          autoPlay={true}
-          loop={true}
-          playsInline={true}
-          muted={true}
-        ></MyVideo>
-        {/* Add controls */}
-      </HeroContainer>
+      {/* <HeroContainer> */}
+      <MyVideo
+        ref={videoControls}
+        style={{
+          borderRadius: "0px",
+        }}
+        alt="A video montage of nature and society"
+        src={HeroVideo}
+        autoPlay={true}
+        loop={true}
+        playsInline={true}
+        muted={true}
+      ></MyVideo>
+      {/* Add controls */}
+      {/* </HeroContainer> */}
 
       <ImageContainer>
         <DesktopHero lottieRef={desktopRef} animationData={WebPattern} />
         <TabletHero lottieRef={tabletRef} animationData={TabletPattern} />
         <MobileHero lottieRef={mobileRef} animationData={MobilePattern} />
       </ImageContainer>
+
       <PauseButton>
         <MyImage ref={playButton} src={PauseIcon} onClick={Play}></MyImage>
       </PauseButton>
@@ -75,56 +74,49 @@ const Hero = () => {
 
 export default Hero;
 
-export const HeroContainer = styled.div`
-  /* padding: 0px; */
-  /* margin: 24px; */
-  /* height: 90vh;
-  width: 100%;
-  box-sizing: border-box;
+export const Container = styled.div`
+  display: flex;
   position: relative;
-  top: -1px;
-  display: inline-block; */
-  /* height: 80vh; */
-  /* width: 100%; */
-  box-sizing: border-box;
-  height: 80vh;
-  /* width: 100%; */
+  height: 70vh;
+  margin: 67px auto 0px auto;
+  max-width: 1729px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1729px) {
+    margin: 67px 0px 0px 0px;
     height: 80vh;
   }
-`;
-
-export const Container = styled.div`
-  /* padding: 0px; */
-  /* height: 90vh; */
-  margin: 84px 0px 0px 0px;
-  display: inline-block;
-  position: relative;
-  width: 100%;
 
   @media (max-width: 768px) {
     margin: 64px 0px 0px 0px;
     height: 80vh;
   }
+
+  @media (max-width: 414px) {
+    height: 70vh;
+  }
 `;
 
 export const HeroText = styled(Heading)`
-  width: 70%;
   position: absolute;
-  top: 40px;
-  left: 24px;
+  box-sizing: border-box;
+  top: 24px;
+  left: 0px;
+  right: 0px;
+  margin: 0px auto;
+  padding: 24px;
   color: white;
+  max-width: 1729px;
 
   @media (max-width: 768px) {
-    left: 16px;
+    padding: 20px;
   }
 `;
 
 export const DesktopHero = styled(Lottie)`
   position: absolute;
-  bottom: 0px;
-  width: 100vw;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
   @media (max-width: 768px) {
     display: none;
@@ -133,8 +125,9 @@ export const DesktopHero = styled(Lottie)`
 
 export const TabletHero = styled(Lottie)`
   position: absolute;
-  bottom: 0px;
-  width: 100vw;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: none;
 
   @media (max-width: 768px) and (min-width: 376px) {
@@ -144,8 +137,9 @@ export const TabletHero = styled(Lottie)`
 
 export const MobileHero = styled(Lottie)`
   position: absolute;
-  bottom: 0px;
-  width: 100vw;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: none;
 
   @media (max-width: 375px) {

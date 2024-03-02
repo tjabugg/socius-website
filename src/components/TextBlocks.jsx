@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { Body, Title, ParentContainer, PrimaryButton } from "../styles";
+import {
+  Body,
+  ParentContainer,
+  PrimaryButton,
+  Subheading,
+} from "../styles";
 
 // Destructure blogs and title directly from the props
 const TextBlocks = ({ textBlocks }) => {
@@ -10,7 +15,7 @@ const TextBlocks = ({ textBlocks }) => {
       {textBlocks.map((textBlock) => (
         // When we .map(), each root element we return must have a 'key' property which react uses to keep track of items in the dom
         <TextContainer key={textBlock.id}>
-          <Title>{textBlock.heading}</Title>
+          <Subheading>{textBlock.heading}</Subheading>
           <Paragraph>{textBlock.paragraph}</Paragraph>
           {textBlock.link ? (
             <PrimaryButton
@@ -35,11 +40,11 @@ export default TextBlocks;
 export const TextContainer = styled(ParentContainer)`
   gap: 16px;
   flex-direction: column;
-  margin: 48px auto 48px auto;
+  margin: 56px auto 56px auto;
   max-width: 1728px;
 
   @media (max-width: 1728px) {
-    margin: 48px 24px 48px 24px;
+    margin: 56px 24px 56px 24px;
   }
 
   @media (max-width: 768px) {

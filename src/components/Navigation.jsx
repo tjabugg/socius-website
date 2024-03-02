@@ -43,7 +43,9 @@ function Navigation() {
       <NavContainer>
         <NavLink href="/research">Research</NavLink>
         <NavLink href="/database">Database</NavLink>
-        <PrimaryButton href="/forsocialscientists">For Social Scientists</PrimaryButton>
+        <PrimaryButton href="/forsocialscientists">
+          For Social Scientists
+        </PrimaryButton>
       </NavContainer>
     </HeaderContainer>
   );
@@ -51,17 +53,21 @@ function Navigation() {
 
 export default Navigation;
 
-export const HeaderContainer = styled.header`
+export const HeaderContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   padding: 24px;
   box-sizing: border-box;
-  position: fixed;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   z-index: 1000;
-  /* mix-blend-mode: difference; */
+  max-width: 1729px;
   background-color: white;
 
   @media (max-width: 768px) {
@@ -70,5 +76,5 @@ export const HeaderContainer = styled.header`
 `;
 
 export const NavLink = styled(Link)`
-  mix-blend-mode: difference;
+  color: black;
 `;

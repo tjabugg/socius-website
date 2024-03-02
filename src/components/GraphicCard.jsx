@@ -61,12 +61,13 @@ export const Container = styled(GridContainer)`
 `;
 
 export const PatternCard = styled(CentreContainer)`
-  padding: 24px 160px;
+  padding: 40px;
   border-radius: 20px;
   background-size: cover;
   justify-content: flex-end;
   background-color: #00002e;
   gap: 16px;
+  /* aspect-ratio: 1/1; */
 
   @media (max-width: 1024px) {
     padding: 20px;
@@ -78,6 +79,11 @@ export const GraphicContainer = styled.div`
   width: 100%;
   box-sizing: border-box;
   aspect-ratio: 1/1;
+  max-width: 600px;
+
+  @media (max-width: 1600px) {
+    max-width: 500px;
+  }
 
   @media (max-width: 1024px) {
     padding: 20px 40px;
