@@ -70,6 +70,10 @@ export const HeaderContainer = styled.div`
   max-width: 1729px;
   background-color: white;
 
+  @media (max-width: 1729px) {
+    padding: 24px;
+  }
+
   @media (max-width: 768px) {
     padding: 20px;
   }
