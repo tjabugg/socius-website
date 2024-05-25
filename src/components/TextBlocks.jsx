@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import {
   Body,
+  Caption,
   ParentContainer,
-  PrimaryButton,
   Subheading,
+  TertiaryButton,
 } from "../styles";
 
 // Destructure blogs and title directly from the props
@@ -15,10 +16,13 @@ const TextBlocks = ({ textBlocks }) => {
       {textBlocks.map((textBlock) => (
         // When we .map(), each root element we return must have a 'key' property which react uses to keep track of items in the dom
         <TextContainer key={textBlock.id}>
-          <Subheading>{textBlock.heading}</Subheading>
+          {textBlock.caption ? <Caption>{textBlock.caption}</Caption> : null}
+
+          <Heading>{textBlock.heading}</Heading>
+
           <Paragraph>{textBlock.paragraph}</Paragraph>
           {textBlock.link ? (
-            <PrimaryButton
+            <TertiaryButton
               style={{
                 marginTop: "8px",
               }}
@@ -27,7 +31,7 @@ const TextBlocks = ({ textBlocks }) => {
             >
               {" "}
               {textBlock.button}
-            </PrimaryButton>
+            </TertiaryButton>
           ) : null}
         </TextContainer>
       ))}
@@ -53,6 +57,14 @@ export const TextContainer = styled(ParentContainer)`
 `;
 
 export const Paragraph = styled(Body)`
+  width: 50%;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+`;
+
+export const Heading = styled(Subheading)`
   width: 50%;
 
   @media (max-width: 1024px) {

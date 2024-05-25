@@ -1,41 +1,52 @@
 import React from "react";
 import styled from "styled-components";
-import Wheat from "../assets/images/wheat.jpg";
+// import Wheat from "../assets/videos/wheat.mp4";
+// import Wheat from "../assets/videos/wheat.mp4";
+import Trust from "../assets/videos/light.mp4";
 import {
   Subheading,
   Body,
-  PrimaryButton,
   ParentContainer,
   ImageContainer,
   GridContainer,
-  MyImage,
+  MyVideo,
+  Caption,
+  TertiaryButton,
 } from "../styles";
 
 // Destructure blogs and title directly from the props
-const TextAndImages = ({ textAndImages }) => {
-  return (
-    <Container>
-      {textAndImages.map((textAndImage) => (
-        <GridContainer key={textAndImage.id}>
-          <TextContainer>
-            <Subheading>Open Data</Subheading>
-            <Paragraph>
-              AI runs on data. Our growing open data repository curates diverse
-              datasets to power new breakthroughs.
-            </Paragraph>
-            <PrimaryButton href="/sentibank">
-              Explore our collection
-            </PrimaryButton>
-          </TextContainer>
+const TextAndImages = () => (
+  <Container>
+    {/* {textAndImages.map((textAndImage) => ( */}
+    <GridContainer>
+      <TextContainer>
+        <Caption>Research</Caption>
+        <Subheading>Insights you trust, powered by understanding</Subheading>
+        <Paragraph>
+          Our research focuses on leveraging AI while maintaining transparency
+          and interpretability.
+        </Paragraph>
+        <TertiaryButton href="research">
+          Explore our collection
+        </TertiaryButton>
+      </TextContainer>
 
-          <GraphicContainer>
-            <MyImage src={Wheat} />
-          </GraphicContainer>
-        </GridContainer>
-      ))}
-    </Container>
-  );
-};
+      <GraphicContainer>
+      {/* <MyImage src={Wheat} /> */}
+
+        <MyVideo
+          // alt={secondaryHero.videoAlt}
+          id="myVideoControls"
+          src={Trust}
+          autoPlay={true}
+          loop={true}
+          playsInline={true}
+          muted={true}
+        ></MyVideo>
+      </GraphicContainer>
+    </GridContainer>
+  </Container>
+);
 
 export default TextAndImages;
 
@@ -60,7 +71,7 @@ export const TextContainer = styled(ParentContainer)`
   margin: 0px;
   flex-direction: column;
   width: 80%;
-  align-self: flex-end;
+  align-self: flex-start;
 
   @media (max-width: 768px) {
     width: 100%;

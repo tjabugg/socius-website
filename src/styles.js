@@ -73,13 +73,13 @@ export const SecondaryButton = styled(PrimaryButton)`
 export const TertiaryButton = styled(PrimaryButton)`
   border-bottom: 1px solid #1b1b1b;
   color: #1b1b1b;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0);
   border-radius: 0px;
   padding: 0px;
 
   &:hover {
-    background-color: white;
-    border-bottom: 1px solid white;
+    background-color: rgba(255, 255, 255, 0);
+    border-bottom: solid 1px rgba(255, 255, 255, 0);
   }
 `;
 
@@ -90,7 +90,7 @@ export const Heading = styled.h1`
   line-height: 1.1;
 
   @media (max-width: 1729px) {
-    font-size: 48px;
+    font-size: 54px;
   }
 
   @media (max-width: 414px) {
@@ -105,7 +105,7 @@ export const Subheading = styled.h2`
   color: #1b1b1b;
 
   @media (max-width: 1729px) {
-    font-size: 40px;
+    font-size: 44px;
   }
 
   @media (max-width: 414px) {
@@ -125,7 +125,17 @@ export const Title = styled.h3`
   }
 `;
 
-export const Subtitle = styled.h4`
+export const Synopsis = styled.h4`
+  font-size: 32px;
+  font-family: "Porpora Regular";
+  line-height: 1.1;
+  color: #1b1b1b;
+
+  @media (max-width: 414px) {
+    font-size: 22px;
+  }
+`;
+export const Subtitle = styled.h5`
   font-size: 24px;
   font-family: "Montagu Slab", serif;
   line-height: 1.1;
@@ -159,7 +169,7 @@ export const CentreContainer = styled.div`
 `;
 
 export const CentreText = styled(CentreContainer)`
-  gap: 24px;
+  gap: 16px;
   margin: 64px 25vw 40px 25vw;
 
   @media (max-width: 768px) {

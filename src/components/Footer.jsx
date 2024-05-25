@@ -25,9 +25,9 @@ const Footer = () => (
       <TextContainer>
         <LinkContainer>
           <Title>Socials</Title>
-          <FooterLink>Instagram</FooterLink>
-          <FooterLink>GitHub</FooterLink>
-          <FooterLink>LinkedIn</FooterLink>
+          <FooterLink href="/https://github.com/socius-org" target="_blank">
+            GitHub
+          </FooterLink>
         </LinkContainer>
 
         <LinkContainer>
@@ -44,10 +44,7 @@ const Footer = () => (
           <FooterLink href="https://thomasbugg.com/" target="_blank">
             Thomas Bugg
           </FooterLink>
-          <FooterLink
-            href="https://www.instagram.com/anthonyodu_/"
-            target="_blank"
-          >
+          <FooterLink href="https://anthonyodu.com/" target="_blank">
             Anthony Odu
           </FooterLink>
         </LinkContainer>

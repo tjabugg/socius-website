@@ -43,9 +43,7 @@ function Navigation() {
       <NavContainer>
         <NavLink href="/research">Research</NavLink>
         <NavLink href="/database">Database</NavLink>
-        <PrimaryButton href="/forsocialscientists">
-          For Social Scientists
-        </PrimaryButton>
+        <PrimaryButton href="/documentation">Documentation</PrimaryButton>
       </NavContainer>
     </HeaderContainer>
   );

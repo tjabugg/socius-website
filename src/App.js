@@ -2,7 +2,7 @@ import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import Research from "./pages/Research";
 import Database from "./pages/Database";
-import ForSocialScientists from "./pages/ForSocialScientists";
+import Documentation from "./pages/Documentation";
 import Footer from "./components/Footer";
 import { GlobalStyle } from "./styles";
 import { Routes, Route } from "react-router-dom";
@@ -19,7 +19,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/research" element={<Research />} />
         <Route path="/database" element={<Database />} />
-        <Route path="/forsocialscientists" element={<ForSocialScientists />} />
+        <Route path="/documentation" element={<Documentation />} />
         <Route path="/sentium" element={<Sentium />} />
         <Route path="/sentibank" element={<SentiBank />} />
         <Route path="*" element={<NotFound />} />

@@ -1,4 +1,4 @@
-import { Body, Subtitle } from "../styles";
+import { Body, Caption, ImageContainer, MyImage, Subtitle } from "../styles";
 import styled from "styled-components";
 
 // Destructure blogs and title directly from the props
@@ -11,6 +11,22 @@ const PublicationDetails = ({ publicationDetails }) => {
         // When we .map(), each root element we return must have a 'key' property which react uses to keep track of items in the dom
         <TextContainer key={publicationDetail.id}>
           <BodyContainer>
+            {publicationDetail.icon ? (
+              <a
+                href={
+                  "https://socius-org.github.io/sentibank/Introduction.html"
+                }
+              >
+                {" "}
+                <Icon>
+                  <MyImage
+                    src={publicationDetail.icon}
+                    alt={`GitHub Icon`}
+                  ></MyImage>
+                </Icon>
+              </a>
+            ) : null}
+
             {publicationDetail.link ? (
               <Date>{publicationDetail.link}</Date>
             ) : null}
@@ -37,18 +53,14 @@ const PublicationDetails = ({ publicationDetails }) => {
               <Body>{publicationDetail.paragraph}</Body>
             ) : null}
 
-            {publicationDetail.code ? (
-              <CodeContainer>
-                <Code>{publicationDetail.code}</Code>
-              </CodeContainer>
-            ) : null}
+        
           </BodyContainer>
 
-          {/* <NotesContainer>
+          <NotesContainer>
             {publicationDetail.caption ? (
               <Caption>{publicationDetail.caption}</Caption>
             ) : null}
-          </NotesContainer> */}
+          </NotesContainer>
         </TextContainer>
       ))}
     </div>
@@ -68,7 +80,12 @@ export const Code = styled(Body)`
 `;
 
 export const Heading = styled(Subtitle)`
-  font-family: "Porpora Regular";
+  /* font-family: "Porpora Regular"; */
+`;
+
+export const Icon = styled(ImageContainer)`
+  height: 2vh;
+  width: 2vh;
 `;
 
 export const CodeContainer = styled.div`
@@ -81,7 +98,8 @@ export const TextContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   gap: 80px;
-  /* margin-left: 14vw; */
+  margin-left: 20vw;
+  align-items: baseline;
 
   @media (max-width: 768px) {
     gap: 0px;
@@ -94,7 +112,7 @@ export const BodyContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  flex: 0.35;
+  flex: 0.5;
   gap: 20px;
   margin: 20px;
 
@@ -104,9 +122,13 @@ export const BodyContainer = styled.div`
 `;
 
 export const NotesContainer = styled.div`
-  flex: 0.1;
-  text-align: end;
+  flex: 0.2;
+  /* text-align: end; */
   margin: 20px;
+  align-content: flex-start;
+  vertical-align: middle;
+
+
 
   @media (max-width: 768px) {
     display: none;

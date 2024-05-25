@@ -118,7 +118,7 @@ export const ThumbnailCarousel = styled.div`
   /* background-color: pink; */
 
   @media (max-width: 1729px) {
-    margin: 24px 0px;
+    margin: 24px;
   }
 
   @media (max-width: 768px) {

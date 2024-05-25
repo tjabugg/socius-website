@@ -25,22 +25,21 @@ const Database = () => {
 
   const [textBlocks] = useState([
     {
-      heading: "SentiBank",
+      heading: "sentibank",
       paragraph:
-        "Open database of expert-verified sentiment dictionaries, all accessible through a simple API.\n\nCustomise sentiment dictionary tailored to your field of application. Instantly discover a vast knowledge base of annotated corpora spanning diverse domains.",
+        "Frictionlessly import open database of expert-verified sentiment dictionaries\n\nInterpretable dictionary-based sentiment analysis remains crucial, yet leveraging dispersed lexicons poses obstacles. sentibank solves key challenges by centralising high-quality dictionaries spanning diverse domains and genres. No more scattered sources, conflicting labels, or duplicates – sentibank curates and standardises lexicons, enabling effortless integration into your research workflows.",
       id: 1,
-      paddingBottom: "24px",
       button: "Read more",
-      link: "sentibank",
+      link: "https://socius-org.github.io/sentibank/Introduction.html",
+      target: "_blank",
     },
     {
-      heading: "Optimising Research Through Private Data Archive",
+      heading: "RedditHarbor",
       paragraph:
-        "14M+ data rows delivered and counting. Researchers rank our dashboard as saving 87%+ of the time and months of work compared to alternatives.",
+        "Ethical, legal, and effortless acquisition of Reddit data through a simple API.\n\nSocial media data like Reddit offers rich insights into human behavior and beliefs, but collecting and storing this data requires navigating complex APIs. RedditHarbor streamlines this entire workflow, with researchers ranking our toolkit as saving 87%+ of time and months of work compared to alternatives, while ensuring ethical and legal compliance.",
       id: 2,
-      paddingBottom: "24px",
-      button: "Get priority access",
-      link: "mailto:nick.sh.oh@gmail.com",
+      button: "Read more",
+      link: "https://socius-org.github.io/RedditHarbor/about.html",
       target: "_blank",
     },
   ]);
@@ -76,12 +75,12 @@ const Database = () => {
       bgColour: "#00002E",
       textColour: "white",
       image: LandscapePainting,
-      heading: "Leverage SentiBank with Sentium",
+      heading: "Leverage SentiBank with entium",
       paragraph:
         "Experience customisable sentiment analysis that unlocks deeper insights.",
       id: 1,
       button: "Learn more",
-      link: "complisent",
+      link: "sentium",
     },
   ]);
 

@@ -53,6 +53,7 @@ const ArticleCards = ({ articleCards, alignment }) => {
               alignSelf: "flex-start",
             }}
             href={articleCard.link}
+            target="_blank"
           >
             Learn more
           </SecondaryButton>
@@ -69,7 +70,7 @@ export const CardContainer = styled(ParentContainer)`
   /* justify-content: center; */
   /* margin: 0px 12px 24px 12px; */
   margin: 0px auto 80px auto;
-  gap: 20px 0px;
+  gap: 24px 0px;
   max-width: 1728px;
 
   @media (max-width: 1728px) {

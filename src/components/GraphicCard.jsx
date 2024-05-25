@@ -3,6 +3,7 @@ import { Body, GridContainer, SecondaryButton } from "../styles";
 import styled from "styled-components";
 import { CentreContainer, Subtitle, MyImage } from "../styles";
 
+
 // Destructure blogs and title directly from the props
 const GraphicCards = ({ graphicCards }) => {
   return (

@@ -3,14 +3,18 @@ import ArticleCard from "../components/ArticleCard";
 import { useState } from "react";
 import TextBlocks from "../components/TextBlocks";
 import GraphicCards from "../components/GraphicCard";
+import InformationCards from "../components/InformationCard";
 import StockExchange from "../assets/images/stock_exchange.jpg";
 import FrozenIce from "../assets/images/frozen_ice.jpg";
-import FriendsAtDusk from "../assets/images/friends.jpg";
-import PostIt from "../assets/images/post_it_notes.jpg";
+import Crossroads from "../assets/images/crossroads.jpg";
+import FilmCrowd from "../assets/images/film_crowd.jpg";
 import CallToAction from "../components/CallToAction";
 import TextAndImage from "../components/TextAndImage";
 import HoverAnimation from "../assets/videos/hover_animation.json";
 import SquarePattern from "../assets/svgs/organised/organised_1x1_pattern.svg";
+import BgBlue from "../assets/svgs/bg_blue.svg";
+import BgMint from "../assets/svgs/bg_mint.svg";
+import BgGreen from "../assets/svgs/bg_green.svg";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
 
@@ -22,9 +26,9 @@ import {
   CentreContainer,
   MyImage,
   CentreText,
-  ParentContainer,
   TertiaryButton,
-  Title,
+  Caption,
+  Synopsis,
 } from "../styles";
 
 const Home = () => {
@@ -37,66 +41,92 @@ const Home = () => {
       id: 1,
     },
     {
-      heading: "Resources to streamline your workflows",
+      caption: "Database",
+      heading: "Transparent, reproducible research fuel",
       paragraph:
-        "Concentrate on your impactful discoveries, not technicalities. Our documentation features step-by-step instructions, tutorials and API references, making our AI models and datasets readily accessible.  ",
+        "Leverage curated datasets or crawl data seamlessly through our growing open database.",
       id: 2,
-      button: "Discover all of our resources",
-      link: "forsocialscientists",
+      button: "Explore our collection",
+      link: "database",
     },
   ]);
 
   const [graphicCards] = useState([
     {
       image: SquarePattern,
-      heading: "Sentium: Accuracy engineered for understanding",
+      heading: "sentibank: Encyclopedic Hub for Sentiment dictionaries",
       paragraph:
-        "Fusing AI linguistics with configurable logic for interpretable sentiment analysis",
+        "Domain-genre specific dictionaries tailored to your field of application",
       id: 1,
       link: "sentium",
     },
     {
       bgImage: FrozenIce,
-      heading: "SentiBank: Unleashing the emotions of textual data",
-      paragraph:
-        "Providing a trusted foundation for sentiment analysis via verified dictionaries",
+      heading: "RedditHarbor: Responsible ETL toolkit for Reddit data",
+      paragraph: "Ethical, legal, and effortless extraction of Reddit data",
       id: 2,
       link: "sentibank",
+    },
+  ]);
+
+  const [informationCards] = useState([
+    {
+      bgImage: BgBlue,
+      heading: "Research",
+      paragraph:
+        "Our research designs transparent and interpretable AI systems guided by social science principles.",
+      id: 1,
+      link: "sentium",
+    },
+    {
+      bgImage: BgMint,
+      heading: "Database",
+      paragraph:
+        "Gain access to our curated datasets or crawl data seamlessly through our open data repository.",
+      id: 2,
+      link: "sentibank",
+    },
+    {
+      bgImage: BgGreen,
+      heading: "Documentation",
+      paragraph:
+        "Our documentation enables accessible AI, datasets, and tools through step-by-step API references.",
+      id: 3,
     },
   ]);
 
   const [articleCards] = useState([
     {
       align: "center",
-      image: FriendsAtDusk,
+      image: Crossroads,
       padding: "0px",
       heading: "Sentium",
       paragraph:
         "Explore our comprehensive guides and resources to utilise Sentium, through documentation crafted to simplify and streamline your research workflow.",
       alt: "A group of friends sat in the foreground before an evening sky",
       id: 1,
-      link: "forsocialscientists",
+      link: "",
     },
     {
       bgColour: "#CBDCFF",
       animation: HoverAnimation,
-      heading: "SentiBank",
+      align: "center",
+      heading: "sentibank",
       paragraph:
-        "Access extensive documentation explaining the breadth of annotated lexica available in SentiBank, to amplify the capabilities of your sentiment analysis.",
-      alt: "An animation from the socius design system",
+        "Access extensive documentation explaining the breadth of annotated lexica available in sentibank, to amplify the capabilities of your sentiment analysis.",
+      alt: "A group of friends sat in the foreground before an evening sky",
       id: 2,
-      link: "forsocialscientists",
+      link: "https://socius-org.github.io/sentibank/Introduction.html",
     },
-  ]);
-
-  const [textAndImages] = useState([
     {
-      heading: "Open Data",
+      image: FilmCrowd,
+      padding: "0px",
+      heading: "RedditHarbor",
       paragraph:
-        "AI runs on data. Our growing open data repository curates diverse datasets to power new breakthroughs.",
-      id: 1,
-      button: "Explore our collection",
-      link: "database",
+        "Harness the power of RedditHarbor, our responsible ETL toolkit designed to simplify and streamline the process of collecting and storing Reddit data for your research needs.",
+      alt: "An animation from the socius design system",
+      id: 3,
+      link: "https://socius-org.github.io/RedditHarbor/about.html",
     },
   ]);
 
@@ -138,36 +168,23 @@ const Home = () => {
         <meta property="og:image" content={StockExchange} />
       </Helmet>
       <Hero />
-      {/* Property name (blogs) with dynamic prop value {blogs} */}
-      <TextBlocks
-        textBlocks={textBlocks.filter((textBlock) => textBlock.id === 1)}
-      />
-      <ParentContainer>
-        <LetterContainer>
-          <MyImage
-            style={{
-              borderRadius: "20px",
-            }}
-            alt={`A close up photo of a hand pointing at post-it notes on a whiteboard`}
-            src={PostIt}
-          />
-        </LetterContainer>
-      </ParentContainer>
 
       <CentreText>
-        <Subheading>Our Research</Subheading>
-        <Body>
-          Designing AI with social science principles. Our research focuses on
-          leveraging AI while maintaining transparency and interpretability. 
-        </Body>
-        <TertiaryButton href="research">View all research</TertiaryButton>
+        <Synopsis>
+          Accelerate every stage of your research lifecycle with open-source AI
+          models, datasets, and tools
+        </Synopsis>
       </CentreText>
 
-      <GraphicCards graphicCards={graphicCards} />
+      <InformationCards informationCards={informationCards} />
+
+      <TextAndImage />
 
       <TextBlocks
         textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
       />
+
+      <GraphicCards graphicCards={graphicCards} />
 
       <LetterContainer>
         <MyImage
@@ -179,19 +196,19 @@ const Home = () => {
         />
       </LetterContainer>
 
-      <CentreContainer>
-        <Title
-          style={{
-            margin: "80px 20px 24px 20px",
-          }}
-        >
-          Explore our documentation
-        </Title>
-      </CentreContainer>
+      <CentreText>
+        <Caption>Documentation</Caption>
+        <Subheading>Focus on discoveries, not technicalities </Subheading>
+        <Body>
+          Our documentation enables accessible AI, datasets, and tools through
+          step-by-step API references.{" "}
+        </Body>
+        <TertiaryButton href="documentation">
+          Discover our resources
+        </TertiaryButton>
+      </CentreText>
 
       <ArticleCard articleCards={articleCards} alignment={"center"} />
-
-      <TextAndImage textAndImages={textAndImages} />
 
       <QuoteContainer>
         <Subheading>
