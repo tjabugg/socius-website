@@ -2,10 +2,10 @@ import { useState } from "react";
 import TextBlocks from "../components/TextBlocks";
 import SecondaryHero from "../components/SecondaryHero";
 import OverviewGarden from "../assets/images/overview_garden.jpg";
-import AerialDesert from "../assets//images/aerial_desert.jpg";
+import Desert from "../assets//images/aerial_desert.jpg";
 import React from "react";
 import PublicationCover from "../components/PublicationCover";
-import PublicationCoverPattern from "../assets/svgs/organised/organised_sentium_pattern.svg";
+import PublicationCoverPattern from "../assets/svgs/organised/organised_sentium_pattern.svg"; 
 import FooterCard from "../components/FooterCard";
 import { Helmet } from "react-helmet";
 
@@ -43,7 +43,7 @@ const Research = () => {
   const [footerCards] = useState([
     {
       bgColour: "#3C46FF",
-      image: AerialDesert,
+      image: Desert,
       heading: "Take Sentium further with sentibank",
       paragraph:
         "Tailor sentiment analysis to your needs with SentiBank, the largest public repository of sentiment dictionaries.",

@@ -1,7 +1,7 @@
 import React from "react";
-import { Body, GridContainer, TertiaryButton } from "../styles";
+import { Body, GridContainer } from "../styles";
 import styled from "styled-components";
-import { ParentContainer, Subtitle, MyImage } from "../styles";
+import { ParentContainer, Subtitle } from "../styles";
 
 // Destructure blogs and title directly from the props
 const InformationCards = ({ informationCards }) => {
