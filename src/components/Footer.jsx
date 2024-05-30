@@ -28,15 +28,19 @@ const Footer = () => (
           <FooterLink href="/https://github.com/socius-org" target="_blank">
             GitHub
           </FooterLink>
+          <FooterLink
+            href="https://www.linkedin.com/company/socius-org/about/"
+            target="_blank"
+          >
+            LinkedIn
+          </FooterLink>
         </LinkContainer>
 
         <LinkContainer>
           <Title>Information</Title>
           <FooterLink href="/research">Research</FooterLink>
           <FooterLink href="/database">Database</FooterLink>
-          <FooterLink href="/forsocialscientists">
-            For Social Scientists
-          </FooterLink>
+          <FooterLink href="/documentation">Documentation</FooterLink>
         </LinkContainer>
 
         <LinkContainer>

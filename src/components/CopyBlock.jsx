@@ -26,13 +26,20 @@ export const TextContainer = styled.div`
   /* display: flex; */
   /* flex-direction: row; */
   justify-content: center;
-  margin: 0px 10vw 0px 10vw;
+  /* margin: 0px 10vw 0px 10vw; */
+  margin: 24px auto 24px auto;
   /* gap: 80px; */
   /* align-items: center; */
   /* width: 100%; */
 
+  max-width: 1729px;
+
+  @media (max-width: 1729px) {
+    margin: 24px;
+  }
+
   @media (max-width: 768px) {
-    margin: 0px;
+    margin: 20px;
   }
 `;
 
@@ -41,6 +48,11 @@ export const BodyContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   /* flex: 0.35; */
-  gap: 20px;
-  margin: 20px;
+  /* gap: 20px; */
+  /* margin: 24px auto 24px auto;
+  max-width: 1729px;
+
+  @media (max-width: 1729px) {
+    margin: 24px;
+  } */
 `;

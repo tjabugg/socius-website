@@ -48,7 +48,7 @@ const Research = () => {
       paragraph:
         "Tailor sentiment analysis to your needs with SentiBank, the largest public repository of sentiment dictionaries.",
       id: 7,
-      button: "Browse SentiBank",
+      button: "Browse sentibank",
       link: "sentibank",
       textColour: "white",
     },

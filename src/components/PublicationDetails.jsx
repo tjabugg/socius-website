@@ -12,11 +12,7 @@ const PublicationDetails = ({ publicationDetails }) => {
         <TextContainer key={publicationDetail.id}>
           <BodyContainer>
             {publicationDetail.icon ? (
-              <a
-                href={
-                  "https://socius-org.github.io/sentibank/Introduction.html"
-                }
-              >
+              <a href={"https://github.com/socius-org/sentibank"}>
                 {" "}
                 <Icon>
                   <MyImage
@@ -52,8 +48,6 @@ const PublicationDetails = ({ publicationDetails }) => {
             {publicationDetail.paragraph ? (
               <Body>{publicationDetail.paragraph}</Body>
             ) : null}
-
-        
           </BodyContainer>
 
           <NotesContainer>
@@ -112,9 +106,14 @@ export const BodyContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  flex: 0.5;
+  flex: 0.4;
   gap: 20px;
   margin: 20px;
+  max-width: 1729px;
+
+  @media (max-width: 1729px) {
+    flex: 0.5;
+  }
 
   @media (max-width: 768px) {
     flex: 1;
@@ -127,8 +126,6 @@ export const NotesContainer = styled.div`
   margin: 20px;
   align-content: flex-start;
   vertical-align: middle;
-
-
 
   @media (max-width: 768px) {
     display: none;

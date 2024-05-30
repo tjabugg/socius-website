@@ -58,14 +58,14 @@ const Home = () => {
       paragraph:
         "Domain-genre specific dictionaries tailored to your field of application",
       id: 1,
-      link: "sentium",
+      link: "sentibank",
     },
     {
       bgImage: FrozenIce,
       heading: "RedditHarbor: Responsible ETL toolkit for Reddit data",
       paragraph: "Ethical, legal, and effortless extraction of Reddit data",
       id: 2,
-      link: "sentibank",
+      link: "https://github.com/socius-org/RedditHarbor",
     },
   ]);
 

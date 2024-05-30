@@ -32,7 +32,7 @@ const SentiBank = () => {
   const [publicationCovers] = useState([
     {
       date: "August 2023",
-      heading: "SentiBank: Unleashing the emotions of textual data",
+      heading: "sentibank: Unleashing the emotions of textual data",
       paragraph:
         "Providing a trusted foundation for sentiment analysis via verified dictionaries",
       id: 1,
@@ -43,20 +43,20 @@ const SentiBank = () => {
 
   const [showLineNumbers] = useState([
     {
-      code: `# 1. Installation 
+      code: `# 1. Installation
 
-      pip install sentibank 
+      pip install sentibank
       
       
-      # 2. Import modules 
+      # 2. Import modules
       
-      from sentibank import archive 
+      from sentibank import archive
       
       
-      # 3. Access dictionaries 
+      # 3. Access dictionaries
       
-      load = archive.load( ) 
-      vader = load.dict(“VADER_v2014”) 
+      load = archive.load( )
+      vader = load.dict(“VADER_v2014”)
       `,
     },
   ]);
@@ -67,7 +67,7 @@ const SentiBank = () => {
       date: "May 31, 2023",
       id: 1,
       synopsis:
-        "SentiBank is an open database project that embraces emotions as the heart of textual data. The journey began with a realisation of the profound impact emotions have on every aspect of human life.",
+        "sentibank is an open database project that embraces emotions as the heart of textual data. The journey began with a realisation of the profound impact emotions have on every aspect of human life.",
     },
     {
       paragraph:
@@ -177,7 +177,7 @@ const SentiBank = () => {
       <Helmet>
         {/* <!-- Primary Meta Tags --> */}
         <title>
-          SentiBank: Unleashing the emotions of textual data | socius
+          sentibank: Unleashing the emotions of textual data | socius
         </title>
         <meta
           name="title"
@@ -273,7 +273,7 @@ const SentiBank = () => {
       />
 
       <TitleContainer>
-        <Title>Explore our documentation for SentiBank</Title>
+        <Title>Explore our documentation for sentibank</Title>
       </TitleContainer>
       <ArticleCard articleCards={sentiBankCards} />
     </>

@@ -46,46 +46,46 @@ const CompliSent = () => {
 
   const [showLineNumbers] = useState([
     {
-      code: `1. Installation 
+      code: `# 1. Installation
 
-      pip install sentium 
+      pip install sentium
       
-      2. Import modules 
+      # 2. Import modules
       
       from sentium.heuristic.modules import tag, parse, evaluate
       from sentium.engine import Pipeline
       
-      3. Set configurations 
+      # 3. Set configurations
       
-          module_config = {
-              "tag": {
-                  "neural": "spaCy" 
-                  },
-              "parse": {
-                  "neural": "roBERTa_OntoNotes_v5", 
-                  "logic": "PoriaEtAl_2000", 
-                  "entity": None,
-                  }, 
-              "evaluate": {
-                  "dictionary": "VADER_v2014", 
-                  "logic": "HuttoGilbert_2014"
-                  }
-          }
+      module_config = {
+          "tag": {
+              "neural": "spaCy"
+              },
+          "parse": {
+              "neural": "roBERTa_OntoNotes_v5",
+              "logic": "PoriaEtAl_2000",
+              "entity": None,
+              },
+          "evaluate": {
+              "dictionary": "VADER_v2014",
+              "logic": "HuttoGilbert_2014"
+              }
+      }
       
-      4. Initialise model 
+      # 4. Initialise model
       
-          model = Pipeline(genre="formal", domain="finance")
-          
-          tag, parse, evaluate = tag(module_config["tag"]), parse(module_config["parse"]), evaluate(module_config["evaluate"])
-          
-          model = model.add(tag.pos)
-          model = model.add(parse.aspect)
-          model = model.add(evaluate.sentiment)
+      model = Pipeline(genre="formal", domain="finance")
       
-      5. Analyse data 
+      tag, parse, evaluate = tag(module_config["tag"]), parse(module_config["parse"]), evaluate(module_config["evaluate"])
       
-          sentences = [...] # list of strings   
-          result = model.analyze(sentences)
+      model = model.add(tag.pos)
+      model = model.add(parse.aspect)
+      model = model.add(evaluate.sentiment)
+      
+      # 5. Analyse data
+      
+      sentences = [...] # list of strings  
+      result = model.analyze(sentences)
       `,
     },
   ]);

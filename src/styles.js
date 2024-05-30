@@ -172,6 +172,10 @@ export const CentreText = styled(CentreContainer)`
   gap: 16px;
   margin: 64px 25vw 40px 25vw;
 
+  @media (max-width: 1729px) {
+    margin: 64px 30vw 40px 30vw;
+  }
+
   @media (max-width: 768px) {
     gap: 20px;
     margin: 48px 20px 20px 20px;
@@ -249,6 +253,10 @@ export const NavContainer = styled.nav`
   flex-direction: row;
   gap: 24px;
   align-items: center;
+
+  @media (max-width: 768px) {
+    gap: 16px;
+  }
 `;
 
 export const LogoContainer = styled(NavContainer)`

@@ -30,7 +30,7 @@ const Database = () => {
         "Frictionlessly import open database of expert-verified sentiment dictionaries\n\nInterpretable dictionary-based sentiment analysis remains crucial, yet leveraging dispersed lexicons poses obstacles. sentibank solves key challenges by centralising high-quality dictionaries spanning diverse domains and genres. No more scattered sources, conflicting labels, or duplicates – sentibank curates and standardises lexicons, enabling effortless integration into your research workflows.",
       id: 1,
       button: "Read more",
-      link: "https://socius-org.github.io/sentibank/Introduction.html",
+      link: "sentibank",
       target: "_blank",
     },
     {
@@ -39,7 +39,7 @@ const Database = () => {
         "Ethical, legal, and effortless acquisition of Reddit data through a simple API.\n\nSocial media data like Reddit offers rich insights into human behavior and beliefs, but collecting and storing this data requires navigating complex APIs. RedditHarbor streamlines this entire workflow, with researchers ranking our toolkit as saving 87%+ of time and months of work compared to alternatives, while ensuring ethical and legal compliance.",
       id: 2,
       button: "Read more",
-      link: "https://socius-org.github.io/RedditHarbor/about.html",
+      link: "https://github.com/socius-org/RedditHarbor",
       target: "_blank",
     },
   ]);
@@ -75,7 +75,7 @@ const Database = () => {
       bgColour: "#00002E",
       textColour: "white",
       image: LandscapePainting,
-      heading: "Leverage SentiBank with entium",
+      heading: "Leverage sentibank with Sentium",
       paragraph:
         "Experience customisable sentiment analysis that unlocks deeper insights.",
       id: 1,

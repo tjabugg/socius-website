@@ -9,7 +9,7 @@ import {
 import HeroVideo from "../assets/videos/montage.mp4";
 import WebPattern from "../assets/videos/web_hero.json";
 import TabletPattern from "../assets/videos/tablet_hero.json";
-import MobilePattern from "../assets/videos/mobile_hero.json";
+// import MobilePattern from "../assets/videos/mobile_hero.json";
 import PauseIcon from "../assets/meta/pause_button.svg";
 import PlayIcon from "../assets/meta/play_button.svg";
 import Lottie from "lottie-react";
@@ -59,7 +59,7 @@ const Hero = () => {
       <ImageContainer>
         <DesktopHero lottieRef={desktopRef} animationData={WebPattern} />
         <TabletHero lottieRef={tabletRef} animationData={TabletPattern} />
-        <MobileHero lottieRef={mobileRef} animationData={MobilePattern} />
+        {/* <MobileHero lottieRef={mobileRef} animationData={MobilePattern} /> */}
       </ImageContainer>
 
       <PauseButton>
@@ -130,19 +130,19 @@ export const TabletHero = styled(Lottie)`
   bottom: 0;
   display: none;
 
-  @media (max-width: 768px) and (min-width: 376px) {
+  @media (max-width: 768px) {
     display: block;
   }
 `;
 
-export const MobileHero = styled(Lottie)`
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: none;
+// export const MobileHero = styled(Lottie)`
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   display: none;
 
-  @media (max-width: 375px) {
-    display: block;
-  }
-`;
+//   @media (max-width: 375px) {
+//     display: block;
+//   }
+// `;
