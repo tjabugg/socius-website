@@ -2,9 +2,3 @@
 from = "/*"
 to = "/index.html"
 status = 200
-
-[[redirects]]
-from = "“doc.socius.org/sentibank/"
-to = "doc.socius.org/sentibank/about"
-status = 200
-force = true
