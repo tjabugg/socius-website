@@ -20,7 +20,7 @@ const App = () => {
         <Route path="/research" element={<Research />} />
         <Route path="/database" element={<Database />} />
         <Route path="/documentation" element={<Documentation />} />
-        <Route path="/sentium" element={<Sentium />} />
+        <Route path="/research/sentium" element={<Sentium />} />
         <Route path="/sentibank" element={<SentiBank />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

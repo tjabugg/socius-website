@@ -36,7 +36,7 @@ const Research = () => {
       id: 1,
       bgColour: "#193718",
       graphic: PublicationCoverPattern,
-      link: "sentium",
+      link: "/research/sentium",
     },
   ]);
 
