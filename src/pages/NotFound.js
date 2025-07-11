@@ -3,7 +3,6 @@ import {
   CentreContainer,
   Heading,
   Body,
-  SecondaryButton,
   CentreText,
 } from "../styles";
 import styled from "styled-components";
@@ -39,21 +38,21 @@ const NotFound = () => (
     </Helmet>
     ;
     <TextContainer>
-      <Title
+      {/* <Title
         style={{
           color: "#cbdcff",
         }}
       >
         404
-      </Title>
+      </Title> */}
       <Caption
         style={{
           color: "#cbdcff",
         }}
       >
-        This page could not be found
+        We're currently renovating our website - check back in September!
       </Caption>
-      <SecondaryButton href="/">Country roads, take me home!</SecondaryButton>
+      {/* <SecondaryButton href="/">Country roads, take me home!</SecondaryButton> */}
     </TextContainer>
   </Container>
 );
