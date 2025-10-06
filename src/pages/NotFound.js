@@ -50,7 +50,7 @@ const NotFound = () => (
           color: "#cbdcff",
         }}
       >
-        We're currently renovating our website - please check back on the 15th of October !
+        We're currently renovating our website - please check back on the 15th of October!
       </Caption>
       {/* <SecondaryButton href="/">Country roads, take me home!</SecondaryButton> */}
     </TextContainer>
