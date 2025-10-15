@@ -1,0 +1,254 @@
+import { useState } from "react";
+import TextBlocks from "../components/TextBlocks";
+import SecondaryHero from "../components/SecondaryHero";
+import Diplomats from "../assets/images/diplomat.jpg";
+import LSE from "../assets/images/lse.jpg";
+import { Helmet } from "react-helmet";
+import {
+  CentreContainer,
+  GridContainer,
+  H4,
+  ImageContainer,
+  MyImage,
+  PaddedContainer,
+} from "../styles";
+import styled from "styled-components";
+import CallToAction from "../components/CallToAction";
+
+const About = () => {
+  const [secondaryHeroes] = useState([
+    {
+      subtitle: "About",
+      heading: "Some call us interdisciplinary.\nWe prefer experimental.",
+      image: Diplomats,
+      imageAlt:
+        "19th Century Painting of The Reception of Lord Byron at Missolonghi",
+      id: 1,
+    },
+  ]);
+
+  const [textBlocks] = useState([
+    {
+      justify: "flex-end",
+      subheading:
+        "At socius labs, we create experimental collisions between machine intelligence and human sciences.\n \nBy human sciences, we mean the fuzzy constellation of fields that studied how humans think, behave, and function — psychology, cognitive science, social sciences, and relevant parts of philosophy and neuroscience.\n \nWhat defines us is a hypothesis: that human sciences contain solutions machines haven't discovered, and machine intelligence offers laboratories human sciences never imagined.\n \nNo boundaries on which direction insights flow. No assumptions about what's useful. Just experimenting whether centuries of human thought can debug tomorrow's machines, and whether tomorrow's machines can finally test yesterday's theories.",
+      id: 1,
+    },
+    {
+      captionOne: "How we started?",
+      tagOneColour: "#ffffff",
+      textColour: "#ffffff",
+      subheading:
+        "The story of socius begins at the London School of Economics.",
+      id: 2,
+    },
+    {
+      justify: "flex-end",
+      textColour: "#ffffff",
+      altParagraph:
+        "socius labs began as 'socialscience.ai', exploring how artificial intelligence could advance social science research. The initial vision was straightforward. To bring AI tools to social scientists, help them analyse data, accelerate their research.\n \nBut the work revealed something unexpected. The most interesting discoveries came from reversing the question. Instead of AI serving social science, what if the disciplines that studied us (human) could advance machine intelligence?\n \nToday, socius labs exists to explore this convergence. As an independent research lab supported by the LSE and LSE Generate, we run experiments between every field that studied thinking and every machine trying to think.",
+      id: 3,
+    },
+    {
+      subheading: "Our Experimental Layers",
+      id: 4,
+    },
+    {
+      // justify: "flex-end",
+      altParagraph: "Yesterday’s Theories, Tomorrow’s Upgrades",
+      id: 5,
+    },
+    {
+      // justify: "flex-end",
+      altParagraph:
+        "We don't research humans to decode machines. We experiment whether the sciences that explained humans can improve machines — both how they think and how they work with us. Psychology becomes architecture. Philosophy becomes justification. Economics becomes prediction. Every human insight is a potential machine upgrade.",
+      textColour: "#706A65",
+      id: 6,
+    },
+    {
+      // justify: "flex-end",
+      altParagraph: "Tomorrow’s Laboratories, Yesterday’s Questions",
+      id: 7,
+    },
+    {
+      // justify: "flex-end",
+      altParagraph:
+        "We don't just implement human theories — we test them. Machines become laboratories where economic theories spawn million-agent markets, psychological models surf infinite memories, and uncomputable questions meet microsecond verdicts. Silicon subjects don't get tired, don't quit studies, and can't unionise (yet). They're the test subjects human sciences never had.",
+      textColour: "#706A65",
+      id: 8,
+    },
+  ]);
+  const [callToActions] = useState([
+    {
+      heading: "We're ready to combine our capabilities with your expertise. ",
+      button: "Get in touch",
+      bgColour: "#E6E4E2",
+      id: 1,
+      textColour: "#1C1C1E",
+    },
+  ]);
+
+  return (
+    <>
+      <Helmet>
+        {/* <!-- Primary Meta Tags --> */}
+        <title>Between Every Field That Studied Thinking | socius labs</title>
+        <meta
+          name="title"
+          content="Between Every Field That Studied Thinking | socius labs"
+        />
+        <meta
+          name="description"
+          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
+        />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
+        <meta
+          property="og:title"
+          content="Between Every Field That Studied Thinking | socius labs"
+        />
+        <meta
+          property="og:description"
+          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
+        />
+        <meta property="og:image" content={LSE} />
+      </Helmet>
+
+      <SecondaryHero secondaryHeroes={secondaryHeroes} />
+      <PaddedContainer>
+        <TextBlocks
+          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 1)}
+        />
+      </PaddedContainer>
+
+      <CustomContainer
+        style={{
+          backgroundColor: "#3c46ff",
+        }}
+      >
+        <CustomGrid>
+          <TextBlocks
+            textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
+          />
+
+          <TextBlocks
+            textBlocks={textBlocks.filter((textBlock) => textBlock.id === 3)}
+          />
+        </CustomGrid>
+
+        <ImageContainer
+          style={{
+            aspectRatio: "#E6E4E2",
+            gap: "40px",
+          }}
+        >
+          <MyImage src={LSE} alt="The London School of Economics" />
+        </ImageContainer>
+      </CustomContainer>
+
+      <CustomGrid>
+        <Container>
+          <TextBlocks
+            textBlocks={textBlocks.filter((textBlock) => textBlock.id === 4)}
+          />
+        </Container>
+
+        <Container>
+          <ColourContainer
+            style={{
+              backgroundColor: "#CBDCFF",
+            }}
+          >
+            <TextBlocks
+              textBlocks={textBlocks.filter((textBlock) => textBlock.id === 5)}
+            />
+            <TextBlocks
+              textBlocks={textBlocks.filter((textBlock) => textBlock.id === 6)}
+            />
+          </ColourContainer>
+          <ColourContainer
+            style={{
+              backgroundColor: "#D9FFD8",
+            }}
+          >
+            <TextBlocks
+              textBlocks={textBlocks.filter((textBlock) => textBlock.id === 7)}
+            />
+            <TextBlocks
+              textBlocks={textBlocks.filter((textBlock) => textBlock.id === 8)}
+            />
+          </ColourContainer>
+        </Container>
+      </CustomGrid>
+
+      <QuoteContainer>
+        <H4>
+          Every AI lab builds forward. We build backward too. Maybe the solution
+          to tomorrow's problem was solved in 1979. Or 1781.
+        </H4>
+      </QuoteContainer>
+      <CallToAction callToActions={callToActions} />
+    </>
+  );
+};
+
+export default About;
+
+export const ColourContainer = styled(PaddedContainer)`
+  padding: 24px;
+  border-radius: 20px;
+  margin: 0px;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    margin: 0px;
+  }
+`;
+
+export const Container = styled(PaddedContainer)`
+  margin: 24px;
+  @media (max-width: 414px) {
+    margin: 0px 20px;
+  }
+`;
+
+export const CustomGrid = styled(GridContainer)`
+  margin: 0px auto;
+  /* padding: 60px 0px; */
+  grid-template-columns: 60fr 40fr;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 414px) {
+    padding: 0px;
+    margin: 0px;
+  }
+`;
+
+export const CustomContainer = styled(PaddedContainer)`
+  padding: 60px 24px;
+  margin: 60px auto;
+
+  @media (max-width: 1681px) {
+    margin: 60px 0px;
+  }
+
+  @media (max-width: 414px) {
+    padding: 40px 20px;
+    margin: 40px 0px;
+  }
+`;
+
+export const QuoteContainer = styled(CentreContainer)`
+  margin: 0px auto;
+  padding: 15vh 10vw;
+  max-width: 1729px;
+
+  @media (max-width: 414px) {
+    padding: 10vh 10vw;
+  }
+`;

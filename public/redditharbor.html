@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RedditHarbor - Extraction Monitor</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+          "Roboto", sans-serif;
+        background: #1c1c1e;
+        color: #1c1c1e;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* padding: 4vh 5vw; */
+        /* adds breathing room all around */
+        box-sizing: border-box;
+      }
+
+      .app-container {
+        width: 90%;
+        max-width: 1100px;
+        aspect-ratio: 1/1;
+        background: #f1f0ec;
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Top Bar */
+      .top-bar {
+        background: white;
+        padding: 20px 24px;
+        border-bottom: 1px solid #e6e4e2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+      }
+
+      .brand-name {
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      .brand-tag {
+        font-size: 0.75rem;
+        color: #706a65;
+      }
+
+      .top-nav {
+        display: flex;
+        gap: 24px;
+      }
+
+      .top-link {
+        font-size: 0.75rem;
+        color: #706a65;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .top-link:hover {
+        color: #1c1c1e;
+      }
+
+      /* Main Area */
+      .main-area {
+        flex: 1;
+        display: flex;
+        overflow: hidden;
+      }
+
+      /* Phase Selector */
+      .phase-selector {
+        width: 200px;
+        background: white;
+        padding: 24px 0;
+        border-right: 1px solid #e6e4e2;
+      }
+
+      .phase-item {
+        display: flex;
+        align-items: center;
+        padding: 12px 24px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        position: relative;
+      }
+
+      .phase-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: transparent;
+        transition: all 0.2s ease;
+      }
+
+      .phase-item:hover {
+        background: #f1f0ef;
+      }
+
+      .phase-item.active {
+        background: #f1f0ef;
+      }
+
+      .phase-item.active::before {
+        background: #51da4c;
+      }
+
+      .phase-item.locked {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+
+      .phase-item.complete .phase-number {
+        background: #51da4c;
+        color: white;
+      }
+
+      .phase-number {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #f1f0ef;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-right: 12px;
+      }
+
+      .phase-item.active .phase-number {
+        background: #1c1c1e;
+        color: white;
+      }
+
+      .phase-name {
+        font-size: 0.875rem;
+        color: #1c1c1e;
+      }
+
+      /* Content Area */
+      .content-area {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: #f1f0ec;
+      }
+
+      /* Phase Header */
+      .phase-header {
+        padding: 32px;
+        background: white;
+        border-bottom: 1px solid #e6e4e2;
+      }
+
+      .breadcrumb {
+        font-size: 0.75rem;
+        color: #9f9994;
+        margin-bottom: 8px;
+      }
+
+      .phase-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+      }
+
+      .phase-description {
+        font-size: 0.875rem;
+        color: #706a65;
+        line-height: 1.5;
+        max-width: 600px;
+      }
+
+      /* Content Container */
+      .content {
+        flex: 1;
+        padding: 32px;
+        overflow-y: auto;
+      }
+
+      /* Primary Status */
+      .primary-status {
+        background: white;
+        border: 1px solid #e6e4e2;
+        border-radius: 12px;
+        padding: 32px;
+        margin-bottom: 24px;
+        text-align: center;
+      }
+
+      .extraction-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px 16px;
+        background: #d9ffd8;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .status-dot {
+        width: 12px;
+        height: 12px;
+        background: #51da4c;
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      .status-text {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #1c9418;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .primary-count {
+        font-size: 3rem;
+        font-weight: 600;
+        color: #1c1c1e;
+        margin-bottom: 8px;
+      }
+
+      .primary-label {
+        font-size: 0.875rem;
+        color: #706a65;
+        margin-bottom: 20px;
+      }
+
+      .control-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .control-button {
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: 1px solid #e6e4e2;
+        background: white;
+        color: #514e4b;
+      }
+
+      .control-button:hover {
+        border-color: #cac6c3;
+        background: #f1f0ef;
+      }
+
+      .control-button.stop {
+        background: #cc0000;
+        color: white;
+        border-color: #cc0000;
+      }
+
+      .control-button.stop:hover {
+        background: #aa0000;
+      }
+
+      /* Key Metrics Grid */
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .metric-card {
+        background: white;
+        border: 1px solid #e6e4e2;
+        border-radius: 12px;
+        padding: 20px;
+      }
+
+      .metric-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      .metric-label {
+        font-size: 0.75rem;
+        color: #706a65;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .metric-badge {
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.625rem;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .badge-good {
+        background: #d9ffd8;
+        color: #1c9418;
+      }
+
+      .badge-warning {
+        background: #ffe5cc;
+        color: #cc6600;
+      }
+
+      .badge-critical {
+        background: #ffe5e5;
+        color: #cc0000;
+      }
+
+      .metric-value {
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: #1c1c1e;
+        margin-bottom: 4px;
+      }
+
+      .metric-context {
+        font-size: 0.75rem;
+        color: #9f9994;
+      }
+
+      /* Health Indicators */
+      .health-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .health-item {
+        background: white;
+        border: 1px solid #e6e4e2;
+        border-radius: 8px;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .health-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+      }
+
+      .health-icon.green {
+        background: #d9ffd8;
+        color: #1c9418;
+      }
+
+      .health-icon.yellow {
+        background: #ffe5cc;
+        color: #cc6600;
+      }
+
+      .health-icon.red {
+        background: #ffe5e5;
+        color: #cc0000;
+      }
+
+      .health-info {
+        flex: 1;
+      }
+
+      .health-name {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #1c1c1e;
+      }
+
+      .health-status {
+        font-size: 0.625rem;
+        color: #706a65;
+      }
+
+      /* Activity Timeline */
+      .activity-timeline {
+        background: white;
+        border: 1px solid #e6e4e2;
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 24px;
+      }
+
+      .timeline-header {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #1c1c1e;
+        margin-bottom: 16px;
+      }
+
+      .timeline-entries {
+        max-height: 160px;
+        overflow-y: auto;
+      }
+
+      .timeline-entry {
+        display: flex;
+        gap: 12px;
+        padding: 8px 0;
+        border-bottom: 1px solid #f1f0ef;
+      }
+
+      .timeline-entry:last-child {
+        border-bottom: none;
+      }
+
+      .timeline-time {
+        font-size: 0.75rem;
+        color: #9f9994;
+        min-width: 50px;
+      }
+
+      .timeline-event {
+        font-size: 0.875rem;
+        color: #514e4b;
+        flex: 1;
+      }
+
+      .timeline-impact {
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      .impact-positive {
+        color: #1c9418;
+      }
+
+      .impact-neutral {
+        color: #706a65;
+      }
+
+      .impact-negative {
+        color: #cc0000;
+      }
+
+      /* Decision Helper */
+      .decision-helper {
+        background: linear-gradient(135deg, #f1f0ef, #e6e4e2);
+        border: 1px solid #cac6c3;
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 24px;
+      }
+
+      .helper-title {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #1c1c1e;
+        margin-bottom: 12px;
+      }
+
+      .helper-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .helper-metric {
+        text-align: center;
+      }
+
+      .helper-value {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1c1c1e;
+      }
+
+      .helper-label {
+        font-size: 0.625rem;
+        color: #706a65;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .recommendation {
+        padding: 12px;
+        background: white;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        color: #514e4b;
+        text-align: center;
+      }
+
+      .recommendation strong {
+        color: #1c1c1e;
+      }
+
+      /* Footer */
+      .phase-footer {
+        padding: 24px 32px;
+        background: white;
+        border-top: 1px solid #e6e4e2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-info {
+        font-size: 0.75rem;
+        color: #706a65;
+      }
+
+      .footer-actions {
+        display: flex;
+        gap: 12px;
+      }
+
+      .button {
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        border: 1px solid #e6e4e2;
+        background: white;
+        color: #706a65;
+      }
+
+      .button:hover {
+        border-color: #cac6c3;
+        background: #f1f0ef;
+      }
+
+      .button-primary {
+        background: #1c1c1e;
+        color: white;
+        border-color: #1c1c1e;
+      }
+
+      .button-primary:hover {
+        background: #292726;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 20px;
+          align-items: flex-start;
+        }
+        .app-container {
+          width: 100%;
+          aspect-ratio: auto;
+          max-height: 600px;
+        }
+        .terminal-body {
+          padding: 16px;
+          font-size: 0.8rem;
+        }
+        .json-container {
+          margin: 8px 0 8px 16px;
+          font-size: 0.7rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="brand">
+          <span class="brand-name">RedditHarbor</span>
+          <span class="brand-tag">Extraction Monitor</span>
+        </div>
+        <nav class="top-nav">
+          <a href="#" class="top-link">Export Data</a>
+          <a href="#" class="top-link">View Logs</a>
+          <a href="#" class="top-link">Help</a>
+        </nav>
+      </div>
+
+      <!-- Main Area -->
+      <div class="main-area">
+        <!-- Phase Selector -->
+        <div class="phase-selector">
+          <div class="phase-item complete">
+            <div class="phase-number">✓</div>
+            <div class="phase-name">Privacy</div>
+          </div>
+          <div class="phase-item active">
+            <div class="phase-number">2</div>
+            <div class="phase-name">Extract</div>
+          </div>
+          <div class="phase-item locked">
+            <div class="phase-number">3</div>
+            <div class="phase-name">Transform</div>
+          </div>
+          <div class="phase-item locked">
+            <div class="phase-number">4</div>
+            <div class="phase-name">Load</div>
+          </div>
+          <div class="phase-item locked">
+            <div class="phase-number">5</div>
+            <div class="phase-name">Present</div>
+          </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+          <!-- Phase Header -->
+          <div class="phase-header">
+            <div class="breadcrumb">Extract › Monitoring</div>
+            <h2 class="phase-title">Extraction Control Center</h2>
+            <p class="phase-description">
+              Monitor extraction health and decide when you have sufficient data
+              for your research.
+            </p>
+          </div>
+
+          <!-- Content -->
+          <div class="content">
+            <!-- Primary Status Card -->
+            <div class="primary-status">
+              <div class="extraction-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Extracting</span>
+              </div>
+              <div class="primary-count" id="primaryCount">26,843</div>
+              <div class="primary-label">unique posts collected</div>
+              <div class="control-buttons">
+                <button class="control-button">⏸ Pause</button>
+                <button class="control-button stop">
+                  ■ Stop & Continue to Transform
+                </button>
+              </div>
+            </div>
+
+            <!-- Key Decision Metrics -->
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <div class="metric-header">
+                  <span class="metric-label">Data Quality</span>
+                  <span class="metric-badge badge-good">Good</span>
+                </div>
+                <div class="metric-value">94%</div>
+                <div class="metric-context">
+                  Posts meet score threshold (≥10)
+                </div>
+              </div>
+
+              <div class="metric-card">
+                <div class="metric-header">
+                  <span class="metric-label">Coverage</span>
+                  <span class="metric-badge badge-warning">Limited</span>
+                </div>
+                <div class="metric-value">4 days</div>
+                <div class="metric-context">Historical data retrieved</div>
+              </div>
+
+              <div class="metric-card">
+                <div class="metric-header">
+                  <span class="metric-label">Extraction Rate</span>
+                  <span class="metric-badge badge-good">Stable</span>
+                </div>
+                <div class="metric-value">312/hr</div>
+                <div class="metric-context">Within API limits</div>
+              </div>
+            </div>
+
+            <!-- Health Indicators -->
+            <div class="health-grid">
+              <div class="health-item">
+                <div class="health-icon green">✓</div>
+                <div class="health-info">
+                  <div class="health-name">API Connection</div>
+                  <div class="health-status">Stable</div>
+                </div>
+              </div>
+
+              <div class="health-item">
+                <div class="health-icon yellow">!</div>
+                <div class="health-info">
+                  <div class="health-name">Rate Limit</div>
+                  <div class="health-status">58/100 remaining</div>
+                </div>
+              </div>
+
+              <div class="health-item">
+                <div class="health-icon green">✓</div>
+                <div class="health-info">
+                  <div class="health-name">Database</div>
+                  <div class="health-status">Writing normally</div>
+                </div>
+              </div>
+
+              <div class="health-item">
+                <div class="health-icon green">✓</div>
+                <div class="health-info">
+                  <div class="health-name">Duplicates</div>
+                  <div class="health-status">2.3% filtered</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Decision Helper -->
+            <div class="decision-helper">
+              <div class="helper-title">Should You Stop Extraction?</div>
+              <div class="helper-metrics">
+                <div class="helper-metric">
+                  <div class="helper-value">26,843</div>
+                  <div class="helper-label">Total Posts</div>
+                </div>
+                <div class="helper-metric">
+                  <div class="helper-value">8,947</div>
+                  <div class="helper-label">Per Subreddit Avg</div>
+                </div>
+                <div class="helper-metric">
+                  <div class="helper-value">3h 14m</div>
+                  <div class="helper-label">Run Time</div>
+                </div>
+              </div>
+              <div class="recommendation">
+                <strong>Recommendation:</strong> You have sufficient data for
+                initial analysis. Consider stopping if you have specific
+                research questions. Continue for broader coverage.
+              </div>
+            </div>
+
+            <!-- Activity Timeline -->
+            <div class="activity-timeline">
+              <div class="timeline-header">Recent Activity</div>
+              <div class="timeline-entries">
+                <div class="timeline-entry">
+                  <span class="timeline-time">2 min</span>
+                  <span class="timeline-event">Batch saved (100 posts)</span>
+                  <span class="timeline-impact impact-positive">+100</span>
+                </div>
+                <div class="timeline-entry">
+                  <span class="timeline-time">5 min</span>
+                  <span class="timeline-event">Rate limit warning</span>
+                  <span class="timeline-impact impact-neutral">Throttled</span>
+                </div>
+                <div class="timeline-entry">
+                  <span class="timeline-time">8 min</span>
+                  <span class="timeline-event">Duplicates filtered</span>
+                  <span class="timeline-impact impact-neutral">-23</span>
+                </div>
+                <div class="timeline-entry">
+                  <span class="timeline-time">12 min</span>
+                  <span class="timeline-event">Switched subreddit</span>
+                  <span class="timeline-impact impact-neutral"
+                    >→ r/politics</span
+                  >
+                </div>
+                <div class="timeline-entry">
+                  <span class="timeline-time">18 min</span>
+                  <span class="timeline-event">Checkpoint: 25,000 posts</span>
+                  <span class="timeline-impact impact-positive">Saved</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase Footer -->
+          <div class="phase-footer">
+            <div class="footer-info">
+              Last checkpoint: 2 minutes ago • Next rate limit reset: 12 minutes
+            </div>
+            <div class="footer-actions">
+              <button class="button">Download Current Data</button>
+              <button class="button button-primary">
+                Continue to Transform →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Simulate primary counter
+      let count = 26843;
+      setInterval(() => {
+        const increment = Math.floor(Math.random() * 5) + 1;
+        count += increment;
+        document.getElementById("primaryCount").textContent =
+          count.toLocaleString();
+      }, 3000);
+
+      // Update recommendation based on count
+      setInterval(() => {
+        const recommendation = document.querySelector(".recommendation");
+        if (count < 10000) {
+          recommendation.innerHTML =
+            "<strong>Recommendation:</strong> Continue extraction for more robust dataset. Minimum 10,000 posts recommended for statistical significance.";
+        } else if (count < 30000) {
+          recommendation.innerHTML =
+            "<strong>Recommendation:</strong> You have sufficient data for initial analysis. Consider stopping if you have specific research questions. Continue for broader coverage.";
+        } else {
+          recommendation.innerHTML =
+            "<strong>Recommendation:</strong> Strong dataset collected. Consider stopping to avoid diminishing returns unless temporal coverage is critical.";
+        }
+      }, 10000);
+    </script>
+  </body>
+</html>

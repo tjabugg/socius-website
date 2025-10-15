@@ -1,31 +1,30 @@
-// import Navigation from "./components/Navigation";
-// import Home from "./pages/Home";
-// import Research from "./pages/Research";
-// import Database from "./pages/Database";
-// import Documentation from "./pages/Documentation";
-// import Footer from "./components/Footer";
+import Navigation from "./components/Navigation";
+import Home from "./pages/Home";
+import Research from "./pages/Research";
+import Data from "./pages/Data";
+import About from "./pages/About";
+import Documentation from "./pages/Documentation";
+import Sentibank from "./pages/Senitbank";
+import Footer from "./components/Footer";
 import { GlobalStyle } from "./styles";
 import { Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
-// import Sentium from "./pages/Publications/Sentium";
-// import SentiBank from "./pages/Publications/SentiBank";
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      {/* <Navigation /> */}
+      <Navigation />
       <Routes>
-        <Route path="/" element={<NotFound />} />
-        {/* <Route path="/" element={<Home />} /> */}
-        {/* <Route path="/research" element={<Research />} />
-        <Route path="/database" element={<Database />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/research" element={<Research />} />
+        <Route path="/data" element={<Data />} />
         <Route path="/documentation" element={<Documentation />} />
-        <Route path="/research/sentium" element={<Sentium />} />
-        <Route path="/sentibank" element={<SentiBank />} /> */}
+        <Route path="/sentibank" element={<Sentibank />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

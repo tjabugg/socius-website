@@ -1,13 +1,24 @@
 import React from "react";
-import { Body, GridContainer, SecondaryButton } from "../styles";
+import {
+  Body,
+  GridContainer,
+  // SecondaryButton,
+  Small,
+  Tag,
+  TagContainer,
+  TextContainer,
+} from "../styles";
 import styled from "styled-components";
-import { CentreContainer, Subtitle, MyImage } from "../styles";
-
+import { CentreContainer, H5, MyImage } from "../styles";
 
 // Destructure blogs and title directly from the props
 const GraphicCards = ({ graphicCards }) => {
   return (
-    <Container>
+    <GridContainer
+      style={{
+        gridAutoRows: "1fr",
+      }}
+    >
       {graphicCards.map((graphicCard) => (
         <PatternCard
           key={graphicCard.id}
@@ -26,67 +37,104 @@ const GraphicCards = ({ graphicCards }) => {
               ></MyImage>
             ) : null}
           </GraphicContainer>
+          <CustomTextContainer>
+            <TagContainer>
+              <Tag
+                style={{
+                  backgroundColor: graphicCard.tagOneBgColour,
+                }}
+              >
+                <Small
+                  style={{
+                    color: graphicCard.tagOneColour,
+                  }}
+                >
+                  {graphicCard.captionOne}
+                </Small>
+              </Tag>
 
-          <Subtitle
-            style={{
-              color: "white",
-            }}
-          >
-            {graphicCard.heading}
-          </Subtitle>
-          <Body
-            style={{
-              color: "white",
-              // marginBottom: "8px",
-            }}
-          >
-            {graphicCard.paragraph}
-          </Body>
+              <Tag
+                style={{
+                  backgroundColor: graphicCard.tagTwoBgColour,
+                }}
+              >
+                <Small
+                  style={{
+                    color: graphicCard.tagTwoColour,
+                  }}
+                >
+                  {graphicCard.captionTwo}
+                </Small>
+              </Tag>
+            </TagContainer>
 
-          <SecondaryButton href={graphicCard.link}>Learn more</SecondaryButton>
+            <H5
+              style={{
+                color: "white",
+              }}
+            >
+              {graphicCard.heading}
+            </H5>
+            <Body
+              style={{
+                color: "white",
+                // marginBottom: "8px",
+              }}
+            >
+              {graphicCard.paragraph}
+            </Body>
+          </CustomTextContainer>
+
+          {/* <SecondaryButton href={graphicCard.link}>Learn more</SecondaryButton> */}
         </PatternCard>
       ))}
-    </Container>
+    </GridContainer>
   );
 };
 
 export default GraphicCards;
 
-export const Container = styled(GridContainer)`
-  grid-template-columns: 1fr 1fr;
-  color: white;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
 export const PatternCard = styled(CentreContainer)`
-  padding: 40px;
+  padding: 64px;
   border-radius: 20px;
   background-size: cover;
   justify-content: flex-end;
   background-color: #00002e;
-  gap: 16px;
   /* aspect-ratio: 1/1; */
+  gap: 120px;
+
+  @media (max-width: 1280px) {
+    padding: 40px;
+    gap: 64px;
+  }
 
   @media (max-width: 1024px) {
-    padding: 20px;
+    padding: 40px;
+    gap: 40px;
+  }
+
+  @media (max-width: 414px) {
+    gap: 40px;
+    padding: 40px;
   }
 `;
 
+export const CustomTextContainer = styled(TextContainer)`
+  padding-left: 24px;
+  padding-right: 24px;
+  align-items: center;
+`;
 export const GraphicContainer = styled.div`
-  padding: 40px;
-  width: 100%;
+  display: flex;
+  width: 60%;
   box-sizing: border-box;
-  aspect-ratio: 1/1;
-  max-width: 600px;
+  padding-top: 64px;
 
-  @media (max-width: 1600px) {
-    max-width: 500px;
+  @media (max-width: 1280px) {
+    padding-top: 40px;
   }
 
-  @media (max-width: 1024px) {
-    padding: 0px 40px;
+  @media (max-width: 414px) {
+    padding-top: 24px;
   }
 `;

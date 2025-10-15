@@ -1,142 +1,198 @@
 import Hero from "../components/Hero";
-import ArticleCard from "../components/ArticleCard";
+import LargeArticleCard from "../components/LargeArticleCard";
+// import CallToAction from "../components/CallToAction";
 import { useState } from "react";
-import TextBlocks from "../components/TextBlocks";
 import GraphicCards from "../components/GraphicCard";
-import InformationCards from "../components/InformationCard";
-import StockExchange from "../assets/images/stock_exchange.jpg";
-import FrozenIce from "../assets/images/frozen_ice.jpg";
-import Crossroads from "../assets/images/crossroads.jpg";
-import FilmCrowd from "../assets/images/film_crowd.jpg";
-import CallToAction from "../components/CallToAction";
-import TextAndImage from "../components/TextAndImage";
-import HoverAnimation from "../assets/videos/hover_animation.json";
-import SquarePattern from "../assets/svgs/organised/organised_1x1_pattern.svg";
-import BgBlue from "../assets/svgs/bg_blue.svg";
-import BgMint from "../assets/svgs/bg_mint.svg";
-import BgGreen from "../assets/svgs/bg_green.svg";
+import Animals from "../assets/images/animals.jpg";
+import MonitorGenerate from "../assets/images/monitorGenerate_graphic.jpg";
+import BeforeYouThink from "../assets/images/beforeYouThink_home_graphic.jpg";
+import CountryPath from "../assets/images/country_path.jpg";
+import RedditHarbor from "../assets/images/redditHarbor_graphic.jpg";
+import MountainPath from "../assets/images/mountain_path.jpg";
+import lseLogo from "../assets/images/lse_logo.jpg";
+import lseGenerate from "../assets/images/lse_generate_logo.jpg";
+import Wheat from "../assets/images/wheat.jpg";
+import PELTP from "../assets/images/PELTP.svg";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
-
-import React from "react";
 import {
-  LetterContainer,
-  Subheading,
-  Body,
+  PaddedContainer,
   CentreContainer,
   MyImage,
-  CentreText,
-  TertiaryButton,
-  Caption,
-  Synopsis,
+  ImageContainer,
 } from "../styles";
+import TextBlocks from "../components/TextBlocks";
 
 const Home = () => {
   // An array and function
-  const [textBlocks] = useState([
+
+  const [largeArticleCards] = useState([
     {
-      heading: "AI models for social scientists",
+      aspectRatio: "16/9",
+      flexDirection: "column",
+      image: Animals,
+      padding: "0px",
+      heading: "System 1.5",
       paragraph:
-        "Discovery driven by understanding, insights you can trust. We create open-source AI models for social scientists seeking to integrate the predictive power of AI with the interpretability of traditional methods. ",
+        "We gave machines the cognitive gear shift experts have — knowing when to think fast versus slow.",
+      tagOneBgColour: "#3C46FF",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Workshop",
+      captionTwo: "NeurIPS 2024",
+      tagTwoBgColour: "#D9FFD8",
+      tagTwoColour: "#514E4B",
+      alt: "A 17th century painting of Chickens and Ducks by Melchior d' Hondecoeter",
       id: 1,
+      link: "",
     },
     {
-      caption: "Database",
-      heading: "Transparent, reproducible research fuel",
+      aspectRatio: "16/9",
+      flexDirection: "column",
+      image: MonitorGenerate,
+      padding: "0px",
+      heading: "Monitor-Generate-Verify",
       paragraph:
-        "Leverage curated datasets or crawl data seamlessly through our growing open database.",
+        "We translated metacognition into mathematics. AI now assesses strategy before attempting solutions.",
+      tagOneBgColour: "#193718",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Workshop",
+      captionTwo: "NeurIPS 2024",
+      tagTwoBgColour: "#AEF2AC",
+      tagTwoColour: "#514E4B",
+      alt: "Cropped close up of dark green diagonal line on a pale green background",
       id: 2,
-      button: "Explore our collection",
-      link: "database",
+      link: "",
+    },
+    {
+      aspectRatio: "16/9",
+      flexDirection: "row",
+      image: BeforeYouThink,
+      padding: "0px",
+      heading: "Before You 〈think/〉, Monitor",
+      paragraph:
+        "We gave machines the cognitive gear shift experts have — knowing when to think fast versus slow.",
+      tagOneBgColour: "#1C9418",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Workshop",
+      captionTwo: "COLM 2025",
+      tagTwoBgColour: "#CBDCFF",
+      tagTwoColour: "#514E4B",
+      alt: "Cropped close up of bright blue arc on a blue background",
+      id: 3,
+      link: "",
+    },
+    {
+      aspectRatio: "16/9",
+      flexDirection: "row",
+      image: CountryPath,
+      padding: "0px",
+      heading: "In Defence of Post-hoc Explainability",
+      paragraph:
+        "Philosophy says imperfect AI explanations can still advance knowledge. We proved it.",
+      tagOneBgColour: "#00002E",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Workshop",
+      captionTwo: "NeurIPS 2024",
+      tagTwoBgColour: "#8FB2FF",
+      tagTwoColour: "#514E4B",
+      alt: "A 17th century painting of a Wooded Landscape",
+      id: 4,
+      link: "",
+    },
+    {
+      aspectRatio: "16/9",
+      flexDirection: "column",
+      image: RedditHarbor,
+      padding: "0px",
+      heading: "RedditHarbor",
+      paragraph: "Reddit scraping with compliance built-in, not bolted on.",
+      alt: "Cropped close up of light blue diagonal line on a bright green background",
+      id: 5,
+      link: "/documentation#RedditHarbor",
+    },
+
+    {
+      aspectRatio: "16/9",
+      flexDirection: "column",
+      image: MountainPath,
+      padding: "0px",
+      heading: "sentibank",
+      paragraph: "Sixty years of emotion dictionaries. One import statement.",
+      alt: "The 19th century painting, The Path By The Lake/ Ben Voirlich, by David Cox Junior",
+      id: 6,
+      link: "/documentation#sentibank",
     },
   ]);
 
   const [graphicCards] = useState([
     {
-      image: SquarePattern,
+      bgImage: Wheat,
+      captionOne: "Published",
+      tagOneColour: "#514E4B",
+      captionTwo: "ICWSM 2024",
+      tagTwoColour: "#87807B",
+      heading: "RedditHarbor: Compliant Reddit scraping on autopilot",
+      paragraph: "Ethical, legal, and effortless extraction of Reddit data",
+      id: 1,
+      link: "https://github.com/socius-org/RedditHarbor",
+    },
+    {
+      image: PELTP,
+      captionOne: "Published",
+      tagOneColour: "#CAC6C3",
+      captionTwo: "AIES 2025",
+      tagTwoColour: "#87807B",
       heading: "sentibank: Encyclopedic Hub for Sentiment dictionaries",
       paragraph:
         "Domain-genre specific dictionaries tailored to your field of application",
-      id: 1,
-      link: "sentibank",
-    },
-    {
-      bgImage: FrozenIce,
-      heading: "RedditHarbor: Responsible ETL toolkit for Reddit data",
-      paragraph: "Ethical, legal, and effortless extraction of Reddit data",
-      id: 2,
-      link: "https://github.com/socius-org/RedditHarbor",
-    },
-  ]);
-
-  const [informationCards] = useState([
-    {
-      bgImage: BgBlue,
-      heading: "Research",
-      paragraph:
-        "Our research designs transparent and interpretable AI systems guided by social science principles.",
-      id: 1,
-      link: "sentium",
-    },
-    {
-      bgImage: BgMint,
-      heading: "Database",
-      paragraph:
-        "Gain access to our curated datasets or crawl data seamlessly through our open data repository.",
       id: 2,
       link: "sentibank",
     },
-    {
-      bgImage: BgGreen,
-      heading: "Documentation",
-      paragraph:
-        "Our documentation enables accessible AI, datasets, and tools through step-by-step API references.",
-      id: 3,
-    },
   ]);
 
-  const [articleCards] = useState([
+  // const [callToActions] = useState([
+  //   {
+  //     heading: "We're ready to combine our capabilities with your expertise",
+  //     button: "Get in touch",
+  //     bgColour: "#3C46FF",
+  //     id: 1,
+  //     textColour: "White",
+  //   },
+  // ]);
+
+  const [textBlocks] = useState([
     {
-      align: "center",
-      image: Crossroads,
-      padding: "0px",
-      heading: "Sentium",
-      paragraph:
-        "Explore our comprehensive guides and resources to utilise Sentium, through documentation crafted to simplify and streamline your research workflow.",
-      alt: "A group of friends sat in the foreground before an evening sky",
+      subheading: "Supported by",
       id: 1,
-      link: "",
     },
     {
-      bgColour: "#CBDCFF",
-      animation: HoverAnimation,
-      align: "center",
-      heading: "sentibank",
-      paragraph:
-        "Access extensive documentation explaining the breadth of annotated lexica available in sentibank, to amplify the capabilities of your sentiment analysis.",
-      alt: "A group of friends sat in the foreground before an evening sky",
+      justify: "space-between",
+      subheading: "Research",
+      subheadingButton: "View all",
+      link: "/research",
       id: 2,
-      link: "https://socius-org.github.io/sentibank/Introduction.html",
     },
     {
-      image: FilmCrowd,
-      padding: "0px",
-      heading: "RedditHarbor",
-      paragraph:
-        "Harness the power of RedditHarbor, our responsible ETL toolkit designed to simplify and streamline the process of collecting and storing Reddit data for your research needs.",
-      alt: "An animation from the socius design system",
+      justify: "space-between",
+      subheading: "Data",
+      subheadingButton: "View all",
+      link: "/data",
       id: 3,
-      link: "https://socius-org.github.io/RedditHarbor/about.html",
     },
-  ]);
-
-  const [callToActions] = useState([
     {
-      heading: "We're ready to combine our capabilities with your expertise.",
-      button: "Get in touch",
-      bgColour: "#3C46FF",
-      id: 1,
-      textColour: "White",
+      justify: "space-between",
+      subheading: "Documentation",
+      subheadingButton: "View all",
+      link: "/documentation",
+      id: 4,
+    },
+    {
+      // align: "flex-end",
+      heading:
+        "We have a theory: Intelligence is too weird for one field  understand. So we experiment at the intersections — between every field that ever studied “thinking” and every machine that's trying to “think”.",
+      primaryButton: "Meet the lab",
+      primaryLink: "/about",
+      id: 5,
     },
   ]);
 
@@ -144,10 +200,10 @@ const Home = () => {
     <>
       <Helmet>
         {/* <!-- Primary Meta Tags --> */}
-        <title>Open-source AI models for social scientists | socius</title>
+        <title>Experimental Intelligence Lab | socius labs</title>
         <meta
           name="title"
-          content="Open-source AI models for social scientists | socius"
+          content="Experimental Intelligence Lab | socius labs"
         />
         <meta
           name="description"
@@ -159,84 +215,143 @@ const Home = () => {
         {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
         <meta
           property="og:title"
-          content="Open-source AI models for social scientists | socius"
+          content="Experimental Intelligence Lab | socius labs"
         />
         <meta
           property="og:description"
           content="We create open-source AI models for social scientists seeking to integrate the power of AI with the interpretability of traditional methods."
         />
-        <meta property="og:image" content={StockExchange} />
+        <meta property="og:image" content={MonitorGenerate} />
       </Helmet>
       <Hero />
 
-      <CentreText>
-        <Synopsis>
-          Accelerate every stage of your research lifecycle with open-source AI
-          models, datasets, and tools
-        </Synopsis>
-      </CentreText>
+      <CustomContainer>
+        <TextBlocks
+          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 1)}
+        />{" "}
+        <SupportContainer>
+          <ImageContainer
+            style={{
+              borderRadius: "0px",
+            }}
+          >
+            <MyImage
+              alt={`London School of Economics and Political Science Logo`}
+              src={lseLogo}
+            />
+          </ImageContainer>
+          <ImageContainer
+            style={{
+              borderRadius: "0px",
+            }}
+          >
+            <MyImage
+              alt={`Generate Entrepeneurship at LSE Logo`}
+              src={lseGenerate}
+            />
+          </ImageContainer>
+        </SupportContainer>
+      </CustomContainer>
 
-      <InformationCards informationCards={informationCards} />
-
-      <TextAndImage />
-
-      <TextBlocks
-        textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
-      />
-
-      <GraphicCards graphicCards={graphicCards} />
-
-      <LetterContainer>
-        <MyImage
-          style={{
-            borderRadius: "0px",
-          }}
-          alt={`Black and white photo of the New York Stock Exchange`}
-          src={StockExchange}
+      <PaddedContainer>
+        <TextBlocks
+          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
         />
-      </LetterContainer>
+        <LargeArticleCard
+          largeArticleCards={largeArticleCards.filter((card) =>
+            [1, 2].includes(card.id)
+          )}
+          grid="2fr 1fr"
+        />
+        <LargeArticleCard
+          largeArticleCards={largeArticleCards.filter((card) =>
+            [3, 4].includes(card.id)
+          )}
+          grid="1fr 1fr"
+        />
+      </PaddedContainer>
 
-      <CentreText>
-        <Caption>Documentation</Caption>
-        <Subheading>Focus on discoveries, not technicalities </Subheading>
-        <Body>
-          Our documentation enables accessible AI, datasets, and tools through
-          step-by-step API references.{" "}
-        </Body>
-        <TertiaryButton href="documentation">
-          Discover our resources
-        </TertiaryButton>
-      </CentreText>
+      <CustomContainer>
+        <TextBlocks
+          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 3)}
+        />{" "}
+        <GraphicCards graphicCards={graphicCards} />
+      </CustomContainer>
 
-      <ArticleCard articleCards={articleCards} alignment={"center"} />
+      <CustomContainer>
+        <TextBlocks
+          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 4)}
+        />{" "}
+        <LargeArticleCard
+          largeArticleCards={largeArticleCards.filter((card) =>
+            [5, 6].includes(card.id)
+          )}
+          grid="1fr 1fr"
+        />
+      </CustomContainer>
 
-      <QuoteContainer>
-        <Subheading>
-          “Artificial intelligence is not a substitute for human intelligence;
-          it's a tool to help us think."
-        </Subheading>
-        <Body>Fei-Fei Li</Body>
-      </QuoteContainer>
-      <CallToAction callToActions={callToActions} />
+      <TeamContainer>
+        <TextBlocks
+          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 5)}
+        />{" "}
+      </TeamContainer>
+
+      {/* <CallToAction callToActions={callToActions} /> */}
     </>
   );
 };
 
 export default Home;
 
-export const QuoteContainer = styled(CentreContainer)`
-  margin: 20vh 20vw 20vh 20vw;
-  gap: 8px;
+export const ButtonContainer = styled(CentreContainer)`
+  margin: 24px;
+`;
 
-  @media (max-width: 768px) {
-    margin: 20vh 10vw 20vh 10vw;
+export const CustomContainer = styled(PaddedContainer)`
+  margin: 60px auto;
+
+  max-width: 1681px;
+
+  @media (max-width: 1681px) {
+    margin: 60px 24px;
   }
-
-  @media (max-width: 414px) {
-    margin: 10vh 10vw 10vh 10vw;
+  @media (max-width: 1024px) {
+    padding: 40px 0px;
   }
 `;
 
-export const ButtonContainer = styled(CentreContainer)`
-  margin: 24px;
+export const CustomResearchContainer = styled(CustomContainer)`
+  gap: 40px;
+`;
+export const TeamContainer = styled(CustomContainer)`
+  margin: 120px auto;
+  max-width: 1681px;
+
+  @media (max-width: 1681px) {
+    margin: 80px 24px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 40px 0px;
+  }
+`;
+
+export const SupportContainer = styled(CentreContainer)`
+  padding: 10vh 15vw 10vh 15vw;
+  flex-direction: row;
+  gap: 180px;
+  max-width: 1681px;
+
+  @media (max-width: 2000px) {
+    padding: 10vh 25vw 10vh 25vw;
+  }
+
+  @media (max-width: 1280px) {
+    padding: 5vh 20vw 5vh 20vw;
+  }
+
+  @media (max-width: 414px) {
+    padding: 5vh 10vw 5vh 10vw;
+    gap: 60px;
+  }
 `;

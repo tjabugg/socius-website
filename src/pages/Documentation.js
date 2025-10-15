@@ -1,216 +1,292 @@
 import { useState } from "react";
+import TextBlocks from "../components/TextBlocks";
 import SecondaryHero from "../components/SecondaryHero";
-import Random7x7Pattern01 from "../assets/svgs/random/random_7x7_pattern_01.svg";
-import Organised15x15Pattern from "../assets/svgs/organised/organised_15x15_pattern.svg";
-import Organised5x5Pattern from "../assets/svgs/organised/organised_5x5_pattern.svg";
-import Organised10x10Pattern from "../assets/svgs/organised/organised_10x10_pattern.svg";
-import Random7x7Pattern02 from "../assets/svgs/random/random_7x7_pattern_02.svg";
-import Beach from "../assets/images/beach.jpg";
-import Silhouette from "../assets/images/silhouette.jpg";
-import Moma from "../assets/images/moma.jpg";
-import CountrysidePainting from "../assets/images/countryside_painting.jpg";
-import Sitting from "../assets/images/sitting.jpg";
-import Whiteboard from "../assets/images/whiteboard.jpg";
-import Wheat from "../assets/images/wheat.jpg";
-import Code from "../assets/videos/code.mp4";
-import React from "react";
-import CallToAction from "../components/CallToAction";
-import styled from "styled-components";
-import ArticleCard from "../components/ArticleCard";
-import { Body, ParentContainer, Subheading } from "../styles";
+import Philosopher from "../assets/images/philosopher.jpg";
+import Anew from "../assets/images/anew_graphic.jpg";
+import Mountain from "../assets/images/mountain.jpg";
+import VictorianTown from "../assets/images/victorian_town.jpg";
+import Tudors from "../assets/images/tudors.jpg";
+import Lake from "../assets/images/lake.jpg";
+import SentiWordNet from "../assets/images/sentiWordNet_graphic.jpg";
+import DatabaseDriven from "../assets/images/databaseDriven_graphic.jpg";
+import MountainValley from "../assets/images/mountain_valley.jpg";
+import Aristocrats from "../assets/images/aristocrats.jpg";
 import { Helmet } from "react-helmet";
+import LargeArticleCard from "../components/LargeArticleCard";
+import { PaddedContainer } from "../styles";
+import styled from "styled-components";
 
-const ForSocialScientists = () => {
+const Documentation = () => {
   const [secondaryHeroes] = useState([
     {
-      heading: "Documentation designed to simplify usage and amplify impact",
-      video: Code,
-      videoAlt: "A close up a developer programming on a computer screen",
+      subtitle: "Documentation",
+      heading: "Inheriting our digital artifacts without the exhaustion",
+      image: Philosopher,
+      imageAlt:
+        "A 17th century painting of Jeremiah Lamenting the Destruction of Jerusalem, by Rembrandt.",
       id: 1,
-    },
-  ]);
-  const [sentiumCards] = useState([
-    {
-      image: Random7x7Pattern01,
-      bgColour: "#3C46FF",
-      heading: "tag.pos",
-      paragraph:
-        "Parts-of-speech tagging to analyse input text’s grammatical and syntactic structure",
-      id: 1,
-    },
-    {
-      padding: "0px",
-      image: Moma,
-      heading: "parse.aspect",
-      paragraph:
-        "Extracts dependency relationships between aspects and their associated predicates",
-      alt: "An aerial photograph of people sat on a bench in the MOMA.",
-      id: 2,
-    },
-    {
-      image: Organised15x15Pattern,
-      bgColour: "#00002E",
-      heading: "evaluate.senti",
-      paragraph:
-        "Refine sentiment score by applying predefined heuristics and sentiment dictionaries",
-      id: 3,
     },
   ]);
 
-  const [sentiBankCards] = useState([
+  const [largeArticleCards] = useState([
     {
-      image: Organised10x10Pattern,
-      bgColour: "#51DA4C",
+      aspectRatio: "16/9",
+      flexDirection: "column",
+      image: Anew,
+      padding: "0px",
       heading: "ANEW",
       paragraph:
         "Emotional ratings across the dimensions of Pleasure, Arousal, and Dominance",
+      tagOneBgColour: "#3C46FF",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Dataset",
+      captionTwo: "Psychology",
+      tagTwoBgColour: "#D9FFD8",
+      tagTwoColour: "#514E4B",
+      alt: "Cropped close up of a dark green socius pattern on a pale green background",
       id: 1,
+      link: "https://socius-org.github.io/sentibank/archive/ANEW.html",
+      target: "blank",
     },
     {
+      aspectRatio: "16/9",
+      flexDirection: "column",
+      image: Mountain,
       padding: "0px",
-      image: Beach,
       heading: "General Inquirer",
       paragraph:
         "Lexicon categorising words across multiple psycholinguistic dimensions",
-      alt: "An aerial shot of people on a beach and in the sea",
-      link: "https://socius-org.github.io/sentibank/archive/General%20Inquirer.html",
+      tagOneBgColour: "#193718",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Dataset",
+      captionTwo: "Behavioural Science",
+      tagTwoBgColour: "#AEF2AC",
+      tagTwoColour: "#514E4B",
+      alt: "A 19th century painting of Dumbarton Castle by John Ruskin",
       id: 2,
+      link: "https://socius-org.github.io/sentibank/archive/General%20Inquirer.html",
+      target: "blank",
     },
     {
-      image: Random7x7Pattern02,
-      bgColour: "#193718",
+      aspectRatio: "16/9",
+      flexDirection: "column",
+      image: VictorianTown,
+      padding: "0px",
       heading: "OpinionLexicon",
       paragraph:
         "A dictionary for product reviews, comprising words curated for informal language",
-      link: "https://socius-org.github.io/sentibank/archive/OpinionLexicon.html",
+      tagOneBgColour: "#00002E",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Dataset",
+      captionTwo: "Product Review",
+      tagTwoBgColour: "#CBDCFF",
+      tagTwoColour: "#514E4B",
+      alt: "A 19th century painting of Paradise Street Towards Christ Church By Charles Rudd",
       id: 3,
+      link: "https://socius-org.github.io/sentibank/archive/OpinionLexicon.html",
+      target: "blank",
     },
     {
+      aspectRatio: "4/5",
+      flexDirection: "column",
+      image: Tudors,
       padding: "0px",
-      image: Sitting,
-      heading: "SentiWordNet",
-      paragraph:
-        "A comprehensive dictionary that assigns graded sentiment scores to WordNet synsets",
-      link: "https://socius-org.github.io/sentibank/archive/SentiWordNet.html",
-      id: 4,
-    },
-    {
-      padding: "0px",
-      image: CountrysidePainting,
-      heading: "Vader",
+      heading: "VADER",
       paragraph:
         "A gold-standard lexicon optimised for social media sentiment analysis",
+      tagOneBgColour: "#1C9418",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Dataset",
+      captionTwo: "Social Media",
+      tagTwoBgColour: "#8FB2FF",
+      tagTwoColour: "#292726",
+      alt: "A 17th century painting of Officers and other civic guardsmen of the XIth District of Amsterdam",
+      id: 4,
       link: "https://socius-org.github.io/sentibank/archive/VADER.html",
-      id: 5,
+      target: "blank",
     },
     {
+      aspectRatio: "16/9",
+      flexDirection: "column",
+      image: Lake,
       padding: "0px",
-      image: Whiteboard,
       heading: "WordNet-Affect",
       paragraph:
         "Affective labels that are hierarchically organised based on WordNet synsets",
+      tagOneBgColour: "#191F8C",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Dataset",
+      captionTwo: "Psychology",
+      tagTwoBgColour: "#AEF2AC",
+      tagTwoColour: "#514E4B",
+      alt: "An illustration of English Lake Scenery by A. F. Lydon",
+      id: 5,
       link: "https://socius-org.github.io/sentibank/archive/WordNet-Affect.html",
-      id: 6,
+      target: "blank",
     },
-  ]);
-
-  const [redditHarborCards] = useState([
     {
+      aspectRatio: "1/1",
+      flexDirection: "column",
+      image: SentiWordNet,
       padding: "0px",
-      image: Silhouette,
+      heading: "SentiWordNet",
+      paragraph:
+        "A comprehensive dictionary that assigns graded sentiment scores to WordNet synsets",
+      tagOneBgColour: "#193718",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Dataset",
+      captionTwo: "General",
+      tagTwoBgColour: "#D9FFD8",
+      tagTwoColour: "#514E4B",
+      alt: "A symmetrical light green socius pattern on a navy background",
+      id: 6,
+      link: "https://socius-org.github.io/sentibank/archive/SentiWordNet.html",
+      target: "blank",
+    },
+    {
+      aspectRatio: "4/5",
+      flexDirection: "column",
+      image: MountainValley,
+      padding: "0px",
       heading: "Subreddit data collection",
       paragraph:
         "Collect data from specific subreddits, whether you’re interested in submissions, comments or user information",
-      id: 1,
+      tagOneBgColour: "#191F8C",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Scraper",
+      captionTwo: "Subreddit",
+      tagTwoBgColour: "#D9FFD8",
+      tagTwoColour: "#514E4B",
+      alt: "A painting of an Alpine Valley, with the Matterhorn in the Distance, by John Ruskin",
+      id: 7,
+      link: "https://socius-org.github.io/RedditHarbor/hands_on/subreddit_based.html",
+      target: "blank",
     },
     {
-      image: Organised5x5Pattern,
-      bgColour: "#D9FFD8",
+      aspectRatio: "16/9",
+      flexDirection: "column",
+      image: Aristocrats,
+      padding: "0px",
       heading: "Keyword based data collection",
       paragraph:
         "Collect submissions based on specific keywords from your desired subreddits",
-      id: 2,
+      tagOneBgColour: "#193718",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Scraper",
+      captionTwo: "Keyword",
+      tagTwoBgColour: "#CBDCFF",
+      tagTwoColour: "#514E4B",
+      alt: "A 19th century painting of Regents and Regentesses of the Lepers' Asylum",
+      id: 8,
+      link: "https://socius-org.github.io/RedditHarbor/hands_on/keyword_based.html",
+      target: "blank",
     },
     {
-      image: Wheat,
+      aspectRatio: "1/1",
+      flexDirection: "column",
+      image: DatabaseDriven,
       padding: "0px",
       heading: "Database-driven data collection",
       paragraph:
         "Leverage your existing database to collect additional relevant data, such as comments from specific submissions",
-      id: 3,
+      tagOneBgColour: "#3C46FF",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Scraper",
+      captionTwo: "NeurIPS 2024",
+      tagTwoBgColour: "#8FB2FF",
+      tagTwoColour: "#292726",
+      alt: "Cropped close up of green arc on a pale blue background",
+      id: 9,
+      link: "https://socius-org.github.io/RedditHarbor/hands_on/database_driven.html",
+      target: "blank",
     },
   ]);
 
-  const [callToActions] = useState([
+  const [textBlocks] = useState([
     {
-      heading:
-        "Our mission is ensuring researchers have the resources to succeed. ",
-      bgColour: "#00002E",
-      id: 7,
-      textColour: "#CBDCFF",
-      button: "Request assistance",
+      justify: "space-between",
+      subheading: "sentibank",
+      paragraph: "Sixty years of emotion dictionaries. One import statement.",
+      paragraphButton: "View all",
+      link: "https://socius-org.github.io/sentibank/about.html",
+      target: "blank",
+      id: 1,
+    },
+    {
+      justify: "space-between",
+      subheading: "RedditHarbor",
+      paragraph: "Reddit scraping with compliance built-in, not bolted on.",
+      paragraphButton: "View all",
+      link: "https://socius-org.github.io/RedditHarbor/about.html",
+      target: "blank",
+      id: 2,
     },
   ]);
-
   return (
     <>
       <Helmet>
         {/* <!-- Primary Meta Tags --> */}
-        <title>Resources designed simplify AI model integration | socius</title>
-        <meta
-          name="title"
-          content="Resources designed simplify AI model integration | socius"
-        />
+        <title>Guides & Resources | socius labs</title>
+        <meta name="title" content="Guides & Resources | socius labs" />
         <meta
           name="description"
-          content="Our mission is to ensure that researchers have the resources to succeed. Navigate our tools and data seamlessly with complete documentation."
+          content="Our research focuses on integrating AI models with social science principles - enhancing interpretability, transparency and accountability."
         />
 
         {/* <!-- Open Graph / Facebook --> */}
         <meta property="og:type" content="website" />
         {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
-        <meta
-          property="og:title"
-          content="Resources designed simplify AI model integration | socius"
-        />
+        <meta property="og:title" content="Guides & Resources | socius labs" />
         <meta
           property="og:description"
-          content="Our mission is to ensure that researchers have the resources to succeed. Navigate our tools and data seamlessly with complete documentation."
+          content="Our research focuses on integrating AI models with social science principles - enhancing interpretability, transparency and accountability."
         />
-        <meta property="og:image" content={Moma} />
+        <meta property="og:image" content={Philosopher} />
       </Helmet>
-
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
-      <HeadingContainer>
-        <Subheading>Sentium</Subheading>
-        <Body>Sentiment analysis designed for human interpretability</Body>
-      </HeadingContainer>
-      <ArticleCard articleCards={sentiumCards} />
 
-      <HeadingContainer>
-        <Subheading>sentibank</Subheading>
-        <Body>Gold-standard sentiment dictionaries in one repository</Body>
-      </HeadingContainer>
-      <ArticleCard articleCards={sentiBankCards} />
+      <CustomContainer id="sentibank">
+        <TextBlocks
+          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 1)}
+        />
+        <LargeArticleCard
+          largeArticleCards={largeArticleCards.filter((card) =>
+            [1, 2].includes(card.id)
+          )}
+          grid="2fr 1fr"
+        />
+        <LargeArticleCard
+          largeArticleCards={largeArticleCards.filter((card) =>
+            [3, 4, 5, 6].includes(card.id)
+          )}
+          grid="1fr 1fr 1fr 1fr"
+        />
+      </CustomContainer>
 
-      <HeadingContainer>
-        <Subheading>RedditHarbor</Subheading>
-        <Body>Ethical and legal ETL toolkit for Reddit data</Body>
-      </HeadingContainer>
-
-      <ArticleCard articleCards={redditHarborCards} />
-      <CallToAction callToActions={callToActions} />
+      <CustomContainer id="RedditHarbor">
+        <TextBlocks
+          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
+        />
+        <LargeArticleCard
+          largeArticleCards={largeArticleCards.filter((card) =>
+            [7, 8, 9].includes(card.id)
+          )}
+          grid="1fr 1fr 1fr 1fr"
+        />
+      </CustomContainer>
     </>
   );
 };
 
-export default ForSocialScientists;
+export default Documentation;
 
-export const HeadingContainer = styled(ParentContainer)`
-  flex-direction: column;
-  padding-left: 12px;
+export const CustomContainer = styled(PaddedContainer)`
+  @media (max-width: 1729px) {
+    margin: 0px 24px;
+    padding: 60px 0px;
+  }
 
-  @media (max-width: 1728px) {
-    padding-left: 0px;
+  @media (max-width: 414px) {
+    padding: 40px 0px;
   }
 `;

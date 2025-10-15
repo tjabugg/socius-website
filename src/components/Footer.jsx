@@ -4,15 +4,15 @@ import {
   Logo,
   Link,
   Word,
-  // MyImage,
   GridContainer,
-  Body,
   LogoContainer,
   ParentContainer,
+  Small,
+  MyImage,
 } from "../styles";
-// import DesktopFooter from "../assets/svgs/random/desktop_footer_pattern.svg";
-// import TabletFooter from "../assets/svgs/random/tablet_footer_pattern.svg";
-// import MobileFooter from "../assets/svgs/random/mobile_footer_pattern.svg";
+import DesktopFooter from "../assets/images/desktop_footer.png";
+import TabletFooter from "../assets/images/tablet_footer.png";
+import MobileFooter from "../assets/images/mobile_footer.png";
 
 const Footer = () => (
   <Container>
@@ -22,79 +22,115 @@ const Footer = () => (
         <Word title={`Socius word`} />
       </LogoContainer>
 
-      <TextContainer>
-        <LinkContainer>
-          <Title>Socials</Title>
-          <FooterLink href="/https://github.com/socius-org" target="_blank">
-            GitHub
-          </FooterLink>
-          <FooterLink
-            href="https://www.linkedin.com/company/socius-org/about/"
-            target="_blank"
-          >
-            LinkedIn
-          </FooterLink>
-        </LinkContainer>
+      {/* <TextContainer> */}
+      <LinkContainer>
+        <Title
+          style={{
+            color: "#706A65",
+          }}
+        >
+          Socials
+        </Title>
+        <FooterLink href="/https://github.com/socius-org" target="_blank">
+          GitHub
+        </FooterLink>
+        <FooterLink
+          href="https://www.instagram.com/socius.labs/"
+          target="_blank"
+        >
+          LinkedIn
+        </FooterLink>
+        <FooterLink
+          href="https://www.linkedin.com/company/socius-labs/posts/?feedView=all"
+          target="_blank"
+        >
+          Instagram
+        </FooterLink>
+      </LinkContainer>
 
-        <LinkContainer>
-          <Title>Information</Title>
-          <FooterLink href="/research">Research</FooterLink>
-          <FooterLink href="/database">Database</FooterLink>
-          <FooterLink href="/documentation">Documentation</FooterLink>
-        </LinkContainer>
+      <LinkContainer>
+        <Title
+          style={{
+            color: "#706A65",
+          }}
+        >
+          Information
+        </Title>
+        <FooterLink href="/home">Home</FooterLink>
+        <FooterLink href="/about">About</FooterLink>
+        <FooterLink href="/research">Research</FooterLink>
+        <FooterLink href="/data">Data</FooterLink>
+        <FooterLink href="/documentation">Documentation</FooterLink>
+      </LinkContainer>
 
-        <LinkContainer>
-          <Title href="/#">Design and Development</Title>
-          <FooterLink href="https://thomasbugg.com/" target="_blank">
-            Thomas Bugg
-          </FooterLink>
-          <FooterLink href="https://anthonyodu.com/" target="_blank">
-            Anthony Odu
-          </FooterLink>
-        </LinkContainer>
-      </TextContainer>
+      <LinkContainer>
+        <Title
+          style={{
+            color: "#706A65",
+          }}
+          href="/#"
+        >
+          Website by
+        </Title>
+        <FooterLink href="https://thomasbugg.com/" target="_blank">
+          Thomas Bugg
+        </FooterLink>
+        <FooterLink href="https://anthonyodu.com/" target="_blank">
+          Anthony Odu
+        </FooterLink>
+      </LinkContainer>
+      {/* </TextContainer> */}
     </Grid>
-    {/* <PatternContainer>
+    <PatternContainer>
       <DesktopPattern alt={`Full bleed pattern`} src={DesktopFooter} />
       <TabletPattern alt={`Full bleed pattern`} src={TabletFooter} />
       <MobilePattern alt={`Full bleed pattern`} src={MobileFooter} />{" "}
-    </PatternContainer>{" "} */}
+    </PatternContainer>{" "}
   </Container>
 );
 
 export default Footer;
 
-// export const PatternContainer = styled.div`
-//   bottom: 0vh;
-//   box-sizing: border-box;
-//   padding: 24px;
-// `;
+export const PatternContainer = styled.div`
+  bottom: 0vh;
+  box-sizing: border-box;
+  padding: 24px;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+`;
 
 export const Grid = styled(GridContainer)`
   margin: 24px;
+  grid-template-columns: 6fr 1fr 1fr 1fr;
+  padding-right: 120px;
 
   @media (max-width: 768px) {
     margin: 20px;
-    gap: 16px;
+    gap: 40px;
+    grid-template-columns: 1fr;
   }
 `;
 
 export const Container = styled(ParentContainer)`
   justify-content: space-between;
   align-items: stretch;
-  background-color: #1b1b1b;
+  background-color: #1c1c1e;
   flex-direction: column;
   border-radius: 20px;
-  padding-bottom: 10vh;
-  margin: 24px auto 24px auto;
+  /* padding-bottom: 10vh; */
+  margin: 80px auto 24px auto;
+  gap: 80px;
+  max-width: 1681px;
 
-  @media (max-width: 1728px) {
-    margin: 24px;
+  @media (max-width: 1681px) {
+    margin: 80px 24px 24px 24px;
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    margin: 20px;
+    margin: 40px 20px 20px 20px;
   }
 `;
 
@@ -113,17 +149,18 @@ export const TextContainer = styled.div`
 export const LinkContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 `;
 
 export const FooterLink = styled(Link)`
   color: white;
+
+  &:hover {
+  }
 `;
 
-export const Title = styled(Body)`
-  font-weight: 600;
-  font-size: 14px;
-  color: white;
+export const Title = styled(Small)`
+  color: #f1f0ef;
 `;
 
 export const SociusLogo = styled(Word)`
@@ -132,24 +169,24 @@ export const SociusLogo = styled(Word)`
   }
 `;
 
-// export const DesktopPattern = styled(MyImage)`
-//   @media (max-width: 768px) {
-//     display: none;
-//   }
-// `;
+export const DesktopPattern = styled(MyImage)`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
 
-// export const TabletPattern = styled(MyImage)`
-//   display: none;
+export const TabletPattern = styled(MyImage)`
+  display: none;
 
-//   @media (max-width: 768px) and (min-width: 376px) {
-//     display: block;
-//   }
-// `;
+  @media (max-width: 768px) and (min-width: 376px) {
+    display: block;
+  }
+`;
 
-// export const MobilePattern = styled(MyImage)`
-//   display: none;
+export const MobilePattern = styled(MyImage)`
+  display: none;
 
-//   @media (max-width: 375px) {
-//     display: block;
-//   }
-// `;
+  @media (max-width: 375px) {
+    display: block;
+  }
+`;

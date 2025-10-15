@@ -1,7 +1,7 @@
 import React from "react";
 import { Body, GridContainer } from "../styles";
 import styled from "styled-components";
-import { ParentContainer, Subtitle } from "../styles";
+import { ParentContainer, H5 } from "../styles";
 
 // Destructure blogs and title directly from the props
 const InformationCards = ({ informationCards }) => {
@@ -43,7 +43,7 @@ export const Container = styled(GridContainer)`
   } */
 `;
 
-export const Heading = styled(Subtitle)`
+export const Heading = styled(H5)`
   /* font-family: "Porpora Regular"; */
 `;
 

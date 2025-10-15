@@ -1,13 +1,18 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { ReactComponent as SociusLogo } from "./assets/meta/socius_logo.svg";
 import { ReactComponent as SociusWord } from "./assets/meta/socius_logotype.svg";
-import PorporaRegular from "../src/assets/fonts/Porpora-Regular.ttf";
+import GeneralSansRegular from "../src/assets/fonts/GeneralSans-Regular.otf";
+import GeneralSansMedium from "../src/assets/fonts/GeneralSans-Medium.otf";
 
 export const GlobalStyle = createGlobalStyle`
 
 @font-face {
-  font-family: 'Porpora Regular';
-  src: url(${PorporaRegular});
+  font-family: 'General Sans Regular';
+  src: url(${GeneralSansRegular});
+}
+@font-face {
+  font-family: 'General Sans Medium';
+  src: url(${GeneralSansMedium});
 }
 
 
@@ -15,11 +20,15 @@ export const GlobalStyle = createGlobalStyle`
   font-weight: 400;
   margin: 0;
     padding: 0;
+      text-decoration: none;
+        scroll-behavior: smooth;
+
+
     
     
 }
 body {
-    font-family: 'Porpora Regular';
+    font-family: 'General Sans Regular';
     font-style: normal;
     margin: 0;
     padding: 0;
@@ -31,131 +40,215 @@ body {
 `;
 
 export const Link = styled.a`
-  font-family: "Porpora Regular";
-  font-size: 16px;
+  font-family: "General Sans Medium";
+  font-size: 14px;
   text-decoration: none;
-  color: white;
   cursor: pointer;
   opacity: 100%;
 
-  @media (max-width: 1729px) {
-    font-size: 14px;
+  @media (max-width: 1681px) {
+    font-size: 12px;
   }
 
   &:hover {
-    opacity: 30%;
+    color: #b9b4b0;
   }
 `;
 
 export const PrimaryButton = styled(Link)`
   padding: 8px;
-  background-color: #1b1b1b;
+  color: white;
+  background-color: #1c1c1e;
   border: none;
   border-radius: 40px;
   justify-self: start;
+  transition: background-color 0.2s ease-in-out;
 
   &:hover {
-    background-color: #cbdcff;
-    color: #1b1b1b;
+    background-color: #cac6c3;
+    color: white;
     opacity: 100%;
   }
 `;
 
 export const SecondaryButton = styled(PrimaryButton)`
-  background-color: #e5e5e5;
+  background-color: #f1f0ef;
   color: #1b1b1b;
+  transition: opacity 0.2s ease-in-out;
 
   &:hover {
-    background-color: #d9ffd8;
-    color: #1b1b1b;
+    opacity: 33%;
   }
 `;
+
 export const TertiaryButton = styled(PrimaryButton)`
-  border-bottom: 1px solid #1b1b1b;
-  color: #1b1b1b;
+  /* border-bottom: 1px solid #1b1b1b; */
+  color: #1c1c1e;
   background-color: rgba(255, 255, 255, 0);
   border-radius: 0px;
   padding: 0px;
+  white-space: nowrap; /* Keeps text on one line */
+  /* width: 100%; */
+  transition: opacity 0.2s ease-in-out;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0);
-    border-bottom: solid 1px rgba(255, 255, 255, 0);
+    /* color: #b9b4b0; */
+    opacity: 33%;
+    /* border-bottom: solid 1px rgba(255, 255, 255, 0); */
   }
 `;
 
-export const Heading = styled.h1`
-  font-size: 64px;
+export const H1 = styled.h1`
+  font-size: 75px;
   font-family: "Montagu Slab", serif;
-  color: #1b1b1b;
+  color: #1c1c1e;
   line-height: 1.1;
+  white-space: pre-wrap;
 
-  @media (max-width: 1729px) {
-    font-size: 54px;
+  @media (max-width: 1681px) {
+    font-size: 60px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 48px;
   }
 
   @media (max-width: 414px) {
-    font-size: 32px;
+    font-size: 38px;
   }
 `;
 
-export const Subheading = styled.h2`
-  font-size: 48px;
+export const H2 = styled.h2`
+  font-size: 55px;
   font-family: "Montagu Slab", serif;
   line-height: 1.1;
-  color: #1b1b1b;
+  color: #1c1c1e;
+  white-space: pre-wrap;
 
-  @media (max-width: 1729px) {
+  @media (max-width: 1681px) {
     font-size: 44px;
   }
 
+  @media (max-width: 1024px) {
+    font-size: 35px;
+  }
+
   @media (max-width: 414px) {
     font-size: 28px;
   }
 `;
 
-export const Title = styled.h3`
-  font-size: 40px;
+export const H3 = styled.h3`
+  font-size: 35px;
   font-family: "Montagu Slab", serif;
   line-height: 1.1;
-  color: #1b1b1b;
-  max-width: 1729px;
-
-  @media (max-width: 1729px) {
-    font-size: 28px;
-  }
-`;
-
-export const Synopsis = styled.h4`
-  font-size: 32px;
-  font-family: "Porpora Regular";
-  line-height: 1.1;
-  color: #1b1b1b;
-
-  @media (max-width: 414px) {
-    font-size: 22px;
-  }
-`;
-export const Subtitle = styled.h5`
-  font-size: 24px;
-  font-family: "Montagu Slab", serif;
-  line-height: 1.1;
-  color: #1b1b1b;
-`;
-
-export const Body = styled.p`
-  font-family: "Porpora Regular";
-  font-size: 19px;
-  color: #1b1b1b;
-  line-height: 1.3;
+  color: #1c1c1e;
+  max-width: 1681px;
   white-space: pre-wrap;
 
-  @media (max-width: 1728px) {
+  @media (max-width: 1681px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 414px) {
     font-size: 18px;
   }
 `;
 
-export const Caption = styled(Body)`
+export const H4 = styled.h4`
+  font-size: 34px;
+  font-family: "General Sans Medium";
+  line-height: 1.1;
+  color: #1c1c1e;
+
+  @media (max-width: 1681px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 414px) {
+    font-size: 18px;
+  }
+`;
+
+export const H5 = styled.h5`
+  font-size: 25px;
+  font-family: "General Sans Medium";
+  line-height: 1.1;
+  color: #1c1c1e;
+  white-space: pre-wrap;
+
+  @media (max-width: 1681px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 414px) {
+    /* font-size: 13px; */
+  }
+`;
+
+export const H6 = styled.h6`
+  font-size: 25px;
+  font-family: "General Sans Medium";
+  line-height: 1.1;
+  color: #1c1c1e;
+  white-space: pre-wrap;
+
+  @media (max-width: 1681px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 414px) {
+    /* font-size: 13px; */
+  }
+`;
+
+export const Body = styled.p`
+  font-family: "General Sans Regular";
+  font-size: 16px;
+  color: #1c1c1e;
+  line-height: 1.3;
+  white-space: pre-wrap;
+
+  @media (max-width: 1681px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 1024px) {
+    /* font-size: 14px; */
+  }
+
+  @media (max-width: 414px) {
+    /* font-size: 9px; */
+  }
+`;
+
+export const Small = styled.p`
+  font-family: "General Sans Medium";
   font-size: 14px;
+  color: #1c1c1e;
+  /* line-height: 1.1; */
+  white-space: pre-wrap;
+
+  @media (max-width: 1681px) {
+    font-size: 12px;
+  }
 `;
 
 export const CentreContainer = styled.div`
@@ -164,21 +257,16 @@ export const CentreContainer = styled.div`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-
   flex-direction: column;
 `;
 
 export const CentreText = styled(CentreContainer)`
-  gap: 16px;
-  margin: 64px 25vw 40px 25vw;
-
-  @media (max-width: 1729px) {
-    margin: 64px 30vw 40px 30vw;
-  }
+  padding: 0px 10vw 24px 10vw;
+  gap: 8px;
+  max-width: 1681px;
 
   @media (max-width: 768px) {
-    gap: 20px;
-    margin: 48px 20px 20px 20px;
+    padding: 0vw 0vw 24px 0vw;
   }
 `;
 
@@ -187,17 +275,57 @@ export const ParentContainer = styled.div`
   display: flex;
   align-items: flex-start;
   box-sizing: border-box;
-  flex-direction: row;
+  flex-direction: column;
   gap: 8px;
-  max-width: 1729px;
+  max-width: 1681px;
 
-  @media (max-width: 1729px) {
+  @media (max-width: 1681px) {
     margin: 24px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     margin: 20px;
+  }
+
+  @media (max-width: 414px) {
+    /* font-size: 9px; */
+  }
+`;
+
+export const PaddedContainer = styled.div`
+  margin: 0px auto;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  gap: 40px 24px;
+  max-width: 1681px;
+
+  @media (max-width: 1681px) {
+    padding: 0px;
+    margin: 0px 24px;
+  }
+
+  @media (max-width: 1024px) {
+    margin: 20px;
+    gap: 40px 24px;
+  }
+
+  @media (max-width: 414px) {
+    gap: 24px;
+  }
+`;
+
+export const CustomPaddedContainer = styled(PaddedContainer)`
+  padding: 60px 24px;
+
+  @media (max-width: 1681px) {
+    /* padding: 60px 24px; */
+    margin: 0px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 24px;
   }
 `;
 
@@ -205,34 +333,28 @@ export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px 24px;
-  max-width: 1729px;
-  margin: 24px auto;
+  max-width: 1681px;
 
-  @media (max-width: 1729px) {
-    margin: 24px;
-  }
-
-  @media (max-width: 768px) {
-    margin: 20px;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-`;
-
-export const LetterContainer = styled.div`
-  height: 80vh;
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: 20px;
-  max-width: 1729px;
-  margin: 0px auto;
-
-  @media (max-width: 1729px) {
+  @media (max-width: 1681px) {
     margin: 0px;
   }
 
   @media (max-width: 768px) {
-    height: 60vh;
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const CustomGridContainer = styled(GridContainer)`
+  margin: 0px auto;
+  padding: 60px 24px;
+  max-width: 1633px;
+
+  @media (max-width: 1633px) {
+    padding: 60px 0px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 0px;
   }
 `;
 
@@ -309,5 +431,38 @@ export const PauseButton = styled.div`
 
   @media (max-width: 768px) {
     margin: 20px;
+  }
+`;
+
+export const TagContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  flex-direction: row;
+  gap: 8px;
+`;
+
+export const ButtonContainer = styled(TagContainer)`
+  @media (max-width: 768px) {
+    gap: 40px;
+  }
+`;
+
+export const Tag = styled.div`
+  padding: 4px;
+  border-radius: 4px;
+  justify-self: start;
+`;
+
+export const TextContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (max-width: 1024px) {
+    gap: 16px;
   }
 `;

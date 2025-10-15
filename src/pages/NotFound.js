@@ -1,12 +1,11 @@
-import React from "react";
 import {
   CentreContainer,
-  Heading,
+  H1,
   Body,
   CentreText,
 } from "../styles";
 import styled from "styled-components";
-import StockExchange from "../assets/images/stock_exchange.jpg";
+import DataHero from "../assets/images/database_hero_graphic.jpg";
 import { Helmet } from "react-helmet";
 
 const NotFound = () => (
@@ -34,7 +33,7 @@ const NotFound = () => (
         property="og:description"
         content="We create open-source AI models for social scientists seeking to integrate the power of AI with the interpretability of traditional methods."
       />
-      <meta property="og:image" content={StockExchange} />
+      <meta property="og:image" content={DataHero} />
     </Helmet>
     ;
     <TextContainer>
@@ -69,7 +68,7 @@ export const TextContainer = styled(CentreText)`
   height: 90vh;
 `;
 
-export const Title = styled(Heading)`
+export const Title = styled(H1)`
   margin: 0px 0px 8px 0px;
   padding: 0px;
 `;

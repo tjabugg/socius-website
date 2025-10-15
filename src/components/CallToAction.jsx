@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Subheading, ParentContainer, SecondaryButton } from "../styles";
+import { H2, ParentContainer, SecondaryButton } from "../styles";
 
 // Destructure blogs and title directly from the props
 const CallToActions = ({ callToActions }) => {
@@ -42,7 +42,7 @@ export const Container = styled(ParentContainer)`
     padding: 20px;
   }
 `;
-export const Title = styled(Subheading)`
+export const Title = styled(H2)`
   width: 60%;
   @media (max-width: 768px) {
     width: 100%;

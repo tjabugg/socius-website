@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SentiBank - Encyclopedic Hub for Sentiment Dictionaries</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+          "Roboto", sans-serif;
+        background: #1c1c1e;
+        color: #1c1c1e;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* padding: 4vh 5vw; */
+        /* adds breathing room all around */
+        box-sizing: border-box;
+      }
+
+      .app-container {
+        width: 90%;
+        max-width: 1100px;
+        aspect-ratio: 16 / 9;
+        background: #f1f0ec;
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Top Bar */
+      .top-bar {
+        background: #191f8c;
+        padding: 20px 24px;
+        border-bottom: 1px solid #e6e4e2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+      }
+
+      .brand-name {
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: white;
+      }
+
+      .brand-tag {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* Window Controls */
+      .window-controls {
+        display: flex;
+        gap: 8px;
+        margin-left: auto;
+      }
+
+      .window-control {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+      }
+
+      .window-control:hover {
+        opacity: 0.8;
+      }
+
+      .window-control.close {
+        background: #ff5f57;
+      }
+
+      .window-control.minimize {
+        background: #ffbd2e;
+      }
+
+      .window-control.maximize {
+        background: #51da4c;
+      }
+
+      .top-nav {
+        display: flex;
+        gap: 24px;
+      }
+
+      .top-link {
+        font-size: 0.75rem;
+        color: #706a65;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .top-link:hover {
+        color: #1c1c1e;
+      }
+
+      /* Terminal Container */
+      .terminal-container {
+        flex: 1;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      /* Terminal Header */
+      .terminal-header {
+        background: #f1f0ec;
+        padding: 16px 24px;
+        border-bottom: 1px solid #e6e4e2;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .terminal-title {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #514e4b;
+      }
+
+      .terminal-subtitle {
+        font-size: 0.75rem;
+        color: #9f9994;
+        margin-left: auto;
+      }
+
+      /* Terminal Body */
+      .terminal-body {
+        flex: 1;
+        padding: 32px;
+        background: white;
+        overflow-y: auto;
+        font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Code", monospace;
+      }
+
+      /* Terminal Scrollbar */
+      .terminal-body::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .terminal-body::-webkit-scrollbar-track {
+        background: #f1f0ec;
+      }
+
+      .terminal-body::-webkit-scrollbar-thumb {
+        background: #cac6c3;
+        border-radius: 3px;
+      }
+
+      .terminal-body::-webkit-scrollbar-thumb:hover {
+        background: #9f9994;
+      }
+
+      /* Code Lines */
+      .code-line {
+        margin-bottom: 8px;
+        opacity: 0;
+        transform: translateX(-8px);
+        transition: all 0.3s ease;
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
+
+      .code-line.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* Prompts and Commands */
+      .bash-prompt {
+        color: #51da4c;
+        font-weight: 600;
+        margin-right: 8px;
+      }
+
+      .bash-command {
+        color: #514e4b;
+      }
+
+      .prompt {
+        color: #51da4c;
+        margin-right: 8px;
+      }
+
+      .command {
+        color: #191f8c;
+        font-weight: 500;
+      }
+
+      .output {
+        color: #706a65;
+        margin-left: 0;
+        font-style: italic;
+      }
+
+      /* Syntax Highlighting */
+      .string {
+        color: #1c9418;
+      }
+
+      .number {
+        color: #191f8c;
+      }
+
+      .key {
+        color: #514e4b;
+        font-weight: 500;
+      }
+
+      .bracket {
+        color: #9f9994;
+      }
+
+      /* JSON Container */
+      .json-container {
+        background: #f1f0ec;
+        border: 1px solid #e6e4e2;
+        border-radius: 8px;
+        padding: 16px 16px 16px 24px;
+        margin: 16px 0 16px 32px;
+        max-height: 400px;
+        overflow-y: auto;
+        overflow-x: auto;
+        position: relative;
+        font-size: 0.8125rem;
+        font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Code", monospace;
+        tab-size: 8;
+      }
+
+      .json-inner {
+        display: inline-block;
+        min-width: 100%;
+        width: max-content;
+        background: transparent;
+        padding-right: 16px;
+      }
+
+      .json-container::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+
+      .json-container::-webkit-scrollbar-track {
+        background: #e6e4e2;
+      }
+
+      .json-container::-webkit-scrollbar-thumb {
+        background: #cac6c3;
+        border-radius: 3px;
+      }
+
+      .json-container::-webkit-scrollbar-corner {
+        background: #e6e4e2;
+      }
+
+      /* JSON Lines */
+      .highlight-line {
+        display: block;
+        min-width: 100%;
+        width: max-content;
+        padding: 2px 0;
+        white-space: pre;
+        opacity: 0;
+        transform: translateX(-4px);
+        animation: fadeInLine 0.4s ease forwards;
+      }
+
+      @keyframes fadeInLine {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Cursor */
+      .cursor {
+        display: inline-block;
+        width: 8px;
+        height: 16px;
+        background: #51da4c;
+        opacity: 0.8;
+        animation: blink 1s infinite;
+        margin-left: 4px;
+        vertical-align: text-bottom;
+      }
+
+      @keyframes blink {
+        0%,
+        50% {
+          opacity: 0.8;
+        }
+        51%,
+        100% {
+          opacity: 0;
+        }
+      }
+
+      /* Status Badge */
+      .status-badge {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.625rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-left: 8px;
+        background: #d9ffd8;
+        color: #1c9418;
+      }
+
+      /* Loading Indicator */
+      .loading-dots {
+        display: inline-block;
+        margin-left: 4px;
+      }
+
+      .loading-dots::after {
+        content: "";
+        animation: dots 1.5s steps(4, end) infinite;
+      }
+
+      @keyframes dots {
+        0% {
+          content: "";
+        }
+        25% {
+          content: ".";
+        }
+        50% {
+          content: "..";
+        }
+        75% {
+          content: "...";
+        }
+        100% {
+          content: "";
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 20px;
+          align-items: flex-start;
+        }
+        .app-container {
+          width: 100%;
+          aspect-ratio: auto;
+          max-height: 600px;
+        }
+        .terminal-body {
+          padding: 16px;
+          font-size: 0.8rem;
+        }
+        .json-container {
+          margin: 8px 0 8px 16px;
+          font-size: 0.7rem;
+        }
+      }
+
+      /* Tablet: slightly taller */
+      /* @media (max-width: 1024px) {
+        .app-container {
+          aspect-ratio: 4 / 3;
+        }
+      } */
+
+      /* Mobile: drop fixed aspect, let it expand naturally */
+      /* @media (max-width: 768px) {
+        body {
+          padding: 4vh 5vw;
+          align-items: flex-start;
+          max-height: auto;
+        }
+
+        .app-container {
+          width: 100%;
+          aspect-ratio: auto;
+          max-height: 600px;
+          height: auto;
+        }
+
+        .terminal-body {
+          padding: 16px;
+          font-size: 0.8rem;
+        }
+
+        .json-container {
+          margin: 8px 0 8px 16px;
+          font-size: 0.7rem;
+        }
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="brand">
+          <span class="brand-name">sentibank</span>
+          <span class="brand-tag"
+            >Encyclopaedic Hub for Sentiment Dictionaries</span
+          >
+        </div>
+        <div class="window-controls">
+          <div class="window-control close"></div>
+          <div class="window-control minimize"></div>
+          <div class="window-control maximize"></div>
+        </div>
+      </div>
+
+      <!-- Terminal Container -->
+      <div class="terminal-container">
+        <!-- Terminal Body -->
+        <div class="terminal-body" id="terminal">
+          <!-- Content will be dynamically generated -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // SentiBank VADER lexicon data
+      const sampleData = {
+        metadata: {
+          description: "Valence Aware Dictionary and sEntiment Reasoner",
+          total_lexicons: 7495,
+          score_range: "[-4, 4]",
+          validation: "10 independent human raters",
+          genre: "social_media",
+          domain: "general",
+        },
+        lexicon_sample: {
+          "(:": 2.2,
+          "(=": 2.2,
+          "):": -1.8,
+          "0_o": -0.3,
+          amazing: 2.8,
+          awesome: 3.1,
+          terrible: -2.1,
+          horrible: -2.5,
+          love: 3.2,
+          hate: -2.7,
+          excellent: 2.7,
+          lol: 2.9,
+          wtf: -2.8,
+        },
+        statistics: {
+          positive_terms: 3324,
+          negative_terms: 4171,
+          score_range: "[-3.9, 3.4]",
+        },
+        processing_info: {
+          preprocessing_applied: [
+            "duplicates_removed",
+            "lowercase_conversion",
+            "emoticon_standardisation",
+          ],
+          quality_control: {
+            rater_screening: "English comprehension test",
+            training_threshold: "90% matching accuracy",
+            consistency_check: "Golden items validation",
+          },
+        },
+      };
+
+      const terminal = document.getElementById("terminal");
+      let lineIndex = 0;
+
+      const commands = [
+        { type: "bash", text: "$ python", delay: 500 },
+        { type: "command", text: "from sentibank import archive", delay: 1000 },
+        { type: "command", text: "load = archive.load()", delay: 1500 },
+        {
+          type: "command",
+          text: 'vader = load.json("VADER_v2014")',
+          delay: 2000,
+        },
+        {
+          type: "output",
+          text: "Loading VADER sentiment lexicon from sentibank...",
+          delay: 2500,
+        },
+        {
+          type: "output",
+          text: "Loading 7,495 sentiment-scored lexicons... ✓",
+          delay: 3000,
+        },
+        { type: "command", text: "print(vader)", delay: 3500 },
+        { type: "json", text: "", delay: 4000 },
+      ];
+
+      function addLine(content, className = "") {
+        const line = document.createElement("div");
+        line.className = `code-line ${className}`;
+        line.innerHTML = content;
+        terminal.appendChild(line);
+
+        setTimeout(() => {
+          line.classList.add("visible");
+        }, 50);
+
+        return line;
+      }
+
+      function formatJSON(jsonString) {
+        return jsonString
+          .replace(/(".*?")/g, '<span class="string">$1</span>')
+          .replace(/(\b\d+\.?\d*\b)/g, '<span class="number">$1</span>')
+          .replace(/("[^"]*")(?=\s*:)/g, '<span class="key">$1</span>')
+          .replace(/([{}[\]])/g, '<span class="bracket">$1</span>');
+      }
+
+      function executeCommands() {
+        commands.forEach((cmd, index) => {
+          setTimeout(() => {
+            if (cmd.type === "bash") {
+              const line = addLine(
+                `<span class="bash-prompt">socius-labs@sentibank ~/Demo</span><br><span class="bash-command">${cmd.text}</span>`
+              );
+            } else if (cmd.type === "command") {
+              const line = addLine(
+                `<span class="prompt">>>></span> <span class="command">${cmd.text}</span>`
+              );
+              if (index === commands.length - 1) {
+                line.innerHTML += '<span class="cursor"></span>';
+              }
+            } else if (cmd.type === "output") {
+              addLine(`<span class="output">${cmd.text}</span>`);
+            } else if (cmd.type === "json") {
+              const jsonContainer = document.createElement("div");
+              jsonContainer.className = "json-container";
+              terminal.appendChild(jsonContainer);
+
+              const jsonInner = document.createElement("div");
+              jsonInner.className = "json-inner";
+              jsonContainer.appendChild(jsonInner);
+
+              // Format JSON
+              let jsonStr =
+                '"VADER_v2014": ' + JSON.stringify(sampleData, null, 8);
+
+              const lines = jsonStr.split("\n");
+              lines.forEach((line, lineIndex) => {
+                setTimeout(() => {
+                  const lineElement = document.createElement("div");
+                  lineElement.className = "highlight-line";
+                  lineElement.style.animationDelay = `${lineIndex * 30}ms`;
+                  lineElement.innerHTML = formatJSON(line);
+                  jsonInner.appendChild(lineElement);
+                  // Scroll to bottom as new lines are added
+                  jsonContainer.scrollTop = jsonContainer.scrollHeight;
+                }, lineIndex * 80);
+              });
+            }
+
+            // Auto-scroll to bottom
+            terminal.scrollTop = terminal.scrollHeight;
+          }, cmd.delay);
+        });
+
+        // Reset animation after completion
+        setTimeout(() => {
+          terminal.innerHTML = "";
+          executeCommands();
+        }, 18000);
+      }
+
+      // Start the animation
+      executeCommands();
+    </script>
+  </body>
+</html>

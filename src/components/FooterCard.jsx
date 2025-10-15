@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  Title,
+  H3,
   Body,
   MyImage,
   SecondaryButton,
@@ -58,7 +58,7 @@ export const Container = styled(ParentContainer)`
   }
 `;
 
-export const Heading = styled(Title)`
+export const Heading = styled(H3)`
   margin-bottom: 8px;
 `;
 

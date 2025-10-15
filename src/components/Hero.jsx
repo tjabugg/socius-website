@@ -3,7 +3,7 @@ import {
   MyVideo,
   MyImage,
   PauseButton,
-  Heading,
+  H1,
   ImageContainer,
 } from "../styles";
 import HeroVideo from "../assets/videos/montage.mp4";
@@ -96,7 +96,7 @@ export const Container = styled.div`
   }
 `;
 
-export const HeroText = styled(Heading)`
+export const HeroText = styled(H1)`
   position: absolute;
   box-sizing: border-box;
   top: 24px;
