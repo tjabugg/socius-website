@@ -26,7 +26,7 @@ import TextBlocks from "../components/TextBlocks";
 const Home = () => {
   // An array and function
 
-  const [largeArticleCards] = useState([
+  const [largeArticleCards] = [
     {
       aspectRatio: "16/9",
       flexDirection: "column",
@@ -122,7 +122,7 @@ const Home = () => {
       id: 6,
       link: "/documentation#sentibank",
     },
-  ]);
+  ];
 
   const [graphicCards] = useState([
     {
