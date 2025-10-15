@@ -12,7 +12,7 @@ import DatabaseDriven from "../assets/images/databaseDriven_graphic.jpg";
 import MountainValley from "../assets/images/mountain_valley.jpg";
 import Aristocrats from "../assets/images/aristocrats.jpg";
 import { Helmet } from "react-helmet";
-import LargeArticleCard from "../components/LargeArticleCard";
+import ArticleCard from "../components/ArticleCard";
 import { PaddedContainer } from "../styles";
 import styled from "styled-components";
 
@@ -28,7 +28,7 @@ const Documentation = () => {
     },
   ]);
 
-  const [largeArticleCards] = useState([
+  const [articleCards] = useState([
     {
       aspectRatio: "16/9",
       flexDirection: "column",
@@ -249,14 +249,14 @@ const Documentation = () => {
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 1)}
         />
-        <LargeArticleCard
-          largeArticleCards={largeArticleCards.filter((card) =>
+        <ArticleCard
+          articleCards={articleCards.filter((card) =>
             [1, 2].includes(card.id)
           )}
           grid="2fr 1fr"
         />
-        <LargeArticleCard
-          largeArticleCards={largeArticleCards.filter((card) =>
+        <ArticleCard
+          articleCards={articleCards.filter((card) =>
             [3, 4, 5, 6].includes(card.id)
           )}
           grid="1fr 1fr 1fr 1fr"
@@ -267,8 +267,8 @@ const Documentation = () => {
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
         />
-        <LargeArticleCard
-          largeArticleCards={largeArticleCards.filter((card) =>
+        <ArticleCard
+          articleCards={articleCards.filter((card) =>
             [7, 8, 9].includes(card.id)
           )}
           grid="1fr 1fr 1fr 1fr"

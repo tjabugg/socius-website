@@ -12,76 +12,76 @@ import {
 } from "../styles";
 
 // Destructure blogs and title directly from the props
-const LargeArticleCards = ({ largeArticleCards, grid }) => {
+const ArticleCard = ({ articleCards, grid }) => {
   return (
     <CardContainer grid={grid}>
-      {largeArticleCards.map((largeArticleCard) => (
-        <a href={largeArticleCard.link} target={largeArticleCard.target}>
-          <LargeArticleCard
+      {articleCards.map((articleCard) => (
+        <a href={articleCard.link} target={articleCard.target}>
+          <ArticleCardContainer
             style={{
-              flexDirection: largeArticleCard.flexDirection,
+              flexDirection: articleCard.flexDirection,
             }}
-            key={largeArticleCard.id}
+            key={articleCard.id}
           >
             <ImageContainer
               style={{
-                backgroundColor: largeArticleCard.bgColour,
-                padding: largeArticleCard.padding,
-                aspectRatio: largeArticleCard.aspectRatio,
+                backgroundColor: articleCard.bgColour,
+                padding: articleCard.padding,
+                aspectRatio: articleCard.aspectRatio,
               }}
             >
-              {largeArticleCard.image ? (
+              {articleCard.image ? (
                 <ImageHover
-                  src={largeArticleCard.image}
-                  alt={largeArticleCard.alt}
+                  src={articleCard.image}
+                  alt={articleCard.alt}
                 ></ImageHover>
               ) : null}
             </ImageContainer>
 
             <TextContainer>
-              {largeArticleCard.captionOne ? (
+              {articleCard.captionOne ? (
                 <TagContainer>
                   <Tag
                     style={{
-                      backgroundColor: largeArticleCard.tagOneBgColour,
+                      backgroundColor: articleCard.tagOneBgColour,
                     }}
                   >
                     <Small
                       style={{
-                        color: largeArticleCard.tagOneColour,
+                        color: articleCard.tagOneColour,
                       }}
                     >
-                      {largeArticleCard.captionOne}
+                      {articleCard.captionOne}
                     </Small>
                   </Tag>
 
                   <Tag
                     style={{
-                      backgroundColor: largeArticleCard.tagTwoBgColour,
+                      backgroundColor: articleCard.tagTwoBgColour,
                     }}
                   >
                     <Small
                       style={{
-                        color: largeArticleCard.tagTwoColour,
+                        color: articleCard.tagTwoColour,
                       }}
                     >
-                      {largeArticleCard.captionTwo}
+                      {articleCard.captionTwo}
                     </Small>
                   </Tag>
                 </TagContainer>
               ) : null}
 
-              <H5>{largeArticleCard.heading}</H5>
-              <Body>{largeArticleCard.paragraph}</Body>
+              <H5>{articleCard.heading}</H5>
+              <Body>{articleCard.paragraph}</Body>
             </TextContainer>
-          </LargeArticleCard>
+          </ArticleCardContainer>
         </a>
       ))}
     </CardContainer>
   );
 };
 
-export default LargeArticleCards;
+export default ArticleCard;
 
 export const CardContainer = styled(GridContainer)`
   grid-template-columns: ${(props) => props.grid || "1fr"};
@@ -97,7 +97,7 @@ export const CardContainer = styled(GridContainer)`
   }
 `;
 
-export const LargeArticleCard = styled.div`
+export const ArticleCardContainer = styled.div`
   /* width: calc(33.3333333333% - 24px); */
   display: flex;
   flex-direction: column;

@@ -23,7 +23,7 @@ function Navigation() {
   }, [lastScrollY]);
 
   return (
-    <HeaderContainer showNav={showNav}>
+    <HeaderContainer $showNav={showNav}>
       {/* Left logo */}
       <NavLink href="/">
         <LogoContainer>
@@ -77,12 +77,11 @@ export default Navigation;
 
 export const HeaderContainer = styled.div`
   position: fixed;
-  top: ${({ showNav }) => (showNav ? "0" : "-100px")};
+  top: ${({ $showNav }) => ($showNav ? "0" : "-100px")};
   left: 0;
   right: 0;
   margin: auto;
   padding: 24px 24px;
-  /* More balanced horizontal padding */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,16 +90,15 @@ export const HeaderContainer = styled.div`
   z-index: 1000;
   max-width: 1729px;
   background-color: white;
-  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); */
   transition: top 0.3s ease-in-out;
 
   @media (max-width: 768px) {
-    padding: 20px; /* Tight padding on mobile */
+    padding: 20px;
   }
 `;
 
 export const NavLink = styled(Link)`
-  color: #1C1C1E;
+  color: #1c1c1e;
   text-decoration: none;
   font-weight: 500;
   /* margin-left: 24px; */

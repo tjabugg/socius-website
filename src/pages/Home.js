@@ -1,5 +1,5 @@
 import Hero from "../components/Hero";
-import LargeArticleCard from "../components/LargeArticleCard";
+import ArticleCard from "../components/ArticleCard";
 // import CallToAction from "../components/CallToAction";
 import { useState } from "react";
 import GraphicCards from "../components/GraphicCard";
@@ -26,7 +26,7 @@ import TextBlocks from "../components/TextBlocks";
 const Home = () => {
   // An array and function
 
-  const [largeArticleCards] = [
+  const [articleCards] = useState([
     {
       aspectRatio: "16/9",
       flexDirection: "column",
@@ -122,7 +122,7 @@ const Home = () => {
       id: 6,
       link: "/documentation#sentibank",
     },
-  ];
+  ]);
 
   const [graphicCards] = useState([
     {
@@ -257,14 +257,14 @@ const Home = () => {
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
         />
-        <LargeArticleCard
-          largeArticleCards={largeArticleCards.filter((card) =>
+        <ArticleCard
+          articleCards={articleCards.filter((card) =>
             [1, 2].includes(card.id)
           )}
           grid="2fr 1fr"
         />
-        <LargeArticleCard
-          largeArticleCards={largeArticleCards.filter((card) =>
+        <ArticleCard
+          articleCards={articleCards.filter((card) =>
             [3, 4].includes(card.id)
           )}
           grid="1fr 1fr"
@@ -282,8 +282,8 @@ const Home = () => {
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 4)}
         />{" "}
-        <LargeArticleCard
-          largeArticleCards={largeArticleCards.filter((card) =>
+        <ArticleCard
+          articleCards={articleCards.filter((card) =>
             [5, 6].includes(card.id)
           )}
           grid="1fr 1fr"

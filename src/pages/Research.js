@@ -7,7 +7,7 @@ import Farmland from "../assets/images/farmland.jpg";
 import BeforeYouThink from "../assets/images/beforeYouThink_graphic.jpg";
 import Politicians from "../assets/images/politicians.jpg";
 import { Helmet } from "react-helmet";
-import LargeArticleCard from "../components/LargeArticleCard";
+import ArticleCard from "../components/ArticleCard";
 import { PaddedContainer } from "../styles";
 import styled from "styled-components";
 import CallToActions from "../components/CallToAction";
@@ -31,7 +31,7 @@ const Research = () => {
     },
   ]);
 
-  const [largeArticleCards] = useState([
+  const [articleCards] = useState([
     {
       aspectRatio: "1/1",
       flexDirection: "column",
@@ -152,8 +152,8 @@ const Research = () => {
       </PaddedContainer>
 
       <CustomContainer>
-        <LargeArticleCard
-          largeArticleCards={largeArticleCards}
+        <ArticleCard
+          articleCards={articleCards}
           grid="1fr 1fr 1fr"
         />
       </CustomContainer>

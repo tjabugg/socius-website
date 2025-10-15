@@ -20,7 +20,7 @@ import {
   PaddedContainer,
 } from "../styles";
 import styled from "styled-components";
-import LargeArticleCard from "../components/LargeArticleCard";
+import LargeArticleCard from "../components/ArticleCard";
 
 const Senitbank = () => {
   const [publicationHeroes] = useState([
