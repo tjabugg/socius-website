@@ -16,13 +16,13 @@ const ArticleCard = ({ articleCards, grid }) => {
   return (
     <CardContainer grid={grid}>
       {articleCards.map((articleCard) => (
-        <a href={articleCard.link} target={articleCard.target}>
-          <ArticleCardContainer
-            style={{
-              flexDirection: articleCard.flexDirection,
-            }}
-            key={articleCard.id}
-          >
+        <ArticleCardContainer
+          style={{
+            flexDirection: articleCard.flexDirection,
+          }}
+          key={articleCard.id}
+        >
+          <a href={articleCard.link} target={articleCard.target}>
             <ImageContainer
               style={{
                 backgroundColor: articleCard.bgColour,
@@ -37,45 +37,45 @@ const ArticleCard = ({ articleCards, grid }) => {
                 ></ImageHover>
               ) : null}
             </ImageContainer>
+          </a>
 
-            <TextContainer>
-              {articleCard.captionOne ? (
-                <TagContainer>
-                  <Tag
+          <TextContainer>
+            {articleCard.captionOne ? (
+              <TagContainer>
+                <Tag
+                  style={{
+                    backgroundColor: articleCard.tagOneBgColour,
+                  }}
+                >
+                  <Small
                     style={{
-                      backgroundColor: articleCard.tagOneBgColour,
+                      color: articleCard.tagOneColour,
                     }}
                   >
-                    <Small
-                      style={{
-                        color: articleCard.tagOneColour,
-                      }}
-                    >
-                      {articleCard.captionOne}
-                    </Small>
-                  </Tag>
+                    {articleCard.captionOne}
+                  </Small>
+                </Tag>
 
-                  <Tag
+                <Tag
+                  style={{
+                    backgroundColor: articleCard.tagTwoBgColour,
+                  }}
+                >
+                  <Small
                     style={{
-                      backgroundColor: articleCard.tagTwoBgColour,
+                      color: articleCard.tagTwoColour,
                     }}
                   >
-                    <Small
-                      style={{
-                        color: articleCard.tagTwoColour,
-                      }}
-                    >
-                      {articleCard.captionTwo}
-                    </Small>
-                  </Tag>
-                </TagContainer>
-              ) : null}
+                    {articleCard.captionTwo}
+                  </Small>
+                </Tag>
+              </TagContainer>
+            ) : null}
 
-              <H5>{articleCard.heading}</H5>
-              <Body>{articleCard.paragraph}</Body>
-            </TextContainer>
-          </ArticleCardContainer>
-        </a>
+            <H5>{articleCard.heading}</H5>
+            <Body>{articleCard.paragraph}</Body>
+          </TextContainer>
+        </ArticleCardContainer>
       ))}
     </CardContainer>
   );

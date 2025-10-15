@@ -77,18 +77,18 @@ export default Hero;
 export const Container = styled.div`
   display: flex;
   position: relative;
-  height: 70vh;
+  height: 80vh;
   margin: 67px auto 0px auto;
   max-width: 1729px;
 
   @media (max-width: 1729px) {
     margin: 67px 0px 0px 0px;
-    height: 80vh;
+    /* height: 80vh; */
   }
 
   @media (max-width: 768px) {
     margin: 64px 0px 0px 0px;
-    height: 80vh;
+    /* height: 80vh; */
   }
 
   @media (max-width: 414px) {
