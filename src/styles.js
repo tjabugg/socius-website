@@ -93,7 +93,7 @@ export const TertiaryButton = styled(PrimaryButton)`
 
   &:hover {
     background-color: rgba(255, 255, 255, 0);
-    /* color: #b9b4b0; */
+    color: #b9b4b0;
     opacity: 33%;
     /* border-bottom: solid 1px rgba(255, 255, 255, 0); */
   }

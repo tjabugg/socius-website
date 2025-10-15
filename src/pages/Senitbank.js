@@ -20,7 +20,7 @@ import {
   PaddedContainer,
 } from "../styles";
 import styled from "styled-components";
-import LargeArticleCard from "../components/ArticleCard";
+import ArticleCard from "../components/ArticleCard";
 
 const Senitbank = () => {
   const [publicationHeroes] = useState([
@@ -299,7 +299,7 @@ const Senitbank = () => {
       id: 8,
     },
   ]);
-  const [largeArticleCards] = useState([
+  const [articleCards] = useState([
     {
       aspectRatio: "16/9",
       flexDirection: "column",
@@ -475,8 +475,8 @@ result = analyzer.sentiment(text=text, dictionary="MASTER_v2022")
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 8)}
         />
-        <LargeArticleCard
-          largeArticleCards={largeArticleCards.filter((card) =>
+        <ArticleCard
+          articleCards={articleCards.filter((card) =>
             [3, 4, 5, 6].includes(card.id)
           )}
           grid="1fr 1fr 1fr 1fr"
