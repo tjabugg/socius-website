@@ -15,13 +15,9 @@ import {
   Body,
   CentreContainer,
   GridContainer,
-  H4,
   H5,
-  ImageContainer,
   Link,
-  MyImage,
   PaddedContainer,
-  TextContainer,
 } from "../styles";
 import styled from "styled-components";
 import LargeArticleCard from "../components/LargeArticleCard";
@@ -581,7 +577,6 @@ export const CustomCode = styled.code`
   font-family: monospace;
   font-size: 16px;
   color: #1c1c1e;
-
 
   @media (max-width: 1729px) {
     font-size: 12px;
