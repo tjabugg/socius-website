@@ -123,7 +123,7 @@ const Data = () => {
 
         <Container>
           <WebContainer
-            src="/sentibank.html"
+            src="/sentibankApp.html"
             alt="An interactive Demonstration of the socius sentibank application"
             title="Interactive Mockup"
           />{" "}
@@ -164,7 +164,7 @@ const Data = () => {
         <PaddedContainer>
           <Container>
             <WebContainer
-              src="/redditharbor.html"
+              src="/redditharborApp.html"
               alt="An interactive Demonstration of the socius RedditHarbor application"
               title="Interactive Mockup"
             />{" "}
