@@ -48,7 +48,7 @@ const Research = () => {
       tagTwoColour: "#514E4B",
       alt: "A symmetrical light green socius pattern on a bright blue background",
       id: 1,
-      link: "",
+      link: "/System-1.5",
     },
     {
       aspectRatio: "16/9",
@@ -66,7 +66,7 @@ const Research = () => {
       tagTwoColour: "#514E4B",
       alt: "A 19th century painting of a flock of sheep being herded, by Robert Hills",
       id: 2,
-      link: "",
+      link: "/Monitor-Generate-Verify",
     },
     {
       aspectRatio: "4/5",
@@ -84,7 +84,7 @@ const Research = () => {
       tagTwoColour: "#514E4B",
       alt: "Cropped close up of a dark blue socius pattern on a lime green background",
       id: 3,
-      link: "",
+      link: "/Before-You-Think-Monitor",
     },
     {
       aspectRatio: "4/5",
@@ -152,10 +152,7 @@ const Research = () => {
       </PaddedContainer>
 
       <CustomContainer>
-        <ArticleCard
-          articleCards={articleCards}
-          grid="1fr 1fr 1fr"
-        />
+        <ArticleCard articleCards={articleCards} grid="1fr 1fr 1fr" />
       </CustomContainer>
       <CallToActions callToActions={callToActions} />
     </>

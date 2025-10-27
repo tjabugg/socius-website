@@ -205,7 +205,7 @@ const Documentation = () => {
   const [textBlocks] = useState([
     {
       justify: "space-between",
-      subheading: "sentibank",
+      heading: "sentibank",
       paragraph: "Sixty years of emotion dictionaries. One import statement.",
       paragraphButton: "View all",
       link: "https://socius-org.github.io/sentibank/about.html",
@@ -214,7 +214,7 @@ const Documentation = () => {
     },
     {
       justify: "space-between",
-      subheading: "RedditHarbor",
+      heading: "RedditHarbor",
       paragraph: "Reddit scraping with compliance built-in, not bolted on.",
       paragraphButton: "View all",
       link: "https://socius-org.github.io/RedditHarbor/about.html",

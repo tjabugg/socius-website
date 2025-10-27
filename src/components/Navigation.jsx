@@ -25,12 +25,14 @@ function Navigation() {
   return (
     <HeaderContainer $showNav={showNav}>
       {/* Left logo */}
-      <NavLink href="/">
-        <LogoContainer>
-          <Logo title="Socius logo" />
-          <Word title="Socius word" />
-        </LogoContainer>
-      </NavLink>
+      <DesktopNav>
+        <NavLink href="/">
+          <LogoContainer>
+            <Logo title="Socius logo" />
+            <Word title="Socius word" />
+          </LogoContainer>
+        </NavLink>
+      </DesktopNav>
 
       {/* Desktop links */}
       <DesktopNav>
@@ -80,8 +82,8 @@ export const HeaderContainer = styled.div`
   top: ${({ $showNav }) => ($showNav ? "0" : "-100px")};
   left: 0;
   right: 0;
-  margin: auto;
-  padding: 24px 24px;
+  margin: 24px auto;
+  padding: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -89,8 +91,10 @@ export const HeaderContainer = styled.div`
   width: 100%;
   z-index: 1000;
   max-width: 1729px;
-  background-color: white;
+  /* background-color: white; */
   transition: top 0.3s ease-in-out;
+  margin: 0px auto;
+  /* border-radius: 20px; */
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -114,6 +118,11 @@ export const NavLink = styled(Link)`
 `;
 
 const DesktopNav = styled(NavContainer)`
+  background: rgba(255, 255, 255, 1); 
+  /* backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); */
+  padding: 16px;
+  border-radius: 1000px;
   @media (max-width: 768px) {
     display: none;
   }

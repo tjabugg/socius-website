@@ -61,7 +61,7 @@ const About = () => {
     {
       // justify: "flex-end",
       altParagraph:
-        "We don't research humans to decode machines. We experiment whether the sciences that explained humans can improve machines — both how they think and how they work with us. Psychology becomes architecture. Philosophy becomes justification. Economics becomes prediction. Every human insight is a potential machine upgrade.",
+        "We don't research humans to decode machines. We experiment whether the sciences that explained humans can improve machines — both how they think and how they work with us.",
       textColour: "#706A65",
       id: 6,
     },
@@ -73,7 +73,7 @@ const About = () => {
     {
       // justify: "flex-end",
       altParagraph:
-        "We don't just implement human theories — we test them. Machines become laboratories where economic theories spawn million-agent markets, psychological models surf infinite memories, and uncomputable questions meet microsecond verdicts. Silicon subjects don't get tired, don't quit studies, and can't unionise (yet). They're the test subjects human sciences never had.",
+        "We don't just implement human theories. We test them. Machines become the test subjects human sciences never had — sometimes revealing entirely new questions we hadn't thought to ask.",
       textColour: "#706A65",
       id: 8,
     },
@@ -138,14 +138,14 @@ const About = () => {
           />
         </CustomGrid>
 
-        <ImageContainer
+        <CustomImageContainer
           style={{
             aspectRatio: "#E6E4E2",
             gap: "40px",
           }}
         >
           <MyImage src={LSE} alt="The London School of Economics" />
-        </ImageContainer>
+        </CustomImageContainer>
       </CustomContainer>
 
       <CustomGrid>
@@ -232,6 +232,11 @@ export const CustomGrid = styled(GridContainer)`
 export const CustomContainer = styled(PaddedContainer)`
   padding: 60px 24px;
   margin: 60px auto;
+  width: 100%;
+  max-width: none;
+  overflow: hidden; /* Ensures animation doesn’t spill out */
+  display: flex;
+  justify-content: center;
 
   @media (max-width: 1681px) {
     margin: 60px 0px;
@@ -251,4 +256,10 @@ export const QuoteContainer = styled(CentreContainer)`
   @media (max-width: 414px) {
     padding: 10vh 10vw;
   }
+`;
+
+export const CustomImageContainer = styled(ImageContainer)`
+  max-width: 1681px;
+  justify-content: center;
+  margin: 0px auto;
 `;

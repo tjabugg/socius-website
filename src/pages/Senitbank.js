@@ -1,26 +1,29 @@
 import { useState } from "react";
 import TextBlocks from "../components/TextBlocks";
 import PublicationHero from "../components/PublicationHero";
-import Diplomats from "../assets/images/diplomat.jpg";
-import LSE from "../assets/images/lse.jpg";
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Helmet } from "react-helmet";
 import VictorianTown from "../assets/images/victorian_town.jpg";
+import SentibankCover from "../assets/covers/sentibank_cover.png";
+import LegacyTreeDiagram from "../assets/diagrams/sentibank_diagram.png";
 import Tudors from "../assets/images/tudors.jpg";
 import Lake from "../assets/images/lake.jpg";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import SentiWordNet from "../assets/images/sentiWordNet_graphic.jpg";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import Github from "../assets/images/github-mark.svg";
 import {
   Body,
-  CentreContainer,
-  GridContainer,
   H5,
-  Link,
-  PaddedContainer,
+  CustomLink,
+  List,
+  CustomCode,
+  CustomTextContainer,
+  CustomContainer,
+  ImageContainer,
+  MyImage,
 } from "../styles";
-import styled from "styled-components";
 import ArticleCard from "../components/ArticleCard";
+import styled from "styled-components";
 
 const Senitbank = () => {
   const [publicationHeroes] = useState([
@@ -28,7 +31,7 @@ const Senitbank = () => {
       tagOne: "Publication",
       tagTwo: "ICWSM 2024",
       heading: "sentibank",
-      image: Diplomats,
+      image: SentibankCover,
       id: 1,
     },
   ]);
@@ -264,27 +267,31 @@ const Senitbank = () => {
       paragraph: (
         <>
           <Body>
-            sentibank is available at our
-            <CustomLink
-              href="https://github.com/socius-org/sentibank"
-              target="_blank"
-              // rel="noopener noreferrer"
-            >
-              GitHub
-            </CustomLink>
-            . For the academically inclined, read our{" "}
-            <CustomLink
-              href="https://doi.org/10.1609/icwsm.v18i1.31443"
-              target="_blank"
-              // rel="noopener noreferrer"
-            >
-              paper{" "}
-            </CustomLink>{" "}
-            For the practically minded:{" "}
-            <CustomCode>pip install sentibank</CustomCode>in Python and start
-            experimenting.<br></br>
-            <br></br>Built with intellectual mischief at socius: Experimental
-            Intelligence Lab.
+            <span style={{ fontStyle: "italic" }}>
+              sentibank is available at our{" "}
+              <CustomLink
+                href="https://github.com/socius-org/sentibank"
+                target="_blank"
+                // rel="noopener noreferrer"
+              >
+                GitHub
+              </CustomLink>
+              . For the academically inclined, read our{" "}
+              <CustomLink
+                href="https://doi.org/10.1609/icwsm.v18i1.31443"
+                target="_blank"
+                // rel="noopener noreferrer"
+              >
+                paper
+              </CustomLink>
+              . For the practically minded:{" "}
+            </span>
+            <CustomCode>pip install sentibank</CustomCode>{" "}
+            <span style={{ fontStyle: "italic" }}>
+              in Python and start experimenting.<br></br>
+              <br></br>Built with intellectual mischief at socius: Experimental
+              Intelligence Lab.
+            </span>
           </Body>
         </>
       ),
@@ -397,10 +404,10 @@ result = analyzer.sentiment(text=text, dictionary="MASTER_v2022")
     <>
       <Helmet>
         {/* <!-- Primary Meta Tags --> */}
-        <title>Optimising research through data discovery AI | socius</title>
+        <title>How Software 1.0 Understood Emotions | socius labs</title>
         <meta
           name="title"
-          content="Optimising research through data discovery AI | socius"
+          content="How Software 1.0 Understood Emotions | socius labs"
         />
         <meta
           name="description"
@@ -412,13 +419,13 @@ result = analyzer.sentiment(text=text, dictionary="MASTER_v2022")
         {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
         <meta
           property="og:title"
-          content="Optimising research through data discovery AI | socius"
+          content="How Software 1.0 Understood Emotions | socius labs"
         />
         <meta
           property="og:description"
           content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
         />
-        <meta property="og:image" content={LSE} />
+        <meta property="og:image" content={SentibankCover} />
       </Helmet>
       <PublicationHero publicationHeroes={publicationHeroes} />
       <CustomTextContainer>
@@ -434,6 +441,12 @@ result = analyzer.sentiment(text=text, dictionary="MASTER_v2022")
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 3)}
         />
+        <ImageContainer>
+          <MyImage
+            alt={`Diagram for the legacy tree`}
+            src={LegacyTreeDiagram}
+          ></MyImage>
+        </ImageContainer>
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 4)}
         />
@@ -488,104 +501,6 @@ result = analyzer.sentiment(text=text, dictionary="MASTER_v2022")
 
 export default Senitbank;
 
-export const CustomTextContainer = styled(PaddedContainer)`
-  /* padding: 0px; */
-  /* justify-content: flex-end; */
-  margin: 0px auto;
-  gap: 40px;
-  justify-content: flex-end;
-
-  @media (max-width: 1729px) {
-    margin: 24px;
-  }
-`;
-
-export const Custom = styled(PaddedContainer)`
-  margin: 0px;
-`;
-
-export const CustomGrid = styled(GridContainer)`
-  margin: 60px auto;
-  padding: 60px 0px;
-
-  @media (max-width: 1729px) {
-    margin: 24px;
-  }
-
-  @media (max-width: 1024px) {
-    /* margin: 20px;
-    gap: 40px 24px; */
-  }
-
-  @media (max-width: 414px) {
-    padding: 40px 0px;
-    margin: 0px 20px;
-  }
-`;
-
-export const CustomContainer = styled(PaddedContainer)`
-  padding: 60px 0px;
-  @media (max-width: 1729px) {
-    margin: 0px 24px;
-  }
-
-  @media (max-width: 414px) {
-    padding: 40px 0px;
-  }
-`;
-
-export const QuoteContainer = styled(CentreContainer)`
-  margin: 0px auto;
-  padding: 15vh 10vw;
-  max-width: 1729px;
-
-  @media (max-width: 414px) {
-    padding: 10vh 10vw;
-  }
-`;
-
-export const List = styled.ul`
-  margin-top: 16px;
-  padding-left: 40px;
-  line-height: 1.5;
-`;
-
-// export const List = styled.li`
-//   margin-top: 16px;
-//   padding-left: 40px;
-// `;
-
-export const CustomLink = styled(Link)`
-  font-size: 16px;
-  color: #1c1c1e;
-  line-height: 1.3;
-  text-decoration: underline;
-
-  @media (max-width: 1729px) {
-    font-size: 14px;
-  }
-
-  &:hover {
-    text-decoration: none;
-  }
-`;
-
-export const CustomCode = styled.code`
-  background: #f4f4f4;
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-family: monospace;
-  font-size: 16px;
-  color: #1c1c1e;
-
-  @media (max-width: 1729px) {
-    font-size: 12px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 1px;
-  }
-`;
 // Outer wrapper — aligns content
 const CodeContainer = styled.div`
   display: flex;

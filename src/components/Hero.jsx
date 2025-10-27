@@ -1,17 +1,8 @@
-import { useRef, React } from "react";
-import {
-  MyVideo,
-  MyImage,
-  PauseButton,
-  H1,
-  ImageContainer,
-} from "../styles";
-import HeroVideo from "../assets/videos/montage.mp4";
+import { useRef } from "react";
+import { H2, H5, GridContainer } from "../styles";
 import WebPattern from "../assets/videos/web_hero.json";
 import TabletPattern from "../assets/videos/tablet_hero.json";
-// import MobilePattern from "../assets/videos/mobile_hero.json";
-import PauseIcon from "../assets/meta/pause_button.svg";
-import PlayIcon from "../assets/meta/play_button.svg";
+import MobilePattern from "../assets/videos/mobile_hero.json";
 import Lottie from "lottie-react";
 import styled from "styled-components";
 
@@ -19,104 +10,95 @@ const Hero = () => {
   const desktopRef = useRef();
   const tabletRef = useRef();
   const mobileRef = useRef();
-  const videoControls = useRef();
-  const playButton = useRef();
 
-  const Play = () => {
-    if (videoControls.current.paused) {
-      videoControls.current.play();
-      playButton.current.src = PauseIcon;
-      desktopRef.current.play();
-      tabletRef.current.play();
-      mobileRef.current.play();
-    } else {
-      playButton.current.src = PlayIcon;
-      videoControls.current.pause();
-      desktopRef.current.pause();
-      tabletRef.current.pause();
-      mobileRef.current.pause();
-    }
-  };
+  //   if (videoControls.current.paused) {
+  //     videoControls.current.play();
+  //     playButton.current.src = PauseIcon;
+  //     desktopRef.current.play();
+  //     tabletRef.current.play();
+  //     mobileRef.current.play();
+  //   } else {
+  //     playButton.current.src = PlayIcon;
+  //     videoControls.current.pause();
+  //     desktopRef.current.pause();
+  //     tabletRef.current.pause();
+  //     mobileRef.current.pause();
+  //   }
+  // };
 
   return (
-    <Container>
-      {/* <HeroContainer> */}
-      <MyVideo
-        ref={videoControls}
-        style={{
-          borderRadius: "0px",
-        }}
-        alt="A video montage of nature and society"
-        src={HeroVideo}
-        autoPlay={true}
-        loop={true}
-        playsInline={true}
-        muted={true}
-      ></MyVideo>
-      {/* Add controls */}
-      {/* </HeroContainer> */}
-
-      <ImageContainer>
+    <div>
+      <Container>
+        {/* <ImageContainer> */}
         <DesktopHero lottieRef={desktopRef} animationData={WebPattern} />
         <TabletHero lottieRef={tabletRef} animationData={TabletPattern} />
-        {/* <MobileHero lottieRef={mobileRef} animationData={MobilePattern} /> */}
-      </ImageContainer>
+        <MobileHero lottieRef={mobileRef} animationData={MobilePattern} />
+        {/* </ImageContainer> */}
+      </Container>
 
-      <PauseButton>
+      <CustomGridContainer>
+        <H2>
+          Experimental<br></br>Intelligence Lab
+        </H2>
+        <H5>
+          We have a theory: Intelligence is too weird for one field understand.
+          So we experiment at the intersections — between every field that ever
+          studied “thinking” and every machine that's trying to “think”.
+        </H5>
+      </CustomGridContainer>
+    </div>
+
+    /* <PauseButton>
         <MyImage ref={playButton} src={PauseIcon} onClick={Play}></MyImage>
-      </PauseButton>
-      <HeroText>
-        Empowering the pioneers of today’s social science research
-      </HeroText>
-    </Container>
+      </PauseButton> */
+    // <HeroText>
+    //   Empowering the pioneers of today’s social science research
+    // </HeroText>
   );
 };
 
 export default Hero;
 
 export const Container = styled.div`
-  display: flex;
+  background-color: #193718;
   position: relative;
-  height: 80vh;
-  margin: 67px auto 0px auto;
-  max-width: 1729px;
+  height: 70vh; /* Adjust if needed */
+  width: 100%;
+  max-width: none;
+  overflow: hidden; /* Ensures animation doesn’t spill out */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-  @media (max-width: 1729px) {
-    margin: 67px 0px 0px 0px;
-    /* height: 80vh; */
+export const CustomGridContainer = styled(GridContainer)`
+  gap: 180px;
+  max-width: 1681px;
+  margin: 40px auto 160px auto;
+
+  @media (max-width: 1681px) {
+    padding: 0px;
+    margin: 24px 24px 160px 24px;
   }
 
-  @media (max-width: 768px) {
-    margin: 64px 0px 0px 0px;
-    /* height: 80vh; */
+  @media (max-width: 1024px) {
+    margin: 20px;
+    gap: 40px 24px;
   }
 
   @media (max-width: 414px) {
-    height: 70vh;
-  }
-`;
-
-export const HeroText = styled(H1)`
-  position: absolute;
-  box-sizing: border-box;
-  top: 24px;
-  left: 0px;
-  right: 0px;
-  margin: 0px auto;
-  padding: 24px;
-  color: white;
-  max-width: 1729px;
-
-  @media (max-width: 768px) {
-    padding: 20px;
+    gap: 24px;
   }
 `;
 
 export const DesktopHero = styled(Lottie)`
   position: absolute;
+  top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 
   @media (max-width: 768px) {
     display: none;
@@ -125,9 +107,10 @@ export const DesktopHero = styled(Lottie)`
 
 export const TabletHero = styled(Lottie)`
   position: absolute;
+  top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   display: none;
 
   @media (max-width: 768px) {
@@ -135,14 +118,15 @@ export const TabletHero = styled(Lottie)`
   }
 `;
 
-// export const MobileHero = styled(Lottie)`
-//   position: absolute;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   display: none;
+export const MobileHero = styled(Lottie)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
 
-//   @media (max-width: 375px) {
-//     display: block;
-//   }
-// `;
+  @media (max-width: 375px) {
+    display: block;
+  }
+`;

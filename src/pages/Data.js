@@ -10,6 +10,7 @@ import {
   ImageContainer,
   MyImage,
   PaddedContainer,
+  FullWidthSection,
 } from "../styles";
 import styled from "styled-components";
 
@@ -39,6 +40,7 @@ const Data = () => {
         "Sixty years of human emotion research, rescued from digital archaeology. Fifteen dictionaries. One toolkit. How Software 1.0 understood feelings before neural networks took over.",
       id: 1,
       secondaryButton: "Read the archaeology",
+      secondaryLink: "/sentibank",
       tertiaryButton: "Install toolkit",
       tertiaryLink: "https://github.com/socius-org/sentibank",
       tertiaryTarget: "blank",
@@ -55,9 +57,9 @@ const Data = () => {
         "Sixty years of human emotion research, rescued from digital archaeology. Fifteen dictionaries. One toolkit. How Software 1.0 understood feelings before neural networks took over.",
       id: 2,
       primaryButton: "Read the paper",
-      primaryLink: "https://www.arxiv.org/abs/2508.09232",
-      primaryTarget: "blank",
+      primaryLink: "/PELTP",
       tertiaryButton: "Learn the framework",
+      tertiaryLink: "https://www.arxiv.org/abs/2508.09232",
       target: "_blank",
     },
     {
@@ -70,9 +72,9 @@ const Data = () => {
         "Sixty years of human emotion research, rescued from digital archaeology. Fifteen dictionaries. One toolkit. How Software 1.0 understood feelings before neural networks took over.",
       id: 3,
       primaryButton: "Explore the project",
-      primaryLink: "https://github.com/socius-org/RedditHarbor",
-      primaryTarget: "blank",
+      primaryLink: "/RedditHarbor",
       tertiaryButton: "Access the beta",
+      tertiaryLink: "https://github.com/socius-org/RedditHarbor",
       target: "_blank",
     },
     {
@@ -112,69 +114,69 @@ const Data = () => {
 
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
 
-      <CustomPaddedContainer
-        style={{
-          backgroundColor: "#292726",
-        }}
-      >
-        <TextBlocks
-          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 1)}
-        />
-
-        <Container>
-          <WebContainer
-            src="/sentibankApp.html"
-            alt="An interactive Demonstration of the socius sentibank application"
-            title="Interactive Mockup"
-          />{" "}
-        </Container>
-      </CustomPaddedContainer>
-
-      <HeadingContainer
-        style={{
-          backgroundColor: "#E6E4E2",
-        }}
-      >
-        <TextBlocks
-          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 4)}
-        />
-      </HeadingContainer>
-
-      <GreyContainer
-        style={{
-          backgroundColor: "#E6E4E2",
-        }}
-      >
-        <PaddedContainer>
-          <ImageContainer
-            style={{
-              aspectRatio: "16/9",
-            }}
-          >
-            <MyImage
-              src={PELTP}
-              alt="Cropped close up of a green socius pattern on a dark green background"
-            />
-          </ImageContainer>
+      <FullWidthSection bg="#292726">
+        <CustomPaddedContainer>
           <TextBlocks
-            textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
+            textBlocks={textBlocks.filter((textBlock) => textBlock.id === 1)}
           />
-        </PaddedContainer>
 
-        <PaddedContainer>
           <Container>
             <WebContainer
-              src="/redditharborApp.html"
-              alt="An interactive Demonstration of the socius RedditHarbor application"
+              src="/sentibankApp.html"
+              alt="An interactive Demonstration of the socius sentibank application"
               title="Interactive Mockup"
-            />{" "}
+            />
           </Container>
+        </CustomPaddedContainer>
+      </FullWidthSection>
 
+      <FullWidthSection bg="#E6E4E2">
+        <HeadingContainer
+          style={{
+            backgroundColor: "#E6E4E2",
+          }}
+        >
           <TextBlocks
-            textBlocks={textBlocks.filter((textBlock) => textBlock.id === 3)}
+            textBlocks={textBlocks.filter((textBlock) => textBlock.id === 4)}
           />
-        </PaddedContainer>
-      </GreyContainer>
+        </HeadingContainer>
+
+        <GreyContainer
+          style={{
+            backgroundColor: "#E6E4E2",
+          }}
+        >
+          <PaddedContainer>
+            <ImageContainer
+              style={{
+                aspectRatio: "16/9",
+              }}
+            >
+              <MyImage
+                src={PELTP}
+                alt="Cropped close up of a green socius pattern on a dark green background"
+              />
+            </ImageContainer>
+            <TextBlocks
+              textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
+            />
+          </PaddedContainer>
+
+          <PaddedContainer>
+            <Container>
+              <WebContainer
+                src="/redditharborApp.html"
+                alt="An interactive Demonstration of the socius RedditHarbor application"
+                title="Interactive Mockup"
+              />{" "}
+            </Container>
+
+            <TextBlocks
+              textBlocks={textBlocks.filter((textBlock) => textBlock.id === 3)}
+            />
+          </PaddedContainer>
+        </GreyContainer>
+      </FullWidthSection>
     </>
   );
 };
@@ -184,7 +186,7 @@ export default Data;
 export const WebContainer = styled.iframe`
   width: 100%;
   height: 100%;
-  min-height: 800px;
+  min-height: 760px;
   /* optional: ensures some initial height */
   border: 0;
   display: block;

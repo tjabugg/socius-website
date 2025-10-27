@@ -30,12 +30,12 @@ const PublicationHero = ({ publicationHeroes }) => {
             <H2>{publicationHero.heading}</H2>
           </HeroContainer>
 
-          <GraphicContainer>
+          <ImageContainer>
             <MyImage
               alt={publicationHero.imageAlt}
               src={publicationHero.image}
             ></MyImage>
-          </GraphicContainer>
+          </ImageContainer>
         </TextAndImage>
       ))}
     </div>

@@ -384,6 +384,7 @@ export const NavContainer = styled.nav`
 export const LogoContainer = styled(NavContainer)`
   gap: 4px;
   align-items: flex-start;
+  color: black;
 `;
 
 export const Logo = styled(SociusLogo)`
@@ -391,7 +392,6 @@ export const Logo = styled(SociusLogo)`
   margin-top: 2px;
   width: 20px;
   display: none;
-  mix-blend-mode: difference;
 
   @media (max-width: 768px) {
     display: block;
@@ -464,5 +464,130 @@ export const TextContainer = styled.div`
 
   @media (max-width: 1024px) {
     gap: 16px;
+  }
+`;
+
+export const FullWidthSection = styled.section`
+  width: 100vw;
+  background-color: ${(props) => props.bg || "transparent"};
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+`;
+
+export const CustomTextContainer = styled(PaddedContainer)`
+  /* padding: 0px; */
+  /* justify-content: flex-end; */
+  margin: 0px auto;
+  gap: 40px;
+  justify-content: flex-end;
+
+  @media (max-width: 1729px) {
+    margin: 24px;
+  }
+`;
+
+export const Custom = styled(PaddedContainer)`
+  margin: 0px;
+`;
+
+export const CustomGrid = styled(GridContainer)`
+  margin: 60px auto;
+  padding: 60px 0px;
+
+  @media (max-width: 1729px) {
+    margin: 24px;
+  }
+
+  @media (max-width: 1024px) {
+    /* margin: 20px;
+    gap: 40px 24px; */
+  }
+
+  @media (max-width: 414px) {
+    padding: 40px 0px;
+    margin: 0px 20px;
+  }
+`;
+
+export const CustomContainer = styled(PaddedContainer)`
+  padding: 60px 0px;
+  @media (max-width: 1729px) {
+    margin: 0px 24px;
+  }
+
+  @media (max-width: 414px) {
+    padding: 40px 0px;
+  }
+`;
+
+export const QuoteContainer = styled(CentreContainer)`
+  margin: 0px auto;
+  padding: 15vh 10vw;
+  max-width: 1729px;
+
+  @media (max-width: 414px) {
+    padding: 10vh 10vw;
+  }
+`;
+
+export const List = styled.ul`
+  margin-top: 16px;
+  padding-left: 40px;
+  line-height: 1.5;
+`;
+export const NumList = styled.ol`
+  margin-top: 16px;
+  padding-left: 40px;
+  line-height: 1.5;
+`;
+
+export const CustomLink = styled(Link)`
+  font-size: 16px;
+  color: #1c1c1e;
+  line-height: 1.3;
+  text-decoration: underline;
+
+  @media (max-width: 1729px) {
+    font-size: 14px;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+`;
+export const CustomHeadingLink = styled(Link)`
+  font-size: 25px;
+  font-family: "General Sans Medium";
+  line-height: 1.1;
+  color: #1c1c1e;
+  text-decoration: underline;
+  white-space: pre-wrap;
+
+  @media (max-width: 1681px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+`;
+
+export const CustomCode = styled.code`
+  background: #e6e4e2;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 14px;
+  color: #1c1c1e;
+
+  @media (max-width: 1729px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1px;
   }
 `;

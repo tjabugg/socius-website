@@ -20,6 +20,9 @@ import {
   CentreContainer,
   MyImage,
   ImageContainer,
+  H4,
+  PrimaryButton,
+  TextContainer,
 } from "../styles";
 import TextBlocks from "../components/TextBlocks";
 
@@ -43,7 +46,7 @@ const Home = () => {
       tagTwoColour: "#514E4B",
       alt: "A 17th century painting of Chickens and Ducks by Melchior d' Hondecoeter",
       id: 1,
-      link: "",
+      link: "/System-1.5",
     },
     {
       aspectRatio: "16/9",
@@ -61,14 +64,14 @@ const Home = () => {
       tagTwoColour: "#514E4B",
       alt: "Cropped close up of dark green diagonal line on a pale green background",
       id: 2,
-      link: "",
+      link: "/Monitor-Generate-Verify",
     },
     {
       aspectRatio: "16/9",
       flexDirection: "row",
       image: BeforeYouThink,
       padding: "0px",
-      heading: "Before You 〈think/〉, Monitor",
+      heading: "Before You 〈think〉, Monitor",
       paragraph:
         "We gave machines the cognitive gear shift experts have — knowing when to think fast versus slow.",
       tagOneBgColour: "#1C9418",
@@ -79,7 +82,7 @@ const Home = () => {
       tagTwoColour: "#514E4B",
       alt: "Cropped close up of bright blue arc on a blue background",
       id: 3,
-      link: "",
+      link: "/Before-You-Think-Monitor",
     },
     {
       aspectRatio: "16/9",
@@ -97,7 +100,7 @@ const Home = () => {
       tagTwoColour: "#514E4B",
       alt: "A 17th century painting of a Wooded Landscape",
       id: 4,
-      link: "",
+      link: "/In-Defence-of-Post-hoc-Explainability",
     },
     {
       aspectRatio: "16/9",
@@ -131,10 +134,10 @@ const Home = () => {
       tagOneColour: "#514E4B",
       captionTwo: "ICWSM 2024",
       tagTwoColour: "#87807B",
-      heading: "RedditHarbor: Compliant Reddit scraping on autopilot",
-      paragraph: "Ethical, legal, and effortless extraction of Reddit data",
+      heading: "sentibank: Sixty years of human emotion dictionaries, unified",
+      paragraph: "How we coded feelings before neural networks.",
       id: 1,
-      link: "https://github.com/socius-org/RedditHarbor",
+      link: "/sentibank",
     },
     {
       image: PELTP,
@@ -142,11 +145,10 @@ const Home = () => {
       tagOneColour: "#CAC6C3",
       captionTwo: "AIES 2025",
       tagTwoColour: "#87807B",
-      heading: "sentibank: Encyclopedic Hub for Sentiment dictionaries",
-      paragraph:
-        "Domain-genre specific dictionaries tailored to your field of application",
+      heading: "PETLP: The legal stack for social media AI research, decoded",
+      paragraph: " From extraction to model release.",
       id: 2,
-      link: "sentibank",
+      link: "/PELTP",
     },
   ]);
 
@@ -187,7 +189,7 @@ const Home = () => {
       id: 4,
     },
     {
-      // align: "flex-end",
+      align: "flex-end",
       heading:
         "We have a theory: Intelligence is too weird for one field  understand. So we experiment at the intersections — between every field that ever studied “thinking” and every machine that's trying to “think”.",
       primaryButton: "Meet the lab",
@@ -258,18 +260,26 @@ const Home = () => {
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
         />
         <ArticleCard
-          articleCards={articleCards.filter((card) =>
-            [1, 2].includes(card.id)
-          )}
+          articleCards={articleCards.filter((card) => [1, 2].includes(card.id))}
           grid="2fr 1fr"
         />
         <ArticleCard
-          articleCards={articleCards.filter((card) =>
-            [3, 4].includes(card.id)
-          )}
+          articleCards={articleCards.filter((card) => [3, 4].includes(card.id))}
           grid="1fr 1fr"
         />
       </PaddedContainer>
+
+      <TeamContainer>
+        <TeamTextContainer>
+          <H4>
+            We have a theory: Intelligence is too weird for one field
+            understand. So we experiment at the intersections — between every
+            field that ever studied “thinking” and every machine that's trying
+            to “think”.
+          </H4>
+          <PrimaryButton href={"/about"}>Meet the lab</PrimaryButton>
+        </TeamTextContainer>
+      </TeamContainer>
 
       <CustomContainer>
         <TextBlocks
@@ -283,18 +293,10 @@ const Home = () => {
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 4)}
         />{" "}
         <ArticleCard
-          articleCards={articleCards.filter((card) =>
-            [5, 6].includes(card.id)
-          )}
+          articleCards={articleCards.filter((card) => [5, 6].includes(card.id))}
           grid="1fr 1fr"
         />
       </CustomContainer>
-
-      <TeamContainer>
-        <TextBlocks
-          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 5)}
-        />{" "}
-      </TeamContainer>
 
       {/* <CallToAction callToActions={callToActions} /> */}
     </>
@@ -305,6 +307,19 @@ export default Home;
 
 export const ButtonContainer = styled(CentreContainer)`
   margin: 24px;
+`;
+export const TeamTextContainer = styled(TextContainer)`
+  width: 50%;
+  /* margin-left: auto; */
+
+  @media (max-width: 1280px) {
+    width: 60%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0px;
+  }
 `;
 
 export const CustomContainer = styled(PaddedContainer)`
@@ -324,8 +339,10 @@ export const CustomResearchContainer = styled(CustomContainer)`
   gap: 40px;
 `;
 export const TeamContainer = styled(CustomContainer)`
+  justify-content: flex-end;
   margin: 120px auto;
   max-width: 1681px;
+  gap: 24px;
 
   @media (max-width: 1681px) {
     margin: 80px 24px;

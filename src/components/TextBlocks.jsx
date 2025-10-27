@@ -96,16 +96,23 @@ const TextBlocks = ({ textBlocks }) => {
               )}
             </Share>
           )}
-
-          {textBlock.heading ? (
-            <CustomHead
+          {textBlock.heading && (
+            <TagContainer
               style={{
-                color: textBlock.textColour,
+                justifyContent: textBlock.justify,
               }}
             >
-              {textBlock.heading}
-            </CustomHead>
-          ) : null}
+              {textBlock.heading && (
+                <CustomHead
+                  style={{
+                    color: textBlock.textColour,
+                  }}
+                >
+                  {textBlock.heading}
+                </CustomHead>
+              )}
+            </TagContainer>
+          )}
 
           {(textBlock.subheading || textBlock.subheadingButton) && (
             <TagContainer
@@ -240,7 +247,7 @@ export const CustomSub = styled(H5)`
 `;
 
 export const CustomHead = styled(H4)`
-  width: 50%;
+  width: 40%;
 
   @media (max-width: 1280px) {
     width: 60%;
@@ -254,13 +261,15 @@ export const CustomHead = styled(H4)`
 export const Share = styled(TagContainer)`
   gap: 40px;
   width: 40%;
-  margin-left: auto; // Aligns it to the right
+  margin-left: auto;
+  // Aligns it to the right
 
   @media (max-width: 1280px) {
+    /* margin-left: 24px; */
     width: 60%;
   }
 
-  @media (max-width: 414px) {
+  @media (max-width: 768px) {
     width: 100%;
   }
 `;

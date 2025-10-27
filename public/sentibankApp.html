@@ -16,28 +16,37 @@
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
           "Roboto", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         background: #1c1c1e;
         color: #1c1c1e;
         line-height: 1.6;
-        min-height: 100vh;
+        /* height: 100vh; */
         display: flex;
         align-items: center;
         justify-content: center;
-        /* padding: 4vh 5vw; */
-        /* adds breathing room all around */
-        box-sizing: border-box;
+        padding: 20px;
       }
 
+      /* Main Container */
       .app-container {
-        width: 90%;
+        width: 100%;
         max-width: 1100px;
-        aspect-ratio: 16 / 9;
+        height: 720px;
         background: #f1f0ec;
         border-radius: 16px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      @media (max-width: 768px) {
+        .app-container {
+          /* height: 100vh; */
+          max-width: 100%;
+          height: 600px;
+        }
       }
 
       /* Top Bar */
@@ -48,6 +57,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+      }
+
+      @media (max-width: 768px) {
+        .top-bar {
+          padding: 16px;
+        }
       }
 
       .brand {
@@ -63,9 +78,21 @@
         color: white;
       }
 
+      @media (max-width: 768px) {
+        .brand-name {
+          font-size: 0.875rem;
+        }
+      }
+
       .brand-tag {
         font-size: 0.75rem;
         color: rgba(255, 255, 255, 0.8);
+      }
+
+      @media (max-width: 768px) {
+        .brand-tag {
+          font-size: 0.625rem;
+        }
       }
 
       /* Window Controls */
@@ -153,6 +180,13 @@
         background: white;
         overflow-y: auto;
         font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Code", monospace;
+      }
+
+      @media (max-width: 768px) {
+        .terminal-body {
+          padding: 16px;
+          font-size: 0.75rem;
+        }
       }
 
       /* Terminal Scrollbar */
@@ -246,7 +280,18 @@
         position: relative;
         font-size: 0.8125rem;
         font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Code", monospace;
-        tab-size: 8;
+        tab-size: 4;
+      }
+
+      @media (max-width: 768px) {
+        .json-container {
+          padding: 12px;
+          margin: 12px 0 12px 8px;
+          font-size: 0.625rem;
+          max-height: 300px;
+          border-radius: 6px;
+          tab-size: 2;
+        }
       }
 
       .json-inner {
@@ -359,59 +404,6 @@
           content: "";
         }
       }
-
-      @media (max-width: 768px) {
-        body {
-          padding: 20px;
-          align-items: flex-start;
-        }
-        .app-container {
-          width: 100%;
-          aspect-ratio: auto;
-          max-height: 600px;
-        }
-        .terminal-body {
-          padding: 16px;
-          font-size: 0.8rem;
-        }
-        .json-container {
-          margin: 8px 0 8px 16px;
-          font-size: 0.7rem;
-        }
-      }
-
-      /* Tablet: slightly taller */
-      /* @media (max-width: 1024px) {
-        .app-container {
-          aspect-ratio: 4 / 3;
-        }
-      } */
-
-      /* Mobile: drop fixed aspect, let it expand naturally */
-      /* @media (max-width: 768px) {
-        body {
-          padding: 4vh 5vw;
-          align-items: flex-start;
-          max-height: auto;
-        }
-
-        .app-container {
-          width: 100%;
-          aspect-ratio: auto;
-          max-height: 600px;
-          height: auto;
-        }
-
-        .terminal-body {
-          padding: 16px;
-          font-size: 0.8rem;
-        }
-
-        .json-container {
-          margin: 8px 0 8px 16px;
-          font-size: 0.7rem;
-        }
-      } */
     </style>
   </head>
   <body>
@@ -557,9 +549,11 @@
               jsonInner.className = "json-inner";
               jsonContainer.appendChild(jsonInner);
 
-              // Format JSON
+              // Format JSON with responsive indentation
+              const isMobile = window.innerWidth <= 768;
               let jsonStr =
-                '"VADER_v2014": ' + JSON.stringify(sampleData, null, 8);
+                '"VADER_v2014": ' +
+                JSON.stringify(sampleData, null, isMobile ? 2 : 4);
 
               const lines = jsonStr.split("\n");
               lines.forEach((line, lineIndex) => {

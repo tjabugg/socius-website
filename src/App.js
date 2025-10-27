@@ -5,6 +5,12 @@ import Data from "./pages/Data";
 import About from "./pages/About";
 import Documentation from "./pages/Documentation";
 import Sentibank from "./pages/Senitbank";
+import MonitorGenerateVerify from "./pages/MonitorGenerateVerify";
+import PETLP from "./pages/PETLP";
+import InDefenceOfPostHocExplainability from "./pages/InDefenceOfPostHocExplainability";
+import BeforeYouThinkMonitor from "./pages/BeforeYouThinkMonitor";
+import RedditHarbor from "./pages/RedditHarbor";
+import System15 from "./pages/System1.5";
 import Footer from "./components/Footer";
 import { GlobalStyle } from "./styles";
 import { Routes, Route } from "react-router-dom";
@@ -34,6 +40,21 @@ const App = () => {
             <Route path="/data" element={<Data />} />
             <Route path="/documentation" element={<Documentation />} />
             <Route path="/sentibank" element={<Sentibank />} />
+            <Route path="/RedditHarbor" element={<RedditHarbor />} />
+            <Route path="/System-1.5" element={<System15 />} />
+            <Route
+              path="/Before-You-Think-Monitor"
+              element={<BeforeYouThinkMonitor />}
+            />
+            <Route path="/PELTP" element={<PETLP />} />
+            <Route
+              path="/In-Defence-of-Post-hoc-Explainability"
+              element={<InDefenceOfPostHocExplainability />}
+            />
+            <Route
+              path="/Monitor-Generate-Verify"
+              element={<MonitorGenerateVerify />}
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </motion.div>
