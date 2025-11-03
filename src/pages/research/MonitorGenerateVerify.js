@@ -1,20 +1,14 @@
 import { useState } from "react";
-import TextBlocks from "../components/TextBlocks";
-import PublicationHero from "../components/PublicationHero";
+import TextBlocks from "../../components/TextBlocks";
+import PublicationHero from "../../components/PublicationHero";
 import { Helmet } from "react-helmet";
-import VictorianTown from "../assets/images/victorian_town.jpg";
-import Tudors from "../assets/images/tudors.jpg";
-import Lake from "../assets/images/lake.jpg";
-import SentiWordNet from "../assets/images/sentiWordNet_graphic.jpg";
-import MonitorGenerateVerifyCover from "../assets/covers/monitor_generate_verify_cover.png";
+import MonitorGenerateVerifyCover from "../../assets/covers/monitor_generate_verify_cover.png";
 import {
   Body,
   CustomLink,
   CustomCode,
   CustomTextContainer,
-  CustomContainer,
-} from "../styles";
-import ArticleCard from "../components/ArticleCard";
+} from "../../styles";
 
 const MonitorGenerateVerify = () => {
   const [publicationHeroes] = useState([
@@ -46,7 +40,7 @@ const MonitorGenerateVerify = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              it confidently explains its reasoning, and you realise it's lying
+              it confidently explains its reasoning, and you realise it's lying.
             </CustomLink>{" "}
             Not maliciously. It simply has no access to its own cognitive
             process. When your AI agent can't reliably monitor its own thinking,
@@ -81,7 +75,6 @@ const MonitorGenerateVerify = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {" "}
               Luo et al. (2025)
             </CustomLink>{" "}
             found that models starting with the wrong approach suffer a 20%
@@ -108,16 +101,24 @@ const MonitorGenerateVerify = () => {
             <br></br> <br></br>
             In 1979,{" "}
             <CustomLink
-              href="https://doi.org/10.1016/S0079-7421(08)60053-5"
+              href="https://doi.org/10.1037/0003-066X.34.10.906"
               target="_blank"
               rel="noopener noreferrer"
             >
               {" "}
               John Flavell laid out a theory of how metacognition works in
-              humans. A decade later, Thomas Nelson and Louis Narens refined
-              these ideas specifically for memory and learning
+              humans.
             </CustomLink>{" "}
-            Their frameworks describe metacognition as a control systmgvwith
+            A decade later,{" "}
+            <CustomLink
+              href="https://doi.org/10.1037/0003-066X.34.10.906"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Thomas Nelson and Louis Narens refined these ideas specifically
+              for memory and learning
+            </CustomLink>{" "}
+            Their frameworks describe metacognition as a control system with
             monitoring and control loops — where cognitive self-monitoring by
             higher-order processes generates signals for strategic control,
             forming continuous feedback loops between observation and control.
@@ -145,17 +146,8 @@ const MonitorGenerateVerify = () => {
             So we did what engineers do when they find a good idea gathering
             dust. We tried to formalise it. To take Flavell's and Nelson &
             Narens' psychological theories and translate them into mathematical
-            language that machines could, theoretically, implement. <br></br>
-          </Body>
-        </>
-      ),
-      id: 5,
-    },
-    {
-      justify: "flex-end",
-      paragraph: (
-        <>
-          <Body>
+            language that machines could, theoretically, implement. <br></br>{" "}
+            <br></br>
             The Monitor-Generate-Verify (MGV) framework attempts to capture what
             psychologists have observed. Think of it like this. Before you solve
             any problem, your brain runs a quick diagnostic. Monitoring is that
@@ -171,7 +163,7 @@ const MonitorGenerateVerify = () => {
           </Body>
         </>
       ),
-      id: 6,
+      id: 5,
     },
     {
       justify: "flex-end",
@@ -188,50 +180,28 @@ const MonitorGenerateVerify = () => {
             strategies, and learn from outcomes. What we can't architect is the
             observer behind the observations — the part that experiences doubt,
             feels confusion, or recognises patterns with that peculiar sense of
-            ‘aha’. <br></br>
-            <br></br>We're left holding a map of something we can't actually
-            visit. What it does is map its contours and boundaries, translating
-            Flavell's and Nelson & Narens' theories into the mathematical
-            language needed to eventually bridge it. We've sketched rough maps
-            of territory that's existed in human minds: territory that
-            psychologists have been exploring for decades, which we're now
-            trying to describe in computational terms.
+            ‘aha’.
             <br></br>
-            <br></br>In this work, we were more like translators, taking field
-            notes written in the language of psychology and converting them into
+            <br></br>
+            We're left holding a map of something we can't actually visit. What
+            it does is map its contours and boundaries, translating Flavell's
+            and Nelson & Narens' theories into the mathematical language needed
+            to eventually bridge it. We've sketched rough maps of territory
+            that's existed in human minds: territory that psychologists have
+            been exploring for decades, which we're now trying to describe in
+            computational terms.
+            <br></br>
+            <br></br>
+            In this work, we were more like translators, taking field notes
+            written in the language of psychology and converting them into
             mathematical specifications. This is our earnest attempt at
             mathematising psychology — an interpretation that involved both
             necessary simplification and, we suspect, occasional
             overinterpretation of what Flavell and Nelson & Narens meant. But
             it's a start. A bridge between what we know about human
             metacognition and what we might build into machines.
-            <span style={{ fontWeight: "bold" }}>
-              Here's where we're supposed to end. But honestly? If you're
-              thinking “okay, but does this actually work?” — we had the same
-              question. We couldn't help ourselves. One weekend, too much
-              caffeine, and a copy of <CustomCode>Llama-3.1-8B</CustomCode>{" "}
-              later, we had our answer. It worked. (Sort of.) <br></br>
-              <br></br>Read how we implemented Flavell's theories in
-              <CustomLink
-                href="/Before-You-Think-Monitor"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {" "}
-                Before You
-                {" <think> "}, Monitor
-              </CustomLink>{" "}
-            </span>
-          </Body>
-        </>
-      ),
-      id: 7,
-    },
-    {
-      justify: "flex-end",
-      paragraph: (
-        <>
-          <Body>
+            <br></br>
+            <br></br>
             <span style={{ fontStyle: "italic" }}>
               Monitor-Generate-Verify represents theoretical work in
               computational metacognition. These are blueprints, maps with
@@ -252,89 +222,30 @@ const MonitorGenerateVerify = () => {
           </Body>
         </>
       ),
+      id: 7,
+    },
+    {
+      justify: "flex-end",
+      paragraph: (
+        <>
+          <Body>
+            <span style={{ fontWeight: "bold" }}>
+              Here's where we're supposed to end. But honestly? If you're
+              thinking “okay, but does this actually work?” — we had the same
+              question. We couldn't help ourselves. One weekend, too much
+              caffeine, and a copy of <CustomCode>Llama-3.1-8B</CustomCode>{" "}
+              later, we had our answer. It worked. (Sort of.) <br></br>
+              <br></br>Read how we implemented Flavell's theories in{" "}
+              <CustomLink href="/research/before-you-think-monitor">
+                Before You
+                {" <think> "}, monitor
+              </CustomLink>
+              .
+            </span>
+          </Body>
+        </>
+      ),
       id: 8,
-    },
-    {
-      justify: "space-between",
-      subheading: "sentibank",
-      paragraph: "Sixty years of emotion dictionaries. One import statement.",
-      paragraphButton: "View all",
-
-      id: 9,
-    },
-  ]);
-  const [articleCards] = useState([
-    {
-      aspectRatio: "16/9",
-      flexDirection: "column",
-      image: VictorianTown,
-      padding: "0px",
-      heading: "OpinionLexicon",
-      paragraph:
-        "A dictionary for product reviews, comprising words curated for informal language",
-      tagOneBgColour: "#00002E",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Product Review",
-      tagTwoBgColour: "#CBDCFF",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 3,
-      link: "https://socius-org.github.io/sentibank/archive/OpinionLexicon.html",
-    },
-    {
-      aspectRatio: "4/5",
-      flexDirection: "column",
-      image: Tudors,
-      padding: "0px",
-      heading: "VADER",
-      paragraph:
-        "A gold-standard lexicon optimised for social media sentiment analysis",
-      tagOneBgColour: "#1C9418",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Social Media",
-      tagTwoBgColour: "#8FB2FF",
-      tagTwoColour: "#292726",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 4,
-      link: "https://socius-org.github.io/sentibank/archive/VADER.html",
-    },
-    {
-      aspectRatio: "16/9",
-      flexDirection: "column",
-      image: Lake,
-      padding: "0px",
-      heading: "WordNet-Affect",
-      paragraph:
-        "Affective labels that are hierarchically organised based on WordNet synsets",
-      tagOneBgColour: "#191F8C",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Psychology",
-      tagTwoBgColour: "#AEF2AC",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 5,
-      link: "https://socius-org.github.io/sentibank/archive/WordNet-Affect.html",
-    },
-    {
-      aspectRatio: "1/1",
-      flexDirection: "column",
-      image: SentiWordNet,
-      padding: "0px",
-      heading: "SentiWordNet",
-      paragraph:
-        "A comprehensive dictionary that assigns graded sentiment scores to WordNet synsets",
-      tagOneBgColour: "#193718",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "General",
-      tagTwoBgColour: "#D9FFD8",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 6,
-      link: "https://socius-org.github.io/sentibank/archive/SentiWordNet.html",
     },
   ]);
 
@@ -383,27 +294,12 @@ const MonitorGenerateVerify = () => {
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 5)}
         />
         <TextBlocks
-          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 6)}
-        />
-        <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 7)}
         />
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 8)}
         />
       </CustomTextContainer>
-
-      <CustomContainer>
-        <TextBlocks
-          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 9)}
-        />
-        <ArticleCard
-          articleCards={articleCards.filter((card) =>
-            [3, 4, 5, 6].includes(card.id)
-          )}
-          grid="1fr 1fr 1fr 1fr"
-        />
-      </CustomContainer>
     </>
   );
 };

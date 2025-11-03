@@ -1,13 +1,13 @@
 import { useState } from "react";
-import TextBlocks from "../components/TextBlocks";
-import PublicationHero from "../components/PublicationHero";
+import TextBlocks from "../../components/TextBlocks";
+import PublicationHero from "../../components/PublicationHero";
 import { Helmet } from "react-helmet";
-import VictorianTown from "../assets/images/victorian_town.jpg";
-import Tudors from "../assets/images/tudors.jpg";
-import Lake from "../assets/images/lake.jpg";
-import SentiWordNet from "../assets/images/sentiWordNet_graphic.jpg";
-import RedditHarborCover from "../assets/covers/reddit_harbor_cover.png";
-import Github from "../assets/images/github-mark.svg";
+import VictorianTown from "../../assets/images/victorian_town.jpg";
+import Tudors from "../../assets/images/tudors.jpg";
+import Lake from "../../assets/images/lake.jpg";
+import SentiWordNet from "../../assets/images/sentiWordNet_graphic.jpg";
+import RedditHarborCover from "../../assets/covers/reddit_harbor_cover.png";
+import Github from "../../assets/images/github-mark.svg";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import {
@@ -19,8 +19,8 @@ import {
   H5,
   NumList,
   CustomHeadingLink,
-} from "../styles";
-import ArticleCard from "../components/ArticleCard";
+} from "../../styles";
+import ArticleCard from "../../components/ArticleCard";
 import styled from "styled-components";
 
 const RedditHarbor = () => {
@@ -240,7 +240,7 @@ const RedditHarbor = () => {
             <br></br>
             <br></br>
             <CustomLink
-              href="/PELTP"
+              href="/data/peltp"
               target=""
               // rel="noopener noreferrer"
             >

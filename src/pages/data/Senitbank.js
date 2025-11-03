@@ -1,16 +1,22 @@
 import { useState } from "react";
-import TextBlocks from "../components/TextBlocks";
-import PublicationHero from "../components/PublicationHero";
+import TextBlocks from "../../components/TextBlocks";
+import PublicationHero from "../../components/PublicationHero";
 import { Helmet } from "react-helmet";
-import VictorianTown from "../assets/images/victorian_town.jpg";
-import SentibankCover from "../assets/covers/sentibank_cover.png";
-import LegacyTreeDiagram from "../assets/diagrams/sentibank_diagram.png";
-import Tudors from "../assets/images/tudors.jpg";
-import Lake from "../assets/images/lake.jpg";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-import SentiWordNet from "../assets/images/sentiWordNet_graphic.jpg";
+import VictorianTown from "../../assets/images/victorian_town.jpg";
+import SentibankCover from "../../assets/covers/sentibank_cover.png";
+import SentibankDiagram1 from "../../assets/diagrams/sentibank_diagram_1.png";
+import SentibankDiagram2 from "../../assets/diagrams/sentibank_diagram_2.png";
+import SentibankDiagram3 from "../../assets/diagrams/sentibank_diagram_3.png";
+import SentibankDiagram4 from "../../assets/diagrams/sentibank_diagram_4.png";
+import SentibankDiagram5 from "../../assets/diagrams/sentibank_diagram_5.png";
+import Tudors from "../../assets/images/tudors.jpg";
+import Lake from "../../assets/images/lake.jpg";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import SentiWordNet from "../../assets/images/sentiWordNet_graphic.jpg";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import Github from "../assets/images/github-mark.svg";
+import python from "react-syntax-highlighter/dist/esm/languages/prism/python";
+
+import Github from "../../assets/images/github-mark.svg";
 import {
   Body,
   H5,
@@ -19,11 +25,11 @@ import {
   CustomCode,
   CustomTextContainer,
   CustomContainer,
-  ImageContainer,
-  MyImage,
-} from "../styles";
-import ArticleCard from "../components/ArticleCard";
+} from "../../styles";
+import ArticleCard from "../../components/ArticleCard";
 import styled from "styled-components";
+import ImageCarousel from "../../components/Carousel";
+SyntaxHighlighter.registerLanguage("python", python);
 
 const Senitbank = () => {
   const [publicationHeroes] = useState([
@@ -44,7 +50,7 @@ const Senitbank = () => {
       share: "Share",
       paper: "Read the paper",
       subheading:
-        "We discovered that sentiment dictionaries — carefully crafted lists of words with emotional scores — were scattered across the digital universe like fragments of an ancient manuscript. Some lived in dusty GitHub repositories as .py files. Others hid in paper appendices as .txt dumps. A few were trapped in websites as .xml schemas, while others floated in supplementary materials as .csv files or exotic .rdf formats.",
+        "Machines have been trying to decode human emotions since 1962, and they were all doing it differently. Some use ordinal scores (-5 to +5). Others assign discrete labels (positive/negative). A few venture into vector representations across affective dimensions. This was the beautiful chaos of Software 1.0 — handcrafted rules encoding human intuition about emotional language. And after six months of digital archaeology, we realised nobody had ever brought them all together. Until now.",
       id: 1,
     },
     {
@@ -64,12 +70,13 @@ const Senitbank = () => {
             exotic <CustomCode>`.rdf`</CustomCode> formats. <br></br>
             <br></br>Even better, 60% of these “validated” dictionaries
             contained duplicates with conflicting labels. For example, the word
-            'smash' appeared in one dictionary scored as both positive *and*
-            negative. But the problems went deeper than internal
-            inconsistencies. These dictionaries were also scattered across
-            completely different ecosystems. It was like 15 different research
-            teams had each invented their own emotional language, and nobody was
-            talking to each other.
+            'smash' appeared in one dictionary scored as both positive{" "}
+            <span style={{ fontStyle: "italic" }}>and</span> negative. But the
+            problems went deeper than internal inconsistencies. These
+            dictionaries were also scattered across completely different
+            ecosystems. It was like 15 different research teams had each
+            invented their own emotional language, and nobody was talking to
+            each other.
           </Body>
         </>
       ),
@@ -144,7 +151,7 @@ const Senitbank = () => {
         <>
           <Body>
             After six months of digital archaeology and more data cleaning than
-            any human should endure, we created sentibank: story:
+            any human should endure, we created sentibank:
           </Body>
           <List>
             <li>
@@ -207,7 +214,7 @@ const Senitbank = () => {
             >
               {" "}
               Software 1.0 (hand-coded rules) through Software 2.0 (trained
-              neural nets){" "}
+              neural nets)
             </CustomLink>
             , we're trading interpretability for capability. These sentiment
             dictionaries represent the last generation of machine we could fully
@@ -263,7 +270,6 @@ const Senitbank = () => {
     },
     {
       justify: "flex-end",
-      subheading: "Download the Archaeology",
       paragraph: (
         <>
           <Body>
@@ -302,6 +308,8 @@ const Senitbank = () => {
       subheading: "sentibank",
       paragraph: "Sixty years of emotion dictionaries. One import statement.",
       paragraphButton: "View all",
+      link: "https://socius-org.github.io/sentibank/about.html",
+      target: "blank",
 
       id: 8,
     },
@@ -324,6 +332,7 @@ const Senitbank = () => {
       alt: "A group of friends sat in the foreground before an evening sky",
       id: 3,
       link: "https://socius-org.github.io/sentibank/archive/OpinionLexicon.html",
+      target: "blank",
     },
     {
       aspectRatio: "4/5",
@@ -342,6 +351,7 @@ const Senitbank = () => {
       alt: "A group of friends sat in the foreground before an evening sky",
       id: 4,
       link: "https://socius-org.github.io/sentibank/archive/VADER.html",
+      target: "blank",
     },
     {
       aspectRatio: "16/9",
@@ -360,6 +370,7 @@ const Senitbank = () => {
       alt: "A group of friends sat in the foreground before an evening sky",
       id: 5,
       link: "https://socius-org.github.io/sentibank/archive/WordNet-Affect.html",
+      target: "blank",
     },
     {
       aspectRatio: "1/1",
@@ -378,6 +389,7 @@ const Senitbank = () => {
       alt: "A group of friends sat in the foreground before an evening sky",
       id: 6,
       link: "https://socius-org.github.io/sentibank/archive/SentiWordNet.html",
+      target: "blank",
     },
   ]);
 
@@ -441,12 +453,15 @@ result = analyzer.sentiment(text=text, dictionary="MASTER_v2022")
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 3)}
         />
-        <ImageContainer>
-          <MyImage
-            alt={`Diagram for the legacy tree`}
-            src={LegacyTreeDiagram}
-          ></MyImage>
-        </ImageContainer>
+        <ImageCarousel
+          images={[
+            SentibankDiagram1,
+            SentibankDiagram2,
+            SentibankDiagram3,
+            SentibankDiagram4,
+            SentibankDiagram5,
+          ]}
+        />
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 4)}
         />
@@ -455,7 +470,7 @@ result = analyzer.sentiment(text=text, dictionary="MASTER_v2022")
             <H5>The API That Makes It All Work</H5>
             <StyledSyntaxHighlighter
               language="python"
-              style={vscDarkPlus}
+              style={dracula}
               // showLineNumbers
               wrapLines
             >
@@ -512,6 +527,7 @@ const CodeContainer = styled.div`
 // Inner wrapper — controls actual code width + positioning
 const CodeInner = styled.div`
   width: 40%;
+  border-radius: 20px;
 
   @media (max-width: 1280px) {
     width: 60%;
@@ -523,7 +539,7 @@ const CodeInner = styled.div`
 `;
 
 const StyledSyntaxHighlighter = styled(SyntaxHighlighter)`
-  border-radius: 12px;
+  border-radius: 20px !important;
   padding: 16px !important;
   margin: 16px 0px !important;
   font-size: 0.9rem;

@@ -1,13 +1,13 @@
 import { useState } from "react";
-import TextBlocks from "../components/TextBlocks";
-import PublicationHero from "../components/PublicationHero";
+import TextBlocks from "../../components/TextBlocks";
+import PublicationHero from "../../components/PublicationHero";
 import { Helmet } from "react-helmet";
-import VictorianTown from "../assets/images/victorian_town.jpg";
-import Tudors from "../assets/images/tudors.jpg";
-import Lake from "../assets/images/lake.jpg";
-import SentiWordNet from "../assets/images/sentiWordNet_graphic.jpg";
-import BeforeYouThinkCover from "../assets/covers/before_you_think_cover.png";
-import GSM8KDiagram from "../assets/diagrams/Before_You_Think_The_GSM8K_Experiment.png";
+import VictorianTown from "../../assets/images/victorian_town.jpg";
+import Tudors from "../../assets/images/tudors.jpg";
+import Lake from "../../assets/images/lake.jpg";
+import SentiWordNet from "../../assets/images/sentiWordNet_graphic.jpg";
+import BeforeYouThinkCover from "../../assets/covers/before_you_think_cover.png";
+import GSM8KDiagram from "../../assets/diagrams/Before_You_Think_The_GSM8K_Experiment.png";
 import {
   Body,
   CustomLink,
@@ -18,8 +18,8 @@ import {
   MyImage,
   ImageContainer,
   CustomHeadingLink,
-} from "../styles";
-import ArticleCard from "../components/ArticleCard";
+} from "../../styles";
+import ArticleCard from "../../components/ArticleCard";
 import styled from "styled-components";
 
 const BeforeYouThinkMonitor = () => {
@@ -27,14 +27,14 @@ const BeforeYouThinkMonitor = () => {
     {
       tagOne: "Workshop",
       tagTwo: "NeurIPS 2024",
-      heading: "Before You <think>, Monitor",
+      heading: "Before You <think>, monitor",
       image: BeforeYouThinkCover,
       id: 1,
     },
   ]);
   const [textBlocks] = useState([
     {
-      paperLink: "https://openreview.net/pdf?id=xgAGJzRzTE",
+      paperLink: "https://www.arxiv.org/abs/2510.16374",
       justify: "flex-end",
       share: "Share",
       paper: "Read the paper",
@@ -70,17 +70,17 @@ const BeforeYouThinkMonitor = () => {
             We'd spent months turning Flavell's and Nelson & Narens'
             psychological insights into mathematical specifications. The{" "}
             <CustomLink
-              href="/Monitor-Generate-Verify"
+              href="/research/monitor-generate-verify"
               target=""
               rel="noopener noreferrer"
             >
-              MGV framework{" "}
+              MGV framework
             </CustomLink>{" "}
-            looked beautiful on paper — Monitor, Generate, Verify, all neatly
-            specified in LaTeX. But there's a special kind of anxiety that comes
-            with staring at your own theoretical work. Do the equations actually
-            mean anything? The natural question wasn't whether to implement it,
-            but how quickly we could try.
+            looked beautiful on paper — Monitor-Generate-Verify, all neatly
+            specified in LaTeX. But there's a special kind of anxiety that
+            comes with staring at your own theoretical work. Do the equations
+            actually mean anything? The natural question wasn't whether to
+            implement it, but how quickly we could try.
             <br></br>
             <br></br>
             The plan was simple. Take{" "}
@@ -139,7 +139,7 @@ const BeforeYouThinkMonitor = () => {
                 mathematical concepts.
               </li>
               <li>
-                <span style={{ fontWeight: "bold" }}>GENERATE:</span> WSelects
+                <span style={{ fontWeight: "bold" }}>GENERATE:</span> Selects
                 appropriate strategy and generates solutions with adaptive
                 compute budget. Calm problems get baseline resources. Difficult
                 problems get more computational power (Silicon Valley's solution
@@ -236,9 +236,9 @@ const BeforeYouThinkMonitor = () => {
             >
               SELF-REFINE
             </CustomLink>
-            )draft solutions then edit them — elegant, but once you start wrong,
-            you rarely recover. Luo et al. quantified this: bad starts cause 20%
-            performance penalties that persist through refinement.
+            ) draft solutions then edit them — elegant, but once you start
+            wrong, you rarely recover. Luo et al. quantified this: bad starts
+            cause 20% performance penalties that persist through refinement.
             Monitor-Generate approaches (like
             <CustomLink
               href="https://arxiv.org/abs/2305.04091"
@@ -291,13 +291,13 @@ const BeforeYouThinkMonitor = () => {
           <Body>
             <span style={{ fontStyle: "italic" }}>
               "Before You {"<think>"}, Monitor" demonstrates what happens when
-              theoretical frameworks meet weekend engineering. Read the
+              theoretical frameworks meet weekend engineering. Read the{" "}
               <CustomLink
-                href="https://openreview.net/pdf?id=xgAGJzRzTE"
+                href="https://www.arxiv.org/abs/2510.16374"
                 target="_blank"
                 // rel="noopener noreferrer"
               >
-                full paper{" "}
+                full paper
               </CustomLink>{" "}
               for implementation details that actually work.
               <br></br>

@@ -4,13 +4,13 @@ import Research from "./pages/Research";
 import Data from "./pages/Data";
 import About from "./pages/About";
 import Documentation from "./pages/Documentation";
-import Sentibank from "./pages/Senitbank";
-import MonitorGenerateVerify from "./pages/MonitorGenerateVerify";
-import PETLP from "./pages/PETLP";
-import InDefenceOfPostHocExplainability from "./pages/InDefenceOfPostHocExplainability";
-import BeforeYouThinkMonitor from "./pages/BeforeYouThinkMonitor";
-import RedditHarbor from "./pages/RedditHarbor";
-import System15 from "./pages/System1.5";
+import Sentibank from "./pages/data/Senitbank";
+import MonitorGenerateVerify from "./pages/research/MonitorGenerateVerify";
+import PETLP from "./pages/data/PETLP";
+import InDefenceOfPostHocExplainability from "./pages/research/InDefenceOfPostHocExplainability";
+import BeforeYouThinkMonitor from "./pages/research/BeforeYouThinkMonitor";
+import RedditHarbor from "./pages/data/RedditHarbor";
+import System15 from "./pages/research/System1.5";
 import Footer from "./components/Footer";
 import { GlobalStyle } from "./styles";
 import { Routes, Route } from "react-router-dom";
@@ -39,20 +39,20 @@ const App = () => {
             <Route path="/research" element={<Research />} />
             <Route path="/data" element={<Data />} />
             <Route path="/documentation" element={<Documentation />} />
-            <Route path="/sentibank" element={<Sentibank />} />
-            <Route path="/RedditHarbor" element={<RedditHarbor />} />
-            <Route path="/System-1.5" element={<System15 />} />
+            <Route path="/data/sentibank" element={<Sentibank />} />
+            <Route path="/data/redditharbor" element={<RedditHarbor />} />
+            <Route path="/research/system-1.5" element={<System15 />} />
             <Route
-              path="/Before-You-Think-Monitor"
+              path="/research/before-you-think-monitor"
               element={<BeforeYouThinkMonitor />}
             />
-            <Route path="/PELTP" element={<PETLP />} />
+            <Route path="/data/peltp" element={<PETLP />} />
             <Route
-              path="/In-Defence-of-Post-hoc-Explainability"
+              path="/research/in-defence-of-post-hoc-explainability"
               element={<InDefenceOfPostHocExplainability />}
             />
             <Route
-              path="/Monitor-Generate-Verify"
+              path="/research/monitor-generate-verify"
               element={<MonitorGenerateVerify />}
             />
             <Route path="*" element={<NotFound />} />

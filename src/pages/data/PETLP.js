@@ -1,13 +1,13 @@
 import { useState } from "react";
-import TextBlocks from "../components/TextBlocks";
-import PublicationHero from "../components/PublicationHero";
+import TextBlocks from "../../components/TextBlocks";
+import PublicationHero from "../../components/PublicationHero";
 import { Helmet } from "react-helmet";
-import VictorianTown from "../assets/images/victorian_town.jpg";
-import Tudors from "../assets/images/tudors.jpg";
-import Lake from "../assets/images/lake.jpg";
-import SentiWordNet from "../assets/images/sentiWordNet_graphic.jpg";
-import ExtractionChannelDiagram from "../assets/diagrams/PELTP_Extraction_Channels.png";
-import PELTPCover from "../assets/covers/peltp_cover.png";
+import VictorianTown from "../../assets/images/victorian_town.jpg";
+import Tudors from "../../assets/images/tudors.jpg";
+import Lake from "../../assets/images/lake.jpg";
+import SentiWordNet from "../../assets/images/sentiWordNet_graphic.jpg";
+import ExtractionChannelDiagram from "../../assets/diagrams/PELTP_Extraction_Channels.png";
+import PELTPCover from "../../assets/covers/peltp_cover.png";
 import {
   Body,
   CustomLink,
@@ -15,8 +15,8 @@ import {
   CustomContainer,
   ImageContainer,
   MyImage,
-} from "../styles";
-import ArticleCard from "../components/ArticleCard";
+} from "../../styles";
+import ArticleCard from "../../components/ArticleCard";
 
 const PETLP = () => {
   const [publicationHeroes] = useState([

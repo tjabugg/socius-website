@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TextBlocks from "../components/TextBlocks";
 import SecondaryHero from "../components/SecondaryHero";
-import PELTP from "../assets/images/PELTP_Data_Image.png";
+import PELTP from "../assets/images/PELTP_Data.png";
 import DataHero from "../assets/images/database_hero_graphic.jpg";
 import { Helmet } from "react-helmet";
 import {
@@ -40,7 +40,7 @@ const Data = () => {
         "Sixty years of human emotion research, rescued from digital archaeology. Fifteen dictionaries. One toolkit. How Software 1.0 understood feelings before neural networks took over.",
       id: 1,
       secondaryButton: "Read the archaeology",
-      secondaryLink: "/sentibank",
+      secondaryLink: "/data/sentibank",
       tertiaryButton: "Install toolkit",
       tertiaryLink: "https://github.com/socius-org/sentibank",
       tertiaryTarget: "blank",
@@ -54,13 +54,13 @@ const Data = () => {
       textColour: "#1C1C1E",
       subheading: "PETLP Framework",
       altParagraph:
-        "Sixty years of human emotion research, rescued from digital archaeology. Fifteen dictionaries. One toolkit. How Software 1.0 understood feelings before neural networks took over.",
+        "Social media AI research is legally haunted. GDPR, copyright, platform terms — every pipeline step faces different rules. We mapped the maze and built the guide.",
       id: 2,
-      primaryButton: "Read the paper",
-      primaryLink: "/PELTP",
-      tertiaryButton: "Learn the framework",
+      tertiaryButton: "Read the paper",
       tertiaryLink: "https://www.arxiv.org/abs/2508.09232",
-      target: "_blank",
+      tertiaryTarget: "_blank",
+      primaryButton: "Learn the framework",
+      primaryLink: "/data/peltp",
     },
     {
       captionOne: "In Development",
@@ -69,10 +69,10 @@ const Data = () => {
       textColour: "#1C1C1E",
       subheading: "RedditHarbor",
       altParagraph:
-        "Sixty years of human emotion research, rescued from digital archaeology. Fifteen dictionaries. One toolkit. How Software 1.0 understood feelings before neural networks took over.",
+        "Reddit research has too many rules to track manually. We are building scraper that follows them all automatically. Privacy filters, audit logs, and ethical defaults built-in.",
       id: 3,
       primaryButton: "Explore the project",
-      primaryLink: "/RedditHarbor",
+      primaryLink: "/data/redditharbor",
       tertiaryButton: "Access the beta",
       tertiaryLink: "https://github.com/socius-org/RedditHarbor",
       target: "_blank",

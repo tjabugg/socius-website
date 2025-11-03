@@ -3,6 +3,8 @@ import TextBlocks from "../components/TextBlocks";
 import SecondaryHero from "../components/SecondaryHero";
 import Diplomats from "../assets/images/diplomat.jpg";
 import LSE from "../assets/images/lse.jpg";
+import AIES from "../assets/images/AIES.jpg";
+import NeurIPS2024 from "../assets/videos/Nick_NeurIPS2024.mp4";
 import { Helmet } from "react-helmet";
 import {
   CentreContainer,
@@ -14,6 +16,7 @@ import {
 } from "../styles";
 import styled from "styled-components";
 import CallToAction from "../components/CallToAction";
+import GraphicCard from "../components/GraphicCard";
 
 const About = () => {
   const [secondaryHeroes] = useState([
@@ -26,12 +29,11 @@ const About = () => {
       id: 1,
     },
   ]);
-
   const [textBlocks] = useState([
     {
       justify: "flex-end",
       subheading:
-        "At socius labs, we create experimental collisions between machine intelligence and human sciences.\n \nBy human sciences, we mean the fuzzy constellation of fields that studied how humans think, behave, and function — psychology, cognitive science, social sciences, and relevant parts of philosophy and neuroscience.\n \nWhat defines us is a hypothesis: that human sciences contain solutions machines haven't discovered, and machine intelligence offers laboratories human sciences never imagined.\n \nNo boundaries on which direction insights flow. No assumptions about what's useful. Just experimenting whether centuries of human thought can debug tomorrow's machines, and whether tomorrow's machines can finally test yesterday's theories.",
+        "At socius labs, we create experimental collisions between machine intelligence and human sciences.\n \nBy human sciences, we mean the fuzzy constellation of fields that studied how humans think, behave, and function — psychology, cognitive science, social sciences, and relevant parts of philosophy and neuroscience.",
       id: 1,
     },
     {
@@ -77,6 +79,13 @@ const About = () => {
       textColour: "#706A65",
       id: 8,
     },
+    {
+      // justify: "space-between",
+      subheading: "Latest News",
+      // subheadingButton: "View all",
+      link: "/research",
+      id: 9,
+    },
   ]);
   const [callToActions] = useState([
     {
@@ -85,6 +94,37 @@ const About = () => {
       bgColour: "#E6E4E2",
       id: 1,
       textColour: "#1C1C1E",
+    },
+  ]);
+  const [graphicCards] = useState([
+    {
+      aspectRatio: "16/9",
+      flexDirection: "column",
+      video: NeurIPS2024,
+      bgColour: "#51DA4C",
+      textColour: "#FFFFFF",
+      heading: "Neural Information Processing Systems 2024 Conference",
+      paragraph:
+        " In Defence of Post-hoc Explainability and Designing Metacognition in Artificial Intelligence",
+      alt: "A 17th century painting of Chickens and Ducks by Melchior d' Hondecoeter",
+      id: 1,
+      link: "https://www.linkedin.com/posts/nick-sh-oh_neurips2024-system1-system2-activity-7275036516656025600-vb8a?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAZmYEBOfRdQjr4gXNOLk3ELwWkedXIQmU",
+      target: "blank",
+    },
+    {
+      aspectRatio: "16/9",
+      flexDirection: "column",
+      image: AIES,
+      bgColour: "#00002E",
+      textColour: "#FFFFFF",
+      heading:
+        "Proceedings of the Eighth AAAI/ACM Conference on AI, Ethics, and Society (AIES 2025)",
+      paragraph:
+        "A Privacy-by-Design Pipeline for Social Media Data in AI Research",
+      alt: "Cropped close up of dark green diagonal line on a pale green background",
+      id: 2,
+      link: "https://ojs.aaai.org/index.php/AIES/article/view/36685",
+      target: "blank",
     },
   ]);
 
@@ -183,6 +223,13 @@ const About = () => {
         </Container>
       </CustomGrid>
 
+      <PaddedContainer>
+        <TextBlocks
+          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 9)}
+        />
+        <GraphicCard graphicCards={graphicCards} grid="2fr 1fr" />
+      </PaddedContainer>
+
       <QuoteContainer>
         <H4>
           Every AI lab builds forward. We build backward too. Maybe the solution
@@ -208,9 +255,9 @@ export const ColourContainer = styled(PaddedContainer)`
 `;
 
 export const Container = styled(PaddedContainer)`
-  margin: 24px;
+  margin: 0px 0px 120px 0px;
   @media (max-width: 414px) {
-    margin: 0px 20px;
+    margin: 20px 20px 40px 20px;
   }
 `;
 
@@ -250,7 +297,7 @@ export const CustomContainer = styled(PaddedContainer)`
 
 export const QuoteContainer = styled(CentreContainer)`
   margin: 0px auto;
-  padding: 15vh 10vw;
+  padding: 20vh 10vw;
   max-width: 1729px;
 
   @media (max-width: 414px) {

@@ -2,7 +2,7 @@ import Hero from "../components/Hero";
 import ArticleCard from "../components/ArticleCard";
 // import CallToAction from "../components/CallToAction";
 import { useState } from "react";
-import GraphicCards from "../components/GraphicCard";
+import GraphicCards from "../components/CentreCard";
 import Animals from "../assets/images/animals.jpg";
 import MonitorGenerate from "../assets/images/monitorGenerate_graphic.jpg";
 import BeforeYouThink from "../assets/images/beforeYouThink_home_graphic.jpg";
@@ -46,7 +46,7 @@ const Home = () => {
       tagTwoColour: "#514E4B",
       alt: "A 17th century painting of Chickens and Ducks by Melchior d' Hondecoeter",
       id: 1,
-      link: "/System-1.5",
+      link: "/research/system-1.5",
     },
     {
       aspectRatio: "16/9",
@@ -64,14 +64,14 @@ const Home = () => {
       tagTwoColour: "#514E4B",
       alt: "Cropped close up of dark green diagonal line on a pale green background",
       id: 2,
-      link: "/Monitor-Generate-Verify",
+      link: "/research/monitor-generate-verify",
     },
     {
       aspectRatio: "16/9",
       flexDirection: "row",
       image: BeforeYouThink,
       padding: "0px",
-      heading: "Before You 〈think〉, Monitor",
+      heading: "Before You 〈think〉, monitor",
       paragraph:
         "We gave machines the cognitive gear shift experts have — knowing when to think fast versus slow.",
       tagOneBgColour: "#1C9418",
@@ -82,7 +82,7 @@ const Home = () => {
       tagTwoColour: "#514E4B",
       alt: "Cropped close up of bright blue arc on a blue background",
       id: 3,
-      link: "/Before-You-Think-Monitor",
+      link: "/research/before-you-think-monitor",
     },
     {
       aspectRatio: "16/9",
@@ -100,7 +100,7 @@ const Home = () => {
       tagTwoColour: "#514E4B",
       alt: "A 17th century painting of a Wooded Landscape",
       id: 4,
-      link: "/In-Defence-of-Post-hoc-Explainability",
+      link: "/research/in-defence-of-post-hoc-explainability",
     },
     {
       aspectRatio: "16/9",
@@ -137,7 +137,7 @@ const Home = () => {
       heading: "sentibank: Sixty years of human emotion dictionaries, unified",
       paragraph: "How we coded feelings before neural networks.",
       id: 1,
-      link: "/sentibank",
+      link: "/data/sentibank",
     },
     {
       image: PELTP,
@@ -148,19 +148,9 @@ const Home = () => {
       heading: "PETLP: The legal stack for social media AI research, decoded",
       paragraph: " From extraction to model release.",
       id: 2,
-      link: "/PELTP",
+      link: "/data/peltp",
     },
   ]);
-
-  // const [callToActions] = useState([
-  //   {
-  //     heading: "We're ready to combine our capabilities with your expertise",
-  //     button: "Get in touch",
-  //     bgColour: "#3C46FF",
-  //     id: 1,
-  //     textColour: "White",
-  //   },
-  // ]);
 
   const [textBlocks] = useState([
     {
@@ -269,24 +259,22 @@ const Home = () => {
         />
       </PaddedContainer>
 
-      <TeamContainer>
-        <TeamTextContainer>
-          <H4>
-            We have a theory: Intelligence is too weird for one field
-            understand. So we experiment at the intersections — between every
-            field that ever studied “thinking” and every machine that's trying
-            to “think”.
-          </H4>
-          <PrimaryButton href={"/about"}>Meet the lab</PrimaryButton>
-        </TeamTextContainer>
-      </TeamContainer>
-
       <CustomContainer>
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 3)}
         />{" "}
         <GraphicCards graphicCards={graphicCards} />
       </CustomContainer>
+
+      <TeamContainer>
+        <TeamTextContainer>
+          <H4>
+            Every AI lab builds forward. We build backward too. Maybe the
+            solution to tomorrow's problem was solved in 1979. Or 1781.
+          </H4>
+          <PrimaryButton href={"/about"}>Meet the lab</PrimaryButton>
+        </TeamTextContainer>
+      </TeamContainer>
 
       <CustomContainer>
         <TextBlocks
@@ -324,7 +312,6 @@ export const TeamTextContainer = styled(TextContainer)`
 
 export const CustomContainer = styled(PaddedContainer)`
   margin: 60px auto;
-
   max-width: 1681px;
 
   @media (max-width: 1681px) {
@@ -338,18 +325,19 @@ export const CustomContainer = styled(PaddedContainer)`
 export const CustomResearchContainer = styled(CustomContainer)`
   gap: 40px;
 `;
+
 export const TeamContainer = styled(CustomContainer)`
   justify-content: flex-end;
-  margin: 120px auto;
+  padding: 10vh 0px;
   max-width: 1681px;
   gap: 24px;
 
   @media (max-width: 1681px) {
-    margin: 80px 24px;
+    padding: 10vh 0px;
   }
 
-  @media (max-width: 1024px) {
-    padding: 40px 0px;
+  @media (max-width: 1280px) {
+    padding: 5vh 0px;
   }
 `;
 

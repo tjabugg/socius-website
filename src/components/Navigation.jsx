@@ -22,51 +22,51 @@ function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  // Close mobile menu on scroll
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const handleScrollClose = () => setMenuOpen(false);
+
+    window.addEventListener("scroll", handleScrollClose);
+    return () => window.removeEventListener("scroll", handleScrollClose);
+  }, [menuOpen]);
+
   return (
     <HeaderContainer $showNav={showNav}>
-      {/* Left logo */}
-      <DesktopNav>
-        <NavLink href="/">
-          <LogoContainer>
-            <Logo title="Socius logo" />
-            <Word title="Socius word" />
-          </LogoContainer>
-        </NavLink>
-      </DesktopNav>
+      <NavTopBar>
+        <LogoNav>
+          <NavLink href="/">
+            <LogoContainer>
+              <Logo />
+              <SpanDesktop>
+                <Word />
+              </SpanDesktop>
+            </LogoContainer>
+          </NavLink>
+        </LogoNav>
 
-      {/* Desktop links */}
-      <DesktopNav>
-        <NavLink href="/about">About</NavLink>
-        <NavLink href="/research">Research</NavLink>
-        <NavLink href="/data">Data</NavLink>
-        <NavLink href="/documentation">Documentation</NavLink>
-      </DesktopNav>
+        <DesktopNav>
+          <NavLink href="/about">About</NavLink>
+          <NavLink href="/research">Research</NavLink>
+          <NavLink href="/data">Data</NavLink>
+          <NavLink href="/documentation">Documentation</NavLink>
+        </DesktopNav>
 
-      {/* Hamburger icon */}
-      <Hamburger open={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
-        <span />
-        {/* <span /> */}
-        <span />
-      </Hamburger>
+        <MobileToggle onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? "Close" : "Menu"}
+        </MobileToggle>
+      </NavTopBar>
 
-      {/* Mobile dropdown */}
-      <MobileMenu open={menuOpen}>
-        <NavLink href="/" onClick={() => setMenuOpen(false)}>
-          Home
-        </NavLink>
-        <NavLink href="/about" onClick={() => setMenuOpen(false)}>
-          About
-        </NavLink>
-        <NavLink href="/research" onClick={() => setMenuOpen(false)}>
-          Research
-        </NavLink>
-        <NavLink href="/data" onClick={() => setMenuOpen(false)}>
-          Data
-        </NavLink>
-        <NavLink href="/documentation" onClick={() => setMenuOpen(false)}>
-          Documentation
-        </NavLink>
-      </MobileMenu>
+      <MobileMenuWrapper open={menuOpen}>
+        <MobileMenuInner>
+          <NavLink href="/">Home</NavLink>
+          <NavLink href="/about">About</NavLink>
+          <NavLink href="/research">Research</NavLink>
+          <NavLink href="/data">Data</NavLink>
+          <NavLink href="/documentation">Documentation</NavLink>
+        </MobileMenuInner>
+      </MobileMenuWrapper>
     </HeaderContainer>
   );
 }
@@ -88,7 +88,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  width: 100%;
+  /* width: 100%; */
   z-index: 1000;
   max-width: 1729px;
   /* background-color: white; */
@@ -97,7 +97,11 @@ export const HeaderContainer = styled.div`
   /* border-radius: 20px; */
 
   @media (max-width: 768px) {
-    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    padding: 16px;
+    border-radius: 20px; /* stays round */
+    flex-direction: column;
   }
 `;
 
@@ -118,9 +122,9 @@ export const NavLink = styled(Link)`
 `;
 
 const DesktopNav = styled(NavContainer)`
-  background: rgba(255, 255, 255, 1); 
-  /* backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); */
+  background: rgba(255, 255, 255, 1);
+  /* backdrop-filter: blur(10px); */
+  /* -webkit-backdrop-filter: blur(10px); */
   padding: 16px;
   border-radius: 1000px;
   @media (max-width: 768px) {
@@ -128,86 +132,51 @@ const DesktopNav = styled(NavContainer)`
   }
 `;
 
-// Animated hamburger button
-// Perfectly centered 2-line hamburger → X
-const Hamburger = styled.div`
-  display: none;
-  position: relative; /* required for absolute children */
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  z-index: 1100;
-
-  /* common bar styles */
-  span {
-    position: absolute; /* absolute lets us set exact top for each bar */
-    left: 0;
-    height: 2px;
-    width: 100%;
-    background: black;
-    border-radius: 4px;
-    transition: top 0.5s cubic-bezier(0.2, 0.9, 0.2, 1),
-      transform 0.5s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.5s;
-    transform-origin: center;
-  }
-
-  /* initial positions: top bar above center, bottom bar below center */
-  span:first-child {
-    top: calc(50% - 6px); /* adjust spacing between bars */
-  }
-  span:last-child {
-    top: calc(50% + 6px);
-  }
-
-  /* when open: move both to exact center and rotate into an X */
-  ${({ open }) =>
-    open &&
-    `
-    span:first-child {
-      top: 50%;
-      transform: translateY(-50%) rotate(45deg);
-    }
-    span:last-child {
-      top: 50%;
-      transform: translateY(-50%) rotate(-45deg);
-    }
-  `}
-
+const LogoNav = styled(DesktopNav)`
   @media (max-width: 768px) {
+    padding: 0px;
     display: block;
   }
 `;
 
-// Mobile dropdown
-const MobileMenu = styled.div`
-  display: ${({ open }) => (open ? "flex" : "none")};
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  background: white;
-  padding: 20px;
-  gap: 12px;
-  /* border-radius: 20px; */
-  /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); */
-  animation: fadeIn 0.2s ease;
-  z-index: 1000;
+const MobileMenuWrapper = styled.div`
   width: 100%;
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  overflow: hidden;
+  max-height: ${({ open }) => (open ? "300px" : "0")};
+  opacity: ${({ open }) => (open ? "1" : "0")};
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  /* border-radius: 20px; */
+  background: white;
 
   @media (min-width: 769px) {
     display: none;
+  }
+`;
+
+const MobileMenuInner = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px 0px 0px 0px; /* ✅ NO padding */
+`;
+
+const SpanDesktop = styled.span`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const NavTopBar = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const MobileToggle = styled(NavLink)`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
   }
 `;

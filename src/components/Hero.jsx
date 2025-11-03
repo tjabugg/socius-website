@@ -62,7 +62,8 @@ export default Hero;
 export const Container = styled.div`
   background-color: #193718;
   position: relative;
-  height: 70vh; /* Adjust if needed */
+  height: 70vh;
+  /* Adjust if needed */
   width: 100%;
   max-width: none;
   overflow: hidden; /* Ensures animation doesn’t spill out */
@@ -75,7 +76,7 @@ export const Container = styled.div`
 export const CustomGridContainer = styled(GridContainer)`
   gap: 180px;
   max-width: 1681px;
-  margin: 40px auto 160px auto;
+  margin: 40px auto 240px auto;
 
   @media (max-width: 1681px) {
     padding: 0px;
@@ -100,7 +101,7 @@ export const DesktopHero = styled(Lottie)`
   height: 100%;
   object-fit: cover;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
@@ -111,10 +112,14 @@ export const TabletHero = styled(Lottie)`
   left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: block;
+  }
+  @media (max-width: 414px) {
+    display: none;
   }
 `;
 
@@ -122,11 +127,12 @@ export const MobileHero = styled(Lottie)`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
+  object-fit: cover;
   display: none;
 
-  @media (max-width: 375px) {
+  @media (max-width: 414px) {
     display: block;
   }
 `;

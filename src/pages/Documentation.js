@@ -192,7 +192,7 @@ const Documentation = () => {
       tagOneBgColour: "#3C46FF",
       tagOneColour: "#F1F0EF",
       captionOne: "Scraper",
-      captionTwo: "NeurIPS 2024",
+      captionTwo: "Database",
       tagTwoBgColour: "#8FB2FF",
       tagTwoColour: "#292726",
       alt: "Cropped close up of green arc on a pale blue background",
@@ -250,9 +250,7 @@ const Documentation = () => {
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 1)}
         />
         <ArticleCard
-          articleCards={articleCards.filter((card) =>
-            [1, 2].includes(card.id)
-          )}
+          articleCards={articleCards.filter((card) => [1, 2].includes(card.id))}
           grid="2fr 1fr"
         />
         <ArticleCard

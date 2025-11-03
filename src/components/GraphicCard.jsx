@@ -1,188 +1,214 @@
-import React from "react";
+import styled from "styled-components";
+import Pause from "../assets/meta/pause_button.svg";
+import Play from "../assets/meta/play_button.svg";
+
 import {
+  H5,
   Body,
   GridContainer,
-  // SecondaryButton,
-  Small,
-  Tag,
-  TagContainer,
+  ImageContainer,
+  MyImage,
   TextContainer,
+  SecondaryButton,
 } from "../styles";
-import styled from "styled-components";
-import { CentreContainer, H5, MyImage } from "../styles";
+import { useRef, useState } from "react";
 
 // Destructure blogs and title directly from the props
-const GraphicCards = ({ graphicCards }) => {
+const GraphicCard = ({ graphicCards, grid }) => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const toggleVideo = () => {
+    if (!videoRef.current) return;
+
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   return (
-    <GridContainer
-      style={{
-        gridAutoRows: "1fr",
-      }}
-    >
+    <CardContainer grid={grid}>
       {graphicCards.map((graphicCard) => (
-        <CardLink href={graphicCard.link} target={graphicCard.target}>
-          <PatternCard
-            key={graphicCard.id}
+        <a href={graphicCard.link} target={graphicCard.target}>
+          <GraphicCardContainer
             style={{
-              backgroundImage: `url(${graphicCard.bgImage})`,
+              backgroundColor: graphicCard.bgColour,
+              flexDirection: graphicCard.flexDirection,
             }}
+            key={graphicCard.id}
           >
-            <GraphicContainer>
+            <ImageContainer
+              style={{
+                aspectRatio: graphicCard.aspectRatio,
+              }}
+            >
               {graphicCard.image ? (
-                <MyImage
-                  style={{
-                    objectFit: "contain",
-                  }}
+                <ImageHover
                   src={graphicCard.image}
-                  alt={`Socius pattern`}
-                ></MyImage>
+                  alt={graphicCard.alt}
+                ></ImageHover>
               ) : null}
-            </GraphicContainer>
-            <CustomTextContainer>
-              <TagContainer>
-                <Tag
-                  style={{
-                    backgroundColor: graphicCard.tagOneBgColour,
-                  }}
-                >
-                  <Small
-                    style={{
-                      color: graphicCard.tagOneColour,
-                    }}
-                  >
-                    {graphicCard.captionOne}
-                  </Small>
-                </Tag>
 
-                <Tag
-                  style={{
-                    backgroundColor: graphicCard.tagTwoBgColour,
+              {graphicCard.video ? (
+                <VideoWrapper
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleVideo();
                   }}
+                  isPlaying={isPlaying}
                 >
-                  <Small
-                    style={{
-                      color: graphicCard.tagTwoColour,
-                    }}
-                  >
-                    {graphicCard.captionTwo}
-                  </Small>
-                </Tag>
-              </TagContainer>
-
+                  <MyVideo
+                    ref={videoRef}
+                    src={graphicCard.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                </VideoWrapper>
+              ) : null}
+            </ImageContainer>
+            <TextContainer>
               <H5
                 style={{
-                  color: "white",
+                  color: graphicCard.textColour,
                 }}
               >
                 {graphicCard.heading}
               </H5>
               <Body
                 style={{
-                  color: "white",
-                  // marginBottom: "8px",
+                  color: graphicCard.textColour,
                 }}
               >
                 {graphicCard.paragraph}
               </Body>
-            </CustomTextContainer>
-
-            {/* <SecondaryButton href={graphicCard.link}>Learn more</SecondaryButton> */}
-          </PatternCard>
-        </CardLink>
+              <SecondaryButton
+                href={graphicCard.link}
+                target={graphicCard.target}
+              >
+                Read more
+              </SecondaryButton>
+            </TextContainer>
+          </GraphicCardContainer>
+        </a>
       ))}
-    </GridContainer>
+    </CardContainer>
   );
 };
 
-export default GraphicCards;
+export default GraphicCard;
 
-export const PatternCard = styled(CentreContainer)`
-  padding: 64px;
+export const CardContainer = styled(GridContainer)`
+  grid-template-columns: ${(props) => props.grid || "1fr"};
+  padding: 0px;
+  max-width: 1681px;
+  grid-template-rows: auto;
+  margin-bottom: 24px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+    margin-bottom: 16px;
+  }
+`;
+
+export const GraphicCardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   border-radius: 20px;
-  background-color: #00002e;
-  justify-content: flex-end;
-  gap: 120px;
+  padding: 24px;
+
+  @media (min-width: 1024px) {
+    padding: 20px;
+    ${ImageContainer} {
+      ${(props) =>
+        props.style?.flexDirection === "row"
+          ? `
+      flex: 0 1 50%;
+    `
+          : ""}
+    }
+
+    ${TextContainer} {
+      ${(props) =>
+        props.style?.flexDirection === "row"
+          ? `
+      flex: 1 1 50%;
+    `
+          : ""}
+    }
+    @media (max-width: 1024px) {
+      ${ImageContainer} {
+        ${(props) =>
+          props.style?.flexDirection === "row"
+            ? `
+      flex: 0 1 50%;
+    `
+            : ""}
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column !important;
+  }
+`;
+
+export const ImageHover = styled(MyImage)`
+  transition: scale 0.4s ease-in-out;
+
+  &:hover {
+    scale: 102%;
+  }
+`;
+export const VideoWrapper = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
-  flex: 1;
-  position: relative;
-  overflow: hidden;
+  cursor: ${({ isPlaying }) =>
+    isPlaying
+      ? "url('/assets/pause.svg') 12 12, pointer"
+      : "url('/assets/play.svg') 12 12, pointer"};
 
-  /* Background image on pseudo-element */
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: inherit;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.4s ease-in-out;
-    z-index: 0;
+  /* Safari fallback */
+  &:hover {
+    cursor: ${({ isPlaying }) =>
+      isPlaying
+        ? `url(${Pause}) 12 12, pointer`
+        : `url(${Play}) 12 12, pointer`};
   }
+`;
 
-  &:hover::before {
-    transform: scale(1.04);
-  }
-
-  /* Ensure content is above background */
-  > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  @media (max-width: 1280px) {
-    padding: 40px;
-    gap: 64px;
-  }
+export const VideoButton = styled.button`
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 
   @media (max-width: 1024px) {
-    padding: 40px;
-    gap: 40px;
-  }
-
-  @media (max-width: 414px) {
-    gap: 40px;
-    padding: 40px;
-  }
-`;
-export const CustomTextContainer = styled(TextContainer)`
-  padding-left: 24px;
-  padding-right: 24px;
-  align-items: center;
-`;
-
-export const GraphicContainer = styled.div`
-  display: flex;
-  width: 60%;
-  box-sizing: border-box;
-  padding-top: 64px;
-
-  transition: transform 0.3s ease-in-out;
-
-  img {
-    transition: transform 0.3s ease-in-out;
-  }
-
-  &:hover img {
-    transform: scale(1.04); /* Scales up by 10% */
-  }
-
-  @media (max-width: 1280px) {
-    padding-top: 40px;
-  }
-
-  @media (max-width: 414px) {
-    padding-top: 24px;
+    bottom: 20px;
+    right: 20px;
   }
 `;
 
-export const CardLink = styled.a`
-  text-decoration: none;
-  color: inherit;
-  display: flex; /* Changed from block to flex */
-  height: 100%;
+export const MyVideo = styled.video`
   width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: scale 0.4s ease-in-out;
+
+  &:hover {
+    scale: 102%;
+  }
 `;

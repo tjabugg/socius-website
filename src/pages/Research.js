@@ -24,7 +24,7 @@ const Research = () => {
   const [secondaryHeroes] = useState([
     {
       subtitle: "Research",
-      heading: "AI Technology focused on insight, not just performance",
+      heading: "Where yesterday’s theories meet tomorrow’s machines",
       image: Dusk,
       alt: "A 19th century painting of A Wooded Landscape in the Autumn Evening",
       id: 1,
@@ -48,7 +48,7 @@ const Research = () => {
       tagTwoColour: "#514E4B",
       alt: "A symmetrical light green socius pattern on a bright blue background",
       id: 1,
-      link: "/System-1.5",
+      link: "/research/system-1.5",
     },
     {
       aspectRatio: "16/9",
@@ -61,21 +61,21 @@ const Research = () => {
       tagOneBgColour: "#193718",
       tagOneColour: "#F1F0EF",
       captionOne: "Workshop",
-      captionTwo: "NeurIPS 2024",
+      captionTwo: "NeurIPS 2025",
       tagTwoBgColour: "#AEF2AC",
       tagTwoColour: "#514E4B",
       alt: "A 19th century painting of a flock of sheep being herded, by Robert Hills",
       id: 2,
-      link: "/Monitor-Generate-Verify",
+      link: "/research/monitor-generate-verify",
     },
     {
       aspectRatio: "4/5",
       flexDirection: "column",
       image: BeforeYouThink,
       padding: "0px",
-      heading: "Before You 〈think/〉, Monitor",
+      heading: "Before You 〈think〉, monitor",
       paragraph:
-        "We gave machines the cognitive gear shift experts have — knowing when to think fast versus slow.",
+        "When AI pauses to assess difficulty first, it solves 7% more problems correctly.",
       tagOneBgColour: "#1C9418",
       tagOneColour: "#F1F0EF",
       captionOne: "Workshop",
@@ -84,7 +84,7 @@ const Research = () => {
       tagTwoColour: "#514E4B",
       alt: "Cropped close up of a dark blue socius pattern on a lime green background",
       id: 3,
-      link: "/Before-You-Think-Monitor",
+      link: "/research/before-you-think-monitor",
     },
     {
       aspectRatio: "4/5",
@@ -102,7 +102,7 @@ const Research = () => {
       tagTwoColour: "#514E4B",
       alt: "A 17th century painting of Officers and other civic guardsmen of the XIth District of Amsterdam",
       id: 4,
-      link: "",
+      link: "/research/in-defence-of-post-hoc-explainability",
     },
   ]);
 

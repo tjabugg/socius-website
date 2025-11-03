@@ -221,21 +221,17 @@ export const H6 = styled.h6`
 
 export const Body = styled.p`
   font-family: "General Sans Regular";
-  font-size: 16px;
+  font-size: 18px;
   color: #1c1c1e;
   line-height: 1.3;
   white-space: pre-wrap;
 
   @media (max-width: 1681px) {
-    font-size: 14px;
-  }
-
-  @media (max-width: 1024px) {
-    /* font-size: 14px; */
+    font-size: 16px;
   }
 
   @media (max-width: 414px) {
-    /* font-size: 9px; */
+    font-size: 14px;
   }
 `;
 
@@ -374,7 +370,7 @@ export const NavContainer = styled.nav`
   display: flex;
   flex-direction: row;
   gap: 24px;
-  align-items: center;
+  /* align-items: center; */
 
   @media (max-width: 768px) {
     gap: 16px;
@@ -383,14 +379,16 @@ export const NavContainer = styled.nav`
 
 export const LogoContainer = styled(NavContainer)`
   gap: 4px;
-  align-items: flex-start;
+  display: flex;
+  /* align-items: center; */
   color: black;
 `;
 
 export const Logo = styled(SociusLogo)`
-  height: 20px;
+  height: 18px;
   margin-top: 2px;
-  width: 20px;
+  width: 18px;
+  mix-blend-mode: difference;
   display: none;
 
   @media (max-width: 768px) {
@@ -399,8 +397,8 @@ export const Logo = styled(SociusLogo)`
 `;
 
 export const Word = styled(SociusWord)`
-  height: 22px;
-  width: 103px;
+  height: 18px;
+  width: 71px;
   display: block;
   mix-blend-mode: difference;
 
@@ -409,12 +407,6 @@ export const Word = styled(SociusWord)`
   }
 `;
 
-export const MyVideo = styled.video`
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-`;
 export const PauseButton = styled.div`
   position: absolute;
   height: 40px;
@@ -545,12 +537,16 @@ export const NumList = styled.ol`
 `;
 
 export const CustomLink = styled(Link)`
-  font-size: 16px;
+  font-size: 18px;
   color: #1c1c1e;
   line-height: 1.3;
   text-decoration: underline;
 
   @media (max-width: 1729px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 414px) {
     font-size: 14px;
   }
 

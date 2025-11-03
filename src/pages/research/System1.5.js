@@ -1,14 +1,11 @@
 import { useState } from "react";
-import TextBlocks from "../components/TextBlocks";
-import PublicationHero from "../components/PublicationHero";
+import TextBlocks from "../../components/TextBlocks";
+import PublicationHero from "../../components/PublicationHero";
 import { Helmet } from "react-helmet";
-import VictorianTown from "../assets/images/victorian_town.jpg";
-import Tudors from "../assets/images/tudors.jpg";
-import Lake from "../assets/images/lake.jpg";
-import SentiWordNet from "../assets/images/sentiWordNet_graphic.jpg";
-import System15Cover from "../assets/covers/system1.5_cover.png";
-import InterferenceDiagram from "../assets/diagrams/System1.5_Interference_Diagram.png";
-import TrainingDiagram from "../assets/diagrams/System1.5_Training_Diagram.png";
+import System15Cover from "../../assets/covers/system1.5_cover.png";
+import InterferenceDiagram from "../../assets/diagrams/System1.5_Interference_Diagram.png";
+import TrainingDiagram from "../../assets/diagrams/System1.5_Training_Diagram.png";
+import NeurIPS2024 from "../../assets/videos/Nick_NeurIPS2024.mp4";
 import {
   Body,
   CustomLink,
@@ -16,8 +13,8 @@ import {
   CustomContainer,
   ImageContainer,
   MyImage,
-} from "../styles";
-import ArticleCard from "../components/ArticleCard";
+} from "../../styles";
+import GraphicCard from "../../components/GraphicCard";
 
 const System15 = () => {
   const [publicationHeroes] = useState([
@@ -31,7 +28,7 @@ const System15 = () => {
   ]);
   const [textBlocks] = useState([
     {
-      paperLink: "https://openreview.net/pdf?id=SEJg9yIhPz",
+      paperLink: "https://neurips.cc/virtual/2024/104306",
       justify: "flex-end",
       share: "Share",
       paper: "Read the paper",
@@ -45,7 +42,7 @@ const System15 = () => {
       paragraph: (
         <>
           <Body>
-            Everyone treats System 1 and System 2 like binary switches.
+            Everyone treats System 1 and System 2 like binary switches.{" "}
             <CustomLink
               href="https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow"
               target="_blank"
@@ -65,14 +62,14 @@ const System15 = () => {
             <br></br>
             That in-between space — that's where expertise lives. Not in pure
             intuition or pure analysis, but in knowing how to blend them.
-            Kenneth Hammond called this the
+            Kenneth Hammond called this the{" "}
             <CustomLink
               href="https://doi.org/10.1109/TSMC.1987.6499282"
               target="_blank"
               rel="noopener noreferrer"
             >
-              “intuitive-analytical continuum”{" "}
-            </CustomLink>
+              “intuitive-analytical continuum”
+            </CustomLink>{" "}
             back in 1987 — most real decisions involve “quasirationality”, a
             fluid mixture of both modes. We call that dial System 1.5.
           </Body>
@@ -98,7 +95,7 @@ const System15 = () => {
             proposing five different ways to handle the same chess position. A
             grandmaster sits at her screen, clicking through each one.
             "Preferred. Not preferred. Preferred. Definitely not. Oh, this one's
-            interesting — preferred."
+            interesting — preferred”"
             <br></br>
             <br></br>
             But there's another layer. Each problem also gets tagged with a
@@ -172,13 +169,14 @@ const System15 = () => {
             <br></br>
             <br></br>
             This graduated response reflects the heart of expertise. It's not
-            about always thinking hard or always thinking fast. It's about
-            knowing how hard to think — investing cognitive effort proportional
-            to uncertainty. The familiar gets rapid treatment. The unusual gets
-            careful consideration. The alien gets everything you've got. That
-            adaptive calibration. That's what separates expertise from mere
-            pattern matching. That's what we attempt with System 1.5 — adaptive
-            doubt for machines.n
+            about always thinking hard or always thinking fast. It's about{" "}
+            <span style={{ fontStyle: "italic" }}>knowing how</span> hard to
+            think — investing cognitive effort proportional to uncertainty. The
+            familiar gets rapid treatment. The unusual gets careful
+            consideration. The alien gets everything you've got. That adaptive
+            calibration. That's what separates expertise from mere pattern
+            matching. That's what we attempt with System 1.5 — adaptive doubt
+            for machines.
           </Body>
         </>
       ),
@@ -190,20 +188,21 @@ const System15 = () => {
       paragraph: (
         <>
           <Body>
-            Looking back, we realised mid-project that System 1.5 mirrors human
-            expertise development — but only partially.
+            Looking back, we realised mid-project that System 1.5 only partially
+            mirrors human expertise development.
             <br></br>
             <br></br>
             Consider how chess masters actually develop. Yes, they study
             thousands of games, absorbing patterns. But they also spend hours in
             post-game analysis, working through variations with engines,
-            understanding *why* certain moves work. Each analysis session is
-            deliberate practice: System 2 methodically examining positions,
-            calculating variations, discovering principles. Over time, these
-            analytical insights crystallise into intuition. What once required
-            conscious calculation (e.g., “if I push this pawn, they'll attack
-            here, I'll defend there, creating weakness on the kingside”) becomes
-            an instant feeling (e.g., “this pawn push feels wrong”).
+            understanding <span style={{ fontStyle: "italic" }}>why</span>{" "}
+            certain moves work. Each analysis session is deliberate practice:
+            System 2 methodically examining positions, calculating variations,
+            discovering principles. Over time, these analytical insights
+            crystallise into intuition. What once required conscious calculation
+            (e.g., “if I push this pawn, they'll attack here, I'll defend there,
+            creating weakness on the kingside”) becomes an instant feeling
+            (e.g., “this pawn push feels wrong”).
             <br></br>
             <br></br>
             Our current framework captures pattern absorption but misses this
@@ -218,14 +217,14 @@ const System15 = () => {
             Imagine if, during training, System 2 could analyse why certain
             solutions work, extract principles, and feed these insights back to
             System 1. Not just "this move is preferred" but "this move is
-            preferred because it follows the principle of controlling the center
-            while maintaining king safety." Over iterations, these principles
+            preferred because it follows the principle of controlling the centre
+            while maintaining king safety". Over iterations, these principles
             would compile into patterns, creating intuitions grounded in
             analytical understanding rather than statistical correlation.
             <br></br>
             <br></br>
-            But here's what we left open on purpose: the actual implementations
-            of System 1 and System 2.
+            But we left the actual implementations of System 1 and System 2 open
+            on purpose.
             <br></br>
             <br></br>
             The framework is intentionally agnostic. System 1 could be
@@ -266,19 +265,13 @@ const System15 = () => {
             confidence, sometimes trusting patterns, sometimes verifying them,
             often doing both simultaneously. Intuition guides search. Search
             refines intuition. The boundary we've been drawing doesn't exist.
+            <br></br>
+            <br></br>
             What if intelligence is this continuous negotiation between pattern
             and principle, recognition and reasoning, knowing and doubting?
             System 1.5 represents our attempt to operationalise that question.
             We've built a framework where machines adjust confidence based on
             familiarity — a crude approximation of human doubt, perhaps.
-            <br></br>
-            <br></br>
-            However, we still do not know whether training models on those
-            datasets is also free from copyrights. There’s a case pending, and
-            until … publishing model weights exists in legal grey zone. Your
-            model could be legitimate research output or massive copyright
-            infringement. Nobody knows, and that uncertainty has a price tag
-            attached.
             <br></br>
             <br></br>
             We're probably wrong about parts of this. But by building systems
@@ -299,13 +292,13 @@ const System15 = () => {
             <span style={{ fontStyle: "italic" }}>
               System 1.5 proposes a theoretical framework for metacognitive
               regulation in artificial systems. Implementation details and
-              mathematical specifications available in our
+              mathematical specifications available in our{" "}
               <CustomLink
-                href="https://claude.ai/chat/LINK"
+                href="https://neurips.cc/virtual/2024/104306"
                 target="_blank"
                 // rel="noopener noreferrer"
               >
-                working paper{" "}
+                working paper
               </CustomLink>{" "}
               .<br></br>
               <br></br>
@@ -319,85 +312,24 @@ const System15 = () => {
     },
     {
       justify: "space-between",
-      subheading: "sentibank",
-      paragraph: "Sixty years of emotion dictionaries. One import statement.",
-      paragraphButton: "View all",
-
+      subheading: "Discover more",
       id: 10,
     },
   ]);
-  const [articleCards] = useState([
+  const [graphicCards] = useState([
     {
       aspectRatio: "16/9",
       flexDirection: "column",
-      image: VictorianTown,
-      padding: "0px",
-      heading: "OpinionLexicon",
+      video: NeurIPS2024,
+      bgColour: "#51DA4C",
+      textColour: "#FFFFFF",
+      heading: "Neural Information Processing Systems 2024 Conference",
       paragraph:
-        "A dictionary for product reviews, comprising words curated for informal language",
-      tagOneBgColour: "#00002E",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Product Review",
-      tagTwoBgColour: "#CBDCFF",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 3,
-      link: "https://socius-org.github.io/sentibank/archive/OpinionLexicon.html",
-    },
-    {
-      aspectRatio: "4/5",
-      flexDirection: "column",
-      image: Tudors,
-      padding: "0px",
-      heading: "VADER",
-      paragraph:
-        "A gold-standard lexicon optimised for social media sentiment analysis",
-      tagOneBgColour: "#1C9418",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Social Media",
-      tagTwoBgColour: "#8FB2FF",
-      tagTwoColour: "#292726",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 4,
-      link: "https://socius-org.github.io/sentibank/archive/VADER.html",
-    },
-    {
-      aspectRatio: "16/9",
-      flexDirection: "column",
-      image: Lake,
-      padding: "0px",
-      heading: "WordNet-Affect",
-      paragraph:
-        "Affective labels that are hierarchically organised based on WordNet synsets",
-      tagOneBgColour: "#191F8C",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Psychology",
-      tagTwoBgColour: "#AEF2AC",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 5,
-      link: "https://socius-org.github.io/sentibank/archive/WordNet-Affect.html",
-    },
-    {
-      aspectRatio: "1/1",
-      flexDirection: "column",
-      image: SentiWordNet,
-      padding: "0px",
-      heading: "SentiWordNet",
-      paragraph:
-        "A comprehensive dictionary that assigns graded sentiment scores to WordNet synsets",
-      tagOneBgColour: "#193718",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "General",
-      tagTwoBgColour: "#D9FFD8",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 6,
-      link: "https://socius-org.github.io/sentibank/archive/SentiWordNet.html",
+        " In Defence of Post-hoc Explainability and Designing Metacognition in Artificial Intelligence",
+      alt: "A 17th century painting of Chickens and Ducks by Melchior d' Hondecoeter",
+      id: 1,
+      link: "https://www.linkedin.com/posts/nick-sh-oh_neurips2024-system1-system2-activity-7275036516656025600-vb8a?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAZmYEBOfRdQjr4gXNOLk3ELwWkedXIQmU",
+      target: "blank",
     },
   ]);
 
@@ -472,12 +404,7 @@ const System15 = () => {
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 10)}
         />
-        <ArticleCard
-          articleCards={articleCards.filter((card) =>
-            [3, 4, 5, 6].includes(card.id)
-          )}
-          grid="1fr 1fr 1fr 1fr"
-        />
+        <GraphicCard graphicCards={graphicCards} grid="1fr" />
       </CustomContainer>
     </>
   );
