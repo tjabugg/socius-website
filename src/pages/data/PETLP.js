@@ -35,7 +35,7 @@ const PETLP = () => {
       share: "Share",
       paper: "Read the paper",
       subheading:
-        "We discovered that sentiment dictionaries — carefully crafted lists of words with emotional scores — were scattered across the digital universe like fragments of an ancient manuscript. Some lived in dusty GitHub repositories as .py files. Others hid in paper appendices as .txt dumps. A few were trapped in websites as .xml schemas, while others floated in supplementary materials as .csv files or exotic .rdf formats.",
+        "Modern AI researchers don't just need GPUs and datasets — they need lawyers, or at least the ability to think like them. A single social media post triggers three separate legal interpretations. Copyright lawyers see intellectual property. Privacy regulators see personal data that must be anonymised. Platform lawyers see terms of service that prohibit your scraping. Each force is real, binding, and sometimes directly contradictory. After eighteen months charting these overlapping obligations, we built PETLP: a navigation system for researchers caught between scientific necessity and legal uncertainty.",
       id: 1,
     },
     {
@@ -69,15 +69,15 @@ const PETLP = () => {
             multiplication of uncertainty. Europe's privacy law (GDPR) says
             researchers get special exemptions, but won't tell you what counts
             as “research”. The copyright law says you can mine data for
-            “research”, but stays silent on whether training AI counts as
-            mining. When pressed,
+            “research”, but stays silent on whether training AI is ok. When
+            pressed,{" "}
             <CustomLink
               href="https://ec.europa.eu/newsroom/article29/items/611236/en"
               target="_blank"
               rel="noopener noreferrer"
             >
               the European Data Protection Board admits that making social media
-              truly anonymous is "difficult"{" "}
+              truly anonymous is "difficult"
             </CustomLink>
             . It's like being given driving directions where every other turn is
             “maybe left, possibly straight, definitely not right unless it's
@@ -130,14 +130,13 @@ const PETLP = () => {
             you. What data do you actually need? Who might be harmed? How will
             you protect them? In the sections that follow, we'll walk through
             the lessons we learnt — briefly, because nobody wants a 20,000-word
-            blog post (that's what
+            blog post (that's what{" "}
             <CustomLink
               href="https://arxiv.org/abs/2508.09232"
               target="_blank"
               // rel="noopener noreferrer"
             >
-              {" "}
-              our paper{" "}
+              our paper
             </CustomLink>{" "}
             is for). We're leaving out Load stage (from PETLP) because honestly,
             it's just ‘store your data securely and don't route it through dodgy
@@ -202,8 +201,8 @@ const PETLP = () => {
             <span style={{ fontWeight: "bold" }}>
               The Window (DIY Scraping):{" "}
             </span>
-            crape it yourself. If you're a qualifying research organisation, DSM
-            Article 3 protects you. The LAION v. Kneschke court confirmed
+            Scrape it yourself. If you're a qualifying research organisation,
+            DSM Article 3 protects you. The LAION v. Kneschke court confirmed
             platforms can't contract away statutory research rights. If you're a
             commercial entity, you're probably violating terms of service. If
             you're a startup doing "research", welcome to the grey zone.
@@ -229,10 +228,9 @@ const PETLP = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {" "}
-              true anonymisation of social media data proves difficult{" "}
-            </CustomLink>{" "}
-            This isn't pessimism; De Montjoye's research showed that{" "}
+              true anonymisation of social media data proves difficult
+            </CustomLink>
+            . This isn't pessimism; De Montjoye's research showed that{" "}
             <CustomLink
               href="https://doi.org/10.1038/srep01376"
               target="_blank"
@@ -240,7 +238,7 @@ const PETLP = () => {
             >
               {" "}
               95% of individuals can be uniquely identified from just four
-              spatiotemporal points{" "}
+              spatiotemporal points
             </CustomLink>
             . For social media, with its rich behavioural patterns and
             linguistic fingerprints, traditional de-identification techniques
@@ -251,49 +249,48 @@ const PETLP = () => {
             <br></br>
             This reality demands a different approach. Differential privacy
             offers the mathematically defensible path forward. Yes, it adds
-            noise, and yes, it reduces utility. But the tools have matured —
+            noise, and yes, it reduces utility. But the tools have matured —{" "}
+            <CustomLink
+              href="https://opacus.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Opacus
+            </CustomLink>{" "}
+            for PyTorch,{" "}
+            <CustomLink
+              href="https://www.tensorflow.org/responsible_ai/privacy/guide"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              TensorFlow Privacy{" "}
+            </CustomLink>{" "}
+            for TF - and
+            <CustomLink
+              href="https://openreview.net/forum?id=sKF3MOjfh2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              recent work demonstrates that 8B models can be fine-tuned with
+              differential privacy
+            </CustomLink>{" "}
+            (though the performance trade-offs are still being mapped out). The
+            trade-off is real but manageable. You're not choosing between
+            perfect privacy and perfect utility; you're choosing between
+            imperfect privacy and no privacy at all.
+            <br></br>
+            <br></br>
+            What matters legally and ethically isn't achieving perfect
+            anonymisation (impossible) but demonstrating serious engagement with
+            privacy risks (possible). Document your differential privacy
+            parameters. Justify your epsilon budget. Explain your noise addition
+            strategy. Show that you understood the trade-offs and made
+            deliberate choices to balance them. That paper trail — proving you
+            engaged thoughtfully with privacy — becomes your defence when
+            someone inevitably demonstrates that your "anonymised" dataset
+            isn't.
           </Body>
-          <CustomLink
-            href="https://opacus.ai"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {" "}
-            Opacus{" "}
-          </CustomLink>{" "}
-          for PyTorch,
-          <CustomLink
-            href="https://www.tensorflow.org/responsible_ai/privacy/guide"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {" "}
-            TensorFlow Privacy{" "}
-          </CustomLink>{" "}
-          for TF - and
-          <CustomLink
-            href="https://openreview.net/forum?id=sKF3MOjfh2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {" "}
-            recent work demonstrates that 8B models can be fine-tuned with
-            differential privacy{" "}
-          </CustomLink>
-          , though the performance trade-offs are still being mapped out. The
-          trade-off is real but manageable. You're not choosing between perfect
-          privacy and perfect utility; you're choosing between imperfect privacy
-          and no privacy at all.
-          <br></br>
-          <br></br>
-          What matters legally and ethically isn't achieving perfect
-          anonymisation (impossible) but demonstrating serious engagement with
-          privacy risks (possible). Document your differential privacy
-          parameters. Justify your epsilon budget. Explain your noise addition
-          strategy. Show that you understood the trade-offs and made deliberate
-          choices to balance them. That paper trail — proving you engaged
-          thoughtfully with privacy — becomes your defence when someone
-          inevitably demonstrates that your "anonymised" dataset isn't.
         </>
       ),
       id: 7,
@@ -314,6 +311,8 @@ const PETLP = () => {
               Legally collecting and processing data doesn't mean you can
               legally share your results.
             </span>
+            <br></br>
+            <br></br>
             The first problem is that models have memories. Your fine-tuned
             model — BERT, GPT, Claude, LLaMA, or whatever we're calling them by
             the time you read this — can recite training examples verbatim;
@@ -321,31 +320,30 @@ const PETLP = () => {
             carrying around fragments of personal data in its weights. Ask it
             the right question and it might repeat those personal details back.
             Under privacy law, that counts as 'processing personal data' — and
-            you're responsible for it.
+            you're responsible for it.{" "}
             <CustomLink
               href="https://www.edpb.europa.eu/our-work-tools/our-documents/opinion-board-art-64/opinion-282024-certain-data-protection-aspects_en"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {" "}
               The EDPB explicitly warns that models trained on personal data
               can't always be considered anonymous
             </CustomLink>
             .<br></br>
             <br></br>
             However, we still do not know whether training models on those
-            datasets is also free from copyrights. There’s a case pending, and
-            until … publishing model weights exists in legal grey zone. Your
-            model could be legitimate research output or massive copyright
-            infringement. Nobody knows, and that uncertainty has a price tag
-            attached.
-            <br></br>
-            <br></br>
-            <span style={{ fontWeight: "bold" }}>Platform Prohibitions:</span>
-            Reddit's terms ban using their data for AI training without
-            permission. Your DSM Article 3 rights might override this for
-            research. But does "research" include releasing models? Nobody
-            knows, and platforms have lawyers eager to find out.
+            datasets is also free from copyrights. There’s a{" "}
+            <CustomLink
+              href="https://www.europarl.europa.eu/RegData/etudes/STUD/2025/774095/IUST_STU(2025)774095_EN.pdf"
+              target="_blank"
+              // rel="noopener noreferrer"
+            >
+              case pending
+            </CustomLink>{" "}
+            , and until such case provides clarity, publishing model weights
+            exists in legal grey zone. Your model could be legitimate research
+            output or massive copyright infringement. Nobody knows, and that
+            uncertainty has a price tag attached.
           </Body>
         </>
       ),
@@ -405,16 +403,16 @@ const PETLP = () => {
                 arXiv
               </CustomLink>{" "}
               with decision trees, templates, and implementation guides. For
-              Reddit researchers, we're rebuilding RedditHarbor from a simple
-              crawler into guided PETLP compliance - automating not just data
-              collection but the documentation and decisions that keep it
-              defensible.
-              <br></br>
-              <br></br>
-              Built with theoretical rigour at socius: Experimental Intelligence
-              Lab Legal Disclaimer: This is a framework for thinking about
-              compliance, not legal advice. When in doubt, consult counsel. When
-              counsel's in doubt, at least you'll have documentation.
+              Reddit researchers, we're rebuilding{" "}
+              <CustomLink
+                href="/data/redditharbor"
+                // rel="noopener noreferrer"
+              >
+                RedditHarbor
+              </CustomLink>{" "}
+              from a simple crawler into guided PETLP compliance - automating
+              not just data collection but the documentation and decisions that
+              keep it defensible.
               <br></br>
               <br></br>
               Built with cautious optimism at socius: Experimental Intelligence
@@ -432,80 +430,6 @@ const PETLP = () => {
       paragraphButton: "View all",
 
       id: 11,
-    },
-  ]);
-  const [articleCards] = useState([
-    {
-      aspectRatio: "16/9",
-      flexDirection: "column",
-      image: VictorianTown,
-      padding: "0px",
-      heading: "OpinionLexicon",
-      paragraph:
-        "A dictionary for product reviews, comprising words curated for informal language",
-      tagOneBgColour: "#00002E",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Product Review",
-      tagTwoBgColour: "#CBDCFF",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 3,
-      link: "https://socius-org.github.io/sentibank/archive/OpinionLexicon.html",
-    },
-    {
-      aspectRatio: "4/5",
-      flexDirection: "column",
-      image: Tudors,
-      padding: "0px",
-      heading: "VADER",
-      paragraph:
-        "A gold-standard lexicon optimised for social media sentiment analysis",
-      tagOneBgColour: "#1C9418",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Social Media",
-      tagTwoBgColour: "#8FB2FF",
-      tagTwoColour: "#292726",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 4,
-      link: "https://socius-org.github.io/sentibank/archive/VADER.html",
-    },
-    {
-      aspectRatio: "16/9",
-      flexDirection: "column",
-      image: Lake,
-      padding: "0px",
-      heading: "WordNet-Affect",
-      paragraph:
-        "Affective labels that are hierarchically organised based on WordNet synsets",
-      tagOneBgColour: "#191F8C",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Psychology",
-      tagTwoBgColour: "#AEF2AC",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 5,
-      link: "https://socius-org.github.io/sentibank/archive/WordNet-Affect.html",
-    },
-    {
-      aspectRatio: "1/1",
-      flexDirection: "column",
-      image: SentiWordNet,
-      padding: "0px",
-      heading: "SentiWordNet",
-      paragraph:
-        "A comprehensive dictionary that assigns graded sentiment scores to WordNet synsets",
-      tagOneBgColour: "#193718",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "General",
-      tagTwoBgColour: "#D9FFD8",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 6,
-      link: "https://socius-org.github.io/sentibank/archive/SentiWordNet.html",
     },
   ]);
 
@@ -577,18 +501,6 @@ const PETLP = () => {
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 10)}
         />
       </CustomTextContainer>
-
-      <CustomContainer>
-        <TextBlocks
-          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 11)}
-        />
-        <ArticleCard
-          articleCards={articleCards.filter((card) =>
-            [3, 4, 5, 6].includes(card.id)
-          )}
-          grid="1fr 1fr 1fr 1fr"
-        />
-      </CustomContainer>
     </>
   );
 };

@@ -14,9 +14,21 @@ import {
   ImageContainer,
   MyImage,
 } from "../styles";
+import Clipboard from "../assets/meta/clipboard.svg"; // your icon
+
+import { useState } from "react";
 
 // Destructure blogs and title directly from the props
 const TextBlocks = ({ textBlocks }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1800);
+  };
+
   return (
     <div>
       {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
@@ -77,17 +89,20 @@ const TextBlocks = ({ textBlocks }) => {
           {(textBlock.paper || textBlock.share) && (
             <Share>
               {textBlock.share && (
-                <TertiaryButton
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigator.clipboard.writeText(window.location.href);
-                    // Optional: show a "Copied!" message
-                    // alert("Link copied to clipboard!");
-                  }}
-                  style={{ cursor: "pointer" }}
-                >
-                  {textBlock.share}
-                </TertiaryButton>
+                <ShareWrapper>
+                  <TertiaryButton
+                    onClick={handleShare}
+                    style={{ cursor: "pointer" }}
+                  >
+                    {textBlock.share}
+                  </TertiaryButton>
+
+                  {copied && (
+                    <ClipboardPopup>
+                      <ClipboardIcon src={Clipboard} alt="Copied" />
+                    </ClipboardPopup>
+                  )}
+                </ShareWrapper>
               )}
               {textBlock.paper && (
                 <TertiaryButton href={textBlock.paperLink} target="blank">
@@ -302,4 +317,46 @@ export const IconContainer = styled(ImageContainer)`
   &:hover {
     opacity: 33%;
   }
+`;
+
+const ShareWrapper = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
+const ClipboardPopup = styled.div`
+  position: absolute;
+  top: -36px;
+  right: -8px;
+  padding: 6px;
+  background: #F1F0EC;
+  border-radius: 8px;
+  animation: fadePop 1.8s ease forwards;
+  display: flex;
+  align-items: center;
+
+  @keyframes fadePop {
+    0% {
+      opacity: 0;
+      transform: translateY(6px) scale(0.9);
+    }
+    15% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    85% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-6px) scale(0.9);
+    }
+  }
+`;
+
+const ClipboardIcon = styled.img`
+  width: 18px;
+  height: 18px;
+  /* filter: invert(1); */
 `;

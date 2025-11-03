@@ -2,14 +2,13 @@ import { useState } from "react";
 import TextBlocks from "../../components/TextBlocks";
 import PublicationHero from "../../components/PublicationHero";
 import { Helmet } from "react-helmet";
-import VictorianTown from "../../assets/images/victorian_town.jpg";
-import Tudors from "../../assets/images/tudors.jpg";
-import Lake from "../../assets/images/lake.jpg";
-import SentiWordNet from "../../assets/images/sentiWordNet_graphic.jpg";
+import DatabaseDriven from "../../assets/images/databaseDriven_graphic.jpg";
+import MountainValley from "../../assets/images/mountain_valley.jpg";
+import Aristocrats from "../../assets/images/aristocrats.jpg";
 import RedditHarborCover from "../../assets/covers/reddit_harbor_cover.png";
 import Github from "../../assets/images/github-mark.svg";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import {
   Body,
   CustomLink,
@@ -87,9 +86,8 @@ const RedditHarbor = () => {
                   target="_blank"
                   // rel="noopener noreferrer"
                 >
-                  {" "}
                   PRAW
-                </CustomLink>
+                </CustomLink>{" "}
                 makes it accessible. But you still need to build everything
                 else. Three weeks later, you might have a working pipeline.
                 Three weeks of engineering that had nothing to do with your
@@ -100,7 +98,7 @@ const RedditHarbor = () => {
                 Someone, somewhere, scraped years of Reddit data and uploaded
                 it. It's sitting there, terabytes of exactly what you need. But
                 it disclaims the data ‘may be copyright protected’. The legal
-                equivalent of 'maybe safe, maybe not.’
+                equivalent of 'maybe safe, maybe not’.
               </li>
             </NumList>
             <br></br>
@@ -139,11 +137,11 @@ const RedditHarbor = () => {
               // rel="noopener noreferrer"
             >
               supabase.com
-            </CustomLink>{" "}
+            </CustomLink>
             .<br></br>
             <br></br>
             Finally, install RedditHarbor and connect everything (8 minutes
-            including database setup):
+            including database setup).
           </Body>
         </>
       ),
@@ -189,16 +187,19 @@ const RedditHarbor = () => {
               Export Without Drama:
             </span>{" "}
             <CustomCode>download.submission().to_csv()</CustomCode> for
-            spreadsheet people. <CustomCode>.to_json()</CustomCode>for API
-            folks.<CustomCode>.to_img()</CustomCode> when you realise half of
+            spreadsheet people. <CustomCode>.to_json()</CustomCode> for API
+            folks. <CustomCode>.to_img()</CustomCode> when you realise half of
             Reddit is actually memes and screenshots. Pick your columns, set
             your path, get your data. No proprietary formats. No vendor lock-in.
             Just your data in whatever shape you need it.
             <br></br>
             <br></br>
-            Built-in PII Protection: Microsoft's Presidio under the hood. One
-            flag — <CustomCode>mask_pii=True</CustomCode> — and suddenly{" "}
-            <CustomCode>John from Seattle</CustomCode>becomes
+            <span style={{ fontWeight: "bold" }}>
+              Built-in PII Protection:{" "}
+            </span>{" "}
+            Microsoft's Presidio under the hood. One flag —{" "}
+            <CustomCode>mask_pii=True</CustomCode> — and suddenly{" "}
+            <CustomCode>John from Seattle</CustomCode> becomes{" "}
             <CustomCode>
               {"<PERSON>"}from {"<LOCATION>"}
             </CustomCode>
@@ -245,7 +246,7 @@ const RedditHarbor = () => {
               // rel="noopener noreferrer"
             >
               We learned that collecting Reddit data legally requires navigating
-              a maze of overlapping and contradictory requirement{" "}
+              a maze of overlapping and contradictory requirement.
             </CustomLink>{" "}
             GDPR says one thing. Reddit's ToS says another. Copyright law wants
             something else entirely.
@@ -307,9 +308,11 @@ const RedditHarbor = () => {
     },
     {
       justify: "space-between",
-      subheading: "sentibank",
-      paragraph: "Sixty years of emotion dictionaries. One import statement.",
+      subheading: "RedditHarbor",
+      paragraph: "Reddit scraping with compliance built-in, not bolted on.",
       paragraphButton: "View all",
+      link: "https://socius-org.github.io/RedditHarbor/about.html",
+      target: "blank",
       id: 9,
     },
   ]);
@@ -347,76 +350,61 @@ collect.subreddit_submission(["python", "MachineLearning"], ["hot", "top"], limi
 
   const [articleCards] = useState([
     {
-      aspectRatio: "16/9",
-      flexDirection: "column",
-      image: VictorianTown,
-      padding: "0px",
-      heading: "OpinionLexicon",
-      paragraph:
-        "A dictionary for product reviews, comprising words curated for informal language",
-      tagOneBgColour: "#00002E",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Product Review",
-      tagTwoBgColour: "#CBDCFF",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 3,
-      link: "https://socius-org.github.io/sentibank/archive/OpinionLexicon.html",
-    },
-    {
       aspectRatio: "4/5",
       flexDirection: "column",
-      image: Tudors,
+      image: MountainValley,
       padding: "0px",
-      heading: "VADER",
+      heading: "Subreddit data collection",
       paragraph:
-        "A gold-standard lexicon optimised for social media sentiment analysis",
-      tagOneBgColour: "#1C9418",
+        "Collect data from specific subreddits, whether you’re interested in submissions, comments or user information",
+      tagOneBgColour: "#191F8C",
       tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Social Media",
-      tagTwoBgColour: "#8FB2FF",
-      tagTwoColour: "#292726",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 4,
-      link: "https://socius-org.github.io/sentibank/archive/VADER.html",
+      captionOne: "Scraper",
+      captionTwo: "Subreddit",
+      tagTwoBgColour: "#D9FFD8",
+      tagTwoColour: "#514E4B",
+      alt: "A painting of an Alpine Valley, with the Matterhorn in the Distance, by John Ruskin",
+      id: 1,
+      link: "https://socius-org.github.io/RedditHarbor/hands_on/subreddit_based.html",
+      target: "blank",
     },
     {
       aspectRatio: "16/9",
       flexDirection: "column",
-      image: Lake,
+      image: Aristocrats,
       padding: "0px",
-      heading: "WordNet-Affect",
+      heading: "Keyword based data collection",
       paragraph:
-        "Affective labels that are hierarchically organised based on WordNet synsets",
-      tagOneBgColour: "#191F8C",
+        "Collect submissions based on specific keywords from your desired subreddits",
+      tagOneBgColour: "#193718",
       tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Psychology",
-      tagTwoBgColour: "#AEF2AC",
+      captionOne: "Scraper",
+      captionTwo: "Keyword",
+      tagTwoBgColour: "#CBDCFF",
       tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 5,
-      link: "https://socius-org.github.io/sentibank/archive/WordNet-Affect.html",
+      alt: "A 19th century painting of Regents and Regentesses of the Lepers' Asylum",
+      id: 2,
+      link: "https://socius-org.github.io/RedditHarbor/hands_on/keyword_based.html",
+      target: "blank",
     },
     {
       aspectRatio: "1/1",
       flexDirection: "column",
-      image: SentiWordNet,
+      image: DatabaseDriven,
       padding: "0px",
-      heading: "SentiWordNet",
+      heading: "Database-driven data collection",
       paragraph:
-        "A comprehensive dictionary that assigns graded sentiment scores to WordNet synsets",
-      tagOneBgColour: "#193718",
+        "Leverage your existing database to collect additional relevant data, such as comments from specific submissions",
+      tagOneBgColour: "#3C46FF",
       tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "General",
-      tagTwoBgColour: "#D9FFD8",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 6,
-      link: "https://socius-org.github.io/sentibank/archive/SentiWordNet.html",
+      captionOne: "Scraper",
+      captionTwo: "Database",
+      tagTwoBgColour: "#8FB2FF",
+      tagTwoColour: "#292726",
+      alt: "Cropped close up of green arc on a pale blue background",
+      id: 3,
+      link: "https://socius-org.github.io/RedditHarbor/hands_on/database_driven.html",
+      target: "blank",
     },
   ]);
 
@@ -464,22 +452,12 @@ collect.subreddit_submission(["python", "MachineLearning"], ["hot", "top"], limi
           <CodeInner>
             <StyledSyntaxHighlighter
               language="python"
-              style={vscDarkPlus}
+              style={dracula}
               // showLineNumbers
               wrapLines
             >
               {codeString}
             </StyledSyntaxHighlighter>
-            <Body>
-              <br></br>
-              No more hunting through journal websites for that one CSV buried
-              in "supplementary_material_v3_revised.zip". No more parsing
-              ancient file formats. Just{" "}
-              <CustomCode>pip install sentibank</CustomCode> and you inherit an
-              encyclopaedic hub of 15 sentiment dictionaries — 60 years of
-              emotional archaeology in a single import statement. simple naming
-              rule:
-            </Body>
           </CodeInner>
         </CodeContainer>
         <TextBlocks
@@ -499,6 +477,9 @@ collect.subreddit_submission(["python", "MachineLearning"], ["hot", "top"], limi
           />{" "}
         </Container>
         <TextBlocks
+          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 10)}
+        />
+        <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 7)}
         />
         <TextBlocks
@@ -512,7 +493,7 @@ collect.subreddit_submission(["python", "MachineLearning"], ["hot", "top"], limi
         />
         <ArticleCard
           articleCards={articleCards.filter((card) =>
-            [3, 4, 5, 6].includes(card.id)
+            [1, 2, 3].includes(card.id)
           )}
           grid="1fr 1fr 1fr 1fr"
         />
@@ -545,9 +526,9 @@ const CodeInner = styled.div`
 `;
 
 const StyledSyntaxHighlighter = styled(SyntaxHighlighter)`
-  border-radius: 12px;
+  border-radius: 20px !important;
   padding: 16px !important;
-  margin: 16px 0px !important;
+  margin: 0px !important;
   font-size: 0.9rem;
   background: #0d1117 !important;
   line-height: 1.5;

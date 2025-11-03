@@ -576,11 +576,11 @@ export const CustomCode = styled.code`
   padding: 2px 6px;
   border-radius: 4px;
   font-family: monospace;
-  font-size: 14px;
+  font-size: 16px;
   color: #1c1c1e;
 
   @media (max-width: 1729px) {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   @media (max-width: 768px) {
