@@ -2,24 +2,19 @@ import { useState } from "react";
 import TextBlocks from "../../components/TextBlocks";
 import PublicationHero from "../../components/PublicationHero";
 import { Helmet } from "react-helmet";
-import VictorianTown from "../../assets/images/victorian_town.jpg";
-import Tudors from "../../assets/images/tudors.jpg";
-import Lake from "../../assets/images/lake.jpg";
-import SentiWordNet from "../../assets/images/sentiWordNet_graphic.jpg";
 import BeforeYouThinkCover from "../../assets/covers/before_you_think_cover.png";
 import GSM8KDiagram from "../../assets/diagrams/Before_You_Think_The_GSM8K_Experiment.png";
+import Psychology from "../../assets/diagrams/psychology_to_python.png";
 import {
   Body,
   CustomLink,
   CustomTextContainer,
-  CustomContainer,
   H5,
   List,
   MyImage,
   ImageContainer,
   CustomHeadingLink,
 } from "../../styles";
-import ArticleCard from "../../components/ArticleCard";
 import styled from "styled-components";
 
 const BeforeYouThinkMonitor = () => {
@@ -27,7 +22,7 @@ const BeforeYouThinkMonitor = () => {
     {
       tagOne: "Workshop",
       tagTwo: "NeurIPS 2024",
-      heading: "Before You <think>, monitor",
+      heading: "Before you <think>, monitor",
       image: BeforeYouThinkCover,
       id: 1,
     },
@@ -77,10 +72,10 @@ const BeforeYouThinkMonitor = () => {
               MGV framework
             </CustomLink>{" "}
             looked beautiful on paper — Monitor-Generate-Verify, all neatly
-            specified in LaTeX. But there's a special kind of anxiety that
-            comes with staring at your own theoretical work. Do the equations
-            actually mean anything? The natural question wasn't whether to
-            implement it, but how quickly we could try.
+            specified in LaTeX. But there's a special kind of anxiety that comes
+            with staring at your own theoretical work. Do the equations actually
+            mean anything? The natural question wasn't whether to implement it,
+            but how quickly we could try.
             <br></br>
             <br></br>
             The plan was simple. Take{" "}
@@ -104,6 +99,10 @@ const BeforeYouThinkMonitor = () => {
     {
       justify: "flex-end",
       subheading: "From Psychology to Python",
+      id: 3,
+    },
+    {
+      justify: "flex-end",
       paragraph: (
         <>
           <Body>
@@ -156,7 +155,7 @@ const BeforeYouThinkMonitor = () => {
           </Body>
         </>
       ),
-      id: 3,
+      id: 9,
     },
     {
       justify: "flex-end",
@@ -239,7 +238,7 @@ const BeforeYouThinkMonitor = () => {
             ) draft solutions then edit them — elegant, but once you start
             wrong, you rarely recover. Luo et al. quantified this: bad starts
             cause 20% performance penalties that persist through refinement.
-            Monitor-Generate approaches (like
+            Monitor-Generate approaches (like{" "}
             <CustomLink
               href="https://arxiv.org/abs/2305.04091"
               target="_blank"
@@ -261,12 +260,14 @@ const BeforeYouThinkMonitor = () => {
             We had working hacks but no theory.
             <br></br>
             <br></br>
-            So we tried something different. Instead of being *inspired* by
-            human reasoning, we *implemented* it. Flavell's 1979 framework
-            doesn't just say “monitor before acting” — it specifies what to
-            monitor (difficulty, strategies, confidence), when (before, during,
-            after), and how monitoring affects generation. We translated those
-            specifications directly into prompts.
+            So we tried something different. Instead of being{" "}
+            <span style={{ fontStyle: "italic" }}>inspired</span> by human
+            reasoning, we{" "}
+            <span style={{ fontStyle: "italic" }}>implemented</span> it.
+            Flavell's 1979 framework doesn't just say “monitor before acting” —
+            it specifies what to monitor (difficulty, strategies, confidence),
+            when (before, during, after), and how monitoring affects generation.
+            We translated those specifications directly into prompts.
             <br></br>
             <br></br>
             What really excites us is the next step. Imagine what happens when
@@ -310,88 +311,6 @@ const BeforeYouThinkMonitor = () => {
       ),
       id: 8,
     },
-    {
-      justify: "space-between",
-      subheading: "sentibank",
-      paragraph: "Sixty years of emotion dictionaries. One import statement.",
-      paragraphButton: "View all",
-
-      id: 9,
-    },
-  ]);
-  const [articleCards] = useState([
-    {
-      aspectRatio: "16/9",
-      flexDirection: "column",
-      image: VictorianTown,
-      padding: "0px",
-      heading: "OpinionLexicon",
-      paragraph:
-        "A dictionary for product reviews, comprising words curated for informal language",
-      tagOneBgColour: "#00002E",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Product Review",
-      tagTwoBgColour: "#CBDCFF",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 3,
-      link: "https://socius-org.github.io/sentibank/archive/OpinionLexicon.html",
-    },
-    {
-      aspectRatio: "4/5",
-      flexDirection: "column",
-      image: Tudors,
-      padding: "0px",
-      heading: "VADER",
-      paragraph:
-        "A gold-standard lexicon optimised for social media sentiment analysis",
-      tagOneBgColour: "#1C9418",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Social Media",
-      tagTwoBgColour: "#8FB2FF",
-      tagTwoColour: "#292726",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 4,
-      link: "https://socius-org.github.io/sentibank/archive/VADER.html",
-    },
-    {
-      aspectRatio: "16/9",
-      flexDirection: "column",
-      image: Lake,
-      padding: "0px",
-      heading: "WordNet-Affect",
-      paragraph:
-        "Affective labels that are hierarchically organised based on WordNet synsets",
-      tagOneBgColour: "#191F8C",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Psychology",
-      tagTwoBgColour: "#AEF2AC",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 5,
-      link: "https://socius-org.github.io/sentibank/archive/WordNet-Affect.html",
-    },
-    {
-      aspectRatio: "1/1",
-      flexDirection: "column",
-      image: SentiWordNet,
-      padding: "0px",
-      heading: "SentiWordNet",
-      paragraph:
-        "A comprehensive dictionary that assigns graded sentiment scores to WordNet synsets",
-      tagOneBgColour: "#193718",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "General",
-      tagTwoBgColour: "#D9FFD8",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 6,
-      link: "https://socius-org.github.io/sentibank/archive/SentiWordNet.html",
-    },
   ]);
 
   return (
@@ -432,6 +351,16 @@ const BeforeYouThinkMonitor = () => {
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 3)}
         />
+        <ImageContainer>
+          <MyImage
+            // style={{ alignSelf: "flex-end" }}
+            alt={`Diagram for Flavell's Cognitive Monitoring Model`}
+            src={Psychology}
+          ></MyImage>
+        </ImageContainer>
+        <TextBlocks
+          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 9)}
+        />
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 4)}
         />
@@ -455,18 +384,6 @@ const BeforeYouThinkMonitor = () => {
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 8)}
         />
       </CustomTextContainer>
-
-      <CustomContainer>
-        <TextBlocks
-          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 9)}
-        />
-        <ArticleCard
-          articleCards={articleCards.filter((card) =>
-            [3, 4, 5, 6].includes(card.id)
-          )}
-          grid="1fr 1fr 1fr 1fr"
-        />
-      </CustomContainer>
     </>
   );
 };

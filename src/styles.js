@@ -397,8 +397,8 @@ export const Logo = styled(SociusLogo)`
 `;
 
 export const Word = styled(SociusWord)`
-  height: 18px;
-  width: 71px;
+  height: 17px;
+  width: 114px;
   display: block;
   mix-blend-mode: difference;
 
@@ -554,6 +554,7 @@ export const CustomLink = styled(Link)`
     text-decoration: none;
   }
 `;
+
 export const CustomHeadingLink = styled(Link)`
   font-size: 25px;
   font-family: "General Sans Medium";

@@ -206,7 +206,7 @@ const Senitbank = () => {
       paragraph: (
         <>
           <Body>
-            As we transition from{" "}
+            As we transition from
             <CustomLink
               href="https://karpathy.medium.com/software-2-0-a64152b37c35"
               target="_blank"
@@ -256,7 +256,7 @@ const Senitbank = () => {
               target="_blank"
               // rel="noopener noreferrer"
             >
-              our contribution guidelines{" "}
+              our contribution guidelines
             </CustomLink>{" "}
             and help us expand this archaeological dig.
             <br></br>

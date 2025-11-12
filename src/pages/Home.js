@@ -73,7 +73,7 @@ const Home = () => {
       padding: "0px",
       heading: "Before You 〈think〉, monitor",
       paragraph:
-        "We gave machines the cognitive gear shift experts have — knowing when to think fast versus slow.",
+        "When AI pauses to assess difficulty first, it solves 7% more problems correctly.",
       tagOneBgColour: "#1C9418",
       tagOneColour: "#F1F0EF",
       captionOne: "Workshop",

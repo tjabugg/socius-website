@@ -3,11 +3,17 @@ import TextBlocks from "../../components/TextBlocks";
 import PublicationHero from "../../components/PublicationHero";
 import { Helmet } from "react-helmet";
 import MonitorGenerateVerifyCover from "../../assets/covers/monitor_generate_verify_cover.png";
+import TranslationProjects from "../../assets/diagrams/mgv_translation_project.png";
 import {
   Body,
   CustomLink,
   CustomCode,
   CustomTextContainer,
+  H4,
+  H5,
+  CustomHeadingLink,
+  ImageContainer,
+  MyImage,
 } from "../../styles";
 
 const MonitorGenerateVerify = () => {
@@ -24,31 +30,25 @@ const MonitorGenerateVerify = () => {
     {
       justify: "flex-end",
       share: "Share",
-      subheading:
-        "We discovered that sentiment dictionaries — carefully crafted lists of words with emotional scores — were scattered across the digital universe like fragments of an ancient manuscript. Some lived in dusty GitHub repositories as .py files. Others hid in paper appendices as .txt dumps. A few were trapped in websites as .xml schemas, while others floated in supplementary materials as .csv files or exotic .rdf formats.",
-      id: 1,
-    },
-    {
-      justify: "flex-end",
       subheading: (
         <>
-          <Body>
+          <H5>
             There's a moment in every conversation with an advanced language
             model where{" "}
-            <CustomLink
+            <CustomHeadingLink
               href="https://transformer-circuits.pub/2025/attribution-graphs/biology.html"
               target="_blank"
               rel="noopener noreferrer"
             >
               it confidently explains its reasoning, and you realise it's lying.
-            </CustomLink>{" "}
+            </CustomHeadingLink>{" "}
             Not maliciously. It simply has no access to its own cognitive
             process. When your AI agent can't reliably monitor its own thinking,
             how can it know when it's uncertain, when it needs more information,
             or when it should refuse to answer? We went looking for answers in
             psychology papers from 1979. What we found was a blueprint that's
             been waiting 45 years to be translated into mathematics.
-          </Body>
+          </H5>
         </>
       ),
       id: 2,
@@ -146,8 +146,17 @@ const MonitorGenerateVerify = () => {
             So we did what engineers do when they find a good idea gathering
             dust. We tried to formalise it. To take Flavell's and Nelson &
             Narens' psychological theories and translate them into mathematical
-            language that machines could, theoretically, implement. <br></br>{" "}
-            <br></br>
+            language that machines could, theoretically, implement.
+          </Body>
+        </>
+      ),
+      id: 5,
+    },
+    {
+      justify: "flex-end",
+      paragraph: (
+        <>
+          <Body>
             The Monitor-Generate-Verify (MGV) framework attempts to capture what
             psychologists have observed. Think of it like this. Before you solve
             any problem, your brain runs a quick diagnostic. Monitoring is that
@@ -163,7 +172,7 @@ const MonitorGenerateVerify = () => {
           </Body>
         </>
       ),
-      id: 5,
+      id: 9,
     },
     {
       justify: "flex-end",
@@ -279,9 +288,6 @@ const MonitorGenerateVerify = () => {
       <PublicationHero publicationHeroes={publicationHeroes} />
       <CustomTextContainer>
         <TextBlocks
-          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 1)}
-        />{" "}
-        <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
         />
         <TextBlocks
@@ -292,6 +298,16 @@ const MonitorGenerateVerify = () => {
         />
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 5)}
+        />
+        <ImageContainer>
+          <MyImage
+            // style={{ alignSelf: "flex-end" }}
+            alt={`Diagram for the Translation Project`}
+            src={TranslationProjects}
+          ></MyImage>
+        </ImageContainer>
+        <TextBlocks
+          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 9)}
         />
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 7)}

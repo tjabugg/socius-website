@@ -293,8 +293,8 @@ const InDefenceOfPostHocExplainability = () => {
                 target="_blank"
                 // rel="noopener noreferrer"
               >
-                full paper{" "}
-              </CustomLink>
+                full paper
+              </CustomLink>{" "}
               for the complete framework.
               <br></br>
               <br></br>
@@ -305,88 +305,6 @@ const InDefenceOfPostHocExplainability = () => {
         </>
       ),
       id: 8,
-    },
-    {
-      justify: "space-between",
-      subheading: "sentibank",
-      paragraph: "Sixty years of emotion dictionaries. One import statement.",
-      paragraphButton: "View all",
-
-      id: 8,
-    },
-  ]);
-  const [articleCards] = useState([
-    {
-      aspectRatio: "16/9",
-      flexDirection: "column",
-      image: VictorianTown,
-      padding: "0px",
-      heading: "OpinionLexicon",
-      paragraph:
-        "A dictionary for product reviews, comprising words curated for informal language",
-      tagOneBgColour: "#00002E",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Product Review",
-      tagTwoBgColour: "#CBDCFF",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 3,
-      link: "https://socius-org.github.io/sentibank/archive/OpinionLexicon.html",
-    },
-    {
-      aspectRatio: "4/5",
-      flexDirection: "column",
-      image: Tudors,
-      padding: "0px",
-      heading: "VADER",
-      paragraph:
-        "A gold-standard lexicon optimised for social media sentiment analysis",
-      tagOneBgColour: "#1C9418",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Social Media",
-      tagTwoBgColour: "#8FB2FF",
-      tagTwoColour: "#292726",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 4,
-      link: "https://socius-org.github.io/sentibank/archive/VADER.html",
-    },
-    {
-      aspectRatio: "16/9",
-      flexDirection: "column",
-      image: Lake,
-      padding: "0px",
-      heading: "WordNet-Affect",
-      paragraph:
-        "Affective labels that are hierarchically organised based on WordNet synsets",
-      tagOneBgColour: "#191F8C",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "Psychology",
-      tagTwoBgColour: "#AEF2AC",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 5,
-      link: "https://socius-org.github.io/sentibank/archive/WordNet-Affect.html",
-    },
-    {
-      aspectRatio: "1/1",
-      flexDirection: "column",
-      image: SentiWordNet,
-      padding: "0px",
-      heading: "SentiWordNet",
-      paragraph:
-        "A comprehensive dictionary that assigns graded sentiment scores to WordNet synsets",
-      tagOneBgColour: "#193718",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Dataset",
-      captionTwo: "General",
-      tagTwoBgColour: "#D9FFD8",
-      tagTwoColour: "#514E4B",
-      alt: "A group of friends sat in the foreground before an evening sky",
-      id: 6,
-      link: "https://socius-org.github.io/sentibank/archive/SentiWordNet.html",
     },
   ]);
 
@@ -449,19 +367,10 @@ const InDefenceOfPostHocExplainability = () => {
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 7)}
         />
-      </CustomTextContainer>
-
-      <CustomContainer>
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 8)}
         />
-        <ArticleCard
-          articleCards={articleCards.filter((card) =>
-            [3, 4, 5, 6].includes(card.id)
-          )}
-          grid="1fr 1fr 1fr 1fr"
-        />
-      </CustomContainer>
+      </CustomTextContainer>
     </>
   );
 };

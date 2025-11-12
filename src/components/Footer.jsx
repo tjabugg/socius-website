@@ -100,7 +100,7 @@ export const PatternContainer = styled.div`
   padding: 24px;
 
   @media (max-width: 768px) {
-    padding: 20px;
+    padding: 0px 0px 20px 0px;
   }
 `;
 
@@ -109,10 +109,14 @@ export const Grid = styled(GridContainer)`
   grid-template-columns: 6fr 1fr 1fr 1fr;
   padding-right: 120px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     margin: 20px;
     gap: 40px;
     grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0px;
   }
 `;
 
@@ -129,12 +133,13 @@ export const Container = styled(ParentContainer)`
   /* max-width: 1681px; */
 
   @media (max-width: 1681px) {
-    margin: 80px 24px 24px 24px;
+    margin: 80px 0px 0px 0px;
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    margin: 40px 20px 20px 20px;
+    margin: 40px 20px 0px 20px;
+    padding: 20px 0px 0px 0px;
   }
 `;
 

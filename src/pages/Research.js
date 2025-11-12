@@ -16,7 +16,7 @@ const Research = () => {
   const [textBlocks] = useState([
     {
       paragraph:
-        "What defines us is a hypothesis: that human sciences contain solutions machines haven't discovered, and machine intelligence offers laboratories human sciences never imagined.No boundaries on which direction insights flow. No assumptions about what's useful. Just experimenting whether centuries of human thought can debug tomorrow's machines, and whether tomorrow's machines can test yesterday's theories.",
+        "What defines us is a hypothesis: that human sciences contain solutions machines haven't discovered, and machine intelligence offers laboratories human sciences never imagined. No boundaries on which direction insights flow. No assumptions about what's useful. Just experimenting whether centuries of human thought can debug tomorrow's machines, and whether tomorrow's machines can test yesterday's theories.",
       id: 1,
     },
   ]);
