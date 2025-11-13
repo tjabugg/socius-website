@@ -9,7 +9,6 @@ import {
   CustomLink,
   CustomCode,
   CustomTextContainer,
-  H4,
   H5,
   CustomHeadingLink,
   ImageContainer,

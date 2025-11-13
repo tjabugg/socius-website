@@ -2,24 +2,18 @@ import { useState } from "react";
 import TextBlocks from "../../components/TextBlocks";
 import PublicationHero from "../../components/PublicationHero";
 import { Helmet } from "react-helmet";
-import VictorianTown from "../../assets/images/victorian_town.jpg";
-import Tudors from "../../assets/images/tudors.jpg";
-import Lake from "../../assets/images/lake.jpg";
-import SentiWordNet from "../../assets/images/sentiWordNet_graphic.jpg";
 import InDefenceOfPostHocExplainabilityCover from "../../assets/covers/in_defence_cover.png";
 import BoundedTruthDiagram from "../../assets/diagrams/In_Defence_Bounded_Truth.png";
 import {
   Body,
   CustomLink,
   CustomTextContainer,
-  CustomContainer,
   H5,
   List,
   CustomHeadingLink,
   ImageContainer,
   MyImage,
 } from "../../styles";
-import ArticleCard from "../../components/ArticleCard";
 
 const InDefenceOfPostHocExplainability = () => {
   const [publicationHeroes] = useState([
