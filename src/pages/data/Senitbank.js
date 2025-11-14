@@ -222,9 +222,9 @@ const Senitbank = () => {
             an author, and every score has a justification. <br></br>
             <br></br>Every sentiment score tells a story. A specific word,
             assigned a specific value, by a specific researcher, for a specific
-            reason. When MASTER scores "liability" as negative, you can trace it
+            reason. When MASTER scores “liability” as negative, you can trace it
             back to Loughran and McDonald analysing 10-K filings in 2011. When
-            VADER scores "lol" at +2.9, that's a weight with a backstory — not
+            VADER scores “lol” at +2.9, that's a weight with a backstory — not
             learned by backpropagation, but the collective wisdom of 10 vetted
             humans voting on how much happiness lives in three letters.
           </Body>
@@ -479,7 +479,7 @@ result = analyzer.sentiment(text=text, dictionary="MASTER_v2022")
             <Body>
               <br></br>
               No more hunting through journal websites for that one CSV buried
-              in "supplementary_material_v3_revised.zip". No more parsing
+              in “supplementary_material_v3_revised.zip”. No more parsing
               ancient file formats. Just{" "}
               <CustomCode>pip install sentibank</CustomCode> and you inherit an
               encyclopaedic hub of 15 sentiment dictionaries — 60 years of

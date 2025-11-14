@@ -160,10 +160,10 @@ const MonitorGenerateVerify = () => {
             psychologists have observed. Think of it like this. Before you solve
             any problem, your brain runs a quick diagnostic. Monitoring is that
             moment when you look at a math problem and instantly know it's going
-            to be brutal (what Flavell calls "feelings of difficulty"),
+            to be brutal (what Flavell calls “feelings of difficulty”),
             instantly size up whether material looks learnable (what Nelson &
-            Narens call "ease of learning"), or have that tip-of-the-tongue
-            sensation where you know you know it (”feeling of knowing”).
+            Narens call “ease of learning”), or have that tip-of-the-tongue
+            sensation where you know you know it (“feelings not knowing”).
             Generation takes those signals and decides what to do — should I
             work through this step-by-step or just move on? Finally,
             verification checks if it worked and files that information away for

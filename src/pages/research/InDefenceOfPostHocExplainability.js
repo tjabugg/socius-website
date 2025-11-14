@@ -34,7 +34,7 @@ const InDefenceOfPostHocExplainability = () => {
       subheading: (
         <>
           <H5>
-            Galileo's telescope had "
+            Galileo's telescope had “
             <CustomHeadingLink
               href="https://en.wikipedia.org/wiki/Chromatic_aberration"
               target="_blank"
@@ -42,7 +42,7 @@ const InDefenceOfPostHocExplainability = () => {
             >
               chromatic aberration
             </CustomHeadingLink>
-            " - an optical flaw that produced colored halos that didn't exist.
+            ” - an optical flaw that produced colored halos that didn't exist.
             Strictly speaking, his instrument was broken, showing false
             information mixed with truth. Today's AI explanation methods (XAI)
             are our chromatic aberration: they distort what’s really happening
@@ -164,7 +164,7 @@ const InDefenceOfPostHocExplainability = () => {
             critics' standards, this method fails.
             <br></br>
             <br></br>
-            Yet when these "broken" concept vectors were used to generate
+            Yet when these “broken” concept vectors were used to generate
             training puzzles for human experts — including world champions
             Vladimir Kramnik and Hou Yifan — something unexpected happened. One
             grandmaster improved the performance by up to 42% after studying
@@ -173,7 +173,7 @@ const InDefenceOfPostHocExplainability = () => {
             <br></br>
             One concept involved quiet moves that improve piece positioning
             while preparing unconventional long-term sacrifices. Grandmaster
-            commentary described these as “clever”, "not natural”, and
+            commentary described these as “clever”, “not natural”, and
             containing ideas that were “hard to spot” even after seeing the
             solution. The concepts combined known chess principles in novel ways
             that violated conventional strategic thinking.
@@ -195,7 +195,7 @@ const InDefenceOfPostHocExplainability = () => {
           <Body>
             This phenomenon — where broken explanations generate valid insights
             — isn't a fluke. It reflects how knowledge transfers between
-            incompatible forms of intelligence through what we call "mediated
+            incompatible forms of intelligence through what we call “mediated
             understanding”.
             <br></br>
             <br></br>
@@ -210,7 +210,7 @@ const InDefenceOfPostHocExplainability = () => {
             Consider how this works in practice. When AlphaZero's millions of
             parameters get compressed into concept vectors, the compression
             destroys most information. The resulting explanation operates within
-            what we might call "bounded factivity" — it's only true within
+            what we might call “bounded factivity” — it's only true within
             specific limits and contexts. The explanation isn't universally
             correct; it's correct enough, often enough, to be useful.
           </Body>
@@ -278,7 +278,7 @@ const InDefenceOfPostHocExplainability = () => {
         <>
           <Body>
             <span style={{ fontStyle: "italic" }}>
-              "In Defence of Post-hoc Explainability" argues that computational
+              “In Defence of Post-hoc Explainability” argues that computational
               faithfulness matters less than scientific usefulness. When
               explanation methods fail mathematically but succeed
               scientifically, we should care more about the science. Read the{" "}

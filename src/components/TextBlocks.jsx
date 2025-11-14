@@ -329,7 +329,7 @@ const ClipboardPopup = styled.div`
   top: -36px;
   right: -8px;
   padding: 6px;
-  background: #F1F0EC;
+  background: #f1f0ec;
   border-radius: 8px;
   animation: fadePop 1.8s ease forwards;
   display: flex;

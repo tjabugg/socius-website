@@ -37,13 +37,13 @@ const Footer = () => (
             GitHub
           </FooterLink>
           <FooterLink
-            href="https://www.instagram.com/socius.labs/"
+            href="https://www.linkedin.com/company/socius-labs/posts/?feedView=all"
             target="_blank"
           >
             LinkedIn
           </FooterLink>
           <FooterLink
-            href="https://www.linkedin.com/company/socius-labs/posts/?feedView=all"
+            href="https://www.instagram.com/socius.labs/"
             target="_blank"
           >
             Instagram

@@ -94,8 +94,8 @@ const System15 = () => {
             solutions for every problem in the training set — imagine it
             proposing five different ways to handle the same chess position. A
             grandmaster sits at her screen, clicking through each one.
-            "Preferred. Not preferred. Preferred. Definitely not. Oh, this one's
-            interesting — preferred”"
+            “Preferred. Not preferred. Preferred. Definitely not. Oh, this one's
+            interesting — preferred”.
             <br></br>
             <br></br>
             But there's another layer. Each problem also gets tagged with a
@@ -118,8 +118,8 @@ const System15 = () => {
             Week by week, iteration by iteration, the Generator gets better at
             producing solutions humans prefer, the Verifier sharpens its ability
             to spot quality, and the Monitor develops a{" "}
-            <span style={{ fontStyle: "italic" }}>feeling </span> of "I've seen
-            this before" versus "this is new".
+            <span style={{ fontStyle: "italic" }}>feeling </span> of “I've seen
+            this before” versus “this is new”.
           </Body>
         </>
       ),

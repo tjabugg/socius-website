@@ -291,7 +291,7 @@ const BeforeYouThinkMonitor = () => {
         <>
           <Body>
             <span style={{ fontStyle: "italic" }}>
-              "Before You {"<think>"}, Monitor" demonstrates what happens when
+              “Before you {"<think>"}, monitor” demonstrates what happens when
               theoretical frameworks meet weekend engineering. Read the{" "}
               <CustomLink
                 href="https://www.arxiv.org/abs/2510.16374"

@@ -71,7 +71,7 @@ const PETLP = () => {
               rel="noopener noreferrer"
             >
               the European Data Protection Board admits that making social media
-              truly anonymous is "difficult"
+              truly anonymous is “difficult”
             </CustomLink>
             . It's like being given driving directions where every other turn is
             “maybe left, possibly straight, definitely not right unless it's
@@ -187,8 +187,8 @@ const PETLP = () => {
             </span>
             Third-party aggregators and archived datasets. Someone else took the
             legal risk; you inherit the legal uncertainty. Those 15TB of Reddit
-            data on Academic Torrents? They come with a note saying content "may
-            be protected". That's not a licence; it's a legal liability of
+            data on Academic Torrents? They come with a note saying content “may
+            be protected”. That's not a licence; it's a legal liability of
             unknown magnitude.
             <br></br>
             <br></br>
@@ -199,7 +199,7 @@ const PETLP = () => {
             DSM Article 3 protects you. The LAION v. Kneschke court confirmed
             platforms can't contract away statutory research rights. If you're a
             commercial entity, you're probably violating terms of service. If
-            you're a startup doing "research", welcome to the grey zone.
+            you're a startup doing “research”, welcome to the grey zone.
           </Body>
         </>
       ),
@@ -212,7 +212,7 @@ const PETLP = () => {
         <>
           <Body>
             Transform isn't just about cleaning messy data — it's where you
-            discover that "anonymising" social media is like trying to make
+            discover that “anonymising” social media is like trying to make
             water not wet.
             <br></br>
             <br></br>
@@ -282,7 +282,7 @@ const PETLP = () => {
             strategy. Show that you understood the trade-offs and made
             deliberate choices to balance them. That paper trail — proving you
             engaged thoughtfully with privacy — becomes your defence when
-            someone inevitably demonstrates that your "anonymised" dataset
+            someone inevitably demonstrates that your “anonymised” dataset
             isn't.
           </Body>
         </>
