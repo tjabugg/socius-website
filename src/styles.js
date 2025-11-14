@@ -1,18 +1,23 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { ReactComponent as SociusLogo } from "./assets/meta/socius_logo.svg";
 import { ReactComponent as SociusWord } from "./assets/meta/socius_logotype.svg";
-import GeneralSansRegular from "../src/assets/fonts/GeneralSans-Regular.otf";
-import GeneralSansMedium from "../src/assets/fonts/GeneralSans-Medium.otf";
 
 export const GlobalStyle = createGlobalStyle`
 
 @font-face {
-  font-family: 'General Sans Regular';
-  src: url(${GeneralSansRegular});
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
+
 @font-face {
-  font-family: 'General Sans Medium';
-  src: url(${GeneralSansMedium});
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 
