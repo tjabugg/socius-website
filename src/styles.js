@@ -33,8 +33,8 @@ export const GlobalStyle = createGlobalStyle`
     
 }
 body {
-    font-family: 'General Sans Regular';
-    font-style: normal;
+    font-family: 'GeneralSans';
+    font-weight: 400;
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
@@ -45,7 +45,8 @@ body {
 `;
 
 export const Link = styled.a`
-  font-family: "General Sans Medium";
+  font-family: "GeneralSans";
+  font-weight: 500;
   font-size: 14px;
   text-decoration: none;
   cursor: pointer;
@@ -167,7 +168,8 @@ export const H3 = styled.h3`
 
 export const H4 = styled.h4`
   font-size: 34px;
-  font-family: "General Sans Medium";
+  font-family: "GeneralSans";
+  font-weight: 500;
   line-height: 1.1;
   color: #1c1c1e;
 
@@ -186,7 +188,8 @@ export const H4 = styled.h4`
 
 export const H5 = styled.h5`
   font-size: 25px;
-  font-family: "General Sans Medium";
+  font-family: "GeneralSans";
+  font-weight: 500;
   line-height: 1.1;
   color: #1c1c1e;
   white-space: pre-wrap;
@@ -206,7 +209,8 @@ export const H5 = styled.h5`
 
 export const H6 = styled.h6`
   font-size: 25px;
-  font-family: "General Sans Medium";
+  font-family: "GeneralSans";
+  font-weight: 500;
   line-height: 1.1;
   color: #1c1c1e;
   white-space: pre-wrap;
@@ -225,7 +229,8 @@ export const H6 = styled.h6`
 `;
 
 export const Body = styled.p`
-  font-family: "General Sans Regular";
+  font-family: "GeneralSans";
+  font-weight: 400;
   font-size: 18px;
   color: #1c1c1e;
   line-height: 1.3;
@@ -241,7 +246,8 @@ export const Body = styled.p`
 `;
 
 export const Small = styled.p`
-  font-family: "General Sans Medium";
+  font-family: "GeneralSans";
+  font-weight: 500;
   font-size: 14px;
   color: #1c1c1e;
   /* line-height: 1.1; */
@@ -562,7 +568,8 @@ export const CustomLink = styled(Link)`
 
 export const CustomHeadingLink = styled(Link)`
   font-size: 25px;
-  font-family: "General Sans Medium";
+  font-family: "GeneralSans";
+  font-weight: 500;
   line-height: 1.1;
   color: #1c1c1e;
   text-decoration: underline;

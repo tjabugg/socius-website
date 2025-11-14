@@ -59,7 +59,7 @@ const Home = () => {
       tagOneBgColour: "#193718",
       tagOneColour: "#F1F0EF",
       captionOne: "Workshop",
-      captionTwo: "NeurIPS 2024",
+      captionTwo: "NeurIPS 2025",
       tagTwoBgColour: "#AEF2AC",
       tagTwoColour: "#514E4B",
       alt: "Cropped close up of dark green diagonal line on a pale green background",
