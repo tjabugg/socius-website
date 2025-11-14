@@ -1,12 +1,8 @@
 import { useRef, useState } from "react";
 import { H2, H5, GridContainer } from "../styles";
-
 import WebPattern from "../assets/videos/Web_Graphic_V3_1.mp4";
 import TabletPattern from "../assets/videos/Tablet_Graphic_V3.mp4";
 import MobilePattern from "../assets/videos/Mobile_Graphic_V3.mp4";
-
-import JsonPattern from "../assets/videos/web_hero.json";
-
 import styled from "styled-components";
 import Pause from "../assets/meta/pause_button.svg";
 import Play from "../assets/meta/play_button.svg";
