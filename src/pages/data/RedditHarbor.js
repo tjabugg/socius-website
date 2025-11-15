@@ -201,7 +201,7 @@ const RedditHarbor = () => {
             <CustomCode>mask_pii=True</CustomCode> — and suddenly{" "}
             <CustomCode>John from Seattle</CustomCode> becomes{" "}
             <CustomCode>
-              {"<PERSON>"}from {"<LOCATION>"}
+              {"<PERSON>"} from {"<LOCATION>"}
             </CustomCode>
             . Covers 12+ entity types. Your IRB will sleep better. Though
             sometimes it's overeager: "The Fed raised rates by 0.25%" becomes

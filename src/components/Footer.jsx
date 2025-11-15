@@ -97,17 +97,26 @@ export default Footer;
 export const PatternContainer = styled.div`
   bottom: 0vh;
   box-sizing: border-box;
-  padding: 24px;
+  padding: 0px 0px 24px 0px;
+
+  @media (max-width: 1681px) {
+    margin: 24px;
+  }
 
   @media (max-width: 768px) {
+    margin: 0px;
     padding: 0px 0px 20px 0px;
   }
 `;
 
 export const Grid = styled(GridContainer)`
-  margin: 24px;
+  margin: 24px 0px 0px 0px;
   grid-template-columns: 6fr 1fr 1fr 1fr;
   padding-right: 120px;
+
+  @media (max-width: 1681px) {
+    margin: 24px;
+  }
 
   @media (max-width: 1024px) {
     margin: 20px;

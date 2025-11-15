@@ -4,6 +4,8 @@ import PublicationHero from "../../components/PublicationHero";
 import { Helmet } from "react-helmet";
 import ExtractionChannelDiagram from "../../assets/diagrams/PELTP_Extraction_Channels.png";
 import PELTPCover from "../../assets/covers/peltp_cover.png";
+import PELTPdiagram from "../../assets/images/PELTP_Data.png";
+
 import {
   Body,
   CustomLink,
@@ -467,6 +469,9 @@ const PETLP = () => {
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 3)}
         />
+        <ImageContainer>
+          <MyImage alt={`Diagram for PELTP`} src={PELTPdiagram}></MyImage>
+        </ImageContainer>
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 4)}
         />

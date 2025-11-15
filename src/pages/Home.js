@@ -199,7 +199,7 @@ const Home = () => {
         />
         <meta
           name="description"
-          content="We create open-source AI models for social scientists seeking to integrate the power of AI with the interpretability of traditional methods."
+          content="We create experimental collisions between machine intelligence and human sciences."
         />
 
         {/* <!-- Open Graph / Facebook --> */}
@@ -211,7 +211,7 @@ const Home = () => {
         />
         <meta
           property="og:description"
-          content="We create open-source AI models for social scientists seeking to integrate the power of AI with the interpretability of traditional methods."
+          content="We create experimental collisions between machine intelligence and human sciences."
         />
         <meta property="og:image" content={MonitorGenerate} />
       </Helmet>

@@ -103,9 +103,9 @@ const About = () => {
       video: NeurIPS2024,
       bgColour: "#51DA4C",
       textColour: "#FFFFFF",
-      heading: "Neural Information Processing Systems 2024 Conference",
-      paragraph:
-        "The Thirty-Eighth Annual Conference on Neural Information Processing Systems (NeurIPS 2024) Lightning Talk: System-2 Reasoning at Scale Workshop”",
+      heading:
+        "The Thirty-Eighth Annual Conference on Neural Information Processing Systems (NeurIPS 2024)",
+      paragraph: "Lightning Talk: System-2 Reasoning at Scale Workshop",
       alt: "A 17th century painting of Chickens and Ducks by Melchior d' Hondecoeter",
       id: 1,
       link: "https://www.linkedin.com/posts/nick-sh-oh_neurips2024-system1-system2-activity-7275036516656025600-vb8a?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAZmYEBOfRdQjr4gXNOLk3ELwWkedXIQmU",

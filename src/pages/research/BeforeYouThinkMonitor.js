@@ -89,8 +89,6 @@ const BeforeYouThinkMonitor = () => {
             and see if we could actually make it work. No fancy architectures.
             No million-dollar compute budgets. Just us, a single H100 GPU, and
             the kind of nervous excitement that defines experimental research.
-            <br></br>
-            <br></br>
           </Body>
         </>
       ),
@@ -351,6 +349,9 @@ const BeforeYouThinkMonitor = () => {
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 3)}
         />
+        <TextBlocks
+          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 9)}
+        />
         <ImageContainer>
           <MyImage
             // style={{ alignSelf: "flex-end" }}
@@ -358,9 +359,6 @@ const BeforeYouThinkMonitor = () => {
             src={Psychology}
           ></MyImage>
         </ImageContainer>
-        <TextBlocks
-          textBlocks={textBlocks.filter((textBlock) => textBlock.id === 9)}
-        />
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 4)}
         />
