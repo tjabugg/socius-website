@@ -21,7 +21,7 @@ const BeforeYouThinkMonitor = () => {
   const [publicationHeroes] = useState([
     {
       tagOne: "Workshop",
-      tagTwo: "NeurIPS 2024",
+      tagTwo: "COLM 2025",
       heading: "Before you <think>, monitor",
       image: BeforeYouThinkCover,
       id: 1,
