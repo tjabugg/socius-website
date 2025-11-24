@@ -110,7 +110,7 @@ const Hero = () => {
           Intelligence Lab
         </H2>
         <H5>
-          We have a theory: Intelligence is too weird for one field understand.
+          We have a theory: Intelligence is too weird for one field to understand.
           So we experiment at the intersections — between every field that ever
           studied “thinking” and every machine that's trying to “think”.
         </H5>
