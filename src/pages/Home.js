@@ -254,7 +254,7 @@ const Home = () => {
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 3)}
         />{" "}
-        <CentreCards graphicCards={centreCards} />
+        <CentreCards centreCards={centreCards} />
       </CustomContainer>
 
       <TeamContainer>
