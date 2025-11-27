@@ -118,7 +118,7 @@ const System15 = () => {
             Week by week, iteration by iteration, the Generator gets better at
             producing solutions humans prefer, the Verifier sharpens its ability
             to spot quality, and the Monitor develops a{" "}
-            <span style={{ fontStyle: "italic" }}>feeling </span> of “I've seen
+            <span style={{ fontStyle: "italic" }}>feeling</span> of “I've seen
             this before” versus “this is new”.
           </Body>
         </>

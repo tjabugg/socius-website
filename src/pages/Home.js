@@ -1,6 +1,5 @@
 import Hero from "../components/Hero";
 import ArticleCard from "../components/ArticleCard";
-// import CallToAction from "../components/CallToAction";
 import { useState } from "react";
 import GraphicCards from "../components/CentreCard";
 import Animals from "../assets/images/animals.jpg";

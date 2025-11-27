@@ -47,14 +47,17 @@ const App = () => {
               element={<BeforeYouThinkMonitor />}
             />
             <Route path="/data/peltp" element={<PETLP />} />
+
             <Route
               path="/research/in-defence-of-post-hoc-explainability"
               element={<InDefenceOfPostHocExplainability />}
             />
+
             <Route
               path="/research/monitor-generate-verify"
               element={<MonitorGenerateVerify />}
             />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </motion.div>
