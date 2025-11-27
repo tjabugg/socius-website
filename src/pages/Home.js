@@ -1,7 +1,7 @@
 import Hero from "../components/Hero";
 import ArticleCard from "../components/ArticleCard";
 import { useState } from "react";
-import GraphicCards from "../components/CentreCard";
+import CentreCards from "../components/CentreCard";
 import Animals from "../assets/images/animals.jpg";
 import MonitorGenerate from "../assets/images/monitorGenerate_graphic.jpg";
 import BeforeYouThink from "../assets/images/beforeYouThink_home_graphic.jpg";
@@ -126,7 +126,7 @@ const Home = () => {
     },
   ]);
 
-  const [graphicCards] = useState([
+  const [centreCards] = useState([
     {
       bgImage: Wheat,
       captionOne: "Published",
@@ -254,7 +254,7 @@ const Home = () => {
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 3)}
         />{" "}
-        <GraphicCards graphicCards={graphicCards} />
+        <CentreCards graphicCards={centreCards} />
       </CustomContainer>
 
       <TeamContainer>

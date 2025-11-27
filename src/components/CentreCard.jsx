@@ -12,28 +12,28 @@ import styled from "styled-components";
 import { CentreContainer, H5, MyImage } from "../styles";
 
 // Destructure blogs and title directly from the props
-const GraphicCards = ({ graphicCards }) => {
+const CentreCards = ({ centreCards }) => {
   return (
     <GridContainer
       style={{
         gridAutoRows: "1fr",
       }}
     >
-      {graphicCards.map((graphicCard) => (
-        <CardLink href={graphicCard.link} target={graphicCard.target}>
+      {centreCards.map((centreCard) => (
+        <CardLink href={centreCard.link} target={centreCard.target}>
           <PatternCard
-            key={graphicCard.id}
+            key={centreCard.id}
             style={{
-              backgroundImage: `url(${graphicCard.bgImage})`,
+              backgroundImage: `url(${centreCard.bgImage})`,
             }}
           >
             <GraphicContainer>
-              {graphicCard.image ? (
+              {centreCard.image ? (
                 <MyImage
                   style={{
                     objectFit: "contain",
                   }}
-                  src={graphicCard.image}
+                  src={centreCard.image}
                   alt={`Socius pattern`}
                 ></MyImage>
               ) : null}
@@ -42,29 +42,29 @@ const GraphicCards = ({ graphicCards }) => {
               <TagContainer>
                 <Tag
                   style={{
-                    backgroundColor: graphicCard.tagOneBgColour,
+                    backgroundColor: centreCard.tagOneBgColour,
                   }}
                 >
                   <Small
                     style={{
-                      color: graphicCard.tagOneColour,
+                      color: centreCard.tagOneColour,
                     }}
                   >
-                    {graphicCard.captionOne}
+                    {centreCard.captionOne}
                   </Small>
                 </Tag>
 
                 <Tag
                   style={{
-                    backgroundColor: graphicCard.tagTwoBgColour,
+                    backgroundColor: centreCard.tagTwoBgColour,
                   }}
                 >
                   <Small
                     style={{
-                      color: graphicCard.tagTwoColour,
+                      color: centreCard.tagTwoColour,
                     }}
                   >
-                    {graphicCard.captionTwo}
+                    {centreCard.captionTwo}
                   </Small>
                 </Tag>
               </TagContainer>
@@ -74,7 +74,7 @@ const GraphicCards = ({ graphicCards }) => {
                   color: "white",
                 }}
               >
-                {graphicCard.heading}
+                {centreCard.heading}
               </H5>
               <Body
                 style={{
@@ -82,7 +82,7 @@ const GraphicCards = ({ graphicCards }) => {
                   // marginBottom: "8px",
                 }}
               >
-                {graphicCard.paragraph}
+                {centreCard.paragraph}
               </Body>
             </CustomTextContainer>
 
@@ -94,7 +94,7 @@ const GraphicCards = ({ graphicCards }) => {
   );
 };
 
-export default GraphicCards;
+export default CentreCards;
 
 export const PatternCard = styled(CentreContainer)`
   padding: 64px;
