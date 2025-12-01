@@ -3,6 +3,7 @@ import {
   H1,
   Body,
   CentreText,
+  SecondaryButton,
 } from "../styles";
 import styled from "styled-components";
 import DataHero from "../assets/images/database_hero_graphic.jpg";
@@ -37,21 +38,14 @@ const NotFound = () => (
     </Helmet>
     ;
     <TextContainer>
-      {/* <Title
+      <Title
         style={{
           color: "#cbdcff",
         }}
       >
         404
-      </Title> */}
-      <Caption
-        style={{
-          color: "#cbdcff",
-        }}
-      >
-        We're currently renovating our website - please check back on the 15th of October!
-      </Caption>
-      {/* <SecondaryButton href="/">Country roads, take me home!</SecondaryButton> */}
+      </Title>
+      <SecondaryButton href="/">Country roads, take me home!</SecondaryButton>
     </TextContainer>
   </Container>
 );
@@ -64,7 +58,7 @@ export const Container = styled(CentreContainer)`
 `;
 
 export const TextContainer = styled(CentreText)`
-  gap: 0px;
+  gap: 16px;
   height: 90vh;
 `;
 
