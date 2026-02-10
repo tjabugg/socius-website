@@ -34,7 +34,7 @@ const Footer = () => (
             Socials
           </Title>
 
-          <FooterLink href="/https://github.com/socius-org" target="_blank">
+          <FooterLink href="https://github.com/socius-org" target="_blank">
             GitHub
           </FooterLink>
 
