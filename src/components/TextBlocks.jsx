@@ -281,7 +281,6 @@ export const Share = styled(TagContainer)`
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: flex-end;
 
   @media (max-width: 1280px) {
     /* margin-left: 24px; */
