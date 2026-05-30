@@ -1,2 +1,8 @@
+# Dependencies
+/node_modules
+
+# Production build
+/build
+
 # Local Netlify folder
 .netlify

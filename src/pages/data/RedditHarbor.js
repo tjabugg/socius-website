@@ -255,7 +255,7 @@ const RedditHarbor = () => {
             So we're building{" "}
             <CustomLink
               href="https://www.arxiv.org/abs/2508.09232"
-              target="blank"
+              target="_blank"
               // rel="noopener noreferrer"
             >
               PELTP
@@ -312,7 +312,7 @@ const RedditHarbor = () => {
       paragraph: "Reddit scraping with compliance built-in, not bolted on.",
       paragraphButton: "View all",
       link: "https://socius-org.github.io/RedditHarbor/about.html",
-      target: "blank",
+      target: "_blank",
       id: 9,
     },
   ]);
@@ -366,7 +366,7 @@ collect.subreddit_submission(["python", "MachineLearning"], ["hot", "top"], limi
       alt: "A painting of an Alpine Valley, with the Matterhorn in the Distance, by John Ruskin",
       id: 1,
       link: "https://socius-org.github.io/RedditHarbor/hands_on/subreddit_based.html",
-      target: "blank",
+      target: "_blank",
     },
     {
       aspectRatio: "16/9",
@@ -385,7 +385,7 @@ collect.subreddit_submission(["python", "MachineLearning"], ["hot", "top"], limi
       alt: "A 19th century painting of Regents and Regentesses of the Lepers' Asylum",
       id: 2,
       link: "https://socius-org.github.io/RedditHarbor/hands_on/keyword_based.html",
-      target: "blank",
+      target: "_blank",
     },
     {
       aspectRatio: "1/1",
@@ -404,7 +404,7 @@ collect.subreddit_submission(["python", "MachineLearning"], ["hot", "top"], limi
       alt: "Cropped close up of green arc on a pale blue background",
       id: 3,
       link: "https://socius-org.github.io/RedditHarbor/hands_on/database_driven.html",
-      target: "blank",
+      target: "_blank",
     },
   ]);
 

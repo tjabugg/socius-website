@@ -78,7 +78,7 @@ const TextBlocks = ({ textBlocks }) => {
 
           {textBlock.github && (
             <Share>
-              <a href={textBlock.gitLink} target="blank">
+              <a href={textBlock.gitLink} target="_blank" rel="noreferrer">
                 <IconContainer>
                   <MyImage src={textBlock.github} alt="GitHub Icon" />
                 </IconContainer>
@@ -105,7 +105,7 @@ const TextBlocks = ({ textBlocks }) => {
                 </ShareWrapper>
               )}
               {textBlock.paper && (
-                <TertiaryButton href={textBlock.paperLink} target="blank">
+                <TertiaryButton href={textBlock.paperLink} target="_blank">
                   {textBlock.paper}
                 </TertiaryButton>
               )}
