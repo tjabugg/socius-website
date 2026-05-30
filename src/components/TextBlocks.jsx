@@ -78,7 +78,7 @@ const TextBlocks = ({ textBlocks }) => {
 
           {textBlock.github && (
             <Share>
-              <a href={textBlock.gitLink} target="_blank">
+              <a href={textBlock.gitLink} target="_blank" rel="noreferrer">
                 <IconContainer>
                   <MyImage src={textBlock.github} alt="GitHub Icon" />
                 </IconContainer>
