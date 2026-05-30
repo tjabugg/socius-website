@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TextBlocks from "../../components/TextBlocks";
 import PublicationHero from "../../components/PublicationHero";
-import { Helmet } from "react-helmet";
+import Seo from "../../components/Seo";
 import VictorianTown from "../../assets/images/victorian_town.jpg";
 import SentibankCover from "../../assets/covers/sentibank_cover.png";
 import SentibankDiagram1 from "../../assets/diagrams/sentibank_diagram_1.png";
@@ -414,31 +414,13 @@ result = analyzer.sentiment(text=text, dictionary="MASTER_v2022")
 `;
   return (
     <>
-      <Helmet>
-        {/* <!-- Primary Meta Tags --> */}
-        <title>How Software 1.0 Understood Emotions | socius labs</title>
-        <meta
-          name="title"
-          content="How Software 1.0 Understood Emotions | socius labs"
-        />
-        <meta
-          name="description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
-        <meta
-          property="og:title"
-          content="How Software 1.0 Understood Emotions | socius labs"
-        />
-        <meta
-          property="og:description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-        <meta property="og:image" content={SentibankCover} />
-      </Helmet>
+      <Seo
+        title="How Software 1.0 Understood Emotions | socius labs"
+        description="SentiBank: a curated archive of classic sentiment-analysis lexicons — how 'Software 1.0' understood human emotions, packaged for social science research."
+        image={SentibankCover}
+        path="/data/sentibank"
+        type="article"
+      />
       <PublicationHero publicationHeroes={publicationHeroes} />
       <CustomTextContainer>
         <TextBlocks

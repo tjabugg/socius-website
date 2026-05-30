@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TextBlocks from "../../components/TextBlocks";
 import PublicationHero from "../../components/PublicationHero";
-import { Helmet } from "react-helmet";
+import Seo from "../../components/Seo";
 import MonitorGenerateVerifyCover from "../../assets/covers/monitor_generate_verify_cover.png";
 import TranslationProjects from "../../assets/diagrams/mgv_translation_project.png";
 import {
@@ -261,31 +261,13 @@ const MonitorGenerateVerify = () => {
 
   return (
     <>
-      <Helmet>
-        {/* <!-- Primary Meta Tags --> */}
-        <title>Thinking About Thinking for Machines | socius labs</title>
-        <meta
-          name="title"
-          content="Thinking About Thinking for Machines | socius labs"
-        />
-        <meta
-          name="description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
-        <meta
-          property="og:title"
-          content="Thinking About Thinking for Machines | socius labs"
-        />
-        <meta
-          property="og:description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-        <meta property="og:image" content={MonitorGenerateVerifyCover} />
-      </Helmet>
+      <Seo
+        title="Thinking About Thinking for Machines | socius labs"
+        description="When a language model confidently explains its reasoning, it might be lying. Monitor–Generate–Verify is our framework for more faithful machine reasoning."
+        image={MonitorGenerateVerifyCover}
+        path="/research/monitor-generate-verify"
+        type="article"
+      />
       <PublicationHero publicationHeroes={publicationHeroes} />
       <CustomTextContainer>
         <TextBlocks

@@ -6,7 +6,7 @@ import System from "../assets/images/system_1.5_graphic.jpg";
 import Farmland from "../assets/images/farmland.jpg";
 import BeforeYouThink from "../assets/images/beforeYouThink_graphic.jpg";
 import Politicians from "../assets/images/politicians.jpg";
-import { Helmet } from "react-helmet";
+import Seo from "../components/Seo";
 import ArticleCard from "../components/ArticleCard";
 import { PaddedContainer } from "../styles";
 import styled from "styled-components";
@@ -119,33 +119,12 @@ const Research = () => {
 
   return (
     <>
-      <Helmet>
-        {/* <!-- Primary Meta Tags --> */}
-        <title>
-          Where Yesterday's Theories Meet Tomorrow's Machines | socius labs
-        </title>
-        <meta
-          name="title"
-          content="Where Yesterday's Theories Meet Tomorrow's Machines | socius labs"
-        />
-        <meta
-          name="description"
-          content="Our research focuses on integrating AI models with social science principles - enhancing interpretability, transparency and accountability."
-        />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
-        <meta
-          property="og:title"
-          content="Where Yesterday's Theories Meet Tomorrow's Machines | socius labs"
-        />
-        <meta
-          property="og:description"
-          content="Our research focuses on integrating AI models with social science principles - enhancing interpretability, transparency and accountability."
-        />
-        <meta property="og:image" content={Dusk} />
-      </Helmet>
+      <Seo
+        title="Where Yesterday's Theories Meet Tomorrow's Machines | socius labs"
+        description="Our research integrates AI models with social science principles — advancing interpretability, transparency, and accountability in machine intelligence."
+        image={Dusk}
+        path="/research"
+      />
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
       <PaddedContainer>
         <TextBlocks textBlocks={textBlocks} />

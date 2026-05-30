@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TextBlocks from "../../components/TextBlocks";
 import PublicationHero from "../../components/PublicationHero";
-import { Helmet } from "react-helmet";
+import Seo from "../../components/Seo";
 import System15Cover from "../../assets/covers/system1.5_cover.png";
 import InterferenceDiagram from "../../assets/diagrams/System1.5_Interference_Diagram.png";
 import TrainingDiagram from "../../assets/diagrams/System1.5_Training_Diagram.png";
@@ -335,31 +335,13 @@ const System15 = () => {
 
   return (
     <>
-      <Helmet>
-        {/* <!-- Primary Meta Tags --> */}
-        <title>Between Fast and Slow Thinking of Machines | socius labs</title>
-        <meta
-          name="title"
-          content="Between Fast and Slow Thinking of Machines | socius labs"
-        />
-        <meta
-          name="description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
-        <meta
-          property="og:title"
-          content="Between Fast and Slow Thinking of Machines | socius labs"
-        />
-        <meta
-          property="og:description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-        <meta property="og:image" content={System15Cover} />
-      </Helmet>
+      <Seo
+        title="Between Fast and Slow Thinking of Machines | socius labs"
+        description="System 1.5: the space between thinking fast and slow, where expertise lives. Socius Labs research on machine reasoning, presented at NeurIPS 2024."
+        image={System15Cover}
+        path="/research/system-1.5"
+        type="article"
+      />
       <PublicationHero publicationHeroes={publicationHeroes} />
       <CustomTextContainer>
         <TextBlocks

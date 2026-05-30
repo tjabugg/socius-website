@@ -30,8 +30,30 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "react-snap || echo 'WARNING: react-snap pre-rendering skipped (headless Chromium could not launch in this environment); deploying client-rendered SPA fallback.'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "reactSnap": {
+    "source": "build",
+    "include": [
+      "/",
+      "/about",
+      "/research",
+      "/data",
+      "/documentation",
+      "/research/monitor-generate-verify",
+      "/research/in-defence-of-post-hoc-explainability",
+      "/research/system-1.5",
+      "/research/before-you-think-monitor",
+      "/data/sentibank",
+      "/data/redditharbor",
+      "/data/peltp"
+    ],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +74,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "react-snap": "^1.23.0"
   }
 }

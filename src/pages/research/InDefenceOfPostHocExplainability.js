@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TextBlocks from "../../components/TextBlocks";
 import PublicationHero from "../../components/PublicationHero";
-import { Helmet } from "react-helmet";
+import Seo from "../../components/Seo";
 import InDefenceOfPostHocExplainabilityCover from "../../assets/covers/in_defence_cover.png";
 import BoundedTruthDiagram from "../../assets/diagrams/In_Defence_Bounded_Truth.png";
 import {
@@ -304,34 +304,13 @@ const InDefenceOfPostHocExplainability = () => {
 
   return (
     <>
-      <Helmet>
-        {/* <!-- Primary Meta Tags --> */}
-        <title>When Wrong Methods Get Right Answers | socius labs"</title>
-        <meta
-          name="title"
-          content="When Wrong Methods Get Right Answers | socius labs"
-        />
-        <meta
-          name="description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
-        <meta
-          property="og:title"
-          content="When Wrong Methods Get Right Answers | socius labs"
-        />
-        <meta
-          property="og:description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-        <meta
-          property="og:image"
-          content={InDefenceOfPostHocExplainabilityCover}
-        />
-      </Helmet>
+      <Seo
+        title="When Wrong Methods Get Right Answers | socius labs"
+        description="Galileo's flawed telescope still revealed the truth. In defence of post-hoc explainability — why imperfect interpretability methods can still get right answers."
+        image={InDefenceOfPostHocExplainabilityCover}
+        path="/research/in-defence-of-post-hoc-explainability"
+        type="article"
+      />
       <PublicationHero publicationHeroes={publicationHeroes} />
       <CustomTextContainer>
         <TextBlocks

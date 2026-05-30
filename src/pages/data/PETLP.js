@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TextBlocks from "../../components/TextBlocks";
 import PublicationHero from "../../components/PublicationHero";
-import { Helmet } from "react-helmet";
+import Seo from "../../components/Seo";
 import ExtractionChannelDiagram from "../../assets/diagrams/PELTP_Extraction_Channels.png";
 import PELTPCover from "../../assets/covers/peltp_cover.png";
 import PELTPdiagram from "../../assets/images/PELTP_Data.png";
@@ -431,33 +431,13 @@ const PETLP = () => {
 
   return (
     <>
-      <Helmet>
-        {/* <!-- Primary Meta Tags --> */}
-        <title>
-          Navigating the Legal Maze of Social Media AI Research | socius labs"
-        </title>
-        <meta
-          name="title"
-          content="Navigating the Legal Maze of Social Media AI Research | socius labs"
-        />
-        <meta
-          name="description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
-        <meta
-          property="og:title"
-          content="Navigating the Legal Maze of Social Media AI Research | socius labs"
-        />
-        <meta
-          property="og:description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-        <meta property="og:image" content={PELTPCover} />
-      </Helmet>
+      <Seo
+        title="PETLP: A Legal Navigation System for Social Media Research | socius labs"
+        description="PETLP: a framework for researchers caught between scientific necessity and legal uncertainty — copyright, privacy, and platform terms in social media AI research."
+        image={PELTPCover}
+        path="/data/peltp"
+        type="article"
+      />
       <PublicationHero publicationHeroes={publicationHeroes} />
       <CustomTextContainer>
         <TextBlocks

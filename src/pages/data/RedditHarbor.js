@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TextBlocks from "../../components/TextBlocks";
 import PublicationHero from "../../components/PublicationHero";
-import { Helmet } from "react-helmet";
+import Seo from "../../components/Seo";
 import DatabaseDriven from "../../assets/images/databaseDriven_graphic.jpg";
 import MountainValley from "../../assets/images/mountain_valley.jpg";
 import Aristocrats from "../../assets/images/aristocrats.jpg";
@@ -410,33 +410,13 @@ collect.subreddit_submission(["python", "MachineLearning"], ["hot", "top"], limi
 
   return (
     <>
-      <Helmet>
-        {/* <!-- Primary Meta Tags --> */}
-        <title>
-          Navigating the Legal Maze of Social Media AI Research | socius labs
-        </title>
-        <meta
-          name="title"
-          content="Navigating the Legal Maze of Social Media AI Research | socius labs"
-        />
-        <meta
-          name="description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
-        <meta
-          property="og:title"
-          content="Navigating the Legal Maze of Social Media AI Research | socius labs"
-        />
-        <meta
-          property="og:description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-        <meta property="og:image" content={RedditHarborCover} />
-      </Helmet>
+      <Seo
+        title="Navigating the Legal Maze of Social Media AI Research | socius labs"
+        description="RedditHarbor: an open-source tool for collecting Reddit data for research after Pushshift — navigating the legal maze of social media AI research."
+        image={RedditHarborCover}
+        path="/data/redditharbor"
+        type="article"
+      />
       <PublicationHero publicationHeroes={publicationHeroes} />
       <CustomTextContainer>
         <TextBlocks
