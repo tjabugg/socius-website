@@ -4,10 +4,10 @@ import { Helmet } from "react-helmet";
 // absolute Open Graph / Twitter image URLs (social crawlers require absolute
 // URLs and ignore root-relative ones).
 export const SITE_URL = "https://socius.org";
-export const SITE_NAME = "Socius Labs";
+export const SITE_NAME = "socius labs";
 
 const DEFAULT_DESCRIPTION =
-  "Socius Labs creates experimental collisions between machine intelligence and the human sciences — open-source AI models and datasets for social scientists.";
+  "socius labs is experimenting at the intersection between every field that ever studied “thinking” and every machine that’s trying to “think”.";
 
 const PUBLISHER = {
   "@type": "Organization",
@@ -30,7 +30,7 @@ const cleanTitle = (title) =>
   title.replace(/\s*\|\s*socius(?:\s+labs)?\s*$/i, "").trim();
 
 // schema.org Article markup for publication pages — makes them eligible for
-// richer search results and ties them to the Socius Labs organisation.
+// richer search results and ties them to the socius labs organisation.
 const buildArticleSchema = ({ title, description, image, canonical }) => ({
   "@context": "https://schema.org",
   "@type": "Article",

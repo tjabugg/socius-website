@@ -337,7 +337,7 @@ const System15 = () => {
     <>
       <Seo
         title="Between Fast and Slow Thinking of Machines | socius labs"
-        description="System 1.5: the space between thinking fast and slow, where expertise lives. Socius Labs research on machine reasoning, presented at NeurIPS 2024."
+        description="System 1.5: the space between thinking fast and slow, where expertise lives. socius labs research on machine reasoning, presented at NeurIPS 2024."
         image={System15Cover}
         path="/research/system-1.5"
         type="article"

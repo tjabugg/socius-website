@@ -13,7 +13,7 @@ const NotFound = () => (
   <Container>
     <Seo
       title="Page not found | socius labs"
-      description="The page you are looking for doesn't exist. Explore open-source AI models, datasets, and research for social scientists at Socius Labs."
+      description="The page you are looking for doesn't exist. Explore open-source AI models, datasets, and research for social scientists at socius labs."
       image={DataHero}
       path="/404"
       noindex

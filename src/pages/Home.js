@@ -183,7 +183,6 @@ const Home = () => {
     <>
       <Seo
         title="Experimental Intelligence Lab | socius labs"
-        description="Socius Labs creates experimental collisions between machine intelligence and the human sciences — open-source AI models and datasets for social scientists."
         image={MonitorGenerate}
         path="/"
       />

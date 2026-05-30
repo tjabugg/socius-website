@@ -226,7 +226,7 @@ const Documentation = () => {
     <>
       <Seo
         title="Guides & Resources | socius labs"
-        description="Guides, tutorials, and resources for Socius Labs' open-source tools — including SentiBank and RedditHarbor — for social science research."
+        description="Guides, tutorials, and resources for socius labs' open-source tools — including SentiBank and RedditHarbor — for social science research."
         image={Philosopher}
         path="/documentation"
       />

@@ -132,7 +132,7 @@ const About = () => {
     <>
       <Seo
         title="Between Every Field That Studied Thinking | socius labs"
-        description="Socius Labs works in the space between every field that has studied thinking — uniting the social sciences with modern AI. Learn about our mission and people."
+        description="socius labs works in the space between every field that has studied thinking — uniting the social sciences with modern AI. Learn about our mission and people."
         image={LSE}
         path="/about"
       />
