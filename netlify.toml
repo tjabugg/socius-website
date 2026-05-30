@@ -1,3 +1,13 @@
+# Canonical host: 301-redirect the Netlify subdomain to socius.org so the site
+# has a single indexable address. This backs up the "primary domain" setting in
+# the Netlify UI and the per-page canonical tags. It must come before the SPA
+# fallback below, because Netlify applies the first matching rule.
+[[redirects]]
+from = "https://socius-org.netlify.app/*"
+to = "https://socius.org/:splat"
+status = 301
+force = true
+
 # SPA fallback for routes without a pre-rendered file. react-snap emits
 # 200.html as the bare app shell; pre-rendered routes (e.g. /about/index.html)
 # are static files and take precedence over this non-forced rewrite.
