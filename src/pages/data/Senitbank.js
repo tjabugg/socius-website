@@ -62,12 +62,12 @@ const Senitbank = () => {
             We discovered that sentiment dictionaries — carefully crafted lists
             of words with emotional scores — were scattered across the digital
             universe like fragments of an ancient manuscript. Some lived in
-            dusty GitHub repositories as <CustomCode>`.py`</CustomCode> files.
-            Others hid in paper appendices as <CustomCode>`.txt`</CustomCode>{" "}
+            dusty GitHub repositories as <CustomCode>.py</CustomCode> files.
+            Others hid in paper appendices as <CustomCode>.txt</CustomCode>{" "}
             dumps. A few were trapped in websites as{" "}
-            <CustomCode>`.xml`</CustomCode> schemas, while others floated in
-            supplementary materials as <CustomCode>`.csv`</CustomCode> files or
-            exotic <CustomCode>`.rdf`</CustomCode> formats. <br></br>
+            <CustomCode>.xml</CustomCode> schemas, while others floated in
+            supplementary materials as <CustomCode>.csv</CustomCode> files or
+            exotic <CustomCode>.rdf</CustomCode> formats. <br></br>
             <br></br>Even better, 60% of these “validated” dictionaries
             contained duplicates with conflicting labels. For example, the word
             'smash' appeared in one dictionary scored as both positive{" "}
@@ -118,7 +118,7 @@ const Senitbank = () => {
             </li>
             <li>
               <CustomLink
-                href="https://doi.org/10.17605/OSF.IO/CBM9E"
+                href="http://ssrn.com/abstract=1331573"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -129,7 +129,7 @@ const Senitbank = () => {
             </li>
             <li>
               <CustomLink
-                href="https://link.springer.com/article/10.1007/s10115-011-0433-5"
+                href="https://doi.org/10.17605/OSF.IO/CBM9E"
                 target="_blank"
                 rel="noopener noreferrer"
               >

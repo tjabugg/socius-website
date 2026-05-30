@@ -330,9 +330,9 @@ const PETLP = () => {
             However, we still do not know whether training models on those
             datasets is also free from copyrights. There’s a{" "}
             <CustomLink
-              href="https://www.europarl.europa.eu/RegData/etudes/STUD/2025/774095/IUST_STU(2025)774095_EN.pdf"
+              href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:62025CN0250"
               target="_blank"
-              // rel="noopener noreferrer"
+              rel="noopener noreferrer"
             >
               case pending
             </CustomLink>{" "}

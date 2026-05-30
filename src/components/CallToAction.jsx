@@ -20,7 +20,7 @@ const CallToActions = ({ callToActions }) => {
           >
             {callToAction.heading}
           </Title>
-          <SecondaryButton href="mailto:nick.sh.oh@gmail.com" target="_blank">
+          <SecondaryButton href="mailto:nick.sh.oh@socius.org" target="_blank">
             {callToAction.button}
           </SecondaryButton>
         </Container>

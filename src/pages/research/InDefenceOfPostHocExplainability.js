@@ -283,9 +283,9 @@ const InDefenceOfPostHocExplainability = () => {
               explanation methods fail mathematically but succeed
               scientifically, we should care more about the science. Read the{" "}
               <CustomLink
-                href="https://www.arxiv.org/abs/2508.09232"
+                href="https://arxiv.org/abs/2412.17883"
                 target="_blank"
-                // rel="noopener noreferrer"
+                rel="noopener noreferrer"
               >
                 full paper
               </CustomLink>{" "}

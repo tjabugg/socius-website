@@ -27,8 +27,10 @@ const MonitorGenerateVerify = () => {
   ]);
   const [textBlocks] = useState([
     {
+      paperLink: "https://arxiv.org/abs/2511.04341",
       justify: "flex-end",
       share: "Share",
+      paper: "Read the paper",
       subheading: (
         <>
           <H5>
@@ -110,7 +112,7 @@ const MonitorGenerateVerify = () => {
             </CustomLink>{" "}
             A decade later,{" "}
             <CustomLink
-              href="https://doi.org/10.1037/0003-066X.34.10.906"
+              href="https://doi.org/10.1016/S0079-7421(08)60053-5"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -215,9 +217,9 @@ const MonitorGenerateVerify = () => {
               computational metacognition. These are blueprints, maps with
               unexplored territories. Read the{" "}
               <CustomLink
-                href="https://doi.org/10.1609/icwsm.v18i1.31443"
+                href="https://arxiv.org/abs/2511.04341"
                 target="_blank"
-                // rel="noopener noreferrer"
+                rel="noopener noreferrer"
               >
                 working paper
               </CustomLink>{" "}
