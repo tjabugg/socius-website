@@ -80,7 +80,7 @@ const BeforeYouThinkMonitor = () => {
             <br></br>
             The plan was simple. Take{" "}
             <CustomLink
-              href="https://doi.org/10.1016/S0079-7421(08)60053-5"
+              href="https://psycnet.apa.org/doiLanding?doi=10.1037%2F0003-066X.34.10.906"
               target="_blank"
               rel="noopener noreferrer"
             >

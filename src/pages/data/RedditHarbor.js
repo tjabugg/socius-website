@@ -284,9 +284,9 @@ const RedditHarbor = () => {
               <CustomLink
                 href="https://github.com/socius-org/RedditHarbor"
                 target="_blank"
-                // rel="noopener noreferrer"
+                rel="noopener noreferrer"
               >
-                github.com/socius-org/RedditHarbor{" "}
+                GitHub
               </CustomLink>{" "}
               . Version 2.0 is in development, built on lessons from our{" "}
               <CustomLink

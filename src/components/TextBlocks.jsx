@@ -278,6 +278,10 @@ export const Share = styled(TagContainer)`
   width: 40%;
   margin-left: auto;
   // Aligns it to the right
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
 
   @media (max-width: 1280px) {
     /* margin-left: 24px; */
