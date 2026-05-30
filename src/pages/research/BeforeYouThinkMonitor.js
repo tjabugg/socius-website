@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TextBlocks from "../../components/TextBlocks";
 import PublicationHero from "../../components/PublicationHero";
-import { Helmet } from "react-helmet";
+import Seo from "../../components/Seo";
 import BeforeYouThinkCover from "../../assets/covers/before_you_think_cover.png";
 import GSM8KDiagram from "../../assets/diagrams/Before_You_Think_The_GSM8K_Experiment.png";
 import Psychology from "../../assets/diagrams/psychology_to_python.png";
@@ -313,31 +313,13 @@ const BeforeYouThinkMonitor = () => {
 
   return (
     <>
-      <Helmet>
-        {/* <!-- Primary Meta Tags --> */}
-        <title>When Psychology Theory Meets Llama-3.1 | socius labs"</title>
-        <meta
-          name="title"
-          content="When Psychology Theory Meets Llama-3.1 | socius labs"
-        />
-        <meta
-          name="description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
-        <meta
-          property="og:title"
-          content="When Psychology Theory Meets Llama-3.1 | socius labs"
-        />
-        <meta
-          property="og:description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-        <meta property="og:image" content={BeforeYouThinkCover} />
-      </Helmet>
+      <Seo
+        title="When Psychology Theory Meets Llama-3.1 | socius labs"
+        description="AI models pay a performance penalty when they reason the wrong way. Before You Think applies psychological theory to monitoring reasoning in LLMs like Llama-3.1."
+        image={BeforeYouThinkCover}
+        path="/research/before-you-think-monitor"
+        type="article"
+      />
       <PublicationHero publicationHeroes={publicationHeroes} />
       <CustomTextContainer>
         <TextBlocks

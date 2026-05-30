@@ -5,7 +5,7 @@ import Diplomats from "../assets/images/diplomat.jpg";
 import LSE from "../assets/images/lse.jpg";
 import AIES from "../assets/images/AIES.jpg";
 import NeurIPS2024 from "../assets/videos/Nick_NeurIPS2024.mp4";
-import { Helmet } from "react-helmet";
+import Seo from "../components/Seo";
 import {
   CentreContainer,
   GridContainer,
@@ -130,31 +130,12 @@ const About = () => {
 
   return (
     <>
-      <Helmet>
-        {/* <!-- Primary Meta Tags --> */}
-        <title>Between Every Field That Studied Thinking | socius labs</title>
-        <meta
-          name="title"
-          content="Between Every Field That Studied Thinking | socius labs"
-        />
-        <meta
-          name="description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
-        <meta
-          property="og:title"
-          content="Between Every Field That Studied Thinking | socius labs"
-        />
-        <meta
-          property="og:description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-        <meta property="og:image" content={LSE} />
-      </Helmet>
+      <Seo
+        title="Between Every Field That Studied Thinking | socius labs"
+        description="Socius Labs works in the space between every field that has studied thinking — uniting the social sciences with modern AI. Learn about our mission and people."
+        image={LSE}
+        path="/about"
+      />
 
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
       <PaddedContainer>

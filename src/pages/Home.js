@@ -13,7 +13,7 @@ import lseGenerate from "../assets/images/lse_generate_logo.jpg";
 import Wheat from "../assets/images/wheat.jpg";
 import PELTP from "../assets/images/PELTP.svg";
 import styled from "styled-components";
-import { Helmet } from "react-helmet";
+import Seo from "../components/Seo";
 import {
   PaddedContainer,
   CentreContainer,
@@ -181,31 +181,12 @@ const Home = () => {
 
   return (
     <>
-      <Helmet>
-        {/* <!-- Primary Meta Tags --> */}
-        <title>Experimental Intelligence Lab | socius labs</title>
-        <meta
-          name="title"
-          content="Experimental Intelligence Lab | socius labs"
-        />
-        <meta
-          name="description"
-          content="We create experimental collisions between machine intelligence and human sciences."
-        />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
-        <meta
-          property="og:title"
-          content="Experimental Intelligence Lab | socius labs"
-        />
-        <meta
-          property="og:description"
-          content="We create experimental collisions between machine intelligence and human sciences."
-        />
-        <meta property="og:image" content={MonitorGenerate} />
-      </Helmet>
+      <Seo
+        title="Experimental Intelligence Lab | socius labs"
+        description="Socius Labs creates experimental collisions between machine intelligence and the human sciences — open-source AI models and datasets for social scientists."
+        image={MonitorGenerate}
+        path="/"
+      />
       <Hero />
 
       <CustomContainer>

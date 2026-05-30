@@ -3,7 +3,7 @@ import TextBlocks from "../components/TextBlocks";
 import SecondaryHero from "../components/SecondaryHero";
 import PELTP from "../assets/images/PELTP_Data.png";
 import DataHero from "../assets/images/database_hero_graphic.jpg";
-import { Helmet } from "react-helmet";
+import Seo from "../components/Seo";
 import {
   CustomGridContainer,
   CustomPaddedContainer,
@@ -86,31 +86,12 @@ const Data = () => {
 
   return (
     <>
-      <Helmet>
-        {/* <!-- Primary Meta Tags --> */}
-        <title>Datasets, Scrapers, Pipelines | socius labs</title>
-        <meta
-          name="title"
-          content="Datasets, Scrapers, Pipelines | socius labs"
-        />
-        <meta
-          name="description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
-        <meta
-          property="og:title"
-          content="Datasets, Scrapers, Pipelines | socius labs"
-        />
-        <meta
-          property="og:description"
-          content="By leveraging AI, our new dataset search assistant simplifies data discovery, instantly matching researchers' goals with relevant data."
-        />
-        <meta property="og:image" content={DataHero} />
-      </Helmet>
+      <Seo
+        title="Datasets, Scrapers, Pipelines | socius labs"
+        description="Open datasets, scrapers, and pipelines for social science research. Our AI-powered dataset search matches researchers' goals with relevant data."
+        image={DataHero}
+        path="/data"
+      />
 
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
 

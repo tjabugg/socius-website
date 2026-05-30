@@ -1,4 +1,7 @@
+# SPA fallback for routes without a pre-rendered file. react-snap emits
+# 200.html as the bare app shell; pre-rendered routes (e.g. /about/index.html)
+# are static files and take precedence over this non-forced rewrite.
 [[redirects]]
 from = "/*"
-to = "/index.html"
+to = "/200.html"
 status = 200

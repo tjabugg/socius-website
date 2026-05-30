@@ -11,7 +11,7 @@ import SentiWordNet from "../assets/images/sentiWordNet_graphic.jpg";
 import DatabaseDriven from "../assets/images/databaseDriven_graphic.jpg";
 import MountainValley from "../assets/images/mountain_valley.jpg";
 import Aristocrats from "../assets/images/aristocrats.jpg";
-import { Helmet } from "react-helmet";
+import Seo from "../components/Seo";
 import ArticleCard from "../components/ArticleCard";
 import { PaddedContainer } from "../styles";
 import styled from "styled-components";
@@ -224,25 +224,12 @@ const Documentation = () => {
   ]);
   return (
     <>
-      <Helmet>
-        {/* <!-- Primary Meta Tags --> */}
-        <title>Guides & Resources | socius labs</title>
-        <meta name="title" content="Guides & Resources | socius labs" />
-        <meta
-          name="description"
-          content="Our research focuses on integrating AI models with social science principles - enhancing interpretability, transparency and accountability."
-        />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://socius-ai.netlify.app/" /> */}
-        <meta property="og:title" content="Guides & Resources | socius labs" />
-        <meta
-          property="og:description"
-          content="Our research focuses on integrating AI models with social science principles - enhancing interpretability, transparency and accountability."
-        />
-        <meta property="og:image" content={Philosopher} />
-      </Helmet>
+      <Seo
+        title="Guides & Resources | socius labs"
+        description="Guides, tutorials, and resources for Socius Labs' open-source tools — including SentiBank and RedditHarbor — for social science research."
+        image={Philosopher}
+        path="/documentation"
+      />
       <SecondaryHero secondaryHeroes={secondaryHeroes} />
 
       <CustomContainer id="sentibank">
