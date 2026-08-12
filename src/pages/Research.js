@@ -6,6 +6,7 @@ import System from "../assets/images/system_1.5_graphic.jpg";
 import Farmland from "../assets/images/farmland.jpg";
 import BeforeYouThink from "../assets/images/beforeYouThink_graphic.jpg";
 import Politicians from "../assets/images/politicians.jpg";
+import CentauriCover from "../assets/covers/centauri_cover.jpg";
 import Seo from "../components/Seo";
 import ArticleCard from "../components/ArticleCard";
 import { PaddedContainer } from "../styles";
@@ -32,6 +33,24 @@ const Research = () => {
   ]);
 
   const [articleCards] = useState([
+    {
+      aspectRatio: "1/1",
+      flexDirection: "column",
+      image: CentauriCover,
+      padding: "0px",
+      heading: "Small Foundation Models of Human Cognition and Behaviour",
+      paragraph:
+        "Seventy billion parameters are not what cognitive foundation models rest on. Fourteen open models, 135M–14B, prove it.",
+      tagOneBgColour: "#00002E",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Conference",
+      captionTwo: "COLM 2026",
+      tagTwoBgColour: "#CBDCFF",
+      tagTwoColour: "#514E4B",
+      alt: "Classical landscape painting of Mount Pelion — home of the centaur Chiron — with a ruined temple and two horses above the Aegean",
+      id: 5,
+      link: "/research/small-foundation-models-of-human-cognition",
+    },
     {
       aspectRatio: "1/1",
       flexDirection: "column",

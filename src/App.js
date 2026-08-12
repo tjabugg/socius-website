@@ -11,6 +11,7 @@ import InDefenceOfPostHocExplainability from "./pages/research/InDefenceOfPostHo
 import BeforeYouThinkMonitor from "./pages/research/BeforeYouThinkMonitor";
 import RedditHarbor from "./pages/data/RedditHarbor";
 import System15 from "./pages/research/System1.5";
+import SmallFoundationModels from "./pages/research/SmallFoundationModels";
 import Footer from "./components/Footer";
 import { GlobalStyle } from "./styles";
 import { Routes, Route } from "react-router-dom";
@@ -42,6 +43,10 @@ const App = () => {
             <Route path="/data/sentibank" element={<Sentibank />} />
             <Route path="/data/redditharbor" element={<RedditHarbor />} />
             <Route path="/research/system-1.5" element={<System15 />} />
+            <Route
+              path="/research/small-foundation-models-of-human-cognition"
+              element={<SmallFoundationModels />}
+            />
             <Route
               path="/research/before-you-think-monitor"
               element={<BeforeYouThinkMonitor />}

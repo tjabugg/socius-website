@@ -9,6 +9,7 @@ import CountryPath from "../assets/images/country_path.jpg";
 import RedditHarbor from "../assets/images/redditHarbor_graphic.jpg";
 import MountainPath from "../assets/images/mountain_path.jpg";
 import lseLogo from "../assets/images/lse_logo.jpg";
+import CentauriCover from "../assets/covers/centauri_cover.jpg";
 import lseGenerate from "../assets/images/lse_generate_logo.jpg";
 import Wheat from "../assets/images/wheat.jpg";
 import PELTP from "../assets/images/PELTP.svg";
@@ -29,6 +30,24 @@ const Home = () => {
   // An array and function
 
   const [articleCards] = useState([
+    {
+      aspectRatio: "16/9",
+      flexDirection: "column",
+      image: CentauriCover,
+      padding: "0px",
+      heading: "Small Foundation Models of Human Cognition and Behaviour",
+      paragraph:
+        "Seventy billion parameters are not what cognitive foundation models rest on. Fourteen open models, 135M–14B, prove it.",
+      tagOneBgColour: "#00002E",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Conference",
+      captionTwo: "COLM 2026",
+      tagTwoBgColour: "#CBDCFF",
+      tagTwoColour: "#514E4B",
+      alt: "Classical landscape painting of Mount Pelion — home of the centaur Chiron — with a ruined temple and two horses above the Aegean",
+      id: 7,
+      link: "/research/small-foundation-models-of-human-cognition",
+    },
     {
       aspectRatio: "16/9",
       flexDirection: "column",
@@ -129,7 +148,7 @@ const Home = () => {
   const [centreCards] = useState([
     {
       bgImage: Wheat,
-      captionOne: "Published",
+      captionOne: "Conference",
       tagOneColour: "#514E4B",
       captionTwo: "ICWSM 2024",
       tagTwoColour: "#87807B",
@@ -140,7 +159,7 @@ const Home = () => {
     },
     {
       image: PELTP,
-      captionOne: "Published",
+      captionOne: "Conference",
       tagOneColour: "#CAC6C3",
       captionTwo: "AIES 2025",
       tagTwoColour: "#87807B",
@@ -221,11 +240,11 @@ const Home = () => {
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
         />
         <ArticleCard
-          articleCards={articleCards.filter((card) => [1, 2].includes(card.id))}
+          articleCards={articleCards.filter((card) => [7, 1].includes(card.id))}
           grid="2fr 1fr"
         />
         <ArticleCard
-          articleCards={articleCards.filter((card) => [3, 4].includes(card.id))}
+          articleCards={articleCards.filter((card) => [2, 3].includes(card.id))}
           grid="1fr 1fr"
         />
       </PaddedContainer>
