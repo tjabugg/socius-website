@@ -208,6 +208,13 @@ export const DesktopVideo = styled.video`
   width: 100%;
   height: auto;
   object-fit: cover;
+  /* Scaled <video> elements blend their edge pixels against the element's
+     black backing in Chromium, drawing a hairline dark border; back the
+     element with the section green and clip one display pixel all round.
+     (The tablet asset additionally has a baked 1px black column on its
+     right edge from encoder padding.) */
+  background-color: #193718;
+  clip-path: inset(1px);
 `;
 
 export const DesktopHero = styled(Lottie)`
@@ -241,6 +248,13 @@ export const TabletVideo = styled.video`
   width: 100%;
   height: auto;
   object-fit: cover;
+  /* Scaled <video> elements blend their edge pixels against the element's
+     black backing in Chromium, drawing a hairline dark border; back the
+     element with the section green and clip one display pixel all round.
+     (The tablet asset additionally has a baked 1px black column on its
+     right edge from encoder padding.) */
+  background-color: #193718;
+  clip-path: inset(1px);
 `;
 
 export const TabletHero = styled(Lottie)`
@@ -271,6 +285,13 @@ export const MobileVideo = styled.video`
   width: 100%;
   height: auto;
   object-fit: cover;
+  /* Scaled <video> elements blend their edge pixels against the element's
+     black backing in Chromium, drawing a hairline dark border; back the
+     element with the section green and clip one display pixel all round.
+     (The tablet asset additionally has a baked 1px black column on its
+     right edge from encoder padding.) */
+  background-color: #193718;
+  clip-path: inset(1px);
 `;
 
 export const MobileHero = styled(Lottie)`
