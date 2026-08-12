@@ -29,7 +29,7 @@ const Data = () => {
 
   const [textBlocks] = useState([
     {
-      captionOne: "Published",
+      captionOne: "Conference",
       captionTwo: "ICWSM 2024",
       tagOneColour: "#E6E4E2",
       tagTwoColour: "#87807B",
@@ -47,7 +47,7 @@ const Data = () => {
       target: "_blank",
     },
     {
-      captionOne: "Published",
+      captionOne: "Conference",
       captionTwo: "AIES 2025",
       tagOneColour: "#514E4B",
       tagTwoColour: "#87807B",
