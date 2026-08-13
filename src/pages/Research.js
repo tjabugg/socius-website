@@ -34,7 +34,7 @@ const Research = () => {
 
   const [articleCards] = useState([
     {
-      aspectRatio: "1/1",
+      aspectRatio: "4/5",
       flexDirection: "column",
       image: CentauriCover,
       padding: "0px",
@@ -52,7 +52,7 @@ const Research = () => {
       link: "/research/small-foundation-models-of-human-cognition",
     },
     {
-      aspectRatio: "1/1",
+      aspectRatio: "4/5",
       flexDirection: "column",
       image: System,
       padding: "0px",
@@ -70,7 +70,7 @@ const Research = () => {
       link: "/research/system-1.5",
     },
     {
-      aspectRatio: "16/9",
+      aspectRatio: "4/5",
       flexDirection: "column",
       image: Farmland,
       padding: "0px",

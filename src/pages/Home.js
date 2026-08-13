@@ -49,7 +49,7 @@ const Home = () => {
       link: "/research/small-foundation-models-of-human-cognition",
     },
     {
-      aspectRatio: "16/9",
+      aspectRatio: "1/1",
       flexDirection: "column",
       image: Animals,
       padding: "0px",
@@ -68,7 +68,7 @@ const Home = () => {
     },
     {
       aspectRatio: "16/9",
-      flexDirection: "column",
+      flexDirection: "row",
       image: MonitorGenerate,
       padding: "0px",
       heading: "Monitor-Generate-Verify",
