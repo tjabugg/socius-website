@@ -319,6 +319,7 @@ const BeforeYouThinkMonitor = () => {
         image={BeforeYouThinkCover}
         path="/research/before-you-think-monitor"
         type="article"
+        datePublished="2025-10-18"
       />
       <PublicationHero publicationHeroes={publicationHeroes} />
       <CustomTextContainer>

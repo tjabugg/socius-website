@@ -31,14 +31,32 @@ const cleanTitle = (title) =>
 
 // schema.org Article markup for publication pages — makes them eligible for
 // richer search results and ties them to the socius labs organisation.
-const buildArticleSchema = ({ title, description, image, canonical }) => ({
+// Named authors (Person) take precedence over the lab; datePublished and
+// sameAs (e.g. the arXiv abstract page) further qualify the page for
+// Article rich results.
+const buildArticleSchema = ({
+  title,
+  description,
+  image,
+  canonical,
+  datePublished,
+  dateModified,
+  authors,
+  sameAs,
+}) => ({
   "@context": "https://schema.org",
   "@type": "Article",
   headline: cleanTitle(title),
   description,
   ...(image ? { image: [toAbsoluteUrl(image)] } : {}),
-  author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+  author:
+    authors && authors.length
+      ? authors.map((name) => ({ "@type": "Person", name }))
+      : { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
   publisher: PUBLISHER,
+  ...(datePublished ? { datePublished } : {}),
+  ...(dateModified ? { dateModified } : {}),
+  ...(sameAs && sameAs.length ? { sameAs } : {}),
   mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
   url: canonical,
 });
@@ -77,12 +95,16 @@ const buildBreadcrumbSchema = ({ title, path, canonical }) => {
  * consistently optimised for search engines and link previews. Pages with
  * type="article" additionally emit Article + BreadcrumbList JSON-LD.
  *
- * @param {string}  title        Full page title (e.g. "About | socius labs").
- * @param {string}  description  Meta + OG + Twitter description.
- * @param {string}  image        Imported asset or URL used as the share image.
- * @param {string}  path         Route path beginning with "/" (e.g. "/about").
- * @param {string}  type         Open Graph type ("website" or "article").
- * @param {boolean} noindex      When true, asks crawlers not to index the page.
+ * @param {string}  title         Full page title (e.g. "About | socius labs").
+ * @param {string}  description   Meta + OG + Twitter description.
+ * @param {string}  image         Imported asset or URL used as the share image.
+ * @param {string}  path          Route path beginning with "/" (e.g. "/about").
+ * @param {string}  type          Open Graph type ("website" or "article").
+ * @param {boolean} noindex       When true, asks crawlers not to index the page.
+ * @param {string}  datePublished ISO date the article page went live (article only).
+ * @param {string}  dateModified  ISO date of the last substantive update (article only).
+ * @param {string[]} authors      Author names, rendered as schema.org Persons (article only).
+ * @param {string[]} sameAs       URLs for the same work elsewhere, e.g. arXiv (article only).
  */
 const Seo = ({
   title,
@@ -91,12 +113,25 @@ const Seo = ({
   path = "/",
   type = "website",
   noindex = false,
+  datePublished,
+  dateModified,
+  authors,
+  sameAs,
 }) => {
   const canonical = `${SITE_URL}${path}`;
   const ogImage = toAbsoluteUrl(image);
   const isArticle = type === "article";
   const articleSchema = isArticle
-    ? buildArticleSchema({ title, description, image, canonical })
+    ? buildArticleSchema({
+        title,
+        description,
+        image,
+        canonical,
+        datePublished,
+        dateModified,
+        authors,
+        sameAs,
+      })
     : null;
   const breadcrumbSchema = isArticle
     ? buildBreadcrumbSchema({ title, path, canonical })

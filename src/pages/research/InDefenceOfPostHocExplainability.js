@@ -310,6 +310,7 @@ const InDefenceOfPostHocExplainability = () => {
         image={InDefenceOfPostHocExplainabilityCover}
         path="/research/in-defence-of-post-hoc-explainability"
         type="article"
+        datePublished="2024-12-23"
       />
       <PublicationHero publicationHeroes={publicationHeroes} />
       <CustomTextContainer>

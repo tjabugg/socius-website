@@ -341,6 +341,7 @@ const System15 = () => {
         image={System15Cover}
         path="/research/system-1.5"
         type="article"
+        datePublished="2024-12-15"
       />
       <PublicationHero publicationHeroes={publicationHeroes} />
       <CustomTextContainer>

@@ -437,6 +437,7 @@ const PETLP = () => {
         image={PELTPCover}
         path="/data/peltp"
         type="article"
+        datePublished="2025-08-12"
       />
       <PublicationHero publicationHeroes={publicationHeroes} />
       <CustomTextContainer>

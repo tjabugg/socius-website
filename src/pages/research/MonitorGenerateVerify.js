@@ -267,6 +267,7 @@ const MonitorGenerateVerify = () => {
         image={MonitorGenerateVerifyCover}
         path="/research/monitor-generate-verify"
         type="article"
+        datePublished="2025-11-06"
       />
       <PublicationHero publicationHeroes={publicationHeroes} />
       <CustomTextContainer>

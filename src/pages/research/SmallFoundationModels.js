@@ -251,6 +251,9 @@ const SmallFoundationModels = () => {
         image={CentauriCover}
         path="/research/small-foundation-models-of-human-cognition"
         type="article"
+        datePublished="2026-08-05"
+        authors={["Nick Oh", "Fernand Gobet"]}
+        sameAs={[ARXIV, "https://hf.co/papers/2608.05224"]}
       />
       <PublicationHero publicationHeroes={publicationHeroes} />
 

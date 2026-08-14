@@ -420,6 +420,7 @@ result = analyzer.sentiment(text=text, dictionary="MASTER_v2022")
         image={SentibankCover}
         path="/data/sentibank"
         type="article"
+        datePublished="2024-05-08"
       />
       <PublicationHero publicationHeroes={publicationHeroes} />
       <CustomTextContainer>
