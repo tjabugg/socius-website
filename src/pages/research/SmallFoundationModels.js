@@ -7,6 +7,7 @@ import CentauriCover from "../../assets/covers/centauri_cover.jpg";
 import ScalingFigure from "../../assets/diagrams/centauri_scaling.png";
 import AblationFigure from "../../assets/diagrams/centauri_ablation.png";
 import PermutationFigure from "../../assets/diagrams/centauri_permutation.png";
+import OodFigure from "../../assets/diagrams/centauri_ood.png";
 import {
   Body,
   CustomLink,
@@ -31,7 +32,8 @@ const COLLECTION = "https://hf.co/collections/socius/centauri";
 const HF_PAPER = "https://huggingface.co/papers/2608.05224";
 
 // ---------------------------------------------------------------------------
-// Code snippets (Run one) — highlighted with a tiny fixed-purpose tokenizer
+// Code snippets (Take one home) — highlighted with a tiny fixed-purpose
+// tokenizer
 // ---------------------------------------------------------------------------
 
 const PROMPT_LINES = `# Psych-101 transcripts: task instructions, then one line per trial with
@@ -152,61 +154,170 @@ const SmallFoundationModels = () => {
       paper: "Read the paper",
       subheading: (
         <>
+          How many parameters does it take to predict a human? In 2025,{" "}
           <CustomHeadingLink
             href="https://www.nature.com/articles/s41586-025-09215-4"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Centaur
-          </CustomHeadingLink>{" "}
-          showed that a 70-billion-parameter language model fine-tuned on
-          Psych-101 — 10.7 million choices from 60,092 participants — predicts
-          human behaviour better than the domain-specific cognitive models
-          psychologists build by hand. We asked what that result actually
-          rests on — and answered with fourteen open models, from 135M to 14B
-          parameters, fine-tuned to predict what real people do in
-          psychological experiments, trial by trial.
+            Nature's answer appeared to be 70 billion
+          </CustomHeadingLink>
+          : Centaur, a large language model fine-tuned on ten million choices
+          from real
+          psychological experiments, beat the models psychologists build by
+          hand. Nobody had tested smaller. So we trained fourteen open models
+          across four families, from 135 million to 14 billion parameters, to
+          find out.
         </>
       ),
       id: 1,
     },
     {
       justify: "flex-end",
+      subheading: "The Obvious Lesson Was Scale",
       paragraph: (
         <>
           <Body>
-            Across four base-model families, whether a model has been
-            fine-tuned on behaviour matters far more than how large it is. Our
-            0.6B <CustomCode>Qwentaur</CustomCode> already edges the original
-            Centaur-70B (0.69 vs 0.71 mean negative log-likelihood over the 46
-            held-out-participant tasks) and matches the cognitive-model
-            baseline (0.69).
-            <br></br>
-            <br></br>
-            Accuracy on familiar paradigms is cheap. What remains expensive —
-            and unsolved — is breadth: the models saturate within the paradigms
-            they have seen and remain far from saturated outside them. Full
-            results in the{" "}
-            <CustomLink href={ARXIV} target="_blank" rel="noopener noreferrer">
-              paper
-            </CustomLink>
-            ; every{" "}
+            Foundation models trained a reflex into all of us: when a large
+            model does something surprising, credit the size. Centaur fit the
+            reflex perfectly. One model, one base family, one enormous
+            scale. But a single model at a single size is a confounded
+            experiment. It can't tell you whether the result rests on the 70
+            billion parameters or on{" "}
             <CustomLink
-              href={COLLECTION}
+              href="https://huggingface.co/datasets/marcelbinz/Psych-101"
               target="_blank"
               rel="noopener noreferrer"
             >
-              adapter
-            </CustomLink>{" "}
-            and{" "}
-            <CustomLink href={GITHUB} target="_blank" rel="noopener noreferrer">
-              training script
-            </CustomLink>{" "}
-            is public.
+              Psych-101
+            </CustomLink>
+            , the dataset of 10.7 million choices from 60,092 participants it
+            was fine-tuned on.
+            <br></br>
+            <br></br>
+            If predicting human behaviour is an ability that emerges
+            somewhere on the road to 70 billion parameters, then cognitive
+            foundation models belong to the few labs that can serve them. If
+            it's a skill that any competent language model picks up once you
+            show it enough human choices, then every psychology department
+            with a consumer GPU can train one, probe one, and break one.
+            <br></br>
+            <br></br>
+            The only way to tell the two apart is to run the same experiment
+            at many different sizes.
           </Body>
         </>
       ),
       id: 2,
+    },
+    {
+      justify: "flex-end",
+      subheading: "So We Bred Smaller Centaurs",
+      paragraph: (
+        <>
+          <Body>
+            We took four open base families (Llama, Qwen, OLMo, SmolLM)
+            spanning fourteen models from 135 million to 14 billion
+            parameters, and gave every one of them exactly Centaur's
+            education: the same ten million choices, transcribed trial by
+            trial across 160 psychological experiments, with the same recipe.
+            The herd got names. Llama-Centaur, Qwentaur, Olmotaur, Smoltaur.
+            <br></br>
+            <br></br>
+            Then we varied what the original left fixed, from the adapter
+            rank (how much fine-tuning is allowed to change the base model)
+            to the share of the training data each model saw.
+          </Body>
+        </>
+      ),
+      id: 3,
+    },
+    {
+      justify: "flex-end",
+      subheading: "What Mattered Was the Data",
+      paragraph: (
+        <>
+          <Body>
+            Once a model has been fine-tuned on behaviour, size stops being
+            the story. By 0.6 billion parameters,{" "}
+            <CustomCode>Qwentaur</CustomCode> matches the cognitive-model
+            baseline psychologists spent decades hand-building (0.69 mean
+            negative log-likelihood over 46 tasks) and edges past our
+            reproduction of Centaur-70B (0.71). The best models in the grid,
+            Qwentaur-14B and Llama-Centaur-8B at 0.64, beat the original
+            outright at a fifth and a ninth of its size.
+            <br></br>
+            <br></br>
+            Adapter rank tells the same story from another angle. The more we
+            let fine-tuning change the base model, the smaller the model that
+            keeps up: matching Centaur-70B takes an 8B model at rank 4, a 3B
+            at rank 8, a 1.7B at rank 16, and just 0.6B at rank 32 and above.
+            <br></br>
+            <br></br>
+            Whether a model has been fine-tuned on behaviour matters
+            enormously; how large it is barely matters at all. Seventy
+            billion parameters were never the foundation. Ten million human
+            choices were.
+          </Body>
+        </>
+      ),
+      id: 4,
+    },
+    {
+      justify: "flex-end",
+      subheading: "What Are They Actually Reading?",
+      paragraph: (
+        <>
+          <Body>
+            An easy objection remains: perhaps these models are right for
+            the wrong reasons, picking up on some superficial regularity in
+            the transcripts rather than reading the experiments themselves.
+            An instrument must respond to the right things. So we ran two
+            stress tests on what the models actually take from a session.
+          </Body>
+        </>
+      ),
+      id: 5,
+    },
+    {
+      justify: "flex-end",
+      subheading: "Solved Inside, Unsolved Outside",
+      paragraph: (
+        <>
+          <Body>
+            So, the honest ledger. These models are instruments, not
+            theories. They estimate how predictable human behaviour is
+            within the experiments they have seen; nothing in our results
+            says fine-tuning moved any of them closer to human mechanism.
+            <br></br>
+            <br></br>
+            They are also bounded by coverage, not capacity. Inside
+            Psych-101's 160 paradigms the models are saturated: more
+            parameters, higher rank, even more participants per experiment
+            buy almost nothing. Outside them, on the eighteen held-out
+            experiments of Psych-201, every model falls far short of its
+            familiar-task numbers. Our best model there (Qwentaur-14B, at
+            0.79) still edges the 70B (0.82), but nobody is near saturation.
+            Accuracy on familiar paradigms turned out to be cheap. Breadth is
+            what remains expensive, and it is bought with new experiments,
+            not new parameters.
+            <br></br>
+            <br></br>
+            And the sweep has edges we haven't crossed: adaptation is LoRA
+            throughout, on dense decoder-only transformers, with one epoch of
+            supervised fine-tuning. Full fine-tuning at small scale, other
+            architectures, and reinforcement-learning post-training could all
+            move this picture; none are tested here.
+            <br></br>
+            <br></br>
+            But the constraint that binds is hard to mistake. If the field
+            wants a foundation model of cognition, the bottleneck isn't
+            parameters. It's paradigms: the breadth of human experiments
+            anyone has transcribed.
+          </Body>
+        </>
+      ),
+      id: 6,
     },
     {
       justify: "flex-end",
@@ -239,7 +350,7 @@ const SmallFoundationModels = () => {
           </Body>
         </>
       ),
-      id: 3,
+      id: 7,
     },
   ]);
 
@@ -257,17 +368,13 @@ const SmallFoundationModels = () => {
       />
       <PublicationHero publicationHeroes={publicationHeroes} />
 
+      {/* ═══════════ essay: narrow text columns + full-width figures ═══════ */}
       <CustomTextContainer>
         <TextBlocks textBlocks={textBlocks.filter((b) => b.id === 1)} />
-
-        {/* ------------------- thesis ------------------- */}
-        <PullQuote>
-          Seventy billion parameters are not what cognitive foundation models
-          rest on.
-        </PullQuote>
         <TextBlocks textBlocks={textBlocks.filter((b) => b.id === 2)} />
+        <TextBlocks textBlocks={textBlocks.filter((b) => b.id === 3)} />
+        <TextBlocks textBlocks={textBlocks.filter((b) => b.id === 4)} />
 
-        {/* ------------------- headline figure ------------------- */}
         <FigureCard>
           <MyImage
             alt="Mean negative log-likelihood against parameter count for all fourteen fine-tuned models across LoRA ranks 4 to 64, with per-rank side panels. Fine-tuned curves cluster far below the dotted cognitive-model baseline from roughly 1B parameters upward, and the Centaur-70B diamonds sit within the range already reached by 4-14B models."
@@ -275,13 +382,93 @@ const SmallFoundationModels = () => {
           />
         </FigureCard>
         <Caption>
-          <b>Adapter rank against model size on Psych-101.</b> Mean negative
-          log-likelihood over the 38 of 46 held-out-participant tasks with a
-          published domain-specific cognitive model (dotted line), one side
-          panel per adapter rank (r&thinsp;=&thinsp;4–64). Lower is better.
+          <b>Small models predict people about as well as the giant.</b>{" "}
+          Every point is one of our fine-tuned models, scored on how well it
+          predicts the choices of participants it never saw during training
+          (lower is better). The dotted line is the benchmark set by the
+          cognitive models psychologists build by hand; the diamonds on the
+          right are the original 70-billion-parameter Centaur. The smaller
+          panels repeat the comparison at each adapter rank, from 4 to 64.
         </Caption>
 
-        {/* ------------------- stat band ------------------- */}
+        <TextBlocks textBlocks={textBlocks.filter((b) => b.id === 5)} />
+
+        <StressRow>
+          <StressCaption>
+            <b>Take away the content and predictions collapse.</b> We deleted
+            parts of the experiment transcripts and measured how much of each
+            model&rsquo;s predictive power survived (1 means all of it, 0
+            means no better than guessing; averaged over 27 experiments).
+            Removing the task instructions costs little. Masking what
+            participants actually saw and the feedback they received, or
+            leaving only their bare sequence of key presses, erases
+            essentially everything. The models are reading the experiment,
+            not memorising response patterns.
+          </StressCaption>
+          <FigureCard>
+            <MyImage
+              alt="Information retention across four prompt-ablation conditions for eight fine-tuned models. Retention stays high when task instructions are removed, then collapses to around or below zero when stimulus content is masked or only the choice history remains."
+              src={AblationFigure}
+            />
+          </FigureCard>
+        </StressRow>
+
+        <StressRow>
+          <StressCaption>
+            <b>Order matters only where it should.</b> We shuffled the order
+            of the past trials shown to each model 50 times and measured how
+            much its predictions wobbled. Top: a task where people simply
+            pick which of three objects doesn&rsquo;t belong. The order of
+            past trials carries no information there, and the fine-tuned
+            models barely react to shuffling, while their untuned bases react
+            far more. Bottom: a task where people choose between a smaller
+            reward now and a larger one later, with each question adapting to
+            the answers before it. There, order genuinely matters, and the
+            same models become sharply order-sensitive.
+          </StressCaption>
+          <FigureCard>
+            <MyImage
+              alt="Box plots and cumulative distributions of per-participant order variance for fine-tuned and base models on two tasks. On the odd-one-out task, fine-tuned models show far lower variance than base models; on the delayed-reward task the pattern reverses."
+              src={PermutationFigure}
+            />
+          </FigureCard>
+        </StressRow>
+
+        <TextBlocks textBlocks={textBlocks.filter((b) => b.id === 6)} />
+
+        <FigureCard>
+          <MyImage
+            alt="Two-panel scaling figure at LoRA rank 16. Left: Psych-101 mean negative log-likelihood versus parameter count, with fine-tuned families forming nearly flat lines far below the dotted cognitive baseline and untuned base models scattered high above. Right: the same models on Psych-201's held-out experiments; every value sits much higher, the fitted slopes are steeper, and the Qwentaur-14B point lands just below the reproduced Centaur-70B diamond."
+            src={OodFigure}
+          />
+        </FigureCard>
+        <Caption>
+          <b>Familiar tasks are nearly solved. New ones aren&rsquo;t.</b>{" "}
+          Both panels score models on predicting people&rsquo;s choices
+          (lower is better). Left: new participants doing tasks the models
+          saw during training. The lines are nearly flat, so extra size buys
+          almost nothing. Right: eighteen kinds of experiments the models
+          never saw during training. Everyone starts much further back here,
+          and the lines fall steeply: on unfamiliar experiments, extra size
+          still buys real gains, and no model is close to done improving.
+        </Caption>
+
+        {/* ═══════════ resource appendix: one practical section ═══════════ */}
+        <SectionHead>Run One Yourself</SectionHead>
+        <SectionSub>
+          The stable is public: every{" "}
+          <CustomLink href={COLLECTION} target="_blank" rel="noopener noreferrer">
+            adapter
+          </CustomLink>{" "}
+          and{" "}
+          <CustomLink href={GITHUB} target="_blank" rel="noopener noreferrer">
+            training script
+          </CustomLink>
+          , down to the last rank and data fraction. Each model ships as a
+          LoRA adapter on an open base; these six cover the sensible
+          operating points, and each link opens that size&rsquo;s full
+          adapter collection.
+        </SectionSub>
         <StatGrid>
           <Stat>
             <StatN>14</StatN>
@@ -304,18 +491,6 @@ const SmallFoundationModels = () => {
             <StatL>LoRA adapters (r&thinsp;=&thinsp;4, 8, 16, 32, 64)</StatL>
           </Stat>
         </StatGrid>
-
-        {/* ------------------- model chooser ------------------- */}
-        <SectionHead>Which model should you use?</SectionHead>
-        <SectionSub>
-          Every model is released as a LoRA adapter on a public base. These six
-          cover the sensible operating points; the{" "}
-          <CustomLink href={COLLECTION} target="_blank" rel="noopener noreferrer">
-            collection
-          </CustomLink>{" "}
-          holds the full rank and data-fraction grid behind the paper&rsquo;s
-          ablations.
-        </SectionSub>
         <TableWrap>
           <Chooser>
             <thead>
@@ -362,7 +537,7 @@ const SmallFoundationModels = () => {
                 <TdNum>8B</TdNum>
                 <TdNum $best>0.64</TdNum>
                 <TdWhy>
-                  Ties the flagship at half the size — and shares
+                  Ties the flagship at half the size, and shares
                   Centaur&rsquo;s own base family for direct comparisons.
                 </TdWhy>
               </tr>
@@ -382,7 +557,7 @@ const SmallFoundationModels = () => {
                 <TdNum>0.68</TdNum>
                 <TdWhy>
                   Provenance matters as much as prediction: the base is open
-                  end to end — weights, data, and training recipe.
+                  end to end (weights, data, and training recipe).
                 </TdWhy>
               </tr>
               <tr>
@@ -438,7 +613,7 @@ const SmallFoundationModels = () => {
                 <TdNum>135M</TdNum>
                 <TdNum>0.89</TdNum>
                 <TdWhy>
-                  The floor of the sweep — yet still ahead of the untuned,
+                  The floor of the sweep, yet still ahead of the untuned,
                   60&times;-larger Llama-3.1-8B (0.92).
                 </TdWhy>
               </tr>
@@ -470,8 +645,7 @@ const SmallFoundationModels = () => {
         <TableNote>
           Mean negative log-likelihood across all 46 held-out-participant
           Psych-101 tasks; bf16 inference, LoRA rank 16, full training data.
-          Lower is better. Each model link opens that size&rsquo;s full adapter
-          collection. Per-task tables, the out-of-distribution
+          Lower is better. Per-task tables, the out-of-distribution
           Psych-201 results, and 4-bit numbers are in the{" "}
           <a href={ARXIV} target="_blank" rel="noopener noreferrer">
             paper appendix
@@ -486,16 +660,13 @@ const SmallFoundationModels = () => {
           </a>
           .
         </TableNote>
-
-        {/* ------------------- run one ------------------- */}
-        <SectionHead>Run one</SectionHead>
         <SectionSub>
           Every adapter loads with stock <CustomCode>transformers</CustomCode>
-          &thinsp;+&thinsp;<CustomCode>peft</CustomCode> — or with{" "}
+          &thinsp;+&thinsp;<CustomCode>peft</CustomCode>, or with{" "}
           <CustomCode>unsloth</CustomCode>, the loader our training and
           evaluations use. The base checkpoint resolves automatically from the
-          adapter config. These are completion models over experiment
-          transcripts, not chat assistants: give them a session in the
+          adapter config. Remember these are completion models over experiment
+          transcripts, not chat assistants: hand one a session in the
           Psych-101 format and read off the distribution over what this
           participant does next.
         </SectionSub>
@@ -530,98 +701,6 @@ const SmallFoundationModels = () => {
             {copied === "run" ? "Copied" : "Copy"}
           </CopyBtn>
         </CodeCard>
-
-        {/* ------------------- stress tests ------------------- */}
-        <SectionHead>Right for the right reasons?</SectionHead>
-        <SectionSub>
-          Accuracy alone would settle nothing; an instrument must also respond
-          to the right things. Two stress tests probe what the models actually
-          read from an experiment&rsquo;s transcript — and whether the original
-          70B behaves any differently.
-        </SectionSub>
-        <StressRow>
-          <FigureCard style={{ maxWidth: "560px" }}>
-            <MyImage
-              alt="Information retention across four prompt-ablation conditions for nine models including Centaur-70B. Retention stays near 0.8 when instructions are removed, then collapses below zero when stimulus content is masked or only choice history remains; the Centaur-70B curve is indistinguishable from the small models."
-              src={AblationFigure}
-            />
-          </FigureCard>
-          <StressCaption>
-            <b>Masking content collapses prediction.</b> Share of learned
-            information retained as prompt components are removed, over the 27
-            ablation experiments with a defined chance floor
-            (mean&thinsp;&plusmn;&thinsp;SEM). Dropping instructions costs
-            little; masking the content of stimuli and feedback — or leaving
-            only the bare choice history — erases essentially everything, for
-            every model. Centaur-70B (diamonds) is indistinguishable from
-            models a hundredth its size.
-          </StressCaption>
-        </StressRow>
-        <StressRow $flip>
-          <StressCaption>
-            <b>Order matters only where it should.</b> Variance of each
-            participant&rsquo;s predictions across 50 shufflings of
-            context-trial order. On THINGS odd-one-out (top), where trials are
-            exchangeable, fine-tuned models are near-invariant — 8.4&times;
-            lower variance than their bases. On intertemporal choice (bottom),
-            an adaptive staircase whose ordering encodes the
-            participant&rsquo;s discount rate, the same models turn strongly
-            order-sensitive — exactly where order genuinely carries
-            information.
-          </StressCaption>
-          <FigureCard>
-            <MyImage
-              alt="Box plots and cumulative distributions of per-participant order variance for fine-tuned and base models on two tasks. On THINGS odd-one-out, fine-tuned models show far lower variance than base models; on intertemporal choice the pattern reverses."
-              src={PermutationFigure}
-            />
-          </FigureCard>
-        </StressRow>
-
-        {/* ------------------- limitations ------------------- */}
-        <SectionHead>What these models are — and aren&rsquo;t</SectionHead>
-        <LimitGrid>
-          <Limit>
-            <LimitHead>Instruments, not theories</LimitHead>
-            <Body>
-              They estimate how predictable behaviour is within paradigms they
-              have seen — a noise ceiling for experimental data. Whether
-              fine-tuning moves these models any distance toward human
-              mechanism is a question for representational analysis, and we
-              treat it as open.
-            </Body>
-          </Limit>
-          <Limit>
-            <LimitHead>Bound by coverage, not capacity</LimitHead>
-            <Body>
-              Training spans 160 laboratory paradigms. Models saturate within
-              the paradigms they have seen and remain far from saturated
-              outside them: the binding constraint is breadth of paradigms,
-              not parameters and not more participants per experiment.
-            </Body>
-          </Limit>
-          <Limit>
-            <LimitHead>Content is what they read</LimitHead>
-            <Body>
-              Prediction collapses when the content of stimuli and feedback is
-              masked, and responds to trial order only where the experimental
-              design makes order informative — a useful sanity check against
-              shortcut explanations of what the models learned.
-            </Body>
-          </Limit>
-          <Limit>
-            <LimitHead>Low-rank, dense, supervised</LimitHead>
-            <Body>
-              Adaptation is LoRA throughout (r&thinsp;=&thinsp;4–64), on dense
-              decoder-only transformers, trained with supervised fine-tuning
-              on one epoch. Full fine-tuning at small scales, other
-              architectures, and RL-based post-training could all move the
-              picture — none are tested here.
-            </Body>
-          </Limit>
-        </LimitGrid>
-
-        {/* ------------------- artifacts ------------------- */}
-        <SectionHead>Artifacts</SectionHead>
         <TagContainer style={{ gap: "24px", flexWrap: "wrap" }}>
           <PrimaryButton href={ARXIV} target="_blank">
             Read the paper
@@ -643,7 +722,7 @@ const SmallFoundationModels = () => {
           </CopyBtn>
         </CodeCard>
 
-        <TextBlocks textBlocks={textBlocks.filter((b) => b.id === 3)} />
+        <TextBlocks textBlocks={textBlocks.filter((b) => b.id === 7)} />
       </CustomTextContainer>
     </>
   );
@@ -659,11 +738,6 @@ const INK = "#1c1c1e";
 const MIST = "#f1f0ef";
 const LINE = "#e6e4e2";
 const FOG = "#b9b4b0";
-
-export const PullQuote = styled(H3)`
-  max-width: 26ch;
-  margin-top: 24px;
-`;
 
 export const FigureCard = styled(ImageContainer)`
   border: 1px solid ${LINE};
@@ -683,6 +757,35 @@ export const Caption = styled.p`
   b {
     color: ${INK};
     font-weight: 500;
+  }
+`;
+
+export const StressRow = styled.div`
+  display: grid;
+  grid-template-columns: minmax(240px, 5fr) minmax(0, 8fr);
+  gap: 24px 44px;
+  align-items: end;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 14px;
+
+    /* figure first when stacked */
+    & > :first-child {
+      order: 2;
+    }
+    & > :last-child {
+      order: 1;
+    }
+  }
+`;
+
+export const StressCaption = styled(Caption)`
+  margin-top: 0;
+  font-size: 15px;
+
+  @media (max-width: 900px) {
+    font-size: 14px;
   }
 `;
 
@@ -901,51 +1004,3 @@ export const CopyBtn = styled.button`
     opacity: 0.45;
   }
 `;
-
-export const StressRow = styled.div`
-  display: grid;
-  grid-template-columns: ${(props) =>
-    props.$flip ? "minmax(220px, 3fr) minmax(0, 9fr)" : "minmax(0, 560px) minmax(240px, 1fr)"};
-  gap: 24px 44px;
-  align-items: end;
-
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-    gap: 14px;
-
-    /* figure first when stacked */
-    ${(props) => props.$flip && "& > :first-child { order: 2; } & > :last-child { order: 1; }"}
-  }
-`;
-
-export const StressCaption = styled(Caption)`
-  margin-top: 0;
-  font-size: 15px;
-
-  @media (max-width: 900px) {
-    font-size: 14px;
-  }
-`;
-
-export const LimitGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px 48px;
-
-  @media (max-width: 820px) {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-`;
-
-export const Limit = styled.div``;
-
-export const LimitHead = styled.h3`
-  font-family: "GeneralSans";
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
-  color: ${INK};
-  margin-bottom: 10px;
-`;
-
