@@ -7,6 +7,7 @@ import GSM8KDiagram from "../../assets/diagrams/Before_You_Think_The_GSM8K_Exper
 import Psychology from "../../assets/diagrams/psychology_to_python.png";
 import {
   Body,
+  Caption,
   CustomLink,
   CustomTextContainer,
   H5,
@@ -342,6 +343,14 @@ const BeforeYouThinkMonitor = () => {
             src={Psychology}
           ></MyImage>
         </ImageContainer>
+        <Caption>
+          <b>Flavell&rsquo;s model, running on a maths word problem.</b> The
+          system reads the problem, sizes up its difficulty, picks a
+          strategy, and then grades its own answer on coherence,
+          plausibility, consistency, and goal-conduciveness. A failing grade
+          (red) sends it back to try a different strategy; a passing one
+          (green) lets it stop.
+        </Caption>
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 4)}
         />
@@ -355,6 +364,13 @@ const BeforeYouThinkMonitor = () => {
             src={GSM8KDiagram}
           ></MyImage>
         </DiagramContainer>
+        <DiagramCaption>
+          <b>Thinking first pays for itself.</b> On 659 grade-school maths
+          problems, the Flavell-based setup answers 75% correctly, about 7
+          points above the generate-then-fix baselines. It spends a little
+          longer per problem but needs far fewer retries: 1.3 attempts on
+          average against SELF-REFINE&rsquo;s 2.0.
+        </DiagramCaption>
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 6)}
         />
@@ -376,6 +392,21 @@ export const DiagramContainer = styled(ImageContainer)`
   /* justify-content: flex-end; */
   width: 40%;
   border-radius: 0px;
+  margin-left: auto;
+
+  @media (max-width: 1280px) {
+    width: 60%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+// Caption sharing the results table's right-justified 40% column.
+export const DiagramCaption = styled(Caption)`
+  width: 40%;
+  max-width: none;
   margin-left: auto;
 
   @media (max-width: 1280px) {

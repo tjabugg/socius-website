@@ -4,6 +4,8 @@ import Seo from "../../components/Seo";
 import PublicationHero from "../../components/PublicationHero";
 import TextBlocks from "../../components/TextBlocks";
 import CentauriCover from "../../assets/covers/centauri_cover.jpg";
+import Github from "../../assets/images/github-mark.svg";
+import HuggingFace from "../../assets/images/hf-logo.svg";
 import ScalingFigure from "../../assets/diagrams/centauri_scaling.png";
 import AblationFigure from "../../assets/diagrams/centauri_ablation.png";
 import PermutationFigure from "../../assets/diagrams/centauri_permutation.png";
@@ -149,6 +151,10 @@ const SmallFoundationModels = () => {
   const [textBlocks] = useState([
     {
       paperLink: ARXIV,
+      github: Github,
+      gitLink: GITHUB,
+      hf: HuggingFace,
+      hfLink: COLLECTION,
       justify: "flex-end",
       share: "Share",
       paper: "Read the paper",
@@ -391,6 +397,30 @@ const SmallFoundationModels = () => {
           panels repeat the comparison at each adapter rank, from 4 to 64.
         </Caption>
 
+        {/* ------------------- the sweep in numbers ------------------- */}
+        <StatGrid>
+          <Stat>
+            <StatN>14</StatN>
+            <StatL>open models</StatL>
+          </Stat>
+          <Stat>
+            <StatN>4</StatN>
+            <StatL>base-model families</StatL>
+          </Stat>
+          <Stat>
+            <StatN>135M–14B</StatN>
+            <StatL>parameter range</StatL>
+          </Stat>
+          <Stat>
+            <StatN>10.7M</StatN>
+            <StatL>human choices trained on</StatL>
+          </Stat>
+          <Stat>
+            <StatN>117</StatN>
+            <StatL>LoRA adapters (r&thinsp;=&thinsp;4, 8, 16, 32, 64)</StatL>
+          </Stat>
+        </StatGrid>
+
         <TextBlocks textBlocks={textBlocks.filter((b) => b.id === 5)} />
 
         <StressRow>
@@ -469,28 +499,6 @@ const SmallFoundationModels = () => {
           operating points, and each link opens that size&rsquo;s full
           adapter collection.
         </SectionSub>
-        <StatGrid>
-          <Stat>
-            <StatN>14</StatN>
-            <StatL>open models</StatL>
-          </Stat>
-          <Stat>
-            <StatN>4</StatN>
-            <StatL>base-model families</StatL>
-          </Stat>
-          <Stat>
-            <StatN>135M–14B</StatN>
-            <StatL>parameter range</StatL>
-          </Stat>
-          <Stat>
-            <StatN>10.7M</StatN>
-            <StatL>human choices trained on</StatL>
-          </Stat>
-          <Stat>
-            <StatN>117</StatN>
-            <StatL>LoRA adapters (r&thinsp;=&thinsp;4, 8, 16, 32, 64)</StatL>
-          </Stat>
-        </StatGrid>
         <TableWrap>
           <Chooser>
             <thead>
@@ -794,8 +802,9 @@ export const StatGrid = styled.div`
   grid-template-columns: repeat(5, 1fr);
   gap: 24px;
   border-top: 1px solid ${LINE};
-  padding-top: 32px;
-  margin-top: 24px;
+  border-bottom: 1px solid ${LINE};
+  padding: 32px 0;
+  margin: 80px 0;
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(3, 1fr);

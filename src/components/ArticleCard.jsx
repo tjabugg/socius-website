@@ -73,7 +73,7 @@ const ArticleCard = ({ articleCards, grid }) => {
               ) : null}
 
               <H5>{articleCard.heading}</H5>
-              <Body>{articleCard.paragraph}</Body>
+              <CardBody>{articleCard.paragraph}</CardBody>
             </TextContainer>
           </ArticleCardContainer>
         </a>
@@ -146,5 +146,13 @@ export const ImageHover = styled(MyImage)`
 
   &:hover {
     scale: 102%;
+  }
+`;
+
+export const CardBody = styled(Body)`
+  /* Tighten title-to-description spacing without touching the container
+     gap that also separates the tag row. */
+  @media (min-width: 769px) {
+    margin-top: -8px;
   }
 `;

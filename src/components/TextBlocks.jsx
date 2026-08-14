@@ -76,13 +76,22 @@ const TextBlocks = ({ textBlocks }) => {
             </TagContainer>
           )}
 
-          {textBlock.github && (
+          {(textBlock.github || textBlock.hf) && (
             <Share>
-              <a href={textBlock.gitLink} target="_blank" rel="noreferrer">
-                <IconContainer>
-                  <MyImage src={textBlock.github} alt="GitHub Icon" />
-                </IconContainer>
-              </a>
+              {textBlock.github && (
+                <a href={textBlock.gitLink} target="_blank" rel="noreferrer">
+                  <IconContainer>
+                    <MyImage src={textBlock.github} alt="GitHub Icon" />
+                  </IconContainer>
+                </a>
+              )}
+              {textBlock.hf && (
+                <a href={textBlock.hfLink} target="_blank" rel="noreferrer">
+                  <IconContainer>
+                    <MyImage src={textBlock.hf} alt="Hugging Face Icon" />
+                  </IconContainer>
+                </a>
+              )}
             </Share>
           )}
 

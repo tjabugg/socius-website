@@ -7,8 +7,7 @@ import MountainValley from "../../assets/images/mountain_valley.jpg";
 import Aristocrats from "../../assets/images/aristocrats.jpg";
 import RedditHarborCover from "../../assets/covers/reddit_harbor_cover.png";
 import Github from "../../assets/images/github-mark.svg";
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import CodeSnippet from "../../components/CodeSnippet";
 import {
   Body,
   CustomLink,
@@ -317,9 +316,7 @@ const RedditHarbor = () => {
     },
   ]);
 
-  const codeString = `
-pip install RedditHarbor
-
+  const codeString = `# pip install RedditHarbor
 import redditharbor.login as login
 from redditharbor.dock.pipeline import collect
 
@@ -430,14 +427,7 @@ collect.subreddit_submission(["python", "MachineLearning"], ["hot", "top"], limi
         />
         <CodeContainer>
           <CodeInner>
-            <StyledSyntaxHighlighter
-              language="python"
-              style={dracula}
-              // showLineNumbers
-              wrapLines
-            >
-              {codeString}
-            </StyledSyntaxHighlighter>
+            <CodeSnippet code={codeString} />
           </CodeInner>
         </CodeContainer>
         <TextBlocks
@@ -503,18 +493,6 @@ const CodeInner = styled.div`
   @media (max-width: 768px) {
     width: 100%;
   }
-`;
-
-const StyledSyntaxHighlighter = styled(SyntaxHighlighter)`
-  border-radius: 20px !important;
-  padding: 16px !important;
-  margin: 0px !important;
-  font-size: 0.9rem;
-  background: #0d1117 !important;
-  line-height: 1.5;
-  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
-  white-space: pre-wrap !important;
-  word-break: break-word;
 `;
 
 export const WebContainer = styled.iframe`

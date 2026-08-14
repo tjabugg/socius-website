@@ -8,6 +8,7 @@ import PELTPdiagram from "../../assets/images/PELTP_Data.png";
 
 import {
   Body,
+  Caption,
   CustomLink,
   CustomTextContainer,
   ImageContainer,
@@ -453,6 +454,14 @@ const PETLP = () => {
         <ImageContainer>
           <MyImage alt={`Diagram for PELTP`} src={PELTPdiagram}></MyImage>
         </ImageContainer>
+        <Caption>
+          <b>The research pipeline, seen end to end.</b> PETLP follows data
+          through the four stages every social media study shares: extract
+          it, transform it, load it into storage, and present the findings.
+          Legal obligations attach at every stage, not just at collection,
+          so the framework wraps the whole pipeline rather than a single
+          step.
+        </Caption>
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 4)}
         />
@@ -465,6 +474,14 @@ const PETLP = () => {
             src={ExtractionChannelDiagram}
           ></MyImage>
         </ImageContainer>
+        <Caption>
+          <b>Four legal doors to the same data.</b> Every route from a
+          social platform to a researcher runs through one of four channels:
+          users hand over their own data, researchers extract it themselves
+          with scraping tools, platforms grant access through partnerships,
+          dashboards, and APIs, or a third party aggregates it. Which door
+          you walk through decides which laws and terms you answer to.
+        </Caption>
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 6)}
         />

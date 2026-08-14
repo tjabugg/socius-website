@@ -11,14 +11,13 @@ import SentibankDiagram4 from "../../assets/diagrams/sentibank_diagram_4.png";
 import SentibankDiagram5 from "../../assets/diagrams/sentibank_diagram_5.png";
 import Tudors from "../../assets/images/tudors.jpg";
 import Lake from "../../assets/images/lake.jpg";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import SentiWordNet from "../../assets/images/sentiWordNet_graphic.jpg";
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import python from "react-syntax-highlighter/dist/esm/languages/prism/python";
+import CodeSnippet from "../../components/CodeSnippet";
 
 import Github from "../../assets/images/github-mark.svg";
 import {
   Body,
+  Caption,
   H5,
   CustomLink,
   List,
@@ -29,7 +28,6 @@ import {
 import ArticleCard from "../../components/ArticleCard";
 import styled from "styled-components";
 import ImageCarousel from "../../components/Carousel";
-SyntaxHighlighter.registerLanguage("python", python);
 
 const Senitbank = () => {
   const [publicationHeroes] = useState([
@@ -410,7 +408,7 @@ result = analyzer.sentiment(text=text, dictionary="VADER_v2014")
 # Label-based analysis
 text = "Our shareholders will be pleased with these results"
 result = analyzer.sentiment(text=text, dictionary="MASTER_v2022")
-# Returns: {'Positive': 1, 'Negative': 0, 'Uncertainty': 0, ...}";
+# Returns: {'Positive': 1, 'Negative': 0, 'Uncertainty': 0, ...}
 `;
   return (
     <>
@@ -445,20 +443,21 @@ result = analyzer.sentiment(text=text, dictionary="MASTER_v2022")
             SentibankDiagram5,
           ]}
         />
+        <Caption>
+          <b>The legacy trees.</b> Each slide traces one lineage of
+          sentiment dictionaries: which early lexicons seeded which
+          successors, and how six decades of borrowing and revision connect
+          them to the versions preserved in sentibank.
+        </Caption>
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 4)}
         />
         <CodeContainer>
           <CodeInner>
             <H5>The API That Makes It All Work</H5>
-            <StyledSyntaxHighlighter
-              language="python"
-              style={dracula}
-              // showLineNumbers
-              wrapLines
-            >
-              {codeString}
-            </StyledSyntaxHighlighter>
+            <SnippetSpacer>
+              <CodeSnippet code={codeString} />
+            </SnippetSpacer>
             <Body>
               <br></br>
               No more hunting through journal websites for that one CSV buried
@@ -521,14 +520,7 @@ const CodeInner = styled.div`
   }
 `;
 
-const StyledSyntaxHighlighter = styled(SyntaxHighlighter)`
-  border-radius: 20px !important;
-  padding: 16px !important;
-  margin: 16px 0px !important;
-  font-size: 0.9rem;
-  background: #0d1117 !important;
-  line-height: 1.5;
-  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
-  white-space: pre-wrap !important;
-  word-break: break-word;
+// Keeps the vertical rhythm the old highlighter's margins provided.
+const SnippetSpacer = styled.div`
+  margin: 16px 0px;
 `;

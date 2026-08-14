@@ -8,6 +8,7 @@ import TrainingDiagram from "../../assets/diagrams/System1.5_Training_Diagram.pn
 import NeurIPS2024 from "../../assets/videos/Nick_NeurIPS2024.mp4";
 import {
   Body,
+  Caption,
   CustomLink,
   CustomTextContainer,
   CustomContainer,
@@ -357,6 +358,14 @@ const System15 = () => {
         <ImageContainer>
           <MyImage alt={`Diagram for training`} src={TrainingDiagram}></MyImage>
         </ImageContainer>
+        <Caption>
+          <b>How the system learns from human masters.</b> In each training
+          round, the Generator proposes several solutions to every problem.
+          Human experts mark which ones they prefer, and each problem also
+          carries a familiarity score. The Verifier learns from the
+          preference labels what a good solution looks like, while the
+          Monitor learns the feel of familiar versus novel territory.
+        </Caption>
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 4)}
         />
@@ -369,6 +378,15 @@ const System15 = () => {
             src={InterferenceDiagram}
           ></MyImage>
         </ImageContainer>
+        <Caption>
+          <b>One familiarity score decides how hard to think.</b> At
+          inference, the Monitor reads the problem and returns a familiarity
+          score. When the problem feels deeply familiar, the Generator
+          answers in one shot. In the middle zone, it drafts several
+          candidates and the Verifier picks the best. In unknown territory,
+          the system generates everything it can and calls in System
+          2&rsquo;s slower reasoning.
+        </Caption>
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 6)}
         />

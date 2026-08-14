@@ -377,6 +377,22 @@ export const MyImage = styled.img`
   object-fit: cover;
 `;
 
+// Figure caption in the style introduced on the Centauri research page:
+// quiet fog text with an ink-weight bold lead.
+export const Caption = styled.p`
+  font-family: "GeneralSans";
+  font-size: 14px;
+  color: #b9b4b0;
+  line-height: 1.5;
+  max-width: 90ch;
+  margin-top: -8px;
+
+  b {
+    color: #1c1c1e;
+    font-weight: 500;
+  }
+`;
+
 export const NavContainer = styled.nav`
   display: flex;
   flex-direction: row;

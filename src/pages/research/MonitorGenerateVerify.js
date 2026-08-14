@@ -6,6 +6,7 @@ import MonitorGenerateVerifyCover from "../../assets/covers/monitor_generate_ver
 import TranslationProjects from "../../assets/diagrams/mgv_translation_project.png";
 import {
   Body,
+  Caption,
   CustomLink,
   CustomCode,
   CustomTextContainer,
@@ -290,6 +291,17 @@ const MonitorGenerateVerify = () => {
             src={TranslationProjects}
           ></MyImage>
         </ImageContainer>
+        <Caption>
+          <b>
+            Three psychology theories, redrawn as flowcharts a machine could
+            follow.
+          </b>{" "}
+          Each column takes a classic account of human metacognition
+          (Flavell&rsquo;s cognitive monitoring, then Nelson and Narens on
+          learning and on recall) and lays it out as the same repeating loop:
+          monitor first, then generate, then verify. That shared shape across
+          all three columns is the Monitor-Generate-Verify framework.
+        </Caption>
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 9)}
         />

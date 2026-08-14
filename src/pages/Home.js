@@ -37,7 +37,7 @@ const Home = () => {
       padding: "0px",
       heading: "Small Foundation Models of Human Cognition and Behaviour",
       paragraph:
-        "Seventy billion parameters are not what cognitive foundation models rest on. Fourteen open models, 135M–14B, prove it.",
+        "Foundation models of human behaviour, small enough for any psychology lab.",
       tagOneBgColour: "#00002E",
       tagOneColour: "#F1F0EF",
       captionOne: "Conference",
@@ -49,7 +49,9 @@ const Home = () => {
       link: "/research/small-foundation-models-of-human-cognition",
     },
     {
-      aspectRatio: "1/1",
+      // 8/9 rather than square: at the 2fr/1fr row split this makes the
+      // image the same height as the 16/9 feature card beside it.
+      aspectRatio: "8/9",
       flexDirection: "column",
       image: Animals,
       padding: "0px",
@@ -89,7 +91,7 @@ const Home = () => {
       flexDirection: "row",
       image: BeforeYouThink,
       padding: "0px",
-      heading: "Before You 〈think〉, monitor",
+      heading: "Before You <think>, monitor",
       paragraph:
         "When AI pauses to assess difficulty first, it solves 7% more problems correctly.",
       tagOneBgColour: "#1C9418",
