@@ -7,7 +7,11 @@ import Documentation from "./pages/Documentation";
 import Sentibank from "./pages/data/Senitbank";
 import MonitorGenerateVerify from "./pages/research/MonitorGenerateVerify";
 import PETLP from "./pages/data/PETLP";
-import InDefenceOfPostHocExplainability from "./pages/research/InDefenceOfPostHocExplainability";
+// In Defence of Post-hoc Explainability is temporarily off the site while
+// the paper is revised for journal submission; restore the import and its
+// route below to bring the page back.
+// import InDefenceOfPostHocExplainability from "./pages/research/InDefenceOfPostHocExplainability";
+import LimitsOfPostHocExplanations from "./pages/research/LimitsOfPostHocExplanations";
 import BeforeYouThinkMonitor from "./pages/research/BeforeYouThinkMonitor";
 import RedditHarbor from "./pages/data/RedditHarbor";
 import System15 from "./pages/research/System1.5";
@@ -53,9 +57,14 @@ const App = () => {
             />
             <Route path="/data/peltp" element={<PETLP />} />
 
-            <Route
+            {/* <Route
               path="/research/in-defence-of-post-hoc-explainability"
               element={<InDefenceOfPostHocExplainability />}
+            /> */}
+
+            <Route
+              path="/research/limits-of-post-hoc-explanations"
+              element={<LimitsOfPostHocExplanations />}
             />
 
             <Route

@@ -55,24 +55,6 @@ const Home = () => {
       flexDirection: "column",
       image: Animals,
       padding: "0px",
-      heading: "System 1.5",
-      paragraph:
-        "We gave machines the cognitive gear shift experts have — knowing when to think fast versus slow.",
-      tagOneBgColour: "#3C46FF",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Workshop",
-      captionTwo: "NeurIPS 2024",
-      tagTwoBgColour: "#D9FFD8",
-      tagTwoColour: "#514E4B",
-      alt: "A 17th century painting of Chickens and Ducks by Melchior d' Hondecoeter",
-      id: 1,
-      link: "/research/system-1.5",
-    },
-    {
-      aspectRatio: "16/9",
-      flexDirection: "row",
-      image: MonitorGenerate,
-      padding: "0px",
       heading: "Monitor-Generate-Verify",
       paragraph:
         "We translated metacognition into mathematics. AI now assesses strategy before attempting solutions.",
@@ -82,14 +64,14 @@ const Home = () => {
       captionTwo: "NeurIPS 2025",
       tagTwoBgColour: "#AEF2AC",
       tagTwoColour: "#514E4B",
-      alt: "Cropped close up of dark green diagonal line on a pale green background",
-      id: 2,
+      alt: "A 17th century painting of Chickens and Ducks by Melchior d' Hondecoeter",
+      id: 1,
       link: "/research/monitor-generate-verify",
     },
     {
       aspectRatio: "16/9",
       flexDirection: "row",
-      image: BeforeYouThink,
+      image: MonitorGenerate,
       padding: "0px",
       heading: "Before You <think>, monitor",
       paragraph:
@@ -100,9 +82,27 @@ const Home = () => {
       captionTwo: "COLM 2025",
       tagTwoBgColour: "#CBDCFF",
       tagTwoColour: "#514E4B",
+      alt: "Cropped close up of dark green diagonal line on a pale green background",
+      id: 2,
+      link: "/research/before-you-think-monitor",
+    },
+    {
+      aspectRatio: "16/9",
+      flexDirection: "row",
+      image: BeforeYouThink,
+      padding: "0px",
+      heading: "System 1.5",
+      paragraph:
+        "We gave machines the cognitive gear shift experts have — knowing when to think fast versus slow.",
+      tagOneBgColour: "#3C46FF",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Workshop",
+      captionTwo: "NeurIPS 2024",
+      tagTwoBgColour: "#D9FFD8",
+      tagTwoColour: "#514E4B",
       alt: "Cropped close up of bright blue arc on a blue background",
       id: 3,
-      link: "/research/before-you-think-monitor",
+      link: "/research/system-1.5",
     },
     {
       aspectRatio: "16/9",
@@ -347,8 +347,15 @@ export const SupportContainer = styled(CentreContainer)`
     padding: 5vh 20vw 5vh 20vw;
   }
 
+  /* Keep the logos side by side on small screens; shrinking the gap and
+     side padding hands the freed width to the logos themselves. */
+  @media (max-width: 768px) {
+    gap: 64px;
+    padding: 4vh 10vw 4vh 10vw;
+  }
+
   @media (max-width: 414px) {
-    padding: 5vh 10vw 5vh 10vw;
-    gap: 60px;
+    gap: 32px;
+    padding: 4vh 7vw 4vh 7vw;
   }
 `;

@@ -6,6 +6,7 @@ import InDefenceOfPostHocExplainabilityCover from "../../assets/covers/in_defenc
 import BoundedTruthDiagram from "../../assets/diagrams/In_Defence_Bounded_Truth.png";
 import {
   Body,
+  Caption,
   CustomLink,
   CustomTextContainer,
   H5,
@@ -335,6 +336,16 @@ const InDefenceOfPostHocExplainability = () => {
             src={BoundedTruthDiagram}
           ></MyImage>
         </ImageContainer>
+        <Caption>
+          <b>How a flawed explanation still earns its keep.</b> Post-hoc
+          methods translate an opaque model&rsquo;s behaviour into patterns
+          people can reason about; domain knowledge turns those patterns
+          into hypotheses; empirical validation then tests them against the
+          world. Confirmations refine the theory, and failures refine the
+          methods. The side notes follow one worked example, a SHAP analysis
+          linking disrupted sleep to diabetes risk, from first attribution
+          to a corroborated clinical finding.
+        </Caption>
         <TextBlocks
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 6)}
         />

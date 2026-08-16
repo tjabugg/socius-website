@@ -237,8 +237,23 @@ export const ColourContainer = styled(PaddedContainer)`
 
 export const Container = styled(PaddedContainer)`
   margin: 0px 0px 120px 0px;
+
+  /* Below the 1681px ceiling the surrounding sections carry a 24px side
+     inset; without this tier the layers grid sits flush at the viewport
+     edge on tablets. */
+  @media (max-width: 1681px) {
+    margin: 0px 24px 120px 24px;
+  }
+
+  /* The 60/40 grid stacks below 768px, where the desktop bottom margin
+     otherwise leaves a hole between the heading, the layer blocks, and
+     the Latest News section that follows. */
+  @media (max-width: 768px) {
+    margin: 0px 20px 32px 20px;
+  }
+
   @media (max-width: 414px) {
-    margin: 20px 20px 40px 20px;
+    margin: 12px 20px 16px 20px;
   }
 `;
 

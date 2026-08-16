@@ -31,10 +31,22 @@ const PublicationHero = ({ publicationHeroes }) => {
           </HeroContainer>
 
           <ImageContainer>
-            <MyImage
-              alt={publicationHero.imageAlt}
-              src={publicationHero.image}
-            ></MyImage>
+            {publicationHero.video ? (
+              <HeroVideo
+                src={publicationHero.video}
+                poster={publicationHero.image}
+                aria-label={publicationHero.imageAlt}
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+            ) : (
+              <MyImage
+                alt={publicationHero.imageAlt}
+                src={publicationHero.image}
+              ></MyImage>
+            )}
           </ImageContainer>
         </TextAndImage>
       ))}
@@ -43,6 +55,16 @@ const PublicationHero = ({ publicationHeroes }) => {
 };
 
 export default PublicationHero;
+
+export const HeroVideo = styled.video`
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  /* White backing so Chromium's edge-pixel blend stays invisible against
+     the page (see the pattern videos in Hero.jsx). */
+  background-color: #ffffff;
+`;
 
 export const TextAndImage = styled.div`
   margin: 120px auto 60px auto;

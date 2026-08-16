@@ -5,8 +5,8 @@ import Cliffs from "../assets/images/cliffs.jpg";
 import System from "../assets/images/system_1.5_graphic_portrait.jpg";
 import Farmland from "../assets/images/farmland.jpg";
 import BeforeYouThink from "../assets/images/beforeYouThink_graphic.jpg";
-import Politicians from "../assets/images/politicians.jpg";
 import CentauriCover from "../assets/covers/centauri_cover.jpg";
+import Politicians from "../assets/images/politicians.jpg";
 import Seo from "../components/Seo";
 import ArticleCard from "../components/ArticleCard";
 import { PaddedContainer } from "../styles";
@@ -50,6 +50,25 @@ const Research = () => {
       alt: "Classical landscape painting of Mount Pelion — home of the centaur Chiron — with a ruined temple and two horses above the Aegean",
       id: 5,
       link: "/research/small-foundation-models-of-human-cognition",
+    },
+    {
+      aspectRatio: "4/5",
+      flexDirection: "column",
+      image: Politicians,
+      padding: "0px",
+      heading:
+        "Reliability, Faithfulness, and the Limits of Post-hoc Explanations of Opaque Scientific Models",
+      paragraph:
+        "A reliable model and a faithful explanation still cannot tell you how nature works.",
+      tagOneBgColour: "#191F8C",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Workshop",
+      captionTwo: "ICML 2026",
+      tagTwoBgColour: "#8FB2FF",
+      tagTwoColour: "#514E4B",
+      alt: "A 17th century painting of Officers and other civic guardsmen of the XIth District of Amsterdam",
+      id: 6,
+      link: "/research/limits-of-post-hoc-explanations",
     },
     {
       aspectRatio: "4/5",
@@ -104,24 +123,6 @@ const Research = () => {
       alt: "Cropped close up of a dark blue socius pattern on a lime green background",
       id: 1,
       link: "/research/system-1.5",
-    },
-    {
-      aspectRatio: "4/5",
-      flexDirection: "column",
-      image: Politicians,
-      padding: "0px",
-      heading: "In Defence of Post-hoc Explainability",
-      paragraph:
-        "Philosophy says imperfect AI explanations can still advance knowledge. We proved it.",
-      tagOneBgColour: "#00002E",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Workshop",
-      captionTwo: "NeurIPS 2024",
-      tagTwoBgColour: "#8FB2FF",
-      tagTwoColour: "#514E4B",
-      alt: "A 17th century painting of Officers and other civic guardsmen of the XIth District of Amsterdam",
-      id: 4,
-      link: "/research/in-defence-of-post-hoc-explainability",
     },
   ]);
 
