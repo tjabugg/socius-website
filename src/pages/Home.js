@@ -2,9 +2,9 @@ import Hero from "../components/Hero";
 import ArticleCard from "../components/ArticleCard";
 import { useState } from "react";
 import CentreCards from "../components/CentreCard";
-import Animals from "../assets/images/animals.jpg";
 import MonitorGenerate from "../assets/images/monitorGenerate_graphic.jpg";
 import BeforeYouThink from "../assets/images/beforeYouThink_home_graphic.jpg";
+import Politicians from "../assets/images/politicians.jpg";
 import CountryPath from "../assets/images/country_path.jpg";
 import RedditHarbor from "../assets/images/redditHarbor_graphic.jpg";
 import MountainPath from "../assets/images/mountain_path.jpg";
@@ -53,7 +53,26 @@ const Home = () => {
       // image the same height as the 16/9 feature card beside it.
       aspectRatio: "8/9",
       flexDirection: "column",
-      image: Animals,
+      image: Politicians,
+      padding: "0px",
+      heading:
+        "Reliability, Faithfulness, and the Limits of Post-hoc Explanations of Opaque Scientific Models",
+      paragraph:
+        "A reliable model and a faithful explanation still cannot tell you how nature works.",
+      tagOneBgColour: "#191F8C",
+      tagOneColour: "#F1F0EF",
+      captionOne: "Workshop",
+      captionTwo: "ICML 2026",
+      tagTwoBgColour: "#8FB2FF",
+      tagTwoColour: "#514E4B",
+      alt: "A 17th century painting of Officers and other civic guardsmen of the XIth District of Amsterdam",
+      id: 8,
+      link: "/research/limits-of-post-hoc-explanations",
+    },
+    {
+      aspectRatio: "16/9",
+      flexDirection: "row",
+      image: BeforeYouThink,
       padding: "0px",
       heading: "Monitor-Generate-Verify",
       paragraph:
@@ -64,7 +83,7 @@ const Home = () => {
       captionTwo: "NeurIPS 2025",
       tagTwoBgColour: "#AEF2AC",
       tagTwoColour: "#514E4B",
-      alt: "A 17th century painting of Chickens and Ducks by Melchior d' Hondecoeter",
+      alt: "Cropped close up of bright blue arc on a blue background",
       id: 1,
       link: "/research/monitor-generate-verify",
     },
@@ -85,24 +104,6 @@ const Home = () => {
       alt: "Cropped close up of dark green diagonal line on a pale green background",
       id: 2,
       link: "/research/before-you-think-monitor",
-    },
-    {
-      aspectRatio: "16/9",
-      flexDirection: "row",
-      image: BeforeYouThink,
-      padding: "0px",
-      heading: "System 1.5",
-      paragraph:
-        "We gave machines the cognitive gear shift experts have — knowing when to think fast versus slow.",
-      tagOneBgColour: "#3C46FF",
-      tagOneColour: "#F1F0EF",
-      captionOne: "Workshop",
-      captionTwo: "NeurIPS 2024",
-      tagTwoBgColour: "#D9FFD8",
-      tagTwoColour: "#514E4B",
-      alt: "Cropped close up of bright blue arc on a blue background",
-      id: 3,
-      link: "/research/system-1.5",
     },
     {
       aspectRatio: "16/9",
@@ -242,11 +243,11 @@ const Home = () => {
           textBlocks={textBlocks.filter((textBlock) => textBlock.id === 2)}
         />
         <ArticleCard
-          articleCards={articleCards.filter((card) => [7, 1].includes(card.id))}
+          articleCards={articleCards.filter((card) => [7, 8].includes(card.id))}
           grid="2fr 1fr"
         />
         <ArticleCard
-          articleCards={articleCards.filter((card) => [2, 3].includes(card.id))}
+          articleCards={articleCards.filter((card) => [1, 2].includes(card.id))}
           grid="1fr 1fr"
         />
       </PaddedContainer>
